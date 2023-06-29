@@ -1,0 +1,161 @@
+{
+  "main": {
+    "id": "cc316d0b7c08acc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "30fe84d133ba109a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "35b6d7c44ddd0b31",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linear Algebra/Vector/Linear Equations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d143943b8a4de075",
+    "type": "split",
+    "children": [
+      {
+        "id": "32849822f4605e34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f3377f6ed1914f5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "76d1b62f30862bac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4a349aa63ad7ebe3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "10be10321f17e95e",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa1757b7e12cdfb4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b17c02b4d71488c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Linear Algebra/Vector/Linear Equations.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a56f44c27797bfb0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Linear Algebra/Vector/Linear Equations.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "803f56134143faf4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6a0df68b493205e0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Linear Algebra/Vector/Linear Equations.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "35b6d7c44ddd0b31",
+  "lastOpenFiles": [
+    "Linear Algebra/Vector/Dot Product.md",
+    "Linear Algebra/Vector/The Vector.md",
+    "Linear Algebra/Vector/Vectors over GF(2).md",
+    "Linear Algebra/Vector/Linear Equations.md",
+    "Linear Algebra/Vector/Line Segments.md",
+    "Untitled.canvas",
+    "Linear Algebra/Vector",
+    "Linear Algebra",
+    "2023-06-25.md"
+  ]
+}
