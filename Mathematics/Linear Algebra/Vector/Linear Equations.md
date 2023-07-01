@@ -43,7 +43,7 @@ $$
 >\begin{array}{c}
 >a_1 \cdot x = \beta_1 \\
 >a_2 \cdot x = \beta_2 \\
->\dots \\
+>\vdots \\
 >a_n \cdot x = \beta_n
 >\end{array}
 >$$
