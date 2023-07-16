@@ -114,7 +114,7 @@ $$
 x_i = \frac {\beta_i - expr} {a_{ii}}
 $$
 
-The Python procedure is more clear imo:
+The Python procedure solves a triangular system with the notable constraint that `r[i][i] != 0` for a given $i$ (this avoids a division by zero):
 
 ```Python
 triangular_solve_n(rowlist, b):

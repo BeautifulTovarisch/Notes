@@ -8,18 +8,39 @@
         "type": "tabs",
         "children": [
           {
-            "id": "35b6d7c44ddd0b31",
+            "id": "7e721d76a1cd5dfc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linear Algebra/Vector/Linear Equations.md",
+                "file": "Linear Algebra/Vector Space/Linear Combination.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
+          },
+          {
+            "id": "a347ea1e451988f4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linear Algebra/Vector Space/Span.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "f5f061d58639908d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +106,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linear Algebra/Vector/Linear Equations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +122,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linear Algebra/Vector/Linear Equations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +143,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Linear Algebra/Vector/Linear Equations.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,13 +163,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "35b6d7c44ddd0b31",
+  "active": "f5f061d58639908d",
   "lastOpenFiles": [
+    "Untitled 1.md",
+    "Discrete/Set.md",
+    "Discrete/Induction.md",
     "Linear Algebra/Vector/Dot Product.md",
-    "Linear Algebra/Vector/The Vector.md",
     "Linear Algebra/Vector/Linear Equations.md",
-    "Linear Algebra/Vector/Vectors over GF(2).md",
+    "Linear Algebra/Vector Space/Linear Combination.md",
+    "Untitled.md",
+    "Discrete/Algorithms.md",
+    "Linear Algebra/Vector Space/Generators.md",
+    "Linear Algebra/Vector Space/Span.md",
+    "Linear Algebra/Vector/The Vector.md",
     "Linear Algebra/Vector/Line Segments.md",
+    "Linear Algebra/Vector Space",
+    "Discrete/Argument Forms.md",
+    "Discrete/Common Syllogisms.md",
+    "Discrete/Logical Propositions.md",
+    "Discrete/Russel's Paradox.md",
+    "Discrete",
+    "Linear Algebra/Vector/Vectors over GF(2).md",
     "Untitled.canvas",
     "Linear Algebra/Vector",
     "Linear Algebra",
