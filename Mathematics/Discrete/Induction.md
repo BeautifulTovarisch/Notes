@@ -47,6 +47,39 @@ We want to prove that the complement of these iterated operations is structurall
 > $$
 > \begin{align}
 > \overline{\bigcup_{i=1}i^{n+1} A_i} &= \overline{\bigcup_{i=1}i^n A_i \cup A_{n+1}} \\
-> &= 
+> &= \overline{\bigcup_{i=1}^n A_i} \cap \overline{A_{n+1}} &\text{<Set Law>} \\
+> &= \bigcap_{i=1}^n \overline{A_i} \cap \overline{A_{n+1}} &\text{I.H.} \\
+> &= \bigcap_{i=1}^{n+1} \overline{A_i} &\text{By Definition}
 > \end{align}
 > $$
+
+Therefore we have shown that $I(N+1)$ holds under mathematical induction. $\blacksquare$
+
+## Example
+
+A fun example. Noting this down since I keep forgetting the "add zero" trick of manipulating expressions.
+
+> [!abstract] $x - 1 | x^n-1$ for all $n \in \mathbb{N}$
+> Proof. By induction on $n$. Let $n = 0$, then:
+> $$
+> \begin{align}
+> x^n - 1 &= x^0 - 1 = 0
+> \end{align}
+> $$
+> so $x - 1 | x^n - 1$ since every integer divides 0. Hence $\exists N \geq 0, I(N)$.
+> Now suppose $n = N + 1$. Then,
+> $$
+> \begin{align}
+> x^{n+1} - 1 &= x^{n+1} + x^n - x^n - 1 \\
+> &= (x-1)x^n + x^n - 1
+> \end{align}
+> $$
+> Now $x-1|(x-1)x^n$, and by inductive hypothesis $x-1|x^n-1$, so we must show that $a|b, a|c \implies a | b + c$.
+> 
+> > [!abstract] Lemma a. $a|b, a|c \implies a | b + c$
+> > Proof. Suppose $a, b, c \in \mathbb{N}$, and $a|b, \; a|c$. Then,
+> > $\exists k, j \in \mathbb{N}$ such that, $ak = b, aj = c$. So then, $b + c = ak + aj = a(k + j)$.
+> > $\blacksquare$
+> 
+> Now by Lemma a. we have shown that if $x-1|x^n -1$ and $x-1|(x-1)x^n$ implies $x-1|(x-1)x^n + x^n - 1$, and so the theorem holds by mathematical induction.
+> $\blacksquare$.

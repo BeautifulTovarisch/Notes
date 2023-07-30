@@ -4,43 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "30fe84d133ba109a",
+        "id": "f01aa818d3c818e3",
         "type": "tabs",
         "children": [
           {
-            "id": "7e721d76a1cd5dfc",
+            "id": "0b71d54bc584ad74",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linear Algebra/Vector Space/Linear Combination.md",
+                "file": "Discrete/Partial Order.md",
                 "mode": "source",
                 "source": true
               }
-            }
-          },
-          {
-            "id": "a347ea1e451988f4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Linear Algebra/Vector Space/Span.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "f5f061d58639908d",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Discrete/Partial Order.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Discrete/Partial Order.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Discrete/Partial Order.md"
+              }
             }
           }
         ]
@@ -163,30 +146,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f5f061d58639908d",
+  "active": "0b71d54bc584ad74",
   "lastOpenFiles": [
-    "Untitled 1.md",
-    "Discrete/Set.md",
-    "Discrete/Induction.md",
-    "Linear Algebra/Vector/Dot Product.md",
-    "Linear Algebra/Vector/Linear Equations.md",
-    "Linear Algebra/Vector Space/Linear Combination.md",
-    "Untitled.md",
-    "Discrete/Algorithms.md",
-    "Linear Algebra/Vector Space/Generators.md",
-    "Linear Algebra/Vector Space/Span.md",
-    "Linear Algebra/Vector/The Vector.md",
-    "Linear Algebra/Vector/Line Segments.md",
-    "Linear Algebra/Vector Space",
-    "Discrete/Argument Forms.md",
+    "Linear Algebra/Matrix/Matrix Representation of a Linear Function.md",
+    "Discrete/Partial Order.md",
+    "Linear Algebra/Matrix/Multiplying Matrices and Vectors.md",
+    "Linear Algebra/Matrix/Linear Functions.md",
+    "Linear Algebra/Matrix/Matrices and Functions.md",
+    "Linear Algebra/Matrix/The Matrix.md",
+    "Linear Algebra/Matrix/Hamming Code.md",
+    "Discrete/Relations.md",
+    "Discrete/Closure.md",
     "Discrete/Common Syllogisms.md",
-    "Discrete/Logical Propositions.md",
+    "Discrete/Induction.md",
+    "Discrete/Correctness of Algorithms.md",
+    "Linear Algebra/Matrix/Null Space.md",
+    "Linear Algebra/Vector Space/Linear Systems.md",
+    "Linear Algebra/Vector/Linear Equations.md",
     "Discrete/Russel's Paradox.md",
+    "Linear Algebra/Vector/The Vector.md",
+    "Linear Algebra/Vector Space/Span.md",
+    "Linear Algebra/Vector Space/Affine Spaces.md",
+    "Linear Algebra/Vector Space/Vector Spaces.md",
+    "Linear Algebra/Vector/Dot Product.md",
+    "Linear Algebra/Matrix",
+    "Linear Algebra/Untitled.md",
+    "Linear Algebra/Vector Space/Homogeneous Linear Systems.md",
+    "Discrete/Logical Propositions.md",
+    "Discrete/Algorithms.md",
+    "Discrete/Argument Forms.md",
+    "Linear Algebra/Vector Space",
     "Discrete",
-    "Linear Algebra/Vector/Vectors over GF(2).md",
     "Untitled.canvas",
     "Linear Algebra/Vector",
-    "Linear Algebra",
-    "2023-06-25.md"
+    "Linear Algebra"
   ]
 }
