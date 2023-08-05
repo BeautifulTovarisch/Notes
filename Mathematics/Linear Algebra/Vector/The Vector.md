@@ -49,7 +49,16 @@ We say a vector is sparse is most of its values are 0. If no more than $k$ entri
 > $u + v = [u_1 + v_1, u_2 + v_2, ..., u_n + v_n]$
 
 ```Python
-def addn(u, b):
+def vadd(u, v):
+	'''
+	vadd(u, v) computes the vector obtaining by adding [u] + [v]
+
+	Parameters:
+		u,v (list): Lists representing vectors of some space.
+
+	Output:
+		The vector u + v
+	'''
 	return [u[k] + v[k] for k in range(len(u))]
 ```
 
@@ -61,8 +70,18 @@ def addn(u, b):
 > $\alpha u = \alpha [u_1, u_2, ..., u_n] = [\alpha u_1, \alpha u_2, ..., \alpha u_n]$
 
 ```Python
-def scale(u, alpha):
-	return [alpha * u_k for u_k in u]
+def scale(a, v):
+	'''
+	scale(a, v) computes the scalar multiplication of [a] * [v]
+
+	Parameters:
+		a (int): A scalar value
+		v (list): A list representing a vector
+
+	Output:
+		A vector whose elements have been scaled by [a].
+	'''
+	return [a * e for e in v]
 ```
 
 #### Associativity

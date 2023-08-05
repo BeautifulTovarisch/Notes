@@ -22,10 +22,44 @@ $$
 > [!info] Linear Combination
 > Let $M$ be an $R \times C$ matrix over $\mathbb{F}$. Let $v$ be a $C$-vector of $\mathbb{F}$. Then $M * v$ is the linear combination:
 > $$
-> \sum_{c \in C} v[c] * M_{,c}
+> r = \sum_{c \in C} v[c] * M_{,c}
 > $$
 > 
-> In other words, the elements of $v$ act as the scalar values in a **linear combination** over $M$'s columns. 
+> Where $r$ is an $R$-vector. In other words, the elements of $v$ act as the scalar values in a **linear combination** over $M$'s columns.
+> $$
+> \begin{bmatrix}
+> a_{11} & a_{12} & \dots & a_{1C} \\
+> a_{21} & a_{22} & \dots & a_{2C} \\
+> \vdots & \vdots & \dots & \vdots \\
+> a_{R1} & a_{R2} & \dots & a_{RC}
+> \end{bmatrix} 
+> * [x_1, x_2, \dots, x_C] 
+>$$
+>$$ 
+> r = x_1 [a_{11}, a_{21}, \dots, a_{R1}]
+> + x_2 [a_{12}, a_{22}, \dots, a_{R2}]
+> + \dots
+> + x_C [a_{1C}, a_{2C}, \dots, a_{RC}]
+> $$
+
+```Python
+# scale: [[The Vector#Scalar Multiplication]]
+# vadd: [[The Vector#Vector Addition]]
+
+# Using the linear combination representation
+def mvMult(M, v):
+	'''
+	mvMult(M, v) computes the matrix-vector multiplication [M] * [v]
+
+	Parameters:
+		M (list[]): An R x C matrix
+		v (list): A C-vector in the same field as [M]
+
+	Output:
+		An R-vector whose entries are the result of M * v
+	'''
+	# TODO: since this involves sub-optimal column-major iteration of M
+```
 
 > [!example]
 > Let
@@ -56,7 +90,36 @@ $$
 ### Dot Product
 
 > [!info] Dot Product
-> If $M$ is an $R \times C$ matrix and $u$ is an $C$-vector, then $u * M$ is the $R$-vector $v$ such that $v[r]$ is the **dot product** of $u$ and $M_{r,}$.
+> If $M$ is an $R \times C$ matrix and $u$ is an $C$-vector, then $M * u$ is the $R$-vector $v$ such that $v[r]$ is the **dot product** of $u$ and $M_{r,}$.
+> 
+> $$
+> \begin{bmatrix}
+> a_{11} & a_{12} & \dots & a_{1C} \\
+> a_{21} & a_{22} & \dots & a_{2C} \\
+> \vdots & \vdots & \dots & \vdots \\
+> a_{R1} & a_{R2} & \dots & a_{RC}
+> \end{bmatrix} 
+> * [x_1, x_2, \dots, x_C] 
+>$$
+>$$ 
+> r = [(x_1 * a_{11} + x_2 * a_{12} + \dots x_C * a_{1C}), (x_1 * a_{21} + \dots + x_C * a_{2C}), \dots, (x_1 * a_{R1} + \dots + x_C * a_{RC})]
+> $$
+
+```Python
+# dot: [[Dot Product]]
+def mvMult(M, v):
+	'''
+	mvMult(M, v) computes the matrix-vector multiplication [M] * [v]
+
+	Parameters:
+		M (list[]): An R x C matrix
+		v (list): A C-vector in the same field as [M]
+
+	Output:
+		An R-vector whose entries are the result of M * v
+	'''
+	return [dot(M[r], v) for r in range(len(M))]
+```
 
 > [!example]
 > $$
@@ -96,10 +159,10 @@ $$
 > [!info] Linear Combination
 > Let $M$ be an $R \times C$ matrix. Then $v * M$ is the **linear combination** 
 > $$
-> \sum_{r \in R} v[r] * M_{r,}
+> c = \sum_{r \in R} v[r] * M_{r,}
 > $$
 > 
-> In other words, the elements of $v$ are scalars in a linear combination over the rows of $M$.
+> Where $c$ is a $C$-vector. In other words, the elements of $v$ are scalars in a linear combination over the rows of $M$.
 
 > [!example]
 > $$

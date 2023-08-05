@@ -12,8 +12,17 @@ The dot product is the **scalar** result of adding the component-wise products o
 >$$
 
 ```Python
-def dot_product(u, v):
-	return sum(u[k] * v[k] for k in range(len(u)))
+def dot(u, v):
+	'''
+	dot(u, v) computes the dot product of vectors u and v.
+
+	Parameters:
+		u, v (list): Vectors under some field F.
+
+	Output:
+		Scalar value of u * v
+	'''
+	return sum([u[k] * v[k] for k in range(len(u))])
 ```
 
 Dot products are a central idea in [[Linear Equations]].

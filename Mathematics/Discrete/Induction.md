@@ -13,6 +13,7 @@ Induction is a proof technique which shows that for some $n \in \mathbb{Z}, I(n)
 > > For any set of Cows, $C$, $\forall c_1, c_2 \in C, c_1 \neq c_2$, $c_1$ is the same color as $c_2$
 > 
 > **Basis**. Suppose we have one cow. Then clearly $I(1)$ holds because a cow is the same color as itself. Hence $\exists N \geq 1, I(N)$.
+> 
 > **Inductive Case**. Suppose we have a set of cows, $C$ such that $|C| = N+1$.  Notice for a arbitrary cow $c_1 \in C, |C - \{c_1\}| = N$, and so all the cows in $C - \{c_1\}$ are the same color by inductive hypothesis. Now choose $c_2 \in C$. We conclude the same about $C - \{c_2\}$ using the inductive hypothesis.
 > > [!note]
 > > There must be at least two cows since $N \geq 1 \implies N + 1 \geq 2$.

@@ -81,5 +81,5 @@ We want to show that a given subspace with certain properties is equal to $\math
 > &= [p, q]
 > \end{align}
 > $$
-> Therefore, we have written an arbitrary vector, $[p, q]$, in terms of $[a, b], [c, d]$, and so all of $\mathbb{R}^2$ must be in $\text{Span}([a, b], [c, d])$. Moreover, since, $mathbb{R}^2$ contains every 2-vector, it must also include all of $\mathcal{V}$, and so both sets are subsets of one another and thus $\mathbb{R}^2 = \mathcal{V}$.
+> Therefore, we have written an arbitrary vector, $[p, q]$, in terms of $[a, b], [c, d]$, and so all of $\mathbb{R}^2$ must be in $\text{Span}([a, b], [c, d])$. Moreover, since, $\mathbb{R}^2$ contains every 2-vector, it must also include all of $\mathcal{V}$, and so both sets are subsets of one another and thus $\mathbb{R}^2 = \mathcal{V}$.
 > $\blacksquare$
