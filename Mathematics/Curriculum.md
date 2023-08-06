@@ -10,17 +10,21 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 - MAF3: Discrete Mathematics - Johsonbaugh
 - MAF4: Precalculus - Stitz/Zeager 
 - MAF5: Basic Mathematics - Serge Lang
+- MAF6: Trigonometry - Michel Corral
 
 ### Calculus
 
 - MAC1: Apostol Calculus Vol I
 - MAC2: The Calculus Integral
+- MAC3: Introduction to Calculus and Analysis Vol 1. - Courant
 
 ### Linear Algebra
 
 - MALA1: Coding the Matrix
 - MALA2: Linear Algebra Done Right
 - MALA3: Introduction to Linear Algebra (MIT)* 
+- MALA4: Linear Algebra Done Wrong
+- MALA5: Linear Algebra - Friedman, Insel, and Spence
 
 ### Multivariable
 
