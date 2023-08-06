@@ -5,7 +5,11 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 ### Foundations
 
 - MAF1: Art of Problem Solving I
-- MAF2: Discrete Mathematics and Functional Programming
+- ~~MAF2: Discrete Mathematics and Functional Programming~~
+- MAF2: Discrete Mathematics with Applications - Epp
+- MAF3: Discrete Mathematics - Johsonbaugh
+- MAF4: Precalculus - Stitz/Zeager 
+- MAF5: Basic Mathematics - Serge Lang
 
 ### Calculus
 
@@ -44,6 +48,8 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 ### Programming
 
 - CSP1: Principles of Functional Programming (COMP 212)
+- CSP2: Functional Programming and Data Structure (CS3110)
+- CSP3: How to Design Programs
 
 ### Systems
 

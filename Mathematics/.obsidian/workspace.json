@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Discrete/Set.md",
+                "file": "Curriculum.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Discrete/Set.md",
+                "file": "Curriculum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Discrete/Set.md",
+                "file": "Curriculum.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Discrete/Set.md"
+                "file": "Curriculum.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "2ac7bbb5e43af949",
   "lastOpenFiles": [
+    "Discrete/Set.md",
     "Discrete/powerset.ipynb",
     "Discrete/Untitled.ipynb",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/top_level.txt",
@@ -158,7 +159,6 @@
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/METADATA",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/INSTALLER",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/DESCRIPTION.rst",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
     "env/lib/python3.8/site-packages/QtPy-2.3.1.dist-info/AUTHORS.md",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",
@@ -190,7 +190,6 @@
     "Untitled.md",
     "o.md",
     "Discrete/Closure.md",
-    "Discrete/Set.md",
     "Discrete/Common Syllogisms.md",
     "Linear Algebra/Matrix/Matrix Multiplication.md",
     "Linear Algebra/Matrix/Multiplying Matrices and Vectors.md",
