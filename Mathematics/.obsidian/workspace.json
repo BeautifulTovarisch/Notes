@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "925f9aaf8d8a87f5",
+        "id": "4865f2a648cd0113",
         "type": "tabs",
         "children": [
           {
-            "id": "2ac7bbb5e43af949",
+            "id": "2a3732a549226af4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Discrete/Set.md",
+                "file": "Discrete/Recurrence Relation.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Discrete/Set.md",
+                "file": "Discrete/Recurrence Relation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Discrete/Set.md",
+                "file": "Discrete/Recurrence Relation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Discrete/Set.md"
+                "file": "Discrete/Recurrence Relation.md"
               }
             }
           }
@@ -146,24 +146,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2ac7bbb5e43af949",
+  "active": "2a3732a549226af4",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Discrete/Recurrence Relation.md",
+    "Discrete/fibonacci.ipynb",
+    "Discrete/Untitled.ipynb",
+    "Discrete/untitled.py",
+    "Linear Algebra/Matrix/Linear Functions.md",
+    "Discrete/Functions.md",
+    "Discrete/Relations.md",
+    "Untitled.canvas",
+    "Discrete/Set.md",
     "Discrete/Logical Propositions.md",
     "Discrete/Common Syllogisms.md",
     "Discrete/Argument Forms.md",
     "Discrete/Algorithms.md",
-    "Discrete/Set.md",
     "Curriculum.md",
     "Discrete/powerset.ipynb",
-    "Discrete/Untitled.ipynb",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/top_level.txt",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/pbr.json",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/metadata.json",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/WHEEL",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/RECORD",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/METADATA",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/INSTALLER",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/DESCRIPTION.rst",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
     "env/lib/python3.8/site-packages/QtPy-2.3.1.dist-info/AUTHORS.md",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",
@@ -187,13 +193,6 @@
     "Discrete/Partial Order.md",
     "Discrete/Theorems to Algorithms.md",
     "Linear Algebra/Vector Space/Vector Spaces.md",
-    "Linear Algebra/Matrix/The Matrix.md",
-    "Discrete/Correctness of Algorithms.md",
-    "Discrete/Functions.md",
-    "Discrete/Relations.md",
-    "Untitled.md",
-    "o.md",
-    "Discrete/Closure.md",
-    "Untitled.canvas"
+    "Linear Algebra/Matrix/The Matrix.md"
   ]
 }
