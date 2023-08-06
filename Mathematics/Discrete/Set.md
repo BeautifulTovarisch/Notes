@@ -139,6 +139,3 @@ Much like integrals, having a cookbook of set identities is very helpful when tr
 > By the above lemma and previous results, $B - (A \cap B) = \overline A$ and $A \cup \overline A = \emptyset$.
 > 
 > $\blacksquare$
-
-> [!todo]
-> Collect set laws here
