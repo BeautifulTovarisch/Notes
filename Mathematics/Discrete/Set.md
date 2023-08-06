@@ -1,6 +1,3 @@
-> [!todo]
-> Need to review this entire section and jot down descriptive notes, proofs, laws etc. for posterity.
-
 Sets represent unordered, arbitrary collections.
 
 > [!info] Axiomatic Foundations
@@ -38,6 +35,33 @@ $$
 
 Much like integrals, having a cookbook of set identities is very helpful when trying to reduce a more complicated proof into known forms.
 
+> [!abstract]- Associativity of Intersection and Union
+> 
+> > [!abstract] Union
+> > $A \cup (B \cup C) = (A \cup B) \cup C$
+> > 
+> > Proof.
+> > Suppose $x \in A \cup (B \cup C)$, then either $x \in A$ or $x \in (B \cup C)$. Suppose $x \in A$, then by definition of union $x \in (A \cup B)$ and so $x \in (A \cup B) \cup C$. Now suppose $x \in (B \cup C)$, then either $x \in (A \cup B)$ or $x \in C$, and so again $x \in (A \cup B) \cup C$.
+> > 
+> > Now to show the converse, suppose $x \in (A \cup B) \cup C$. Then $x \in (A \cup B)$ or $x \in C$. Then if $x \in C$, $x \in (B \cup C)$ and so is in the union on the left, and similarly if $x \in (A \cup B)$ it is also in the union.
+> > 
+> > Therefore, by definition of set equality $A \cup (B \cup C) = (A \cup B) \cup C$.
+> 
+> > [!abstract] Intersection
+> > $A \cap (B \cap C) = (A \cap B) \cap C$
+> > 
+> > Proof.
+> > Suppose $x \in A \cap (B \cap C)$, then $x \in A$ and $x \in (B \cap C)$. Then by definition of intersection, $x \in A, x \in B$, and so $x \in (A \cap B)$, and similarly since $x \in C$, $x \in (A \cap B) \cap C$.
+> > 
+> > Now to show the converse, suppose $x \in (A \cap B) \cap C$, then $x \in (A \cap B), x \in C$. So by definition of intersection, $x \in A, x \in B, x \in C$, and so $x \in A \cap (B \cap C)$. 
+> > 
+> > Therefore, by definition of set equality $A \cap (B \cap C) = (A \cap B) \cap C$.
+
+> [!abstract]- $A \cap B \subseteq B$
+> 
+> Proof.
+> By definition of intersection, $x \in A, x \in B$. But then clearly $x \in B$ and so $A \cap B \subseteq B$. $\blacksquare$
+
 > [!abstract]- $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$ 
 > 
 > Proof.
@@ -50,11 +74,6 @@ Much like integrals, having a cookbook of set identities is very helpful when tr
 > To prove the converse, suppose $a \in (X \cup Y) \cap (X \cup Z)$. Then $a \in X$, or $a \in Y, a \in Z$. By similar argument, $a \in (Y \cap Z)$ implies $a$ is in the left-hand side by definition of union, and likewise if $a \in X$. Thus $(X \cup Y) \cap (X \cup Z) \subseteq X \cup (Y \cap Z)$, and so by definition of set equality, the equivalence holds.
 > 
 > $\blacksquare$
-
-> [!abstract]- $A \cap B \subseteq B$
-> 
-> Proof.
-> By definition of intersection, $x \in A, x \in B$. But then clearly $x \in B$ and so $A \cap B \subseteq B$. $\blacksquare$
 
 > [!abstract]- $A \times (B \cup C) = (A \times B) \cup (A \times C)$
 > 
@@ -80,6 +99,44 @@ Much like integrals, having a cookbook of set identities is very helpful when tr
 > Now suppose $x \in A \setminus B$, then by definition of set difference, $x \in A, x \not \in B$. But then by definition of set complement and intersection, $x \in A \cap \overline B$.
 > 
 > Therefore, since both sets are subsets of one another, $A \cap \overline B = A \setminus B$
+> 
+> $\blacksquare$
+
+> [!abstract]- $A \cup (A \cap B) = A$
+> 
+> Proof.
+> Suppose $x \in A \cup (A \cap B)$, then by definition of union, $x \in A$ or $x \in (A \cap B)$, and so $x \in A$ in either case.
+> 
+> Now suppose $x \in A$. Then clearly $x \in A \cup (A \cap B)$, by definition of union. $\blacksquare$
+
+> [!abstract]- $\overline{A \cup B} = \overline A \cap \overline B$
+> 
+> Proof.
+> Suppose $x \in \overline{A \cup B}$. Then by definition of union and set complement, $x \not \in A \cup B$, so then $x \not \in A$ and $x \not \in B$. But then by definition of complement and intersection, since $x \in \overline A, x \in \overline B \implies x \in \overline{A \cap B}$.
+> 
+> $\blacksquare$
+
+> [!abstract]- $A \cup (A \cap B) = A$
+> 
+> Proof.
+> Suppose $x \in A \cup (A \cap B)$. Then $x \in A$ in either situation, and so $A \cup (A \cap B) \subseteq A$. Now suppose $x \in A$. Then by definition of union $x \in A \implies x \in (A \cup (A \cap B)$ and so $A$ is also a subset of the left-hand side. $\blacksquare$
+
+> [!abstract]- $A \cup (B - (A \cap B)) = \emptyset$
+> 
+> > [!abstract] Lemma.
+> > $B - (A \cap B) = \overline A$ .
+> > 
+> > Proof.
+> > Suppose $x \in B - (A \cap B)$. Then by definition, $x \in B, x \not \in A \cap B$. So then if $x \not \in (A \cap B)$, then either $x \not \in A$, or $x \not \in B$, but from the above, $x \in B$, so then $x \not \in A$ and by definition of set complement $x \in \overline A$.
+> > 
+> > Now we show the converse by supposing that $x \in \overline A$. Then by definition of set difference and set complement, $x \in B, x \not \in (A \cap B)$, and so $x \in B - (A \cap B)$.
+> > 
+> > Therefore, by set equality, $B - (A \cap B) = \overline A$. 
+> > 
+> > $\blacksquare$
+>
+> Proof.
+> By the above lemma and previous results, $B - (A \cap B) = \overline A$ and $A \cup \overline A = \emptyset$.
 > 
 > $\blacksquare$
 

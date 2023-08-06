@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Curriculum.md",
+                "file": "Discrete/Set.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Curriculum.md",
+                "file": "Discrete/Set.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Curriculum.md",
+                "file": "Discrete/Set.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Curriculum.md"
+                "file": "Discrete/Set.md"
               }
             }
           }
@@ -148,7 +148,12 @@
   },
   "active": "2ac7bbb5e43af949",
   "lastOpenFiles": [
+    "Discrete/Logical Propositions.md",
+    "Discrete/Common Syllogisms.md",
+    "Discrete/Argument Forms.md",
+    "Discrete/Algorithms.md",
     "Discrete/Set.md",
+    "Curriculum.md",
     "Discrete/powerset.ipynb",
     "Discrete/Untitled.ipynb",
     "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/top_level.txt",
@@ -186,13 +191,9 @@
     "Discrete/Correctness of Algorithms.md",
     "Discrete/Functions.md",
     "Discrete/Relations.md",
-    "Curriculum.md",
     "Untitled.md",
     "o.md",
     "Discrete/Closure.md",
-    "Discrete/Common Syllogisms.md",
-    "Linear Algebra/Matrix/Matrix Multiplication.md",
-    "Linear Algebra/Matrix/Multiplying Matrices and Vectors.md",
     "Untitled.canvas"
   ]
 }
