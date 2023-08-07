@@ -1,16 +1,17 @@
-Curriculum Plan for topics in undergraduate mathematics and computer science. I plan on using the [General Study Plan](#General Study Plan)) as a guideline. 
+Curriculum Plan for topics in undergraduate mathematics and computer science. I plan on using the General Study Plan as a guideline. 
 
 ## Mathematics
 
 ### Foundations
 
-- MAF1: Art of Problem Solving I
+- ~~MAF1: Art of Problem Solving I~~
 - ~~MAF2: Discrete Mathematics and Functional Programming~~
-- MAF2: Discrete Mathematics with Applications - Epp
-- MAF3: Discrete Mathematics - Johsonbaugh
-- MAF4: Precalculus - Stitz/Zeager 
-- MAF5: Basic Mathematics - Serge Lang
-- MAF6: Trigonometry - Michel Corral
+- MAF1: OpenStax Pre-Calculus 
+- MAF2: Precalculus - Stitz/Zeager 
+- MAF3: Basic Mathematics - Serge Lang
+- MAF4: Trigonometry - Michel Corral
+- MAF5: Discrete Mathematics with Applications - Epp
+- MAF6: Discrete Mathematics - Johsonbaugh
 
 ### Calculus
 
@@ -29,8 +30,8 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 ### Multivariable
 
 - MAMV1: OCW - Multivariable Calculus
-- MAMV2: Apostol Vol 2
-- MAMV3: TBD
+- MAMV2: Apostol Calculus Vol 2
+- MAMV3: Introduction to Calculus and Analysis Vol 2. - Courant 
 
 ### Differential Equations
 
@@ -52,7 +53,7 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 ### Programming
 
 - CSP1: Principles of Functional Programming (COMP 212)
-- CSP2: Functional Programming and Data Structure (CS3110)
+- CSP2: Functional Programming and Data Structures (CS3110)
 - CSP3: How to Design Programs
 
 ### Systems

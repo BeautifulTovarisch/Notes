@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Discrete/Recurrence Relation.md",
-                "mode": "source",
+                "file": "Linear Algebra/Vector Space/Affine Spaces.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Discrete/Recurrence Relation.md",
+                "file": "Linear Algebra/Vector Space/Affine Spaces.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Discrete/Recurrence Relation.md",
+                "file": "Linear Algebra/Vector Space/Affine Spaces.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Discrete/Recurrence Relation.md"
+                "file": "Linear Algebra/Vector Space/Affine Spaces.md"
               }
             }
           }
@@ -146,32 +146,46 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2a3732a549226af4",
+  "active": "5f3377f6ed1914f5",
   "lastOpenFiles": [
-    "Untitled.md",
-    "Discrete/Recurrence Relation.md",
-    "Discrete/fibonacci.ipynb",
-    "Discrete/Untitled.ipynb",
-    "Discrete/untitled.py",
+    "Linear Algebra/code/matrix/__pycache__/__init__.cpython-38.pyc",
+    "Linear Algebra/code/matrix/__pycache__",
+    "Linear Algebra/code/vector/vector.py~",
+    "Linear Algebra/code/vector/__pycache__/__init__.cpython-38.pyc",
+    "Linear Algebra/code/vector/__pycache__",
+    "Linear Algebra/code/__init__.py",
+    "Linear Algebra/code/error-correcting-codes.ipynb",
+    "Linear Algebra/code/vector/vector.py",
+    "Linear Algebra/code/vector/__init__.py",
+    "Linear Algebra/code/vector",
+    "Linear Algebra/code/matrix/matrix.py",
+    "Linear Algebra/Vector Space/Generators.md",
+    "Linear Algebra/Vector Space/Geometry of Sets of Vectors.md",
+    "Linear Algebra/Vector Space/Homogeneous Linear Systems.md",
+    "Linear Algebra/Vector Space/Linear Combination.md",
+    "Linear Algebra/Vector Space/Linear Systems.md",
+    "Linear Algebra/Vector Space/Span.md",
+    "Linear Algebra/Vector Space/Vector Spaces.md",
     "Linear Algebra/Matrix/Linear Functions.md",
-    "Discrete/Functions.md",
-    "Discrete/Relations.md",
-    "Untitled.canvas",
-    "Discrete/Set.md",
-    "Discrete/Logical Propositions.md",
-    "Discrete/Common Syllogisms.md",
-    "Discrete/Argument Forms.md",
-    "Discrete/Algorithms.md",
+    "Linear Algebra/Vector/Linear Equations.md",
+    "Linear Algebra/Vector/Line Segments.md",
+    "Linear Algebra/Vector/Dot Product.md",
+    "Linear Algebra/Matrix/Diagonal Matrix.md",
+    "Linear Algebra/Matrix/Hamming Code.md",
+    "Linear Algebra/Matrix/Matrices and Functions.md",
+    "Linear Algebra/Matrix/Matrix Multiplication.md",
+    "Linear Algebra/Matrix/Matrix Representation of a Linear Function.md",
+    "Linear Algebra/Matrix/Multiplying Matrices and Vectors.md",
+    "Linear Algebra/Matrix/Null Space.md",
+    "Linear Algebra/Matrix/The Matrix.md",
+    "Linear Algebra/Vector/The Vector.md",
     "Curriculum.md",
-    "Discrete/powerset.ipynb",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/top_level.txt",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/pbr.json",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/metadata.json",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/WHEEL",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/RECORD",
-    "env/lib/python3.8/site-packages/jupyter-1.0.0.dist-info/METADATA",
+    "Discrete/Set.md",
+    "Discrete/Combinatorics.md",
+    "Discrete/Recurrence Relation.md",
+    "Untitled.md",
+    "Untitled.canvas",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
-    "env/lib/python3.8/site-packages/QtPy-2.3.1.dist-info/AUTHORS.md",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",
     "env/lib/python3.8/site-packages/notebook/static/a3b9817780214caf01e8.svg",
     "env/lib/python3.8/site-packages/notebook/static/9674eb1bd55047179038.svg",
@@ -180,19 +194,6 @@
     "env/share/jupyter/lab/static/9674eb1bd55047179038.svg",
     "env/share/icons/hicolor/scalable/apps/notebook.svg",
     "env/share/icons/hicolor/scalable/apps/jupyterlab.svg",
-    "env/lib/python3.8/site-packages/jupyterlab/static/be0a084962d8066884f7.svg",
-    "env/lib/python3.8/site-packages/debugpy/_vendored/pydevd/pydevd_plugins/extensions/README.md",
-    "env/lib/python3.8/site-packages/jupyter_server/i18n/README.md",
-    "env/lib/python3.8/site-packages/nbconvert/templates/skeleton/README.md",
-    "env/lib/python3.8/site-packages/nbconvert/templates/README.md",
-    "env/lib/python3.8/site-packages/pyzmq-25.1.0.dist-info/AUTHORS.md",
-    "env/lib/python3.8/site-packages/soupsieve-2.4.1.dist-info/licenses/LICENSE.md",
-    "env/lib/python3.8/site-packages/idna-3.4.dist-info/LICENSE.md",
-    "env/lib/python3.8/site-packages/traitlets-5.9.0.dist-info/licenses/COPYING.md",
-    "Discrete/Induction.md",
-    "Discrete/Partial Order.md",
-    "Discrete/Theorems to Algorithms.md",
-    "Linear Algebra/Vector Space/Vector Spaces.md",
-    "Linear Algebra/Matrix/The Matrix.md"
+    "env/lib/python3.8/site-packages/jupyterlab/static/be0a084962d8066884f7.svg"
   ]
 }

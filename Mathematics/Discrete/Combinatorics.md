@@ -1,0 +1,1 @@
+Combinatorics is a methodology for computing the enumeration, permutation etc. of sets of elements and relations.

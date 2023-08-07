@@ -42,25 +42,6 @@ $$
 > + x_C [a_{1C}, a_{2C}, \dots, a_{RC}]
 > $$
 
-```Python
-# scale: [[The Vector#Scalar Multiplication]]
-# vadd: [[The Vector#Vector Addition]]
-
-# Using the linear combination representation
-def mvMult(M, v):
-	'''
-	mvMult(M, v) computes the matrix-vector multiplication [M] * [v]
-
-	Parameters:
-		M (list[]): An R x C matrix
-		v (list): A C-vector in the same field as [M]
-
-	Output:
-		An R-vector whose entries are the result of M * v
-	'''
-	# TODO: since this involves sub-optimal column-major iteration of M
-```
-
 > [!example]
 > Let
 > $$
@@ -104,22 +85,6 @@ def mvMult(M, v):
 >$$ 
 > r = [(x_1 * a_{11} + x_2 * a_{12} + \dots x_C * a_{1C}), (x_1 * a_{21} + \dots + x_C * a_{2C}), \dots, (x_1 * a_{R1} + \dots + x_C * a_{RC})]
 > $$
-
-```Python
-# dot: [[Dot Product]]
-def mvMult(M, v):
-	'''
-	mvMult(M, v) computes the matrix-vector multiplication [M] * [v]
-
-	Parameters:
-		M (list[]): An R x C matrix
-		v (list): A C-vector in the same field as [M]
-
-	Output:
-		An R-vector whose entries are the result of M * v
-	'''
-	return [dot(M[r], v) for r in range(len(M))]
-```
 
 > [!example]
 > $$

@@ -121,21 +121,10 @@ Much like integrals, having a cookbook of set identities is very helpful when tr
 > Proof.
 > Suppose $x \in A \cup (A \cap B)$. Then $x \in A$ in either situation, and so $A \cup (A \cap B) \subseteq A$. Now suppose $x \in A$. Then by definition of union $x \in A \implies x \in (A \cup (A \cap B)$ and so $A$ is also a subset of the left-hand side. $\blacksquare$
 
-> [!abstract]- $A \cup (B - (A \cap B)) = \emptyset$
+> [!abstract] $A \cup B = A \cup (B - (A \cap B))$
 > 
-> > [!abstract] Lemma.
-> > $B - (A \cap B) = \overline A$ .
+> > [!abstract] Lemma. 
+> > $B - (A \cap B) = B - A$
 > > 
 > > Proof.
-> > Suppose $x \in B - (A \cap B)$. Then by definition, $x \in B, x \not \in A \cap B$. So then if $x \not \in (A \cap B)$, then either $x \not \in A$, or $x \not \in B$, but from the above, $x \in B$, so then $x \not \in A$ and by definition of set complement $x \in \overline A$.
-> > 
-> > Now we show the converse by supposing that $x \in \overline A$. Then by definition of set difference and set complement, $x \in B, x \not \in (A \cap B)$, and so $x \in B - (A \cap B)$.
-> > 
-> > Therefore, by set equality, $B - (A \cap B) = \overline A$. 
-> > 
-> > $\blacksquare$
->
-> Proof.
-> By the above lemma and previous results, $B - (A \cap B) = \overline A$ and $A \cup \overline A = \emptyset$.
-> 
-> $\blacksquare$
+> > Suppose $x \in B - (A \cap B)$. Then $x \in B$ and $x \not \in A$ or $x \not \in B$, but by assumption $x \in B$, so $x \not \in A$ and by definition of set difference $x \in B - A$. Now suppose $x \in B - A$, then $x \in B, x \not \in A$, so then by definition of intersection $x \not \in (A \cap B)$, but then since $x \in B, x \not \in (A \cap B)$, $x \in 

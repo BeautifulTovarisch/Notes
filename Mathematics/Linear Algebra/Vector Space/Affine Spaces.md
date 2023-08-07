@@ -13,7 +13,7 @@ which we abbreviate as $a + \mathcal{V}$. Then the resulting set is a [[Line Seg
 > 2. $u_2$ since $u_1 + a = u_2$
 > 3. $u_3$ since $u_1 + b = u_3$
 > 
-> Then since $mathcal{V}$ contains $u_1, u_2, u_3$, it must be the **unique plane** through these points.
+> Then since $\mathcal{V}$ contains $u_1, u_2, u_3$, it must be the **unique plane** through these points.
 
 ## Affine Combinations
 

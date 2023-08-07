@@ -117,7 +117,7 @@ $$
 The Python procedure solves a triangular system with the notable constraint that `r[i][i] != 0` for a given $i$ (this avoids a division by zero):
 
 ```Python
-triangular_solve_n(rowlist, b):
+def triangular_solve_n(rowlist, b):
 	'''
 	Solves the linear equation described by [rowlist] and [b].
 
