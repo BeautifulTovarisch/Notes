@@ -184,6 +184,6 @@ We want to look at the composition of linear transformations and therefore defin
 > &= x_1 Ab_{,1} + x_2 Ab_{,2} + \dots + x_n Ab_{,n} &\text{Def. of $f_A$} \\
 > &= x_1 AB_{,1} + x_2 AB_{,2} + \dots + x_n AB_{,n} &\text{M-v Def. of AB} \\
 > &= (AB) * x &\text{Linear combination of M-v} \\
-> &= f_AB
+> &= f_{AB}
 > \end{align}
 > $$

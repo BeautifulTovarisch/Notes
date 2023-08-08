@@ -106,3 +106,35 @@ We use this finding to reason about the uniqueness of solutions to a matrix-vect
 > 
 > $\blacksquare$
 
+### Inverse
+
+If a linear function is a bijection then it has an [[Functions#Inverse]] and that inverse also is linear.
+
+> [!abstract] Theorem.
+> If $f$ is a linear function and $g$ is its inverse, then $g$ is also linear.
+> 
+> Proof.
+> We must show $g$ satisfies linearity.
+> 
+> 1. Suppose $y_1, y_2$ are in the domain of $g$. By definition of inverse, $g^{-1}(y_1) = x_1$ and $g^{-1}(y_2) = x_2$. By by linearity of $f$, we know that $f(x_1) + f(x_2) = f(x_1 + x_2)$ and so:
+> $$
+> \begin{align}
+> g(f(x_1) + f(x_2)) &= g(f(x_1 + x_2)) \\
+> &= g(y_1 + y_2) \\
+> &= x_1 + x_2 &\text{Def. of Inverse} \\
+> &= g(y_1) + g(y_2) \\ \\
+> &&\blacksquare 
+> \end{align}
+> $$
+> 
+> 2. Now suppose $\alpha$ is a scalar and $y$ is in the domain of $g$. Then
+> $$
+> \begin{align}
+> g(\alpha y) &= \\
+> &= g(\alpha f(x)) \\
+> &= g(f(\alpha x)) &\text{Linearity of $f$} \\
+> &= \alpha x &\text{Def. of Inverse} \\
+> &= \alpha g(y) \\ \\
+> &&\blacksquare 
+> \end{align}
+> $$
