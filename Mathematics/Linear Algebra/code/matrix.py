@@ -147,15 +147,17 @@ def mm(dotfn):
         [-1, -1, -1]
       ]
     '''
-    R = len(A)
-    T = len(B[0])
+    bT = transpose(B)
 
-    out = [[0 for _ in range(R)] for _ in range(T)]
+    R = len(A)
+    T = len(bT)
+
+    out = [[0 for _ in range(T)] for _ in range(R)]
 
     for r in range(R):
       for t in range(T):
-        out[r][t] = dotfn(A[r], B[t])
+        out[r][t] = dotfn(A[r], bT[t])
 
     return out
 
-  return matMultiply(dotfn)
+  return matMultiply

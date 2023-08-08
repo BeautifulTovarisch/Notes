@@ -149,6 +149,8 @@
   "active": "2a3732a549226af4",
   "lastOpenFiles": [
     "Linear Algebra/code/matrix.py~",
+    "Linear Algebra/code/4913",
+    "Linear Algebra/code/__pycache__/matrix.cpython-38.pyc.140294503871952",
     "Linear Algebra/Matrix/Matrix Inverse.md",
     "Linear Algebra/Matrix/Multiplying Matrices and Vectors.md",
     "Linear Algebra/Matrix/Matrix Multiplication.md",
@@ -167,7 +169,6 @@
     "Linear Algebra/code/vector/__pycache__",
     "Linear Algebra/code/__init__.py",
     "Linear Algebra/code/error-correcting-codes.ipynb",
-    "Linear Algebra/code/vector/vector.py",
     "Linear Algebra/Vector Space/Generators.md",
     "Linear Algebra/Vector Space/Geometry of Sets of Vectors.md",
     "Linear Algebra/Vector Space/Homogeneous Linear Systems.md",
