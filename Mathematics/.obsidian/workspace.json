@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linear Algebra/Matrix/Matrix Multiplication.md",
+                "file": "Discrete/Recurrence Relation.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linear Algebra/Matrix/Matrix Multiplication.md",
+                "file": "Discrete/Recurrence Relation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linear Algebra/Matrix/Matrix Multiplication.md",
+                "file": "Discrete/Recurrence Relation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linear Algebra/Matrix/Matrix Multiplication.md"
+                "file": "Discrete/Recurrence Relation.md"
               }
             }
           }
@@ -148,12 +148,20 @@
   },
   "active": "2a3732a549226af4",
   "lastOpenFiles": [
-    "Linear Algebra/code/matrix.py~",
-    "Linear Algebra/code/4913",
-    "Linear Algebra/code/__pycache__/matrix.cpython-38.pyc.140294503871952",
     "Linear Algebra/Matrix/Matrix Inverse.md",
     "Linear Algebra/Matrix/Multiplying Matrices and Vectors.md",
+    "Linear Algebra/code/linear-transformations.ipynb",
+    "Linear Algebra/linear-transformations.ipynb",
+    "Linear Algebra/code/mat.py",
+    "Linear Algebra/code/Unconfirmed 30881.crdownload",
+    "Linear Algebra/code/matutil.py",
+    "Linear Algebra/code/Unconfirmed 553511.crdownload",
+    "Linear Algebra/code/png.py",
+    "Linear Algebra/code/Unconfirmed 572672.crdownload",
+    "Linear Algebra/code/Unconfirmed 544282.crdownload",
+    "Linear Algebra/code/image_mat_util.py",
     "Linear Algebra/Matrix/Matrix Multiplication.md",
+    "Linear Algebra/Vector Space/Vector Spaces.md",
     "Discrete/Functions.md",
     "Linear Algebra/Matrix/Matrices and Functions.md",
     "Linear Algebra/Matrix/Linear Functions.md",
@@ -161,21 +169,12 @@
     "Discrete/Induction.md",
     "Linear Algebra/Matrix/Matrix Representation of a Linear Function.md",
     "Linear Algebra/Vector Space/Affine Spaces.md",
-    "Linear Algebra/code/__pycache__/matrix.cpython-38.pyc",
-    "Linear Algebra/code/matrix/__pycache__/__init__.cpython-38.pyc",
-    "Linear Algebra/code/matrix/__pycache__",
-    "Linear Algebra/code/vector/vector.py~",
-    "Linear Algebra/code/vector/__pycache__/__init__.cpython-38.pyc",
-    "Linear Algebra/code/vector/__pycache__",
-    "Linear Algebra/code/__init__.py",
-    "Linear Algebra/code/error-correcting-codes.ipynb",
     "Linear Algebra/Vector Space/Generators.md",
     "Linear Algebra/Vector Space/Geometry of Sets of Vectors.md",
     "Linear Algebra/Vector Space/Homogeneous Linear Systems.md",
     "Linear Algebra/Vector Space/Linear Combination.md",
     "Linear Algebra/Vector Space/Linear Systems.md",
     "Linear Algebra/Vector Space/Span.md",
-    "Linear Algebra/Vector Space/Vector Spaces.md",
     "Linear Algebra/Vector/Linear Equations.md",
     "Linear Algebra/Vector/Line Segments.md",
     "Linear Algebra/Vector/Dot Product.md",
