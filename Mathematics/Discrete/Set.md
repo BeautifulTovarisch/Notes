@@ -121,10 +121,28 @@ Much like integrals, having a cookbook of set identities is very helpful when tr
 > Proof.
 > Suppose $x \in A \cup (A \cap B)$. Then $x \in A$ in either situation, and so $A \cup (A \cap B) \subseteq A$. Now suppose $x \in A$. Then by definition of union $x \in A \implies x \in (A \cup (A \cap B)$ and so $A$ is also a subset of the left-hand side. $\blacksquare$
 
-> [!abstract] $A \cup B = A \cup (B - (A \cap B))$
+> [!abstract]- $(A - B) \cap B = \emptyset$
 > 
-> > [!abstract] Lemma. 
-> > $B - (A \cap B) = B - A$
-> > 
-> > Proof.
-> > Suppose $x \in B - (A \cap B)$. Then $x \in B$ and $x \not \in A$ or $x \not \in B$, but by assumption $x \in B$, so $x \not \in A$ and by definition of set difference $x \in B - A$. Now suppose $x \in B - A$, then $x \in B, x \not \in A$, so then by definition of intersection $x \not \in (A \cap B)$, but then since $x \in B, x \not \in (A \cap B)$, $x \in 
+> Proof.
+> Suppose $x \in A - B$. Then $x \in A, x \not \in B$, then clearly if $x \not \in B$, $x \not \in (A - B) \cap B$ and so it is empty.
+> Now suppose $x \in B$. Then if $x \in A, x \not \in (A - B)$ and also if $x \not \in A$, $x$ is vacuously not in $(A - B)$ by definition of set difference. Hence $x \not \in (A - B)$ implies the intersection with $B$ is empty. $\blacksquare$
+
+> [!abstract]- $(A - B) \cup B = A$
+> 
+> Proof.
+> Suppose $x \in A - B$. Then $x \in A, x \not \in B$, then clearly if $x \not \in B$, $x \not \in (A - B) \cap B$ and so it is empty.
+> Now suppose $x \in B$. Then if $x \in A, x \not \in (A - B)$ and also if $x \not \in A$, $x$ is vacuously not in $(A - B)$ by definition of set difference. Hence $x \not \in (A - B)$ implies the intersection with $B$ is empty. $\blacksquare$
+
+> [!abstract]- $B \subseteq A$ if and only if $(A - B) \cup B = A$
+> 
+> Proof.
+> To show the forward direction suppose $B \subseteq A$. Then if $b \in B, b \in A$. Then $A - B \subseteq A$ and so $(A - B) \cup B \subseteq A$ as well. Now suppose $a \in A$. Then if $a \in B$, $a \in (A - B) \cup B$ vacuously. If $a \not \in B$, then $a \in (A - B)$ and so it is in the union. Hence $A \subseteq (A - B) \cup B$ and by set equality the equality is shown.
+> 
+> Now suppose $(A - B) \cup B = A$ and suppose $b \in B, b \not \in A$. Then $b \in (A - B) \cup B$ and by definition of set equality, $b \in A$, contradicting our assumption that $b \not \in A$. Thus the converse is shown and the biconditional holds in both directions.
+> 
+> $\blacksquare$
+
+> [!abstract]- $A \cap (B - (A \cap B))) = \emptyset$
+> Suppose $a \in A, a \in B$, then $a \in (A - B)$ and so $a \not \in (B - (A \cap B))$ and so the intersection is the null set. Now suppose $a \not \in B$, then by similar argument, $a \not \in (B - (A \cap B))$ and so $A \cap (B - (A \cap B)) = \emptyset$. 
+> 
+> $\blacksquare$

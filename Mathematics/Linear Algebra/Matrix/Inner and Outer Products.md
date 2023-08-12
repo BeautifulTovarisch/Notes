@@ -29,7 +29,7 @@ This definition is similar to the dot-product definition of matrix-matrix multip
 > Let $u, v$ be any vectors not necessarily of the same domain. Then the **outer product**, $uv^T$, is defined as follows:
 > $$
 > uv^T_{st} = u_s * v_t
-> $$.
+> $$
 
 > [!example]
 > $$
