@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Discrete/Graph Theory.md",
+                "file": "Curriculum.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Discrete/Graph Theory.md",
+                "file": "Curriculum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Discrete/Graph Theory.md",
+                "file": "Curriculum.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Discrete/Graph Theory.md"
+                "file": "Curriculum.md"
               }
             }
           }
@@ -148,8 +148,14 @@
   },
   "active": "2a3732a549226af4",
   "lastOpenFiles": [
-    "Discrete/Combinatorics.md",
     "Discrete/Graph Theory.md",
+    "Foundations/Untitled",
+    "Foundations/Sequences and Binomial Theorem",
+    "Foundations/Systems of Equations and Matrices",
+    "Foundations/Conics",
+    "Foundations/Exponential and Logarithmic Functions",
+    "Foundations/Linear and Quadratic Functions",
+    "Discrete/Combinatorics.md",
     "Discrete/Newton's Method.md",
     "Discrete/Recurrence Relation.md",
     "Linear Algebra/Vector/Linear Equations.md",
@@ -167,12 +173,6 @@
     "Linear Algebra/Matrix/Matrix Inverse.md",
     "Linear Algebra/code/linear-transformations.ipynb",
     "Linear Algebra/linear-transformations.ipynb",
-    "Linear Algebra/code/mat.py",
-    "Linear Algebra/code/Unconfirmed 30881.crdownload",
-    "Linear Algebra/code/matutil.py",
-    "Linear Algebra/code/Unconfirmed 553511.crdownload",
-    "Linear Algebra/code/png.py",
-    "Linear Algebra/code/Unconfirmed 572672.crdownload",
     "Linear Algebra/Vector Space/Vector Spaces.md",
     "Discrete/Functions.md",
     "Linear Algebra/Matrix/Linear Functions.md",
@@ -183,7 +183,6 @@
     "Linear Algebra/Vector Space/Geometry of Sets of Vectors.md",
     "Linear Algebra/Vector Space/Homogeneous Linear Systems.md",
     "Linear Algebra/Vector Space/Linear Combination.md",
-    "Linear Algebra/Vector Space/Linear Systems.md",
     "Untitled.canvas",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",

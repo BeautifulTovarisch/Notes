@@ -6,18 +6,23 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 
 - ~~MAF1: Art of Problem Solving I~~
 - ~~MAF2: Discrete Mathematics and Functional Programming~~
-- MAF1: OpenStax Pre-Calculus 
-- MAF2: Precalculus - Stitz/Zeager 
-- MAF3: Basic Mathematics - Serge Lang
-- MAF4: Trigonometry - Michel Corral
-- MAF5: Discrete Mathematics with Applications - Epp
-- MAF6: Discrete Mathematics - Johsonbaugh
+- MAF1: Algebra - I.M Gelfand
+- MAF2: Algebra and Trigonometry - Axler
+- MAF3: Precalculus: A Prelude to Calculus - Axler 
+- MAF4: OpenStax Pre-Calculus
+- MAF5: Precalculus with Unit Circle Trig. Cohen
+- MAF6: Precalculus - Stitz/Zeager 
+- MAF7: Basic Mathematics - Serge Lang
+- MAF8: Trigonometry - Michel Corral
+- MAF9: Discrete Mathematics with Applications - Epp
+- MAF10: Discrete Mathematics - Johsonbaugh
 
 ### Calculus
 
 - MAC1: Apostol Calculus Vol I
 - MAC2: The Calculus Integral
 - MAC3: Introduction to Calculus and Analysis Vol 1. - Courant
+- MAC4: Mathematical Modeling and Applied Calculus - Kilty, McAllister
 
 ### Linear Algebra
 
