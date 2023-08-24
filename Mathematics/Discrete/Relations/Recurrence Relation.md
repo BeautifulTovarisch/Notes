@@ -29,7 +29,7 @@ f(n-1) + f(n-2) & \text{otherwise}
 \end{cases}
 $$
 
-Which leads naturally to a [recursive algorithm](./fibonacci.ipynb).
+Which leads naturally to a [recursive algorithm](fibonacci.ipynb).
 
 ## Tower of Hanoi
 
