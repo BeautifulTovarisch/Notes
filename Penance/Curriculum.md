@@ -195,7 +195,7 @@ Resources are not listed in any particular order. Some resources are supplementa
 #### Foundational
 
 - [Discrete Mathematics](https://www.amazon.com/Discrete-Mathematics-Applications-Metric-Susanna/dp/0357114086/ref=sr_1_1?keywords=discrete+mathematics+with+applications&qid=1693837809&sprefix=discrete+math%2Caps%2C91&sr=8-1)
-- [Data-Centric Introduction to Computing](https://cs.brown.edu/courses/csci0190/2021/)
+- [Intro to CS](https://cs.brown.edu/courses/csci0190/2021/)
 - [Data Science for All](https://cs.brown.edu/courses/csci0190/2021/)
 - [Trigonometry](http://mecmath.net/trig/)
 - [AoPS Bookstore](https://artofproblemsolving.com/store)
