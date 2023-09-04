@@ -155,6 +155,7 @@ calc[Elementary Calculus - Corral]
 linalg[Linear Algebra - MIT 18.06]
 prog[Data Structures and Functional Programming]
 systems[Computer Systems: A Programmer's Perspective]
+datasci2[Practical Data Science]
 
 alg[Advanced Algorithms]
 data[Advanced Data Structures]
@@ -179,6 +180,7 @@ subgraph Intermediate Material
 
 	prog-->systems
 
+	datasci-->datasci2
 end
 
 subgraph Advanced
@@ -208,6 +210,7 @@ Resources are not listed in any particular order. Some resources are supplementa
 - [3Blue1Brown Linear Algebra](https://www.youtube.com/playlist?list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B)
 - [Linear Algebra - MIT 18.06](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/)
 - [Coding the Matrix](https://cs.brown.edu/courses/cs053/current/lectures.htm)
+- [Practical Data Science](http://www.datasciencecourse.org/lectures/)
 
 #### Advanced
 

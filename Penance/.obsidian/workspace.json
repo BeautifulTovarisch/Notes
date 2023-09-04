@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Curriculum.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -148,10 +148,11 @@
   },
   "active": "9e10488b0541db29",
   "lastOpenFiles": [
+    "Mathematics/Calculus/Step Functions.md",
+    "Curriculum.md",
     "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
     "Mathematics/Calculus/Area as a Set Function.md",
     "Mathematics/Calculus/Problems to Review.md",
-    "Curriculum.md",
     "Computer Science/AWS/Security/Cognito.md",
     "Mathematics/Calculus",
     "Computer Science/Algorithms",
@@ -175,7 +176,6 @@
     "Computer Science/AWS/Compute/Batch Computing.md",
     "Computer Science/AWS/Event-Driven/Simple Queueing Service.md",
     "Computer Science/AWS/Event-Driven/Simple Notification Service.md",
-    "Computer Science/AWS/Storage/Redshift.md",
     "Computer Science/AWS/Event-Driven",
     "Computer Science/AWS/Configuration",
     "Computer Science/AWS/Stream Processing",
