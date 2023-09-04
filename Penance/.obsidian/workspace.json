@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "cc316d0b7c08acc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "7d6d35e18a35cff4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9e10488b0541db29",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d143943b8a4de075",
+    "type": "split",
+    "children": [
+      {
+        "id": "32849822f4605e34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f3377f6ed1914f5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "76d1b62f30862bac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4a349aa63ad7ebe3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "10be10321f17e95e",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa1757b7e12cdfb4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b17c02b4d71488c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a56f44c27797bfb0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "803f56134143faf4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6a0df68b493205e0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "9e10488b0541db29",
+  "lastOpenFiles": [
+    "Mathematics/Calculus/Area as a Set Function.md",
+    "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
+    "Mathematics/Calculus/Problems to Review.md",
+    "Curriculum.md",
+    "Computer Science/AWS/Security/Cognito.md",
+    "Mathematics/Calculus",
+    "Computer Science/Algorithms",
+    "Mathematics/Linear Algebra/Matrix/Null Space.md",
+    "Mathematics/Linear Algebra/Vector/Dot Product.md",
+    "Mathematics/Linear Algebra/Vector/Line Segments.md",
+    "Mathematics/Linear Algebra/Vector/Linear Equations.md",
+    "Mathematics/Linear Algebra/Vector/Vectors over GF(2).md",
+    "Mathematics/Linear Algebra/Matrix/Multiplying Matrices and Vectors.md",
+    "Mathematics/Linear Algebra/Matrix/Inner and Outer Products.md",
+    "Mathematics/Linear Algebra/Matrix/Matrices and Functions.md",
+    "Mathematics/Linear Algebra/Matrix/Matrix Inverse.md",
+    "Mathematics/Linear Algebra/Matrix/Matrix Multiplication.md",
+    "Mathematics/Linear Algebra/Matrix/Linear Functions.md",
+    "Computer Science/AWS/Compute/Elastic Cloud Compute.md",
+    "Computer Science/AWS/Compute/Elastic Container Service.md",
+    "Computer Science/AWS/Networking/Virtual Private Cloud.md",
+    "Computer Science/AWS/Security/Identity Access Management.md",
+    "Computer Science/AWS/Stream Processing/Kinesis.md",
+    "Computer Science/AWS/Compute/Fargate.md",
+    "Computer Science/AWS/Compute/Batch Computing.md",
+    "Computer Science/AWS/Event-Driven/Simple Queueing Service.md",
+    "Computer Science/AWS/Event-Driven/Simple Notification Service.md",
+    "Computer Science/AWS/Storage/Redshift.md",
+    "Computer Science/AWS/Event-Driven",
+    "Computer Science/AWS/Configuration",
+    "Computer Science/AWS/Stream Processing",
+    "Computer Science/AWS/Identity",
+    "Computer Science/AWS/Security",
+    "Computer Science/AWS/Networking",
+    "Computer Science/AWS/Storage",
+    "Computer Science/AWS/Compute",
+    "Untitled.canvas",
+    "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
+    "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",
+    "env/lib/python3.8/site-packages/notebook/static/a3b9817780214caf01e8.svg",
+    "env/lib/python3.8/site-packages/notebook/static/9674eb1bd55047179038.svg",
+    "env/share/jupyter/lab/static/be0a084962d8066884f7.svg",
+    "env/share/jupyter/lab/static/a3b9817780214caf01e8.svg",
+    "env/share/jupyter/lab/static/9674eb1bd55047179038.svg",
+    "env/share/icons/hicolor/scalable/apps/notebook.svg",
+    "env/share/icons/hicolor/scalable/apps/jupyterlab.svg",
+    "env/lib/python3.8/site-packages/jupyterlab/static/be0a084962d8066884f7.svg"
+  ]
+}
