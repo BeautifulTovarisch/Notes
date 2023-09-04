@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
-                "mode": "preview",
+                "file": "Curriculum.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
+                "file": "Curriculum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
+                "file": "Curriculum.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Algorithms/Fundamental Graph Algorithms.md"
+                "file": "Curriculum.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "9e10488b0541db29",
   "lastOpenFiles": [
-    "Mathematics/Calculus/Area as a Set Function.md",
     "Computer Science/Algorithms/Fundamental Graph Algorithms.md",
+    "Mathematics/Calculus/Area as a Set Function.md",
     "Mathematics/Calculus/Problems to Review.md",
     "Curriculum.md",
     "Computer Science/AWS/Security/Cognito.md",

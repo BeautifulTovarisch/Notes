@@ -132,3 +132,83 @@ subgraph Computer Science
 	DB-->Dist[Distributed Computing];
 end
 ```
+
+## Example Curriculum
+
+The following is an example curriculum one might follow in order to establish a solid foundation in mathematics and computer science. More advanced material has been omitted, as the student will generally have the background to elect specific resources by that point. 
+
+> [!tip]
+> Once a basic foundation of Algebra is established, more advanced material may be worked through ahead of the plan. The student may opt to review requisite material as needed (i.e Trigonometry in Calculus) when the material requires it rather than work through all foundational material beforehand.
+
+```mermaid
+graph LR
+dcic[Intro to CS]
+discrete[Discrete Mathematics with Applications - Epp]
+algebra[AoPS - Intermediate Algebra]
+trig[Trigonometry - Corral]
+comb[AoPS - Counting and Probability]
+datasci[Data Science for All]
+
+calc[Elementary Calculus - Corral]
+linalg[Linear Algebra - MIT 18.06]
+prog[Data Structures and Functional Programming]
+systems[Computer Systems: A Programmer's Perspective]
+
+alg[Advanced Algorithms]
+data[Advanced Data Structures]
+funcdata[Functional Data Structures]
+
+subgraph Foundations
+algebra-->discrete
+
+discrete-- partial requisites -->dcic
+
+dcic-->datasci
+comb-->datasci
+end
+
+subgraph Intermediate Material
+	algebra-->calc
+	trig-->calc
+
+	discrete-->linalg
+
+	dcic-->prog
+
+	prog-->systems
+
+end
+
+subgraph Advanced
+	prog-->alg
+	prog-->data
+	prog-->funcdata
+end
+```
+
+### Resources
+
+Resources are not listed in any particular order. Some resources are supplementary or alternatives to those found in the curriculum.
+
+#### Foundational
+
+- [Discrete Mathematics](https://www.amazon.com/Discrete-Mathematics-Applications-Metric-Susanna/dp/0357114086/ref=sr_1_1?keywords=discrete+mathematics+with+applications&qid=1693837809&sprefix=discrete+math%2Caps%2C91&sr=8-1)
+- [Data-Centric Introduction to Computing](https://cs.brown.edu/courses/csci0190/2021/)
+- [Data Science for All](https://cs.brown.edu/courses/csci0190/2021/)
+- [Trigonometry](http://mecmath.net/trig/)
+- [AoPS Bookstore](https://artofproblemsolving.com/store)
+
+#### Intermediate
+
+- [Data Structures and Functional Programming](https://cs3110.github.io/textbook/cover.html)
+- [Computer Systems: A Programmer's Perspective](https://www.cs.cmu.edu/~213/index.html)
+- [Elementary Calculus](https://www.cs.cmu.edu/~213/index.html)
+- [3Blue1Brown Linear Algebra](https://www.youtube.com/playlist?list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B)
+- [Linear Algebra - MIT 18.06](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/)
+- [Coding the Matrix](https://cs.brown.edu/courses/cs053/current/lectures.htm)
+
+#### Advanced
+
+- [Advanced Algorithms](http://www.cs.cmu.edu/~15850/)
+- [Advanced Data Structures](https://courses.csail.mit.edu/6.851/fall17/lectures/)
+- [Functional Data Structures](https://cs.uwaterloo.ca/~plragde/flaneries/FDS/index.html)
