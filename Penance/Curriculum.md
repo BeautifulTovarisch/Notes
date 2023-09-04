@@ -137,6 +137,8 @@ end
 
 The following is an example curriculum one might follow in order to establish a solid foundation in mathematics and computer science. More advanced material has been omitted, as the student will generally have the background to elect specific resources by that point. 
 
+> Dependencies indicated as "partial" are recommended to be studied concurrently, as only certain topics within a subject are required to progress.
+
 > [!tip]
 > Once a basic foundation of Algebra is established, more advanced material may be worked through ahead of the plan. The student may opt to review requisite material as needed (i.e Trigonometry in Calculus) when the material requires it rather than work through all foundational material beforehand.
 
@@ -159,9 +161,9 @@ data[Advanced Data Structures]
 funcdata[Functional Data Structures]
 
 subgraph Foundations
-algebra-->discrete
+algebra-- partial -->discrete
 
-discrete-- partial requisites -->dcic
+discrete-- partial -->dcic
 
 dcic-->datasci
 comb-->datasci
