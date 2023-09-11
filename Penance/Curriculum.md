@@ -104,7 +104,6 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 graph LR;
 Foundations-->LinAlg[Linear Algebra];
 
-
 subgraph Mathematics
 	Foundations-->Calc[Calculus];
 	LinAlg-->Multi[Multivariable];

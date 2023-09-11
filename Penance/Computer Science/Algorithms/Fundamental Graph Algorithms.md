@@ -142,3 +142,24 @@ def breadthFirst(g):
 
 > [!tip]
 > The cost of Breadth-First is usually higher than that of Depth-First due to the overhead of maintaining the queue/other data structure.
+
+## Weighted Edges
+
+Finally, in most real scenarios there is a positive "cost" of traversing a particular edge. We model this by assigning a "weight" to such an edge. For some classic graph algorithms (Dijkstra's), it is important that the weight of an edge is greater than zero.
+
+```mermaid
+graph LR
+v0 -- -1 --> v1
+v1 -- 3 --> v2
+v2 -- 5 --> v3
+
+v0 -- 1 --> v1
+v1 -- 2 --> v2
+v2 -- 3 --> v3
+
+```
+
+The graph shown above has a "true" shortest path consisting of edges with weights $1, 2, 3$, but the introduction of negative weights along the path result in the incorrect output of greedy algorithms: $-1, 3, 5$.
+
+> [!note] "Shortest" Path
+> Usually when we refer to the "shortest" path, we _actually_ mean the "lightest" path. That is, the path containing the minimal sum of edge weights.
