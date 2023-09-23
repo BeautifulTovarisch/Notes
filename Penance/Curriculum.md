@@ -88,6 +88,9 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 - CSA2: Advanced Data Structures - MIT 6.851
 - CSA3: Functional Data Structures (Waterloo)
 - CSA4: Purely Functional Data Structures (Okasaki)
+- CSA5: Concrete Mathematics
+- CSA6: CLRS
+- CSA7: Introduction to the Analysis of Algorithms - Sedgewick
 
 ### Networking
 

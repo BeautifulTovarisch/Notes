@@ -191,3 +191,6 @@ def find(e):
 
 	return gp
 ```
+
+> [!todo]
+> Diagram

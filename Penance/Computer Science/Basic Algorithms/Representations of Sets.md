@@ -170,4 +170,113 @@ def isBalanced(t):
 A few keys points:
 
 - Insertions can only ever create a balance factor of $\pm 2$
-- 
+- The "problem" subtree will have height $k+1$ and the other will have height $k$ or $k-1$.
+
+#### Left-Left Scenario
+
+Suppose inserting into a tree results in the following (heights of each subtree labeled):
+
+```mermaid
+graph TD
+	p((k+3))
+	q((k+2))
+	A((k+1))
+	B((k or k-1))
+	C((k))
+
+	p-->q
+	p-->C
+	q-->A
+	q-->B
+```
+
+> Imbalanced Tree
+
+Then one of the subtrees of the $k+1$ tree has height $k$ and the other is $k-1$. The situation is illustrated below:
+
+```mermaid
+graph TD
+p((p))
+q((q))
+r((r))
+A1((A1))
+A2((A2))
+B((B))
+C((C))
+
+p-->q
+p-->C
+q-->r
+q-->B
+r-->A1
+r-->A2
+```
+
+If we suppose $h(A_1) = k$, then $h(A_2) = k - 1$
+
+We "rotate" the subtrees clockwise to achieve:
+
+```mermaid
+graph TD
+p((p))
+q((q))
+r((r))
+A1((A1))
+A2((A2))
+B((B))
+C((C))
+
+q-->r
+q-->p
+r-->A1
+r-->A2
+p-->B
+p-->C
+```
+
+#### Left-Right Scenario
+
+If instead we suppose $B$ has a height of $k$, then the issue lies with one of the subtrees of $B$. Again
+
+```mermaid
+graph TD
+p((p))
+q((q))
+r((r))
+A((A))
+B1((B1))
+B2((B2))
+C((C))
+
+p-->q
+p-->C
+q-->A
+q-->r
+r-->B1
+r-->B2
+```
+
+> [!note]
+> Mermaid screwed up the left and right subtree ordering in the above example
+
+The solution here is to elevate $B_2$ and swap $q$ with $r$ as an intermediate step:
+
+```mermaid
+graph TD
+p((p))
+q((q))
+r((r))
+A((A))
+B1((B1))
+B2((B2))
+C((C))
+
+p-->r
+p-->C
+q-->A
+r-->q
+r-->B2
+q-->B1
+```
+
+Here, we reduce the problem into the previous Left-Left scenario under subtree `q`, and so we can proceed with the corresponding rotation.
