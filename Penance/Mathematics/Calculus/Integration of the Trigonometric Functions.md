@@ -1,3 +1,10 @@
+$$
+\begin{align}
+&\int_a^b \sin x \; dx = -(\cos b - \cos a) \\
+&\int_a^b \cos x \; dx = \sin b - \sin a
+\end{align}
+$$
+
 We establish an inequality which demonstrates the integral of the sine function. We use this integral to then show the formula for the definite integral of the cosine.
 
 > [!warning]

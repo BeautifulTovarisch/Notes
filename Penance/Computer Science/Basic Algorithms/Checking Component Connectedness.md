@@ -121,10 +121,11 @@ graph BT
 	e4
 	e5
 
-	e3-->e2-->e5-->e4
+	e5-->e4
+	e3-->e2-->e1-->e4
 ```
 
-In the above diagram, we have chosen to merge `e2` and `e5`. Producing a union in which the parent of `e2` is `e5`.
+In the above diagram, we have chosen to merge `e2` and `e5`. Producing a union in which the parent of `e2` is set to the parent of `e5`.
 
 We merge two sets, arbitrarily choosing one to represent the new set and assigning the same parent to both:
 

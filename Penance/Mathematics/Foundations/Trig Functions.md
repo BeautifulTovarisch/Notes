@@ -21,7 +21,7 @@ We use these "axioms" to develop the following theorem:
 > &\sin(x + \pi/2) = \cos x, \; \cos(x + \pi/2) = -\sin x &\text{Co-Relations} \\ \\
 > &\sin(x + 2\pi) = \sin x, \; \cos(x + 2\pi) = \cos x &\text{Periodicity} \\ \\
 > &\cos(x+y) = \cos x \cos y - \sin x \sin y &\text{Additivity} \\
-> &\sin(x+y) = \sin x \cos y + \cos y \sin x \\ \\
+> &\sin(x+y) = \sin x \cos y + \cos x \sin y \\ \\
 > &\sin a - \sin b = 2 \sin \frac {a-b} 2 \cos \frac {a+b} 2 
 > &\text{Difference Formulas} \\
 > &\cos a - \cos b = -2 \sin \frac {a-b} 2 \sin \frac {a+b} 2 \\ \\
