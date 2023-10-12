@@ -15,3 +15,9 @@ Section 2.17
 - 12
 - 15 
 - Rod Problems
+
+Section 3.6
+
+- 31 (Need to study $\mathbb{R}$ more closely. Consider for reviewing after Analysis)
+- 32
+- 33

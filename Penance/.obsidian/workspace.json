@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Integration to Compute the Average of a Function.md",
+                "file": "Mathematics/Calculus/Continuity of Functions.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Integration to Compute the Average of a Function.md",
+                "file": "Mathematics/Calculus/Continuity of Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Integration to Compute the Average of a Function.md",
+                "file": "Mathematics/Calculus/Continuity of Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Integration to Compute the Average of a Function.md"
+                "file": "Mathematics/Calculus/Continuity of Functions.md"
               }
             }
           },
@@ -158,33 +158,33 @@
   },
   "active": "ba4711b0102384bc",
   "lastOpenFiles": [
-    "Computer Science/Basic Algorithms/Spanning Tree.md",
+    "Mathematics/Calculus/Problems to Review.md",
+    "Mathematics/Calculus/Continuity of Functions.md",
+    "Mathematics/Foundations/Trig Functions.md",
+    "Mathematics/Discrete/Relations/Relations.md",
+    "Mathematics/Discrete/Relations/Partial Order.md",
+    "Mathematics/Discrete/Set.md",
+    "Mathematics/Discrete/Combinatorics.md",
+    "Mathematics/Calculus/Integration of the Trigonometric Functions.md",
+    "Mathematics/Calculus/Properties of the Integral of a Step Function.md",
+    "Mathematics/Calculus/Integrals of more General Functions.md",
+    "Mathematics/Calculus/Integration of Polynomials.md",
     "Mathematics/Calculus/Integration to Compute the Average of a Function.md",
+    "Computer Science/Basic Algorithms/Spanning Tree.md",
     "Computer Science/Basic Algorithms/Checking Component Connectedness.md",
     "Mathematics/Linear Algebra/Vector/Line Segments.md",
     "Mathematics/Linear Algebra/Vector Space/Linear Combination.md",
-    "Mathematics/Calculus/Problems to Review.md",
-    "Mathematics/Calculus/Integration of the Trigonometric Functions.md",
-    "Mathematics/Foundations/Trig Functions.md",
     "Computer Science/Basic Algorithms/Fundamental Graph Algorithms.md",
-    "Mathematics/Discrete/Combinatorics.md",
     "Computer Science/Pre-Algorithms Checklist.md",
     "Mathematics/Foundations/Sequences and Series.md",
     "Mathematics/Calculus/Plots/polynomial-integral.svg",
     "Mathematics/Foundations/Exponents and Logarithms.md",
-    "Mathematics/Calculus/Properties of the Integral of a Step Function.md",
     "Mathematics/Calculus/Applications of Integration.md",
     "Computer Science/Algorithm Fundamentals/Theorems to Algorithms.md",
     "Computer Science/Algorithm Fundamentals/Correctness of Algorithms.md",
     "Mathematics/Foundations/Quadratics.md",
     "Mathematics/Discrete/Newton's Method.md",
     "Mathematics/Discrete/Graph Theory.md",
-    "Mathematics/Discrete/Relations/Solving Recurrence Relations.md",
-    "Mathematics/Calculus/Integrals of more General Functions.md",
-    "AWS/Compute/Elastic Cloud Compute.md",
-    "Mathematics/Discrete/Closure.md",
-    "Mathematics/Discrete/Relations/Recurrence Relation.md",
-    "Curriculum.md",
     "Mathematics/Calculus/Plots",
     "Mathematics/Foundations/example.svg",
     "Mathematics/Foundations/example",
