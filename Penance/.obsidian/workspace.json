@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Continuity of Functions.md",
+                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Continuity of Functions.md",
+                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Continuity of Functions.md",
+                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Continuity of Functions.md"
+                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md"
               }
             }
           },
@@ -158,33 +158,36 @@
   },
   "active": "ba4711b0102384bc",
   "lastOpenFiles": [
-    "Mathematics/Calculus/Problems to Review.md",
-    "Mathematics/Calculus/Continuity of Functions.md",
+    "Mathematics/Calculus/Differentiation",
+    "Mathematics/Calculus/Continuity/Extreme Values.md",
+    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+    "Untitled.md",
+    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
+    "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
+    "Curriculum.md",
+    "Mathematics/Foundations/Factoring Tricks.md",
+    "Mathematics/Foundations/Quadratics.md",
+    "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
+    "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
+    "Mathematics/Calculus/Integration/Applications of Integration.md",
     "Mathematics/Foundations/Trig Functions.md",
+    "Mathematics/Foundations/Exponents and Logarithms.md",
+    "Mathematics/Combinatorics/Basics.md",
+    "Mathematics/Foundations/Sequences and Series.md",
+    "Mathematics/Combinatorics",
+    "Mathematics/Calculus/Integration",
+    "Mathematics/Calculus/Continuity",
+    "Mathematics/Combinatorics/Combinatorics.md",
+    "Mathematics/Calculus/Problems to Review.md",
+    "Computer Science/Pre-Algorithms Checklist.md",
     "Mathematics/Discrete/Relations/Relations.md",
     "Mathematics/Discrete/Relations/Partial Order.md",
     "Mathematics/Discrete/Set.md",
-    "Mathematics/Discrete/Combinatorics.md",
-    "Mathematics/Calculus/Integration of the Trigonometric Functions.md",
-    "Mathematics/Calculus/Properties of the Integral of a Step Function.md",
-    "Mathematics/Calculus/Integrals of more General Functions.md",
-    "Mathematics/Calculus/Integration of Polynomials.md",
-    "Mathematics/Calculus/Integration to Compute the Average of a Function.md",
+    "Mathematics/Calculus/Integration/Properties of the Integral of a Step Function.md",
+    "Mathematics/Calculus/Integration/Integrals of more General Functions.md",
+    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
     "Computer Science/Basic Algorithms/Spanning Tree.md",
-    "Computer Science/Basic Algorithms/Checking Component Connectedness.md",
-    "Mathematics/Linear Algebra/Vector/Line Segments.md",
-    "Mathematics/Linear Algebra/Vector Space/Linear Combination.md",
-    "Computer Science/Basic Algorithms/Fundamental Graph Algorithms.md",
-    "Computer Science/Pre-Algorithms Checklist.md",
-    "Mathematics/Foundations/Sequences and Series.md",
     "Mathematics/Calculus/Plots/polynomial-integral.svg",
-    "Mathematics/Foundations/Exponents and Logarithms.md",
-    "Mathematics/Calculus/Applications of Integration.md",
-    "Computer Science/Algorithm Fundamentals/Theorems to Algorithms.md",
-    "Computer Science/Algorithm Fundamentals/Correctness of Algorithms.md",
-    "Mathematics/Foundations/Quadratics.md",
-    "Mathematics/Discrete/Newton's Method.md",
-    "Mathematics/Discrete/Graph Theory.md",
     "Mathematics/Calculus/Plots",
     "Mathematics/Foundations/example.svg",
     "Mathematics/Foundations/example",
@@ -194,9 +197,6 @@
     "AWS/Event-Driven",
     "AWS/Configuration",
     "AWS/Stream Processing",
-    "Computer Science/AWS/Identity",
-    "AWS/Security",
-    "AWS/Networking",
     "Untitled.canvas",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",

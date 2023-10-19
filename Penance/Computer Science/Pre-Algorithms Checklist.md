@@ -5,7 +5,7 @@ Mathematical background required to perform algorithmic analyses.
 	- [x] Finding roots
 	- [x] Factoring
 	- [x] Polynomials
-- [ ] Sequences and Series
+- [x] Sequences and Series
 	- [x] Algebraic
 	- [x] Geometric
 	- [x] Harmonic
@@ -22,7 +22,7 @@ Mathematical background required to perform algorithmic analyses.
 	- [ ] Tabular integration
 	- [ ] Integration by Parts 
 - [ ] Differentiation Techniques
-	- [ ] Limits 
+	- [x] Limits 
 	- [ ] Epsilon-Delta proofs
 - [ ] Analytic Geometry
 	- [ ] Polar Coordinates
