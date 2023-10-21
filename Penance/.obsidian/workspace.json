@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Foundations/Sequences and Series.md",
-                "mode": "preview",
+                "file": "Mathematics/Sums/Finite Calculus.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Foundations/Sequences and Series.md",
+                "file": "Mathematics/Sums/Finite Calculus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Foundations/Sequences and Series.md",
+                "file": "Mathematics/Sums/Finite Calculus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Foundations/Sequences and Series.md"
+                "file": "Mathematics/Sums/Finite Calculus.md"
               }
             }
           },
@@ -158,6 +158,10 @@
   },
   "active": "ba4711b0102384bc",
   "lastOpenFiles": [
+    "Mathematics/Sums/Manipulation.md",
+    "Computer Science/Algorithm Fundamentals/Algorithms.md",
+    "Computer Science/Basic Algorithms/Fundamental Graph Algorithms.md",
+    "Mathematics/Foundations/Sequences and Series.md",
     "Mathematics/Foundations/Set Theory.md",
     "Mathematics/Foundations/Russel's Paradox.md",
     "Mathematics/Foundations/Relations/Closure.md",
@@ -172,7 +176,6 @@
     "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
     "Mathematics/Calculus/Integration/Integration of Polynomials.md",
     "Mathematics/Foundations/Trig Functions.md",
-    "Mathematics/Sums/Manipulation.md",
     "Mathematics/Linear Algebra/Vector/Dot Product.md",
     "Mathematics/Sums/Finite Calculus.md",
     "Mathematics/Sums",
@@ -185,9 +188,6 @@
     "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
     "Curriculum.md",
     "Mathematics/Foundations/Factoring Tricks.md",
-    "Mathematics/Foundations/Quadratics.md",
-    "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
-    "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
     "Mathematics/Combinatorics",
     "Mathematics/Calculus/Integration",
     "Mathematics/Calculus/Continuity",

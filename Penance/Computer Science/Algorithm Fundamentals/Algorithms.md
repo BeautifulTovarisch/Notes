@@ -33,7 +33,7 @@ def longdiv(divisor, dividend, N):
 
 Computing the powerset involves appending those subsets containing a given $a \in A$ and those without. The powerset in this manner is built up [[Induction|inductively]] starting with the null set as a basis.
 
-I include two algorithms here, one is hopelessly convoluted (from the book). The other is one I wrote (which could be simplified using list comprehensions).
+The following algorithm from the book is hopelessly convoluted. See the `powerset` notebook for a cleaner implementation.
 
 ```Python
 # Book Version
