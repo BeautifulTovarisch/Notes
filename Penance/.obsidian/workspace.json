@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Continuity/Mean Value Theorem.md"
+                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md"
               }
             }
           },
@@ -156,13 +156,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ba4711b0102384bc",
+  "active": "5f3377f6ed1914f5",
   "lastOpenFiles": [
+    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
+    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+    "Mathematics/Foundations/Trig Functions.md",
+    "Mathematics/Sums/Manipulation.md",
+    "Mathematics/Linear Algebra/Vector/Dot Product.md",
+    "Mathematics/Sums/Finite Calculus.md",
+    "Mathematics/Sums",
+    "Mathematics/Calculus/Differentiation/The Deriative.md",
+    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
+    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
     "Mathematics/Calculus/Differentiation",
     "Mathematics/Calculus/Continuity/Extreme Values.md",
-    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
     "Untitled.md",
-    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
     "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
     "Curriculum.md",
     "Mathematics/Foundations/Factoring Tricks.md",
@@ -170,7 +178,6 @@
     "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
     "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
     "Mathematics/Calculus/Integration/Applications of Integration.md",
-    "Mathematics/Foundations/Trig Functions.md",
     "Mathematics/Foundations/Exponents and Logarithms.md",
     "Mathematics/Combinatorics/Basics.md",
     "Mathematics/Foundations/Sequences and Series.md",
@@ -182,11 +189,6 @@
     "Computer Science/Pre-Algorithms Checklist.md",
     "Mathematics/Discrete/Relations/Relations.md",
     "Mathematics/Discrete/Relations/Partial Order.md",
-    "Mathematics/Discrete/Set.md",
-    "Mathematics/Calculus/Integration/Properties of the Integral of a Step Function.md",
-    "Mathematics/Calculus/Integration/Integrals of more General Functions.md",
-    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
-    "Computer Science/Basic Algorithms/Spanning Tree.md",
     "Mathematics/Calculus/Plots/polynomial-integral.svg",
     "Mathematics/Calculus/Plots",
     "Mathematics/Foundations/example.svg",
@@ -195,8 +197,6 @@
     "Mathematics/Calculus",
     "Computer Science/Basic Algorithms",
     "AWS/Event-Driven",
-    "AWS/Configuration",
-    "AWS/Stream Processing",
     "Untitled.canvas",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",
