@@ -10,7 +10,7 @@ These proofs allow us to build up a theory surrounding the cardinality of sets a
 > [!todo]
 > Consider whether these belong under the cardinality section.
 
-Recall from [[Set#Laws]] that if $A, B$ are finite, $|A \cup B| = |A| + |B|$.
+Recall from [[Set Theory#Laws]] that if $A, B$ are finite, $|A \cup B| = |A| + |B|$.
 
 > [!abstract] Difference Rule.
 > If $A, B$ are finite, and $B \subseteq A$, then $|A - B| - |A| - |B|$ 

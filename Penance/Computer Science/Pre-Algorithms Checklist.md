@@ -9,6 +9,11 @@ Mathematical background required to perform algorithmic analyses.
 	- [x] Algebraic
 	- [x] Geometric
 	- [x] Harmonic
+- [ ] Sums
+	- [x] Basic Review
+	- [ ] Manipulation
+	- [ ] "Finite Calculus"
+	- [ ] Stirling Numbers
 - [ ] Logarithms and Exponents
 	- [ ] Natural Log
 	- [x] Changing Bases
@@ -16,6 +21,9 @@ Mathematical background required to perform algorithmic analyses.
 - [ ] Number Theory
 	- [ ] Modular Arithmetic
 - [ ] Combinatorics
+	- [ ] Counting
+	- [ ] Binomial Coefficients
+	- [ ] Generating Functions
 - [ ] Probability
 - [ ] Integration Techniques
 	- [ ] u-substitution
@@ -24,11 +32,8 @@ Mathematical background required to perform algorithmic analyses.
 - [ ] Differentiation Techniques
 	- [x] Limits 
 	- [ ] Epsilon-Delta proofs
-- [ ] Analytic Geometry
-	- [ ] Polar Coordinates
 - [ ] Recurrence Relations
 	- [x] Basic Review
-	- [ ] Generating Functions
 	- [ ] Characteristic Equation
 	- [ ] Repertoire Method
 - [ ] (Optional) gnuplot proficiency

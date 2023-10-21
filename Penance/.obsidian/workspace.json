@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+                "file": "Mathematics/Foundations/Sequences and Series.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+                "file": "Mathematics/Foundations/Sequences and Series.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+                "file": "Mathematics/Foundations/Sequences and Series.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md"
+                "file": "Mathematics/Foundations/Sequences and Series.md"
               }
             }
           },
@@ -156,10 +156,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5f3377f6ed1914f5",
+  "active": "ba4711b0102384bc",
   "lastOpenFiles": [
-    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
+    "Mathematics/Foundations/Set Theory.md",
+    "Mathematics/Foundations/Russel's Paradox.md",
+    "Mathematics/Foundations/Relations/Closure.md",
+    "Mathematics/Foundations/powerset.ipynb",
+    "Mathematics/Foundations/fibonacci.ipynb",
+    "Computer Science/Pre-Algorithms Checklist.md",
+    "Computer Science/Algorithm Fundamentals/Theorems to Algorithms.md",
+    "Computer Science/Basic Algorithms/Representations of Sets.md",
+    "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
+    "Mathematics/Combinatorics/Basics of Counting.md",
+    "Mathematics/Combinatorics/Combinatorics.md",
     "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
     "Mathematics/Foundations/Trig Functions.md",
     "Mathematics/Sums/Manipulation.md",
     "Mathematics/Linear Algebra/Vector/Dot Product.md",
@@ -177,26 +188,15 @@
     "Mathematics/Foundations/Quadratics.md",
     "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
     "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
-    "Mathematics/Calculus/Integration/Applications of Integration.md",
-    "Mathematics/Foundations/Exponents and Logarithms.md",
-    "Mathematics/Combinatorics/Basics.md",
-    "Mathematics/Foundations/Sequences and Series.md",
     "Mathematics/Combinatorics",
     "Mathematics/Calculus/Integration",
     "Mathematics/Calculus/Continuity",
-    "Mathematics/Combinatorics/Combinatorics.md",
-    "Mathematics/Calculus/Problems to Review.md",
-    "Computer Science/Pre-Algorithms Checklist.md",
-    "Mathematics/Discrete/Relations/Relations.md",
-    "Mathematics/Discrete/Relations/Partial Order.md",
     "Mathematics/Calculus/Plots/polynomial-integral.svg",
     "Mathematics/Calculus/Plots",
     "Mathematics/Foundations/example.svg",
     "Mathematics/Foundations/example",
     "Mathematics/Foundations/plot.svg",
     "Mathematics/Calculus",
-    "Computer Science/Basic Algorithms",
-    "AWS/Event-Driven",
     "Untitled.canvas",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",
