@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Sums/Finite Calculus.md",
+                "file": "Mathematics/Sums/Worked Examples.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Sums/Finite Calculus.md",
+                "file": "Mathematics/Sums/Worked Examples.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Sums/Finite Calculus.md",
+                "file": "Mathematics/Sums/Worked Examples.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Sums/Finite Calculus.md"
+                "file": "Mathematics/Sums/Worked Examples.md"
               }
             }
           },
@@ -158,10 +158,16 @@
   },
   "active": "ba4711b0102384bc",
   "lastOpenFiles": [
+    "Mathematics/Sums/Finite Calculus.md",
+    "Mathematics/Sums/Worked Examples.md",
     "Mathematics/Sums/Manipulation.md",
+    "Mathematics/Sums/General Methods.md",
+    "Mathematics/Sums/Multiple Sums.md",
+    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+    "Mathematics/Foundations/Trig Functions.md",
+    "Mathematics/Foundations/Sequences and Series.md",
     "Computer Science/Algorithm Fundamentals/Algorithms.md",
     "Computer Science/Basic Algorithms/Fundamental Graph Algorithms.md",
-    "Mathematics/Foundations/Sequences and Series.md",
     "Mathematics/Foundations/Set Theory.md",
     "Mathematics/Foundations/Russel's Paradox.md",
     "Mathematics/Foundations/Relations/Closure.md",
@@ -173,21 +179,15 @@
     "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
     "Mathematics/Combinatorics/Basics of Counting.md",
     "Mathematics/Combinatorics/Combinatorics.md",
-    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
     "Mathematics/Calculus/Integration/Integration of Polynomials.md",
-    "Mathematics/Foundations/Trig Functions.md",
     "Mathematics/Linear Algebra/Vector/Dot Product.md",
-    "Mathematics/Sums/Finite Calculus.md",
     "Mathematics/Sums",
-    "Mathematics/Calculus/Differentiation/The Deriative.md",
+    "Mathematics/Calculus/Differentiation/The Derivative.md",
     "Mathematics/Calculus/Continuity/Continuity of Functions.md",
     "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
     "Mathematics/Calculus/Differentiation",
     "Mathematics/Calculus/Continuity/Extreme Values.md",
     "Untitled.md",
-    "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
-    "Curriculum.md",
-    "Mathematics/Foundations/Factoring Tricks.md",
     "Mathematics/Combinatorics",
     "Mathematics/Calculus/Integration",
     "Mathematics/Calculus/Continuity",

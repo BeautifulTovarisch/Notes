@@ -76,6 +76,47 @@ The main idea here is to extract the first and last terms of a summation and man
 > $$
 > \begin{align}
 > S_n + (n+1) &= a_0 + \sum_{1 \leqslant k \leqslant n+1} a_k \\ \\
-> &= a_0 + \sum_{1 \leqslant k+1 \leqslant n+1} a_{k+1} &k \to k+1
+> &= a_0 + \sum_{1 \leqslant k+1 \leqslant n+1} a_{k+1} &k \to k+1 \\ \\
+> &= a_0 + \sum_{0 \leqslant k \leqslant n} a_{k} &\text{idx - 1}
 > \end{align}
+> $$
+> 
+> We now have a sum in terms of $S_n$ and can manipulate it to hopefully achieve a closed form.
+
+> [!example] Perturbing a Geometric Series
+> Let $S_n = \sum_{0 \leqslant k \leqslant n} ax^k$. We use the perturbation method to derive the well-known formula
+> $$
+> \begin{align}
+> S_n + ax^{n+1} 
+> &= a + \sum_{1 \leqslant k \leqslant n+1} ax^k \\ \\
+> &= a + \sum_{1 \leqslant k+1 \leqslant n+1} ax^{k+1} &k \to k+1 \\ \\
+> &= a + \sum_{0 \leqslant k \leqslant n} ax^{k+1} \\ \\
+> &= a + \sum_{0 \leqslant k \leqslant n} ax^{k+1} + ax^{n+1} \\ \\
+> &= a + x\sum_{0 \leqslant k \leqslant n} ax^k + ax^{n+1} &\text{factoring $x$} \\ \\
+> &= a + xS_n + ax^{n+1} \\ \\
+> \iff \\ \\
+> S_n(1 - x) &= a(1 - x^{n+1}) \\ \\
+> \iff \\ \\
+> S_n &= \frac {a(1 - x^{n+1})} {1 - x} \\ \\
+> &&\blacksquare
+> \end{align}
+> $$
+
+> [!example] Harder Example
+> Let $S_n = \sum_{0 \leqslant k \leqslant n} k 2^k$. Perturbing the sum:
+> $$
+> \begin{align}
+> S_n + (n+1)2^{n+1} &= \sum_{1 \leqslant k \leqslant n+1} k 2^k \\ \\
+> &= \sum_{1 \leqslant k+1 \leqslant n+1} (k+1) 2^{k+1} &k \to k+1 \\ \\
+> &= \sum_{0 \leqslant k \leqslant n} (k+1) 2^{k+1} \\ \\
+> &= \sum_{0 \leqslant k \leqslant n} k 2^{k+1} + 
+> \sum_{0 \leqslant k \leqslant n} 2^{k+1} \\ \\
+> &= 2 S_n + \frac {2 - 2^{n+2}} {1 - 2} \\ \\
+> &= 2 S_n +  2^{n+1} - 2 \\ \\
+> \iff \\ \\
+> S_n &= (n+1) 2^{n+1} - 2^{n+2} + 2 \\ \\
+> &= (n+1) 2^{n+1} - 2(2^{n+1}) + 2 \\ \\
+> &= (n-1)2^{n+1} + 2 \\ \\
+> &&\blacksquare
+> \end{align} 
 > $$
