@@ -11,7 +11,7 @@ Mathematical background required to perform algorithmic analyses.
 	- [x] Harmonic
 - [ ] Sums
 	- [x] Basic Review
-	- [ ] Manipulation
+	- [x] Manipulation
 	- [ ] "Finite Calculus"
 	- [ ] Stirling Numbers
 - [ ] Logarithms and Exponents
