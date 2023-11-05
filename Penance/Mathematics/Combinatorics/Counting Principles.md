@@ -1,14 +1,8 @@
 Combinatorics is a methodology for computing the enumeration, permutation etc. of sets of elements and relations.
 
-> [!warning]
-> This section is currently anemic due to the poor quality of the book's treatment
-
-## Foundational Proofs
+## Proofs of Basic Counting Principles
 
 These proofs allow us to build up a theory surrounding the cardinality of sets and hence allow for sophisticated counting of elements.
-
-> [!todo]
-> Consider whether these belong under the cardinality section.
 
 Recall from [[Set Theory#Laws]] that if $A, B$ are finite, $|A \cup B| = |A| + |B|$.
 
@@ -77,16 +71,3 @@ Recall from [[Set Theory#Laws]] that if $A, B$ are finite, $|A \cup B| = |A| + |
 > Now suppose $n = N + 1$. Then by inductive hypothesis we have $\prod_{i=1}^{n+1} |A_i| = |A \times \dots \times A_n| * |A_{n+1}|$. By the above lemma, we see that $|A \times \dots \times A_n| * |A_{n+1}| = |A \times \dots \times A_{n+1}|$.
 > 
 > $\blacksquare$
-
-## Permutations and Combinations
-
-> [!warning]
-> Skipping for now due to extremely poor definitions provided by textbook.
-
-Arrangements of sets come in two major flavors:
-
-> [!info] Permutation
-> An ordered sequence of the elements of a set.
-
-> [!info] Combination
-> 

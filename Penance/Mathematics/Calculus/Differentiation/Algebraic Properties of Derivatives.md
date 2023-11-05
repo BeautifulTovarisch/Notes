@@ -102,7 +102,7 @@ Using the addition and product rules, we can prove differentiation exhibits line
 As a treat, we derive the general rule for the derivative of a power function using the [[Binomial Theorem]].
 
 > [!todo]
-> Add a note or section to [[Combinatorics]] about the binomial theorem whenever it comes up.
+> Add a note or section to [[Counting Principles]] about the binomial theorem whenever it comes up.
 
 > [!abstract] Derivative of a Power Function 
 > Let $f(x) = x^n$, then the derivative of $f$ at $x$ is given by the formula:

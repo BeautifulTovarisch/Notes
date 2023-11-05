@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "1f79bb14eb54e35a",
+        "id": "73584eaa74c716ec",
         "type": "tabs",
         "children": [
           {
-            "id": "ba4711b0102384bc",
+            "id": "f4117424579e677c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
+                "file": "Mathematics/Combinatorics/Basics of Counting.md",
                 "mode": "source",
                 "source": true
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mean value theorem",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
+                "file": "Mathematics/Combinatorics/Basics of Counting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
+                "file": "Mathematics/Combinatorics/Basics of Counting.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md"
+                "file": "Mathematics/Combinatorics/Basics of Counting.md"
               }
             }
           },
@@ -156,34 +156,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ba4711b0102384bc",
+  "active": "f4117424579e677c",
   "lastOpenFiles": [
-    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
-    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
-    "Mathematics/Calculus/Differentiation/The Derivative.md",
-    "Mathematics/Foundations/Exponents and Logarithms.md",
+    "Mathematics/Combinatorics/Example Bijections.md",
+    "Mathematics/Combinatorics/Counting Principles.md",
+    "Mathematics/Combinatorics/Basics of Counting.md",
+    "Computer Science/Basic Algorithms/Checking Component Connectedness.md",
+    "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
+    "Computer Science/Basic Algorithms/Representations of Sets.md",
+    "Computer Science/Basic Algorithms/Spanning Tree.md",
+    "Computer Science/Basic Algorithms/Fundamental Graph Algorithms.md",
+    "Mathematics/Foundations/Relations/Closure.md",
+    "Mathematics/Foundations/Set Theory.md",
+    "Mathematics/Foundations/Relations/Relations.md",
+    "Mathematics/Foundations/Relations/Functions.md",
+    "Mathematics/Foundations/Relations/Recurrence Relation.md",
+    "Mathematics/Foundations/Relations/Partial Order.md",
+    "Mathematics/Foundations/Russel's Paradox.md",
+    "Computer Science/Algorithm Fundamentals/Algorithms.md",
     "Computer Science/Algorithm Fundamentals/Theorems to Algorithms.md",
     "Computer Science/Algorithm Fundamentals/Correctness of Algorithms.md",
+    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
+    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+    "Mathematics/Calculus/Differentiation/The Derivative.md",
+    "Mathematics/Foundations/Exponents and Logarithms.md",
     "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
     "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
     "Mathematics/Foundations/Factoring Tricks.md",
     "Computer Science/Pre-Algorithms Checklist.md",
-    "Mathematics/Calculus/Continuity/Extreme Values.md",
-    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
-    "Mathematics/Calculus/Integration/Applications of Integration.md",
-    "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
-    "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
-    "Mathematics/Sums/Worked Examples.md",
-    "Mathematics/Sums/Finite Calculus.md",
-    "Mathematics/Sums/Manipulation.md",
-    "Mathematics/Sums/General Methods.md",
-    "Mathematics/Sums/Multiple Sums.md",
-    "Mathematics/Foundations/Trig Functions.md",
-    "Mathematics/Foundations/Sequences and Series.md",
-    "Computer Science/Algorithm Fundamentals/Algorithms.md",
-    "Computer Science/Basic Algorithms/Fundamental Graph Algorithms.md",
-    "Mathematics/Foundations/Set Theory.md",
-    "Mathematics/Foundations/Russel's Paradox.md",
     "Mathematics/Foundations/powerset.ipynb",
     "Mathematics/Foundations/fibonacci.ipynb",
     "Mathematics/Sums",

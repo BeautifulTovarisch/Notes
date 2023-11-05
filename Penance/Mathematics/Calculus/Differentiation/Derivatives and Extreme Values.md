@@ -44,3 +44,28 @@ The following is a more rigorous proof of Rolle's Theorem:
 > We argue by contradiction and use the vanishing derivative theorem to show $f'(c) = 0$. By the [[Extreme Values#Extreme Value Theorem]] $f$ must take on its absolute minimum and maximum somewhere in the interval $[a, b]$. But then the value cannot occur in the interior interval $(a, b)$ since otherwise the derivative would vanish, and so it must be the case that $f$ has its extrema at $a$ and $b$, but $f(a) = f(b)$ and so $f$ is constant, and its derivative is zero everywhere on $[a, b]$. Thus there must exist some $c$ in the interval such that $f'(c) = 0$.
 > 
 > $\blacksquare$
+
+### Proof of the Mean Value Theorem
+
+In order to use Rolle's theorem, we need to define a function that takes on equal values at its endpoints. We then show that this function has a derivative and show that this leads to the desired equality.
+
+> [!abstract] Mean Value Theorem
+> Assume $f$ is continuous over $[a, b]$ and differentiable at each point in an open interval $(a, b)$. Then there is at least one $c \in (a, b)$ such that:
+> $$
+> f(b) - f(a) = f'(c)(b - a)
+> $$
+> 
+> Proof.
+> We define a function $\phi$ to be the secant line through points $(a, f(a))$ and $(b, f(b))$. We show that derivative of $f$ is equal to the slope of this line at some point in the interval $(a, b)$:
+> $$
+> \phi(x) = f(x)(b-a) - x[f(b) - f(a)] 
+> $$
+> 
+> Since $f$ is differentiable over the entire interval, $\phi'(x)$ must exist, and so we have $\phi'(x) = 0$ for some $c \in (a, b)$ by Rolle's Theorem. Rearranging the subsequent equation we find:
+> $$
+> \phi'(c) = f'(c)(b - a) - (f(b) - f(a)) = 0 \iff f'(c)(b - a) = f(b) - f(a)
+> $$
+> 
+> Which is the desired equation.
+> 
+> $\blacksquare$
