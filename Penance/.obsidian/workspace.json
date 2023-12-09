@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "73584eaa74c716ec",
+        "id": "ed06edd267cc0180",
         "type": "tabs",
         "children": [
           {
-            "id": "f4117424579e677c",
+            "id": "d2b6c8aa1b1497a4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Combinatorics/Basics of Counting.md",
+                "file": "Mathematics/Exponents and Logarithms/Journey to the Natural Log.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "ca40887ea79f30de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mathematics/Calculus/CheatSheet.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Combinatorics/Basics of Counting.md",
+                "file": "Mathematics/Calculus/CheatSheet.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Combinatorics/Basics of Counting.md",
+                "file": "Mathematics/Calculus/CheatSheet.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Combinatorics/Basics of Counting.md"
+                "file": "Mathematics/Calculus/CheatSheet.md"
               }
             }
           },
@@ -156,34 +169,38 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f4117424579e677c",
+  "active": "ca40887ea79f30de",
   "lastOpenFiles": [
-    "Mathematics/Combinatorics/Example Bijections.md",
-    "Mathematics/Combinatorics/Counting Principles.md",
-    "Mathematics/Combinatorics/Basics of Counting.md",
-    "Computer Science/Basic Algorithms/Checking Component Connectedness.md",
-    "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
-    "Computer Science/Basic Algorithms/Representations of Sets.md",
-    "Computer Science/Basic Algorithms/Spanning Tree.md",
-    "Computer Science/Basic Algorithms/Fundamental Graph Algorithms.md",
-    "Mathematics/Foundations/Relations/Closure.md",
-    "Mathematics/Foundations/Set Theory.md",
-    "Mathematics/Foundations/Relations/Relations.md",
-    "Mathematics/Foundations/Relations/Functions.md",
-    "Mathematics/Foundations/Relations/Recurrence Relation.md",
-    "Mathematics/Foundations/Relations/Partial Order.md",
-    "Mathematics/Foundations/Russel's Paradox.md",
-    "Computer Science/Algorithm Fundamentals/Algorithms.md",
-    "Computer Science/Algorithm Fundamentals/Theorems to Algorithms.md",
-    "Computer Science/Algorithm Fundamentals/Correctness of Algorithms.md",
-    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
-    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
-    "Mathematics/Calculus/Differentiation/The Derivative.md",
+    "Computer Science/sed2lu1aI",
+    "sedbmENAU",
+    "Mathematics/Exponents and Logarithms/Additional Properties of the Logarithm.md",
     "Mathematics/Foundations/Exponents and Logarithms.md",
+    "Mathematics/Exponents and Logarithms/The Natural Logarithm.md",
+    "Mathematics/Exponents and Logarithms/Journey to the Natural Log.md",
+    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
     "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
-    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+    "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
+    "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
+    "Mathematics/Calculus/Integration/Applications of Integration.md",
+    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
+    "Mathematics/Foundations/Functional Equations.md",
+    "Mathematics/Calculus/CheatSheet.md",
+    "Mathematics/Calculus/Plots/polynomial-integral.svg",
+    "Curriculum.md",
+    "Mathematics/Sums/Finite Calculus.md",
+    "Mathematics/Foundations/Quadratics.md",
+    "Mathematics/Calculus/Continuity/Extreme Values.md",
     "Mathematics/Foundations/Factoring Tricks.md",
-    "Computer Science/Pre-Algorithms Checklist.md",
+    "Mathematics/Calculus/Differentiation/The Derivative.md",
+    "Computer Science/Graphs/Checking Component Connectedness.md",
+    "Computer Science/Graphs/Spanning Tree.md",
+    "Computer Science/Graphs/Graph Traversal.md",
+    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+    "Mathematics/Exponents and Logarithms",
+    "Mathematics/Foundations/Trig Functions.md",
+    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
+    "Computer Science/Graphs",
     "Mathematics/Foundations/powerset.ipynb",
     "Mathematics/Foundations/fibonacci.ipynb",
     "Mathematics/Sums",
@@ -191,12 +208,8 @@
     "Mathematics/Combinatorics",
     "Mathematics/Calculus/Integration",
     "Mathematics/Calculus/Continuity",
-    "Mathematics/Calculus/Plots/polynomial-integral.svg",
-    "Mathematics/Calculus/Plots",
     "Mathematics/Foundations/example.svg",
-    "Mathematics/Foundations/example",
     "Mathematics/Foundations/plot.svg",
-    "Mathematics/Calculus",
     "Untitled.canvas",
     "env/lib/python3.8/site-packages/qtconsole/resources/icon/JupyterConsole.svg",
     "env/lib/python3.8/site-packages/notebook/static/be0a084962d8066884f7.svg",

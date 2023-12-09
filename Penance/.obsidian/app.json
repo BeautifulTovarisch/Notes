@@ -2,5 +2,7 @@
   "vimMode": true,
   "alwaysUpdateLinks": true,
   "livePreview": false,
-  "attachmentFolderPath": "Computer Science/AWS/Compute"
+  "attachmentFolderPath": "Computer Science/AWS/Compute",
+  "autoPairBrackets": false,
+  "autoPairMarkdown": false
 }

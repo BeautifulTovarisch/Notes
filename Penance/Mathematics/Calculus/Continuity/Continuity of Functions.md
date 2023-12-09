@@ -22,7 +22,7 @@ A more rigorous definition of limits requires us to define the concept of a neig
 > [!info] Neighborhood of $x$
 > We refer to any open interval with $x$ as its midpoint as a **neighborhood** of $x$.
 
-We express the precision definition of a limit in terms of arbitrarily narrow neighborhoods:
+We express the definition of a limit in terms of arbitrarily narrow neighborhoods:
 
 > [!info] Neighborhood Definition of a Limit
 > Let $N(A)$ be a neighborhood of $A$ and $N(p)$ be a neighborhood of $p$. We say that $\lim_{x \to p} f(x) = A$ if and only if $\forall N(A) \; \exists N(p)$ such that
@@ -53,6 +53,27 @@ Limits exhibit similar properties to the integral. These directly imply the cont
 > $$
 > 
 > Proof.
+> Suppose for functions $f$ and $g$ we have:
+> $$
+> \begin{align}
+> &0 < |f(x) - L_1| < \frac \epsilon 2, &0 < |x - p| < \delta_1 \\
+> &0 < |g(x) - L_2| < \frac \epsilon 2, &0 < |x - p| < \delta_2 \\
+> \end{align}
+> $$
+> Adding these inequalities:
+> $$
+> 0 < |f(x) - L_1| + |g(x) - L_2| < \epsilon \; |x-p| < \min(\delta_1, \delta_2)
+> $$
+> by Triangle Inequality:
+> $$
+> \begin{align}
+> 0 < |f(x) + g(x) - (L_1 + L_2)| < \epsilon \; |x-p| < \delta
+> \end{align}
+> $$
+> From the final inequality, we see that $\lim_{x \to p} [f(x) + g(x)] = L_1 + L_2$.
+> 
+> $\blacksquare$
+
 
 > [!abstract] Difference Rule
 > $$
@@ -60,6 +81,12 @@ Limits exhibit similar properties to the integral. These directly imply the cont
 > $$
 > 
 > Proof.
+> Equality follows immediately from the addition rule:
+> $$
+> \lim_{x \to p} f(x) - \lim_{x \to p} g(x) = \lim_{x \to p} f(x) + -\lim_{x \to p} g(x) = \lim_{x \to p}[f(x) - g(x)]
+> $$
+> 
+> $\blacksquare$
 
 > [!abstract] Product Rule
 > $$
@@ -90,7 +117,7 @@ Using a limit, we can now precisely define what it means for a function to be co
 If we can find two functions that "squeeze" or bound another above and below then we can show their limits are equal. This is helpful when we happen to know a function is bounded by two others which either have known limits or those which are easier to evaluate.
 
 > [!abstract] Squeeze Theorem
-> Suppose that $f(x) \leqslant g(x) \leqslant h(x)$ for all $x \neq p$ in some $N(p)$. Suppose also that $\lim_{x \to p} f(x) = \lim_{x \to p} g(x) = a$. Then $\lim_{x \to p} g(x) = a$.
+> Suppose that $f(x) \leqslant g(x) \leqslant h(x)$ for all $x \neq p$ in some $N(p)$. Suppose also that $\lim_{x \to p} f(x) = \lim_{x \to p} h(x) = a$. Then $\lim_{x \to p} g(x) = a$.
 > 
 > Proof.
 > Suppose $\epsilon > 0$ is given and notice that by assumption we have $|f(x) - a| < \epsilon$ whenever $0 < |x - p| < \delta$ and similarly for $h(x)$. Choose the minimum $\delta$ between the two inequality for $f$ and $h$ and write,

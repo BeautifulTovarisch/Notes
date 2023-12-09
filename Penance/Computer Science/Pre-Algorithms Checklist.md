@@ -1,4 +1,6 @@
 
+## Mathematics
+
 Mathematical background required to perform algorithmic analyses.
 
 - [x] General Algebra Proficiency
@@ -21,22 +23,46 @@ Mathematical background required to perform algorithmic analyses.
 - [ ] Number Theory
 	- [ ] Modular Arithmetic
 - [ ] Combinatorics
-	- [ ] Counting
+	- [x] Counting
 	- [ ] Binomial Coefficients
 	- [ ] Generating Functions
 - [ ] Probability
 - [ ] Integration Techniques
-	- [ ] u-substitution
+	- [x] u-substitution
 	- [ ] Tabular integration
-	- [ ] Integration by Parts 
+	- [x] Integration by Parts
 - [ ] Differentiation Techniques
-	- [x] Limits 
+	- [x] Limits
 	- [ ] Epsilon-Delta proofs
 - [ ] Recurrence Relations
 	- [x] Basic Review
 	- [ ] Characteristic Equation
 	- [ ] Repertoire Method
 - [ ] (Optional) gnuplot proficiency
+
+## Data Structures and Algorithms Review
+
+Implement the following data structures and have a thorough understanding before tackling a more challenging algorithms book:
+
+- [ ] Balanced Binary Search Tree
+	- [ ] Heap
+	- [ ] AVL Tree
+	- [ ] Splay Tree
+	- [ ] RB Tree
+- [ ] Priority Queue
+- [ ] Randomized Quicksort
+- [x] Mergesort
+- [ ] Graphs
+	- [ ] Dijkstra's
+	- [ ] Prim's
+	- [ ] Kruskal's
+	- [ ] Breadth-First
+- [ ] Dynamic Programming
+	- [ ] Practice
+	- [ ] Practice
+	- [ ] Practice
+
+Implementations should include worst-case analysis and unit tests (ideally against a brute-force oracle).
 
 ## Resources
 
