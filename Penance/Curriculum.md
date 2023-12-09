@@ -1,4 +1,4 @@
-Curriculum Plan for topics in undergraduate mathematics and computer science. I plan on using the General Study Plan as a guideline. 
+Curriculum Plan for topics in undergraduate mathematics and computer science. I plan on using the General Study Plan as a guideline.
 
 ## Mathematics
 
@@ -6,10 +6,10 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 
 - MAF1: Algebra - I.M Gelfand
 - MAF2: Algebra and Trigonometry - Axler
-- MAF3: Precalculus: A Prelude to Calculus - Axler 
+- MAF3: Precalculus: A Prelude to Calculus - Axler
 - MAF4: OpenStax Pre-Calculus
 - MAF5: Precalculus with Unit Circle Trig. Cohen
-- MAF6: Precalculus - Stitz/Zeager 
+- MAF6: Precalculus - Stitz/Zeager
 - MAF7: Basic Mathematics - Serge Lang
 - MAF8: Trigonometry - Michel Corral
 - MAF9: Discrete Mathematics with Applications - Epp
@@ -29,7 +29,7 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 
 - MALA1: Coding the Matrix
 - MALA2: Linear Algebra Done Right
-- MALA3: Introduction to Linear Algebra (MIT)* 
+- MALA3: Introduction to Linear Algebra (MIT)*
 - MALA4: Linear Algebra Done Wrong
 - MALA5: Linear Algebra - Friedman, Insel, and Spence
 
@@ -37,7 +37,7 @@ Curriculum Plan for topics in undergraduate mathematics and computer science. I 
 
 - MAMV1: OCW - Multivariable Calculus
 - MAMV2: Apostol Calculus Vol 2
-- MAMV3: Introduction to Calculus and Analysis Vol 2. - Courant 
+- MAMV3: Introduction to Calculus and Analysis Vol 2. - Courant
 
 ### Differential Equations
 
@@ -118,26 +118,26 @@ end
 subgraph Computer Science
 	Programming-->Calc[Calculus];
 	Programming-->Alg[Algorithms];
-	
+
 	Alg-->Sys[Systems];
 	Alg-->Net[Networking];
-	
+
 	LinAlg-->PE[Performance Engineering];
-	
+
 	Sys-->PE[Performance Engineering];
 	Sys-->Comp[Compilers];
-	
+
 	Comp-->DB[Databases];
-	
+
 	Net-->DB[Databases];
-	
+
 	DB-->Dist[Distributed Computing];
 end
 ```
 
 ## Example Curriculum
 
-The following is an example curriculum one might follow in order to establish a solid foundation in mathematics and computer science. More advanced material has been omitted, as the student will generally have the background to elect specific resources by that point. 
+The following is an example curriculum one might follow in order to establish a solid foundation in mathematics and computer science. More advanced material has been omitted, as the student will generally have the background to elect specific resources by that point.
 
 > Dependencies indicated as "partial" are recommended to be studied concurrently, as only certain topics within a subject are required to progress.
 
