@@ -5,18 +5,18 @@ If a set of vectors can be used to construct (or **generate**) the [[Span]] of a
 
 > [!example] Generating Set of $\mathbb{R}^3$
 > We want to demonstrate how **every vector** in $\mathbb{R}^3$ can be written as a [[Linear Combination]] of vectors: $[3, 0, 0], [0, 2, 0], [0, 0, 1]$ and thus these vectors span $\mathbb{R}^3$.
-> 
+>
 > We must show two things:
 > 1. Every linear combination is a vector in $\mathbb{R}^3$
 > 2. Every vector in  $\mathbb{R}^3$ can be written as a linear combination of the above vectors.
-> 
+>
 > (1) follows from the fact that $\mathbb{R}^3$ contains all 3-vectors (and every linear combination we could construct would be a 3-vector).
 > To show (2), we need to find coefficients that satisfy the following for all $[x, y, z] \in \mathbb{R}^3$
 > $$
 > [x, y, z] = \alpha [3, 0, 0] + \beta [0, 2, 0] + \gamma [0, 0, 1]
 > $$
 > we can see that for $\alpha = \frac x 3$, $\beta = \frac y 2$, and $\gamma = z$, we can construct the vector $[x, y, z]$ from a linear combination of our choice vectors.
-> 
+>
 > Therefore, $\{ [3, 0, 0], [0, 2, 0], [0, 0, 1] \}$  is a generating set for $\mathbb{R}^3$.
 
 ## Linear Combinations of Other Linear Combinations
@@ -62,5 +62,5 @@ We can also define standard generators in terms of functions:
 
 > [!info] Standard Generators (Function)
 > For any **finite** domain $D$ and field $\mathbb{F}$, there are standard generators defined for $\mathbb{F}^D$ as:
-> 
+>
 > For all $k \in D$, let $e_k$ be the function mapping $k \to 1$ and all other $d \in D, d \neq k$ mapped to 0.

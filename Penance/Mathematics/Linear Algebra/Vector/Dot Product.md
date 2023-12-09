@@ -22,14 +22,14 @@ Dot products are a central idea in [[Linear Equations]].
 > - $cost = \{hops : 2.50/oz, malt : 1.50/lb, water: 0.006/gallon, yeast: 0.45/g\}$
 > - $quantity = \{hops: 6oz, malt: 14lbs, water: \text{7 gallons}, yeast: 11g\}$
 > - $value = \{hops: 0, malt: 960, water: 0, yeast: 3.25\}$
-> 
+>
 > We can compute *total cost*:
 > $$
 > cost \cdot quantity = 2.50 * 6 + 1.50 * 14 + 0.006 * 7 + 0.45 * 11 = 40.992
 > $$
 > and caloric content per pound:
 > $$
-> value \cdot quantity = 0 * 6 + 960 * 14 + 7 * 0 + 3.25 * 11 
+> value \cdot quantity = 0 * 6 + 960 * 14 + 7 * 0 + 3.25 * 11
 > = 13475.75
 > $$
 
@@ -42,7 +42,7 @@ Dot products are a central idea in [[Linear Equations]].
 - Parity (number of ones is odd) of an integer
 - Challenge-Response Authentication
 	- Attacking weak security by solving a system of equations
- 
+
 ## Algebraic Properties
 
 > [!info] Commutativity
@@ -58,7 +58,7 @@ Dot products are a central idea in [[Linear Equations]].
 > > \end{align}
 > > $$
 > > $\blacksquare$
->  
+>
 
 >[!info] Homogeneity
 >$$

@@ -15,10 +15,10 @@ Let $s, t$ be step functions as defined above and $P_1, P_2$ be the respective p
 
 > [!abstract] Theorem.
 > If $s, t$ are step functions constant over the open sub-intervals of respective partitions $P_1, P_2$ over an interval $[a, b]$, then $s + t$ is a step function defined by $s(x) + t(x)$.
-> 
+>
 > Proof.
 > Let $P$ be $P_1 \cup P_2$ and let $u(x) = s(x) + t(x), a \leqslant x \leqslant b$. Then $u$ is constant over $P$ because $s, t$ are constant over $P_1, P_2$, respectively. Thus $u$ is a step function defined as the sum of $s$ and $t$.
-> 
+>
 > $\blacksquare$
 
 A similar argument follows for $s \cdot t$, which produces a step function.
@@ -31,11 +31,11 @@ We now have enough information to define the definite integral of a step functio
 > Let $s$ be a step function constant over the open sub-intervals of a partition $P = \{ x_0, x_1, \dots, x_n \}$. We define the **definite integral** of $s$ as:
 > $$
 > \int_b^a s(x) \; dx = \sum_{k=1}^n s_k (x_k - x_{k - 1})
-> $$ 
+> $$
 
 That is, we compute the product of the value of $s$ over a particular sub-interval and the length of that interval. We sum these values over the entirety of $P$.
 
-> [!example] 
+> [!example]
 > $\int_0^3 \lfloor 2x \rfloor \; dx = (1)(1 - 0.5) + (2)(1.5 - 1) + (3)(2 - 1.5) + (4)(2.5 - 2) + (5)(3 - 2.5) = 7.5$
 
 > [!tip]

@@ -2,7 +2,7 @@ We work through some example derivations using the techniques of [[Finite Calcul
 
 ## Natural Log
 
-To develop a finite analog of $\int \frac 1 x = \ln(x) + C$, we need a function such that 
+To develop a finite analog of $\int \frac 1 x = \ln(x) + C$, we need a function such that
 
 $$
 \sum_a^b x^{\underline -1} = \sum_a^b \frac 1 {x + 1} = \Delta f(x) = f(x + 1) - f(x)
@@ -17,7 +17,7 @@ $$
 Thus we arrive at the full definition of a definite summation:
 
 $$
-\sum_a^b x^{\underline m} \; \delta x = 
+\sum_a^b x^{\underline m} \; \delta x =
 \begin{cases}
 \frac {x^{\underline {m+1}}} {m+1}, &m \neq -1 \\ \\
 H_x \mid_a^b, &m = -1
@@ -31,8 +31,8 @@ To develop an analog for $\frac d {dx} e^x = e^x$ we must find a function such t
 $$
 \Delta f(x) = f(x)
 \iff
-f(x + 1) - f(x) = f(x) 
-\iff 
+f(x + 1) - f(x) = f(x)
+\iff
 f(x + 1) = 2 f(x)
 $$
 
@@ -52,22 +52,22 @@ An integral like $\int xe^x$ is usually computed using a technique called "integ
 > $$
 > \sum u \Delta v = uv - \sum Ev \Delta u
 > $$
-> 
+>
 > Proof.
 > $$
 > \begin{align}
 > \Delta(u(x)v(x)) &= u(x+1)v(x+1) - u(x)v(x) \\ \\
 > &= u(x+1)v(x+1) + u(x)v(x+1) - u(x)v(x+1) - u(x)v(x) \\ \\
 > &= u(x)\Delta v(x) + v(x+1) \Delta u(x) \\ \\
-> &= u(x)\Delta v(x) + Ev \Delta u(x) 	
+> &= u(x)\Delta v(x) + Ev \Delta u(x)
 > \end{align}
 > $$
-> 
+>
 > Taking the summation of both sides and rearranging, we find:
 > $$
 > \sum \Delta(uv) = \sum u \Delta v + \sum Ev \Delta u \iff \sum u \Delta v = uv - \sum Ev \Delta u
 > $$
-> 
+>
 > $\blacksquare$
 
 > [!example]
@@ -75,7 +75,7 @@ An integral like $\int xe^x$ is usually computed using a technique called "integ
 > $$
 > \sum x 2^x = x 2^x - E2^x (1) = x 2^x - 2^{x+1} = 2^x(x - 2) + C
 > $$
-> 
+>
 > Using the formula for the indefinite summation, we can find the definite sum by affixing upper and lower limits:
 > $$
 > \begin{align}
@@ -87,4 +87,4 @@ An integral like $\int xe^x$ is usually computed using a technique called "integ
 > $$
 
 > [!example]
-> 
+>

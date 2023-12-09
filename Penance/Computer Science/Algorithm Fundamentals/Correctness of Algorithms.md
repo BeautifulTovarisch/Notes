@@ -2,7 +2,7 @@ We want to be able to prove that our algorithms are correct beyond the empirical
 
 > [!info] Definition
 > - **pre-condition** - Propositions we expect to be true before execution
-> > [!example] 
+> > [!example]
 > > $a$ is a nonnegative integer.
 > - **post-condition** - Conditions that must hold after the algorithm is complete
 > > [!example]
@@ -64,7 +64,7 @@ For algorithms involving iteration, we want to establish a **loop invariant** an
 > - $I(0)$ establishes the **basis**.
 > - $I(N) \implies I(N+1)$ using the **[[Induction|inductive hypothesis]]**.
 > - $I(N)$ implies the post-condition of the algorithm
-> - The loop terminates. 
+> - The loop terminates.
 
 ### Arithmetic Sum
 
@@ -94,9 +94,9 @@ Thus we establish the post-conditions of $s = \sum_{i=1}^N i$.
 > &= \sum_{i=1}^n i + i + 1 &\text{Substiution} \\
 > &= \sum_{i=1}^{n+1} i &\text{Definition}
 > \end{align}
-> $$ 
+> $$
 > Therefore, we have shown that $I(N) \implies I(N+1)$ and so the post-condition of the algorithm is satisfied.
-> Finally, since $i_{N} = N + 1 \not \lt N$, the guard of the loop will fail and the algorithm will terminate. Thus the algorithm is correct. 
+> Finally, since $i_{N} = N + 1 \not \lt N$, the guard of the loop will fail and the algorithm will terminate. Thus the algorithm is correct.
 > $\blacksquare$
 
 ### Find Minimum
@@ -119,19 +119,19 @@ def findMin(A):
 > [!abstract] findMin(A) returns the minimum element of A
 > Proof. Suppose A is a nonempty array of integers and define $A[i..j]$ as:
 > $$
-> A[i..j] = \{ A_k : i \leq k \lt j \} 
+> A[i..j] = \{ A_k : i \leq k \lt j \}
 > $$
 > additionally define "minimum" as:
 > $$
-> x = min(A) \iff \forall y \in A, x \leq y 
+> x = min(A) \iff \forall y \in A, x \leq y
 > $$
 > Suppose $|A| = 1$, then $min = A[0]$ since clearly $A[0] \leq A[0]$. Hence $\exists n \geq 1$ such that $min$ is the minimum of $A[0..n]$
 > Now define $min_n, min_{n+1}$ as the value of $min$ after $n$ and $n+1$ iterations, respectively and define $i_n, i_{n+1}$ the same way. Then for $min_{n+1}$ we consider the two cases over $min_n$ and $A[i_n]$.
-> 
+>
 > ($min_n \leq A[i_n]$): Then $min_{n+1} = min_n$. Let $x \in A[0..i_{n+1}]$, then either $x = A[i_n] = min_{n+1}$ (by substitution) or $x \in A[0..i_n]$ and so $min_{n+1} = min_n \leq x$ by inductive hypothesis.
-> 
+>
 > ($min_n \gt A[i_n]$): Then $min_{n+1} = A[i_n]$ by assignment. Clearly $min_{n+1} = A[i_n] \leq A[i_n]$, so let $x \in A[0..i_n]$. By the inductive hypothesis and substitution, $min_{n+1} \leq min_n \leq x$, and so $min_{n+1}$ is the minimum of $A[0..i_{n+1}]$.
-> 
+>
 > Thus, in either case $min_{n+1}$ is the minimum of $A[0..i_{n+1}]$ and so the inductive case is shown. Finally, after $N = |A|$ iterations, $i_{n+1} = i_{n} + 1 \implies i = N + 1 \not \lt N$, and so the loop terminates and the proof is complete.
 > $\blacksquare$
 
@@ -162,12 +162,12 @@ def divisionAlg(n, d):
 > \end{align}
 > $$
 > Hence, the invariant holds for $k = 0$ and thus $\exists K \geq 0$ such that $n_K = dq_K + r_K$. Now consider $K = k + 1$. We must show that $n = dq_{k+1} + r_{k+1}$.
-> 
+>
 > We start by noticing the values of $q_{k+1}, r_{k+1}$:
 > $$
 > \begin{align}
 > &r_{k+1} = r_k - d \\
-> &q_{k+1} = q_k + 1 
+> &q_{k+1} = q_k + 1
 > \end{align}
 > $$
 > So then by substitution:
@@ -177,7 +177,7 @@ def divisionAlg(n, d):
 > &= dq_k + r_k \\
 > &= n &\text{I.H}
 > \end{align}
-> $$ 
+> $$
 > Thus we have shown the loop invariant holds for the inductive step, and the proof is complete.
-> 
+>
 > $\blacksquare$

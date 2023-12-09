@@ -13,13 +13,13 @@ The above graph would be denoted $G = (V, E)$ where $V = \{ a, b, c, d, e \}$ an
 
 > [!info] Graph Terminology
 > The following are common terms when describing a graph.
-> 
+>
 > **Path**: A sequence of vertices $u_1, u_2, \dots, u_k$ such that every $(u_k, u_{k+1})$ is an edge in $E$
-> 
+>
 > **Simple**: A simple **path** is one in which all vertices are distinct.
-> 
+>
 > **Cycle**: A path $v_1, \dots, v_k$ where the first $k-1$ vertices are distinct and the $k$th vertex is equal to the first.
-> 
+>
 > ```mermaid
 > graph LR
 > a---b
@@ -27,9 +27,9 @@ The above graph would be denoted $G = (V, E)$ where $V = \{ a, b, c, d, e \}$ an
 > c---d
 > d---a
 > ```
-> 
+>
 > **Connected**: A graph is connected if for every $u, v \in V$, $(u, v) \in E$. A directed graph is called **strongly connected** if all vertices are **mutually reachable**
-> 
+>
 > **Distance**: The **minimum** number of edges between two vertices.
 
 A common special case of a graph is called a **tree**, which has the following properties:
@@ -46,5 +46,5 @@ A common special case of a graph is called a **tree**, which has the following p
 > c---g
 > ```
 
-> [!todo] 
+> [!todo]
 > Prove some basic theorems about graphs. (See Epp)

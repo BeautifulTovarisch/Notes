@@ -3,13 +3,13 @@
 We start off by using an **adjacency list** to represent a graph $G$. An **adjacency list** contains all vertices of $G$ as well as the nodes with which they share a connection.
 
 > [!info] Adjacent
-> Let $v_0, v_1 \in V$ and and let $G = V, E$. We say $v_0, v_1$ are **adjacent** if there exists an edge between them. 
+> Let $v_0, v_1 \in V$ and and let $G = V, E$. We say $v_0, v_1$ are **adjacent** if there exists an edge between them.
 
 There are two main ways to represent a graph, an **adjacency matrix** and **adjacency list**. For most purposes, the **adjacency list** representation will be used.
 
-> [!info] Adjacency Matrix 
+> [!info] Adjacency Matrix
 > Assume $G = (V, E)$ and let $n = |V|$. An **adjacency matrix**, $A$ is an $n \times n$ matrix in which each entry $A_{u,v}$ corresponds to whether there is an edge $(u, v) \in E$. For undirected graphs, $A$ is symmetrical.
-> 
+>
 > ```mermaid
 > graph LR
 >	a---b
@@ -20,7 +20,7 @@ There are two main ways to represent a graph, an **adjacency matrix** and **adja
 > ```
 > This graph is represented by the following matrix:
 > $$
-> \begin{array}{c c} 
+> \begin{array}{c c}
 > & \begin{array}{c c c} a & b & c & d & e \\ \end{array} \\
 > \begin{array}{c c c}a \\ b \\ c \\ d \\ e \end{array} &
 > \left[
@@ -39,7 +39,7 @@ An adjacency matrix uses $O(n^2)$ space regardless of the number of edges betwee
 
 > [!info] Adjacency List
 > Assume $G = (V, E)$ and let $n = |V|, m = |E|$. An **adjacency list** is a mapping from a node to its incident edges.
-> 
+>
 > ```mermaid
 > graph LR
 >	a---b
@@ -48,9 +48,9 @@ An adjacency matrix uses $O(n^2)$ space regardless of the number of edges betwee
 >	b---d
 >	d---e
 > ```
-> 
+>
 > Is represented by:
-> 
+>
 > ```python
 > {
 > 	'a': [b, c],
@@ -61,7 +61,7 @@ An adjacency matrix uses $O(n^2)$ space regardless of the number of edges betwee
 > }
 > ```
 
-## Depth-First Search 
+## Depth-First Search
 
 ```mermaid
 graph TD
@@ -79,7 +79,7 @@ graph TD
 
 > An example depth-first traversal of the above graph:  1, 2, 4, 7, 3, 8, 9
 
-Depth-first traversal of a graph traverse a neighbor immediately before considering other neighbors. 
+Depth-first traversal of a graph traverse a neighbor immediately before considering other neighbors.
 
 The following program computes whether a `dst` is reachable from `src` using a depth-first traversal.
 
@@ -177,7 +177,7 @@ The linear runtime follows from examination of the inner loop, assuming other op
 
 $$
 \begin{align}
-\sum_{k=1}^n 1 + \deg(k) &= \sum_{k=1}^n 1 + \sum_{k=1}^n \deg(k) = n + 2m 
+\sum_{k=1}^n 1 + \deg(k) &= \sum_{k=1}^n 1 + \sum_{k=1}^n \deg(k) = n + 2m
 \end{align}
 $$
 

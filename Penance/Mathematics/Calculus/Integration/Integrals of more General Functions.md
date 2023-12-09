@@ -22,11 +22,11 @@ Here we go through a rigorous proof using the above definition and properties of
 
 > [!abstract] Theorem
 > If $f$ is monotonic on $[a, b]$, then $f$  is integratable on $[a, b]$.
-> 
+>
 > Proof.
 > Assume $f$ is increasing everywhere on $[a, b]$. We must show $\underline I(f) = \overline I(f)$. Let $P = \{x_0, x_1, \dots, x_n \}$ partition $[a, b]$ into equal subintervals, that is, of size $\frac {b - a} n$. Define step functions $s(x) = f(x_{k-1})$ and $t(x) = f(x_k)$ (because $f$ is increasing and by the comparison theorem, $s(x) \leqslant t(x)$ everywhere on $[a, b]$).
-> 
-> Now consider 
+>
+> Now consider
 > $$
 > \begin{align}
 > \int_a^b t - \int_a^b s &= \sum_{k=1}^n f(x_k) (x_k - x_{k-1}) - \sum_{k=1}^n f(x_{k-1}) (x_k - x_{k-1}) \\
@@ -34,7 +34,7 @@ Here we go through a rigorous proof using the above definition and properties of
 > &= \frac {b-a} n (f(b) - f(a))
 > \end{align}
 > $$
-> 
+>
 > Now let $C = (b-a)(f(b) - f(a))$ and so sum of areas is $\frac C n$. Thus
 > $$
 > \begin{align}
@@ -42,7 +42,7 @@ Here we go through a rigorous proof using the above definition and properties of
 > &\int_a^b s \leqslant \overline I(f) \leqslant \int_a^b t &\text{(ii)}
 > \end{align}
 > $$
-> 
+>
 > Multiplying $(i)$ by -1 and adding the result to $(ii)$ we have
 > $$
 > \begin{align}
@@ -51,7 +51,7 @@ Here we go through a rigorous proof using the above definition and properties of
 > &\implies \overline I(f) = \underline I(f) &\text{Archimedes}
 > \end{align}
 > $$
-> 
+>
 > Thus, we have shown $f$ is integratable on $[a, b]$. The proof for a decreasing function is nearly identical. $\blacksquare$
 
 ## Calculation of the Integral of a Bounded Monotonic Function
@@ -61,10 +61,10 @@ We now prove that the definition of the integral is the unique number "contained
 > [!abstract] Theorem.
 > Assume $f$ is increasing over an interval $[a, b]$ and let $x_k = a + \frac {k(b-a)} n$ (the interval formed by $a$ and the $kth$ sub-interval of $[a, b]$) where $k \in \mathbb{N}$. If $I$ is any number such that:
 > $$
-> \frac {(b-a)} n \sum_{k=0}^{n-1} f(x_k) \leqslant I \leqslant \frac {(b-a)} n \sum_{k=1}^{n} f(x_k) 
+> \frac {(b-a)} n \sum_{k=0}^{n-1} f(x_k) \leqslant I \leqslant \frac {(b-a)} n \sum_{k=1}^{n} f(x_k)
 > $$
-> 
+>
 > Then $f$ is integratable on $[a,b]$ and $I = \int_a^b f(x) \; dx$.
-> 
+>
 > Proof.
 > Let $s, t$ be approximating step functions as defined in the [[Integrals of more General Functions#Integratability of Bounded Monotonic Functions]] proof.  Then we know that $\int_a^b s \leqslant I \leqslant \int_a^b t$. But then by definition $I$ is a number that satisfies the inequality and following the same conclusion, we see that $I = \int_a^b f(x) \; dx$ $\blacksquare$

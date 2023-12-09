@@ -10,27 +10,27 @@ We know that the integral exists because $x^p$ is bounded and increasing when $p
 > [!abstract]
 > Theorem.
 > If $p \in \mathbb{Z}^+$, then $\int_a^b x^p \; dx = \frac {b^{p+1}} {p+1}$.
-> 
+>
 > Proof.
-> Notice that by the previous theorem, 
+> Notice that by the previous theorem,
 > $$
 > \sum_{k=1}^{n-1} k^p \leqslant \frac {n^{p+1}} {p+1} \leqslant \sum_{k=1}^{n} k^p, \; n \geqslant 1
 > $$
 > Multiplying by $\frac {b^{p+1}} {n^{p+1}}$ we get:
 > $$
 > \begin{align}
-> &\frac {b^{p+1}} {n^{p+1}} \sum_{k=1}^{n-1} k^p \leqslant 
-> \frac {b^{p+1}} {p+1} \leqslant 
+> &\frac {b^{p+1}} {n^{p+1}} \sum_{k=1}^{n-1} k^p \leqslant
+> \frac {b^{p+1}} {p+1} \leqslant
 > \frac {b^{p+1}} {n^{p+1}} \sum_{k=1}^{n} k^p, \; \\
 > & \frac b n \sum_{k=1}^{n-1} \left(\frac {bk} {n}\right)^p \leqslant
 > \frac {b^{p+1}} {p+1} \leqslant
 > \frac b n \sum_{k=1}^{n} \left(\frac {bk} {n}\right)^p \\
 > & \frac b n \sum_{k=1}^{n-1} f(x_k) \leqslant
 > \frac {b^{p+1}} {p+1} \leqslant
-> \frac b n \sum_{k=1}^{n} f(x_k) 
+> \frac b n \sum_{k=1}^{n} f(x_k)
 > \end{align}
 > $$
-> 
+>
 > Where in the final step we let $f(x) = x^p$ and $x_k = \frac {kb} n$. So then by the previous theorem we have $I = \frac {b^{p+1}} p+1 = \int_a^b x^p \; dx$ since it satisfies the desired inequality.
 > $\blacksquare$
 
@@ -61,7 +61,7 @@ $$
 > \left. [\frac {x^3} 3 - \frac 3 2 x^2 + 5x] \right|_1^3 \\
 > &= \frac {3^3 - 1^3} {3} - \frac 3 2 (3^2 - 1^2) + (5(3) - 5(1)) \\
 > &= \frac {26} 3 - 2 \\
-> &= \frac {20} 3 
+> &= \frac {20} 3
 > \end{align}
 > $$
 

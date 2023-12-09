@@ -5,31 +5,31 @@ This section contains some basic algorithms and nicely transitions to proofs of 
 
 ## Long Division
 
-> [!todo] 
+> [!todo]
 > Express this as a mathematical algorithm and rewrite to be cleaner.
 
 ```Python
 def longdiv(divisor, dividend, N):
 	result = remainder = 0
 	i = N - 1
-	
+
 	while dividend > 0:
 		remainder = remainder * 10 + (dividend // (10 ** i))
 		quotient = remainder // divisor
 		product = quotient * divisor
 		result = result * 10 + quotient
 		remainder = remainder - product
-		
+
 		dividend = dividend % (10 ** i)
-		
+
 		i -= 1
-	
+
 	return (result, remainder)
 
 # longdiv(8, 3521, 4) == (440, 1)
 ```
 
-## Powerset 
+## Powerset
 
 Computing the powerset involves appending those subsets containing a given $a \in A$ and those without. The powerset in this manner is built up [[Induction|inductively]] starting with the null set as a basis.
 

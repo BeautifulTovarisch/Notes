@@ -3,7 +3,7 @@ Induction is a proof technique which shows that for some $n \in \mathbb{Z}, I(n)
 > [!info] General Structure of an Inductive Proof
 > **Proof**. {reformulation of the theorem in terms of $n$}. "By induction on $n$"
 > **Basis**: Suppose $n = 0$, ...{base case shown}... Hence, $\exists N \in \mathbb{N} \geq 0, I(N)$
-> **Inductive Case**: Suppose $n = N + 1$. {show that the **inductive hypothesis** leads to $I(N+1)$} 
+> **Inductive Case**: Suppose $n = N + 1$. {show that the **inductive hypothesis** leads to $I(N+1)$}
 > $\blacksquare$
 
 ## Famous Counterexample
@@ -11,13 +11,13 @@ Induction is a proof technique which shows that for some $n \in \mathbb{Z}, I(n)
 > [!abstract] All cows are the same color
 > Proof. Let $I(n)$ be the proposition:
 > > For any set of Cows, $C$, $\forall c_1, c_2 \in C, c_1 \neq c_2$, $c_1$ is the same color as $c_2$
-> 
+>
 > **Basis**. Suppose we have one cow. Then clearly $I(1)$ holds because a cow is the same color as itself. Hence $\exists N \geq 1, I(N)$.
-> 
+>
 > **Inductive Case**. Suppose we have a set of cows, $C$ such that $|C| = N+1$.  Notice for a arbitrary cow $c_1 \in C, |C - \{c_1\}| = N$, and so all the cows in $C - \{c_1\}$ are the same color by inductive hypothesis. Now choose $c_2 \in C$. We conclude the same about $C - \{c_2\}$ using the inductive hypothesis.
 > > [!note]
 > > There must be at least two cows since $N \geq 1 \implies N + 1 \geq 2$.
-> 
+>
 > Thus, since both $c_1$ and $c_2$ are the same color as every cow in $C$, they too must also be the same color, and so we have shown $I(N+1)$ holds. $\blacksquare$
 
 The issue with the above is that the use of the inductive hypothesis presumes $I(2)$ before establishing the inductive step, in other words, we "skip" over the case of $n = 2$ and presume the set $C$ has at least three cows before pulling one out and applying the inductive hypothesis. We can see for $n = 1$:
@@ -76,11 +76,11 @@ A fun example. Noting this down since I keep forgetting the "add zero" trick of 
 > \end{align}
 > $$
 > Now $x-1|(x-1)x^n$, and by inductive hypothesis $x-1|x^n-1$, so we must show that $a|b, a|c \implies a | b + c$.
-> 
+>
 > > [!abstract] Lemma a. $a|b, a|c \implies a | b + c$
 > > Proof. Suppose $a, b, c \in \mathbb{N}$, and $a|b, \; a|c$. Then,
 > > $\exists k, j \in \mathbb{N}$ such that, $ak = b, aj = c$. So then, $b + c = ak + aj = a(k + j)$.
 > > $\blacksquare$
-> 
+>
 > Now by Lemma a. we have shown that if $x-1|x^n -1$ and $x-1|(x-1)x^n$ implies $x-1|(x-1)x^n + x^n - 1$, and so the theorem holds by mathematical induction.
 > $\blacksquare$.

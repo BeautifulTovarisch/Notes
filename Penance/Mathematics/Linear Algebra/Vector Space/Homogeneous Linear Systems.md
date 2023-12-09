@@ -29,7 +29,7 @@ $$
 
 "The line consisting of the set of triples, $[x, y, z]$ that satisfy the linear system"
 
-## Uses of the Multiple Representations 
+## Uses of the Multiple Representations
 
 In certain scenarios, one representation of the [[Geometry of Sets of Vectors|flat]] may be easier to apply than the other.
 

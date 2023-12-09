@@ -11,13 +11,13 @@ Set
 	is-in :: (T, Set<T>) -> Bool
 	union :: (Set<T>, Set<T>) -> Set<T>
 	insert :: (T, Set<T>) -> Set<T>
-	to-list :: (Set<T> -> List<T>) 
+	to-list :: (Set<T> -> List<T>)
 ```
 
-A key decision to make here is whether we allow the storage of duplicates. 
+A key decision to make here is whether we allow the storage of duplicates.
 
 | Duplicates | size    | insert | is-in |
-| ---------- | ------- | ------ | ----- | 
+| ---------- | ------- | ------ | ----- |
 | N          | O(n)    | O(n)   | O(n)  |
 | Y          | $O(n^2)$ | O(1)   | O(n)  |
 
@@ -68,10 +68,10 @@ We see that in the above construction, called a Binary Search Tree (BST), each e
 > insert(2, t)
 > # ...
 > insert(k, t)
->``` 
+>```
 > This would produce a tree that is skewed to the right:
 > ```mermaid
-> graph LR 
+> graph LR
 > A((1))-->B((2))
 > B((2))-->C((3))
 > C((3))-->D((4))
@@ -80,7 +80,7 @@ We see that in the above construction, called a Binary Search Tree (BST), each e
 
 ## Self-Balancing Trees
 
-Rectifying the inherent flaw in BSTs requires some additional bookkeeping. We want to introduce the notion of a "balanced" tree such that we can guarantee logarithmic complexity of operations in the worst case. 
+Rectifying the inherent flaw in BSTs requires some additional bookkeeping. We want to introduce the notion of a "balanced" tree such that we can guarantee logarithmic complexity of operations in the worst case.
 
 > [!info] Balanced BST
 > Let $T$ be a binary tree. For each node, we let $B = height(L) - height(R)$ (called the **balance factor**) where $L$ and $R$ are the left and right subtrees of a node. We say $T$ is **balanced** if and only if $|B| \leqslant 1$ for all nodes in $T$.
@@ -108,7 +108,7 @@ def height(t):
 	return max(1 + height(t.l), 1 + height(t.r))
 ```
 
-#### BST Invariant 
+#### BST Invariant
 
 ```python
 # NOTE: Normally we assume implementations of min and max. The following checks each node for correctness without finding these absolutes.
@@ -144,7 +144,7 @@ def isBalanced(t):
 	whether the number of nodes along a left subtree in [t] exceeds that of
 	the corresponding rightsubtree by more than 1.
 
-	Parameters: 
+	Parameters:
 		t (Binary Search Tree): A non-empty Binary Search Tree
 
 	Output:
@@ -154,8 +154,8 @@ def isBalanced(t):
 	if isLeaf(t):
 		return True
 
-	return abs(height(t.l) - height(t.r) <= 1) and 
-			isBalanced(t.l) and 
+	return abs(height(t.l) - height(t.r) <= 1) and
+			isBalanced(t.l) and
 			isBalanced(t.r)
 ```
 

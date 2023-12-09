@@ -17,7 +17,7 @@ Generally, choosing a good hash table size requires an understanding of the dist
 
 ## Bloom Filters
 
-An interesting data structure that trades deterministic answers for both space and time complexity is called a bloom filter. 
+An interesting data structure that trades deterministic answers for both space and time complexity is called a bloom filter.
 
 > [!todo]
 > Elaborate more on bloom filters later, or move to "advanced" section

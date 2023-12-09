@@ -10,8 +10,8 @@ Take $S$ to be the "set of all sets". We notice that $R_s \in S$ since $S$ conta
 
 Since $R_s \in S$, we want to know if $R_s \in R_s$.
 
-> [!tip] 
-> It was helpful for me to visualize $S = \{\dots, R_s, \dots\}$, and make the direct connection that if $R_s \in S$, then it could be substituted for $a$ in 
+> [!tip]
+> It was helpful for me to visualize $S = \{\dots, R_s, \dots\}$, and make the direct connection that if $R_s \in S$, then it could be substituted for $a$ in
 > $$
 > R_s = \{ a = R_s \in S : a \not \in a \}
 > $$
@@ -28,5 +28,5 @@ Since $R_s \in S$, we want to know if $R_s \in R_s$.
 > Now we consider two cases of $B \in B$:
 > 1. Suppose $B \in B$, then $B$ is an element of $A$ that contains itself, a contradiction.
 > 2. Suppose $B \not \in B$, then $B \in A$, but does not contain itself, another contradiction.
-> 
+>
 > Thus we have arrived at a contradiction, and therefore $\mathcal{P}(A) \not \subseteq A$. $\blacksquare$

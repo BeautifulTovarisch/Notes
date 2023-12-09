@@ -8,7 +8,7 @@
 > \begin{align}
 > \alpha \; &\text{is a vector} \\
 > x \; &\text{is a vector variable} \\
-> and \; \beta \; &\text{is a scalar} 
+> and \; \beta \; &\text{is a scalar}
 > \end{align}
 > $$
 
@@ -18,8 +18,8 @@ Generally we are presented with the [[Vectors over GF(2)#Lights Out Puzzle|probl
 >Define $D = \{radio, sensor, memory, cpu\}$
 >and consider the following vectors:
 > - $rate = \{memory:0.06W, radio:0.1W, sensor:0.004W, CPU: 0.0025W\}$
-> - $duration = \{memory: 1s, radio: 0.25s, sensor:0.5s, CPU: 1s\}$ 
-> 
+> - $duration = \{memory: 1s, radio: 0.25s, sensor:0.5s, CPU: 1s\}$
+>
 > Then the *total* energy consumed by the sensor is given by:
 > $$
 > \text{total energy} = rate \cdot duration = 0.0845J
@@ -107,7 +107,7 @@ The main idea is to "solve backwards", finding the last component first and deri
 We can describe the general algorithm of backwards substitution as follows:
 1. Initialize $x := \text{zero vector}$
 2. Compute $x_i$ by computing the dot product of $x$ and the current sub-expression
-3. Move to sub-expression $i-1$ 
+3. Move to sub-expression $i-1$
 
 The value computed in step two is given by the formula:
 $$
@@ -137,9 +137,9 @@ def triangular_solve_n(rowlist, b):
 
 		b = [7, 4, 12]
 
-		triangular_solve_n(rowlist, b) = [17.8, 4.4, -1.2] 
+		triangular_solve_n(rowlist, b) = [17.8, 4.4, -1.2]
 	'''
-	
+
 	x = zero_vec
 	n = len(rowlist[0])
 

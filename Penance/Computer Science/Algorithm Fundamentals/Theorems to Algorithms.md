@@ -16,7 +16,7 @@ $$
 
 We want to construct a loop that maintains these invariants.
 
-For initial values, we make an educated guess that $q = 0, r = n$ satisfies the first two conditions, since for $q = 0, n = 0 + r = n$. Then all that remains is the tasks of mutating $r$ and $q$ each iteration such that the algorithm reaches the third condition eventually while maintaining the invariants. 
+For initial values, we make an educated guess that $q = 0, r = n$ satisfies the first two conditions, since for $q = 0, n = 0 + r = n$. Then all that remains is the tasks of mutating $r$ and $q$ each iteration such that the algorithm reaches the third condition eventually while maintaining the invariants.
 
 Notice that before the termination condition is met, $r \geq d$, then $\exists y \in \mathbb{Z}, r = d + y$. Using the Q.R.T:
 
@@ -33,7 +33,7 @@ Now we wish to compute $r_{n+1}, q_{n+1}$ in terms of $r_n, q_n$, respectively:
 $$
 \begin{align}
 &r_{n+1} = y = r_n - d \\
-&q_{n+1} = q_n + 1 \\ 
+&q_{n+1} = q_n + 1 \\
 \end{align}
 $$
 
@@ -47,7 +47,7 @@ We want to compute the Greatest Common Divisor (gcd) of two integers.
 > Suppose $a, b \in \mathbb{Z}$, then there is some $d \in \mathbb{Z}^+$ such that:
 > 1. $d | a, d | b$
 > 2. For all $c$ such that $c|a, a|b$, $c|d$
->    
+>
 >  In other words, $d$ is the **greatest integer** that **divides both** $a$ and $b$.
 
 ### Mathematical Foundation
@@ -58,7 +58,7 @@ As before, we start with two Lemma:
 > If $a \in \mathbb{Z}$, then $gcd(a, 0) = a$.
 > **Proof**.
 > Suppose $d = gcd(a, 0)$, then $d|0, d|a$. Since every integer divides zero, we must show that $d$ is the greatest integer that divides $a$. But since an integers greatest divisor is always itself, $d$ must equal $a$.
-> 
+>
 > $\blacksquare$
 
 > [!abstract] Lemmma (ii).
@@ -69,31 +69,31 @@ As before, we start with two Lemma:
 > **Proof**.
 > We will show the equality holds by proving $gcd(a, b) \leq gcd(b, r)$ and
 > $gcd(b, r) \leq gcd(a, b)$ and therefore the values are equal.
-> 
+>
 > $gcd(a, b) \leq gcd(b, r)$:
-> 
+>
 > Suppose $d = gcd(a, b)$, then $a = dk, b = dj$. Substituting:
 > $$
 > \begin{align}
 > a &= bq + r \\
 > &= dk = djq + r \\
-> &= d(k - jq) = r. 	
+> &= d(k - jq) = r.
 > \end{align}
 > $$
 > And so because $k - jq \in \mathbb{Z}$, we see that $d | r$. Now by assumption, $d | b$. Hence $d$ is a divisor for both $b$ and $r$, and so it must be less than or equal to the greatest such divisor.
-> 
+>
 > $gcd(b,r) \leq gcd(a, b)$:
-> 
+>
 > Similarly, let $d = gcd(b, r) \implies dk = b, \; dj = r$. Substituting:
 > $$
 > \begin{align}
 > a &= bq + r \\
 > &= a = dkq + dj \\
-> &= a = d(kq + j). 
+> &= a = d(kq + j).
 > \end{align}
 > $$
 > And so as before, $d | a$, and since $d$ also divides $b$ by assumption, we see that $d$ must be less than or equal to $gcd(a, b)$. Thus, $gcd(a, b) \leq gcd(b, r)$ and $gcd(b, r) \leq gcd(a, b)$, and so $gcd(a, b) = gcd(b, r)$.
-> 
+>
 > $\blacksquare$
 
 ### Building up the Algorithm
@@ -103,7 +103,7 @@ We start by noticing that Lemma (a) yields a **value**, rather than another form
 ```Python
 def gcd(a, b):
 	while b > 0:
-		# Mutate a and b 
+		# Mutate a and b
 
 	return a
 ```
@@ -141,7 +141,7 @@ def gcd(a, b):
 Combining the two Lemmas, we arrive at a concise definition for $gcd$:
 
 $$
-gcd(a,b) = 
+gcd(a,b) =
 \begin{cases}
 a & \text{if b = 0} \\
 gcd(b, r = a \mod b) & \text{otherwise}
@@ -181,7 +181,7 @@ def exp(x, y):
 
 	# TODO: Need to determine why termination is > 1 rather than > 0
 	while n > 1:
-		# ...	
+		# ...
 
 	# Lemma a.
 	return a
@@ -202,12 +202,12 @@ def exp(x, y):
 	while n > 1:
 		if n % 2 == 1:
 			# Lemma b.
-			a = a * b 
-			n = n - 1 
+			a = a * b
+			n = n - 1
 		else:
 			# Lemma c
 			a = a * b * b
-			n = n // 2	
+			n = n // 2
 
 	# Lemma a.
 	return a

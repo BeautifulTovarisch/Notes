@@ -35,13 +35,13 @@ Compute-->CACHE
 Compute-->Storage
 ```
 
-## General Properties 
+## General Properties
 
 The following should be considered when provisioning compute resources from EC2.
 
 ### Instance Profile
 
-An instance profile is an [[IAM]] role attached to an EC2 instance. This enables RBAC over the actions a machine is allowed to perform. 
+An instance profile is an [[IAM]] role attached to an EC2 instance. This enables RBAC over the actions a machine is allowed to perform.
 
 ```mermaid
 graph LR
@@ -87,7 +87,7 @@ Instance types dramatically affect the price and reliability of computing resour
 - Spot Instances: Run workloads on unused EC2 resources
 	- Less reliable, may be reclaimed at any point
 	- Good for stateless workloads
-	- Greatest potential for cost savings 
+	- Greatest potential for cost savings
 
 
 ### Placement Groups
@@ -116,7 +116,7 @@ Each instance is provisioned on separate underlying hardware
 ```mermaid
 graph TD
 subgraph AZ
-subgraph Rack 1 
+subgraph Rack 1
 groupA[[Instance]]
 end
 subgraph Rack 2

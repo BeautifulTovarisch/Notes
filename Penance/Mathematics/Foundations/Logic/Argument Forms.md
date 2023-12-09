@@ -41,7 +41,7 @@ represented by the truth table:
 | F   | T   | T              | T   |
 | F   | F   | T              | F   |
 
-Row 1 is considered a **critical row** because all premises are true. We see that the argument is **valid** because the conclusion, $q$ is also true. 
+Row 1 is considered a **critical row** because all premises are true. We see that the argument is **valid** because the conclusion, $q$ is also true.
 
 > [!info] Validity using Critical Rows
 > If even **one** critical row leads to a false conclusion, the argument is **invalid**.

@@ -1,11 +1,11 @@
 Using the properties of summations, we can establish helpful manipulations of the [[Step Functions#Definite Integral of a Step Function]], which end up generalizing to other functions later on.
 
 > [!abstract] Additive Property
-> For step functions $s, t$, we have 
+> For step functions $s, t$, we have
 > $$
 > \int_a^b [s(x) + t(x)] \; dx = \int_a^b s(x) \; dx + \int_a^b t(x) \; dx
 > $$
-> 
+>
 > Proof.
 > Let $P = \{ x_0, x_1, \dots, x_n \}$ be a partition over interval $[a, b]$ such that functions $s, t$ are constant over every open sub-interval of $P$. Assume $s(x) = s_k, t(x) = t_k$ if $x_{k-1} \lt x \lt x_k$, where $k \in \mathbb{N}$. By definition of the integral of a step function:
 > $$
@@ -15,14 +15,14 @@ Using the properties of summations, we can establish helpful manipulations of th
 > &= \int_a^b s(x) \; dx + \int_a^b t(x) \; dx  &\text{By Definition} \\
 > &&\blacksquare
 > \end{align}
-> $$ 
+> $$
 
 > [!abstract] Homogeneous Property
 > For a step function $s$ we have
 > $$
 > \int_a^b c \cdot s(x) \; dx = c \cdot \int_a^b s(x) \; dx
 > $$
-> 
+>
 > Proof.
 > $$
 > \begin{align}
@@ -30,7 +30,7 @@ Using the properties of summations, we can establish helpful manipulations of th
 > &= c \sum_{k=1}^n s_k (x_k - x_{k-1}) &\text{Homogeneity of Sums} \\
 > &= c \int_a^b s(x) \; dx &\text{Definition} \\
 > &&\blacksquare
-> \end{align}		
+> \end{align}
 > $$
 
 > [!abstract] Linearity Property
@@ -38,7 +38,7 @@ Using the properties of summations, we can establish helpful manipulations of th
 > $$
 > \int_a^b [c_1 s(x) + c_2 t(x)] \; dx = c_1 \int_a^b s(x) \; dx + c_2 \int_a^b t(x) \; dx
 > $$
-> 
+>
 > Proof.
 > $$
 > \begin{align}
@@ -50,11 +50,11 @@ Using the properties of summations, we can establish helpful manipulations of th
 > $$
 
 > [!abstract] Comparison
-> Assume step functions $s, t$. If $\forall x \in [a, b], \; s(x) \leqslant t(x)$ then,  
+> Assume step functions $s, t$. If $\forall x \in [a, b], \; s(x) \leqslant t(x)$ then,
 > $$
 > \int_a^b s(x) \; dx \leqslant \int_a^b t(x) \; dx
 > $$
-> 
+>
 > Proof.
 > By monotonicity of summations:
 > $$
@@ -62,7 +62,7 @@ Using the properties of summations, we can establish helpful manipulations of th
 > $$
 > Hence,
 > $$
-> \int_a^b s(x) \; dx \leqslant \int_a^b t(x) \; dx 
+> \int_a^b s(x) \; dx \leqslant \int_a^b t(x) \; dx
 > $$
 > $\blacksquare$
 
@@ -71,10 +71,10 @@ Using the properties of summations, we can establish helpful manipulations of th
 > $$
 > \int_a^b s(x) \; dx + \int_b^c s(x) \; dx + \int_a^c s(x) \; dx
 > $$
-> 
+>
 > Proof.
 > Suppose $P_1 = \{ a, x_1, \dots, b \}$ $P_2 = \{ x_{k+1}, x_{k+2}, \dots, c\}$ where $b < x_{k+1}$ and let $s$ be constant over the open sub-intervals of $P_1$ and $P_2$. Then $s$ is also constant over the common refinement $P = P_1 \cup P_2$. Hence, $\int_a^b s(x) \; dx + \int_b^c s(x) \; dx$ gives the integral of $s$ over $P$ and since $P$ is a partition of $[a, c]$, this value must be equal to $\int_a^c s(x) \; dx$.
-> 
+>
 > $\blacksquare$
 
 > [!abstract] Invariance Under Translation
@@ -82,7 +82,7 @@ Using the properties of summations, we can establish helpful manipulations of th
 > $$
 > \int_{a+c}^{b+c} s(x) \; dx = \int_{a}^{b} s(x - c) \; dx
 > $$
-> 
+>
 > Proof.
 > Suppose $s$ is constant over the open sub-intervals of $P = \{x_0 + c, x_1 + c, \dots, x_n + c \}$ which partitions $[a + c,  b + c]$. Then the integral of $s$ over $[a + c, b + c]$ is given by $\int_{a + c}^{b + c} s(x) \; dx$. Next, notice that $s(x - c)$ is constant over the open sub-intervals of $P' = \{ x_0, x_1, \dots, x_n \}$ over $[a, b]$ and so the integral over $P'$ is given by $\int_a^b s(x - c) \; dx$. Finally, by definition of translation, the areas formed by the ordinate sets of $s$ and $s(x - c)$ are congruent, and hence their integrals are equal.
 > $\blacksquare$
@@ -92,7 +92,7 @@ Using the properties of summations, we can establish helpful manipulations of th
 > $$
 > \int_{ka}^{kb} s(\frac x k) \; dx = k \int_a^b s(x) \; dx
 > $$
-> 
+>
 > Proof.
 > Let $P = \{ x_0, x_1, \dots, x_n \}$ be a partition of $[a, b]$ such that $s$ is constant on the open sub-intervals of $P$ and assume $s(x) = s_i$ if $x_{i-1} < x < x_i$. Let $t(x) = s(\frac x k)$ if $ka \leqslant x \leqslant kb$. Then $t(x) = s_i$ if $x \in (x_{i-1}, x_i)$, hence $P' = \{ kx_0, kx_1, \dots, kx_n \}$ is a partition over $[ka, kb]$ and $t$ is constant on the open subintervals of $P'$. Thus:
 > $$

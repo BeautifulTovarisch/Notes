@@ -4,7 +4,7 @@ $$
 g(x) = \int_1^x \frac 1 t \; dt
 $$
 
-> [!todo] 
+> [!todo]
 > Plots
 
 and define the **Natural Logarithm** as follows:
@@ -27,15 +27,15 @@ Immediately from our groundwork we can conclude a few important properties of th
 > &(c) &\ln(ab) = \ln(a) + \ln(b)
 > \end{align}
 > $$
-> 
+>
 > Proof.
 > Property $(a)$ follows immediately from the definition of the natural log:
 > $$
 > \ln(1) = \int_1^1 \frac 1 t \; dt = 0
 > $$
-> 
+>
 > Using the first fundamental theorem of calculus, we find $\frac d {dx} \int_1^x \frac 1 t \; dt = \frac 1 x$, which shows property $(b)$.
-> 
+>
 > Finally, using the [[Properties of the Integral of a Step Function|additive property of the integral]], we find:
 > $$
 > \begin{align}

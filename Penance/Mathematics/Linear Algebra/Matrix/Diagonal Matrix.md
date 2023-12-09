@@ -10,6 +10,6 @@ A diagonal matrix is a matrix such that its "diagonal" entries are allowed to be
 > &  & & d_n
 > \end{bmatrix}
 > $$
-> To construct such a matrix, consider the [[Generators#Standard Generators]] and a vector $[x_1, x_2, \dots, x_n]$ 
+> To construct such a matrix, consider the [[Generators#Standard Generators]] and a vector $[x_1, x_2, \dots, x_n]$
 > > [!todo]
 > > Think about this representation some more after practicing matrix-matrix multiplication.

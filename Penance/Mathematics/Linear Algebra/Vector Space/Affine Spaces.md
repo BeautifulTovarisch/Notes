@@ -12,7 +12,7 @@ which we abbreviate as $a + \mathcal{V}$. Then the resulting set is a [[Line Seg
 > 1. $u_1$ since $\mathcal{V}$ is a span, which contains the zero vector ($u_1 + 0 = u_1$)
 > 2. $u_2$ since $u_1 + a = u_2$
 > 3. $u_3$ since $u_1 + b = u_3$
-> 
+>
 > Then since $\mathcal{V}$ contains $u_1, u_2, u_3$, it must be the **unique plane** through these points.
 
 ## Affine Combinations
@@ -22,7 +22,7 @@ Recall that [[Line Segments#Affine Combinations]] are [[Linear Combination|Linea
 > [!example] Affine Combination
 > $2[10, 20] + 3[0, 10] - 4[30, 40]$ is **affine** because $2 + 3 - 4 = 1$.
 
-> [!example] 
+> [!example]
 > $\mathcal{V} = \text{Span}(a, b)$
 > We want to show that $u_1 + \mathcal{V}$ is affine.
 > $$
@@ -33,7 +33,7 @@ Recall that [[Line Segments#Affine Combinations]] are [[Linear Combination|Linea
 > &= \gamma u_1 + \alpha u_2 + \beta u_3 &\gamma = (1 - \alpha - \beta).
 > \end{align}
 > $$
-> 
+>
 > The final expression is known as an **affine hull**.
 
 > [!info] Affine Hull
@@ -92,7 +92,7 @@ Now we determine whether the affine combination of vectors (affine hull) always 
 > \alpha_1 u_1 + \alpha_2 u_2 + \dots + \alpha_n u_n
 > $$
 > and clearly $\sum_{i=1}^n a_i = 1$, so we have shown that every vector $u_1 + v$ is in the left-hand set.
-> 
+>
 > Conversely, since we are given $\sum_{i=1}^n a_i = 1$, we can choose $\alpha_1 = 1 - \alpha_2 - \dots - \alpha_n$ and write equation $\text{(i)}$, and so every element in the affine combine of the LHS is also in the right.
 > $\blacksquare$
 

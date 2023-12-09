@@ -6,11 +6,11 @@ In order to make manipulating sums easier, we use an unusual notation which lets
 
 > [!info] Notation
 > $$
-> \sum_{k=1}^n a_k 
-> = \sum_{1 \leqslant k \leqslant n} a_k 
+> \sum_{k=1}^n a_k
+> = \sum_{1 \leqslant k \leqslant n} a_k
 > = \sum_{1 \leqslant k + 1 \leqslant n}^n a_{k+1}
 > $$
-> 
+>
 > We see that the rightmost summations allow the trivial substitution of $k + 1$ for $k$ without worrying about adjusting the term. We consider the bounds of the summation in terms of some **predicate** rather than upper and lower limits per se.
 
 ### Iverson Notation
@@ -33,15 +33,15 @@ We can see the advantage of the new notation when adding indices.
 
 > [!abstract] Theorem.
 > $$
-> \sum_{k \in K} a_k + \sum_{k \in K'} a_k 
+> \sum_{k \in K} a_k + \sum_{k \in K'} a_k
 > = \sum_{k \in K \cap K'} a_k + \sum_{k \in K \cup K'} a_k
 > $$
-> 
+>
 > Proof.
 > Writing each sum in iverson notation, we have:
 > $$
 > \begin{align}
-> \sum_{k \in K} a_k + \sum_{k \in K'} a_k 
+> \sum_{k \in K} a_k + \sum_{k \in K'} a_k
 > &= \sum_k a_k [k \in K] + \sum_k a_k [k \in K'] \\
 > &= \sum_k a_k [k \in K] + [k \in K'] &\text{Additivity of Sums} \\
 > &= \sum_k a_k [k \in (K \cup K') + (K \cap K')] &\text{Def of Union} \\
@@ -58,14 +58,14 @@ Thus we see we can treat indices of summations as objects that can be manipulate
 > \begin{align}
 > \sum_{k=1}^m a_k + \sum_{k=m}^n a_k
 > &= \sum_k a_k [1 \leqslant k \leqslant m] + \sum_k a_k [m \leqslant k \leqslant n] \\
-> &= \sum_k a_k [1 \leqslant k \leqslant m] \cup [m \leqslant k \leqslant n] 
+> &= \sum_k a_k [1 \leqslant k \leqslant m] \cup [m \leqslant k \leqslant n]
 > + \sum_k a_k [1 \leqslant k \leqslant m] \cap [m \leqslant k \leqslant n] \\
 > &= \sum_k a_k [1 \leqslant k \leqslant n] + \sum_k a_k [k = m] \\
 > &= \sum_{1 \leqslant k \leqslant n} a_k + a_m
 > \end{align}
 > $$
-> 
-> Where we see that the new indices follow from taking the union and intersection of the indices, respectively. 
+>
+> Where we see that the new indices follow from taking the union and intersection of the indices, respectively.
 
 ### Perturbing the Sum
 
@@ -80,14 +80,14 @@ The main idea here is to extract the first and last terms of a summation and man
 > &= a_0 + \sum_{0 \leqslant k \leqslant n} a_{k} &\text{idx - 1}
 > \end{align}
 > $$
-> 
+>
 > We now have a sum in terms of $S_n$ and can manipulate it to hopefully achieve a closed form.
 
 > [!example] Perturbing a Geometric Series
 > Let $S_n = \sum_{0 \leqslant k \leqslant n} ax^k$. We use the perturbation method to derive the well-known formula
 > $$
 > \begin{align}
-> S_n + ax^{n+1} 
+> S_n + ax^{n+1}
 > &= a + \sum_{1 \leqslant k \leqslant n+1} ax^k \\ \\
 > &= a + \sum_{1 \leqslant k+1 \leqslant n+1} ax^{k+1} &k \to k+1 \\ \\
 > &= a + \sum_{0 \leqslant k \leqslant n} ax^{k+1} \\ \\
@@ -109,7 +109,7 @@ The main idea here is to extract the first and last terms of a summation and man
 > S_n + (n+1)2^{n+1} &= \sum_{1 \leqslant k \leqslant n+1} k 2^k \\ \\
 > &= \sum_{1 \leqslant k+1 \leqslant n+1} (k+1) 2^{k+1} &k \to k+1 \\ \\
 > &= \sum_{0 \leqslant k \leqslant n} (k+1) 2^{k+1} \\ \\
-> &= \sum_{0 \leqslant k \leqslant n} k 2^{k+1} + 
+> &= \sum_{0 \leqslant k \leqslant n} k 2^{k+1} +
 > \sum_{0 \leqslant k \leqslant n} 2^{k+1} \\ \\
 > &= 2 S_n + \frac {2 - 2^{n+2}} {1 - 2} \\ \\
 > &= 2 S_n +  2^{n+1} - 2 \\ \\
@@ -118,5 +118,5 @@ The main idea here is to extract the first and last terms of a summation and man
 > &= (n+1) 2^{n+1} - 2(2^{n+1}) + 2 \\ \\
 > &= (n-1)2^{n+1} + 2 \\ \\
 > &&\blacksquare
-> \end{align} 
+> \end{align}
 > $$

@@ -7,7 +7,7 @@ We consider the following **functional equation** in order to decide what proper
 > [!tip]
 > This is the most effective way I've been shown where the [[Exponents and Logarithms#Logarithmic Identities]] come from!
 
-> [!todo] 
+> [!todo]
 > This is a good point to review the section in AOPS on functional equations
 
 $$
@@ -60,7 +60,7 @@ $$
 
 In summary, we would like our supposed solution to the functional equations to exhibit the above properties and be given by $\int_c^x \frac 1 t \; dt$.
 
-## From the Integral 
+## From the Integral
 
 Continuing from the previous integral and using the Fundamental Theorem of Calculus:
 
@@ -90,7 +90,7 @@ $$
 
 Thus a solution to our functional equation differentiable everywhere except $x = 0$ must be given by the above integral.
 
-### A Closer Look at Our Formula 
+### A Closer Look at Our Formula
 
 We examine the possible values of $f'(1)$ in order to learn more about $f(x)$.
 

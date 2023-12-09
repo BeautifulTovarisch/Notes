@@ -5,16 +5,16 @@ The solution set to an arbitrary [[Linear Equations#System of Equations]], if it
 > $$
 > \begin{align}
 > a_1 &\cdot x = \beta_1 \\
-> &\vdots \\ 
+> &\vdots \\
 > a_m &\cdot x = \beta_m \\
 > \end{align}
 > $$
-> 
+>
 > Then another vector, $u_2$ is a solution if and only if $u_2 - u_1$ is a solution to
 > $$
 > \begin{align}
 > a_1 &\cdot x = 0 \\
-> &\vdots \\ 
+> &\vdots \\
 > a_m &\cdot x = 0 \\
 > \end{align}
 > $$
@@ -26,7 +26,7 @@ The solution set to an arbitrary [[Linear Equations#System of Equations]], if it
 > a_i \cdot u_2 = \beta_i
 > \end{align}
 > $$
-> 
+>
 > Subtracting, we have:
 > $$
 > \begin{align}
@@ -35,7 +35,7 @@ The solution set to an arbitrary [[Linear Equations#System of Equations]], if it
 > &a_i \cdot (u_1 - u_2) = 0 \\
 > &&\blacksquare
 > \end{align}
-> $$ 
+> $$
 
 In other words, $u_2$ is a solution if and only if $u_2 - u_1 \in \mathcal{V}$, where $\mathcal{V}$ is the solution set to a [[Homogeneous Linear Systems|homogeneous linear system]].
 
@@ -60,7 +60,7 @@ which is an [[Affine Spaces|affine space]]!
 > has an empty solution set, since there is no such vector $x$ that satisfies the system.
 
 > [!example]
-> The solution set to 
+> The solution set to
 > $$
 > \begin{align}
 > [1, 0] \cdot x = 2 \\

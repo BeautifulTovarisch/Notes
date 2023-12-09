@@ -59,20 +59,20 @@ A theorem that follows naturally from the technique of completing the square let
 
 > [!abstract] Vieta's Theorem
 > If a quadratic expression $x^2 + px + q$ has distinct roots $\alpha, \beta$, then
-> 
+>
 > $$
 > \begin{align}
 > &\alpha + \beta &= -p \\
 > &\alpha \beta &= -q
 > \end{align}
 > $$
-> 
+>
 > **Corollary**
 > If $x^2 + px + q$ has two distinct roots $\alpha, \beta$ then $x^2 + px + q = (x - \alpha)(x - \beta)$. This follows from the fact that:
 > $$
 > (x - \alpha)(x - \beta) = x^2 - (\alpha + \beta)x + \alpha \beta
 > $$
-> 
+>
 > Proof (Theorem):
 > Consider the equation $x^2 + px + q = 0$. Completing the square, we discover roots $\alpha, \beta$ such that (without loss of generality) $\alpha = -\frac p 2 + \sqrt{\frac {p^2} 4 - q}$ $\beta = -\frac p 2 - \sqrt{\frac {p^2} 4 - q}$. Hence, letting $D = \frac {p^2} 4 - q$:
 > $$
@@ -85,23 +85,23 @@ A theorem that follows naturally from the technique of completing the square let
 > &&\blacksquare
 > \end{align}
 > $$
-> 
+>
 > Proof (Corollary):
 > By factor theorem, if $\alpha, \beta$ are roots of $P(x)$ (having degree at most two), then $P(x) = x^2 + px + q = (x - \alpha)(x - \beta)Q(x)$. Now since $P$ has degree at most two, $Q$ must have be a constant, and since the coefficients of $P$ are unmodified by $Q$, it must be equal to one. Hence, $(x - \alpha)(x - \beta) = x^2 - (\alpha + \beta) + \alpha \beta = x^2 + px + q$.
-> 
+>
 > $\blacksquare$
 
 > [!todo]
-> State and prove an extension of Vieta's theorem for cubic equations. 
+> State and prove an extension of Vieta's theorem for cubic equations.
 
 ### The Quadratic Formula
 
 We consider equations of the form $ax^2 + bx + c$. We can use the technique of completing the square and a little algebraic manipulation to arrive at a concrete formula for finding roots:
 
 $$
-ax^2 + bx + c = x^2 + \frac b a x + \frac c a 
-= x^2 + px + q 
-\; \text{where} \; p = \frac b a, q = \frac c a 
+ax^2 + bx + c = x^2 + \frac b a x + \frac c a
+= x^2 + px + q
+\; \text{where} \; p = \frac b a, q = \frac c a
 $$
 
 $$

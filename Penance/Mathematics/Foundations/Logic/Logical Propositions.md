@@ -13,14 +13,14 @@ The validity of a logical construct comes from its **structure**, not its **cont
 > &\text{Commutativity} &p \land q \equiv q \land p \\ \\
 > &\text{Associativity} &(p \land q) \land r \equiv p \land (q \land r) \\ \\
 > &\text{Distributivity} &p \land (q \lor r) \equiv (p \land q) \lor (p \land r) \\ \\
-> &\text{Absorption} &p \land (p \lor q) \equiv p, p \lor (p \land q) \equiv p \\ \\ 
+> &\text{Absorption} &p \land (p \lor q) \equiv p, p \lor (p \land q) \equiv p \\ \\
 > &\text{Idempotency} &p \land p \equiv p, p \lor p \equiv p \\ \\
 > &\text{Double Negation} &\lnot \lnot p \equiv p \\ \\
 > &\text{DeMorgan's} &\lnot (p \land q) \equiv \lnot p \lor \lnot q \\ \\
 > &\text{Negation} &p \lor \lnot p \equiv T, p \land \lnot p \equiv F \\ \\
 > &\text{Universal Bound} &p \lor T \equiv T, p \land F \equiv F \\ \\
 > &\text{Identity} &p \lor T \equiv p \\ \\
-> &\text{Tautology and Contradiction} &\lnot T \equiv F, \lnot F \equiv T 
+> &\text{Tautology and Contradiction} &\lnot T \equiv F, \lnot F \equiv T
 > \end{align}
 > $$
 
@@ -35,8 +35,8 @@ We verify the first half of the Absorption law below using a proof table as an e
 
 Some examples of verification by applying the equivalences from **Theorem 5.1**
 
-> [!abstract] Verify 
-> $$ 
+> [!abstract] Verify
+> $$
 > (q \land p) \lor \lnot (p \lor \lnot q) \equiv q
 > $$
 > Proof.
@@ -51,7 +51,7 @@ Some examples of verification by applying the equivalences from **Theorem 5.1**
 > \end{align}
 > $$
 
-> [!abstract] Verify 
+> [!abstract] Verify
 > $$
 > \lnot (\lnot (p \land p) \lor (\lnot q \land T))
 > $$
@@ -65,7 +65,7 @@ Some examples of verification by applying the equivalences from **Theorem 5.1**
 >&\equiv p \land q &\text{Univ. Bound} \\
 >&&\blacksquare
 >\end{align}
->$$ 
+>$$
 
 ## Conditional Propositions
 
@@ -75,10 +75,10 @@ We write the truth tables below for interesting findings:
 
 | $p$ | $q$ | $p \implies q$ |
 | :-: | :-: | :------------: |
-| T   | T   | T              | 
-| T   | F   | F              | 
-| F   | T   | T              | 
-| F   | F   | T              | 
+| T   | T   | T              |
+| T   | F   | F              |
+| F   | T   | T              |
+| F   | F   | T              |
 
 > [!info] The third and fourth row are called "vacuously true".
 
@@ -113,5 +113,5 @@ $$
 \end{align}
 $$
 
-> [!warning] 
+> [!warning]
 > Neither the Converse nor the Inverse is logically equivalent!

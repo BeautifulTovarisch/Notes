@@ -25,7 +25,7 @@ Generalization:
 $$
 \begin{align}
 &p \\
-&\therefore p \lor q 
+&\therefore p \lor q
 \end{align}
 $$
 
@@ -54,7 +54,7 @@ $$
 \begin{align}
 &p \implies q \\
 &q \implies r \\
-&\therefore p \implies r 
+&\therefore p \implies r
 \end{align}
 $$
 
@@ -74,7 +74,7 @@ Contradiction:
 $$
 \begin{align}
 &p \implies F \\
-&\therefore \lnot p 
+&\therefore \lnot p
 \end{align}
 $$
 
@@ -94,7 +94,7 @@ we can reduce the premises a-e using logical equivalences and knowledge of commo
 > [!abstract] Verification of an argument form.
 > We prove the logical deduction in the argument form above.
 > 1. Using (c), (d) applying Division into cases:
-> 
+>
 > $$
 > \begin{align}
 > &t \lor \lnot s \\
@@ -102,28 +102,28 @@ we can reduce the premises a-e using logical equivalences and knowledge of commo
 > &\therefore \lnot s
 > \end{align}
 > $$
-> 
+>
 > 2. Using (1), (a) applying Modus Tollens
-> 
+>
 > $$
 > \begin{align}
 > &\lnot p \land \lnot r \implies s \\
 > &\lnot s \\
-> &\therefore \lnot (\lnot p \land \lnot r) 
+> &\therefore \lnot (\lnot p \land \lnot r)
 > \end{align}
 > $$
-> 
+>
 > 3. Applying DeMorgan's  to (2)
-> 
+>
 > $$
 > \begin{align}
 > &\lnot (\lnot p \land \lnot r) \\
 > &\equiv p \lor r
 > \end{align}
 > $$
-> 
+>
 > 4. Dividing (3) into cases over $\lnot q$:
-> 
+>
 > $$
 > \begin{align}
 > &p \lor r \\

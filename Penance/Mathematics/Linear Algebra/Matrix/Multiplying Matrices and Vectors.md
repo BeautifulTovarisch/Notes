@@ -1,11 +1,11 @@
 This section defines several representations of multiplication involving a matrix and vector.
 
 > A "mnemonic" I like for remembering legal operations:
-> 
+>
 > - MvC: $M * v \implies v \text{ is a } C$-vector
 > - vMR: $v * M \implies v \text{ is an } R$-vector
-> 
-> Whether the operation happens against the columns or rows follows naturally from the dimension of the resulting vector. 
+>
+> Whether the operation happens against the columns or rows follows naturally from the dimension of the resulting vector.
 
 For each "direction" (M-v or v-M), we can represent the operation as a [[Linear Combination]] or [[Dot Product]].
 
@@ -24,7 +24,7 @@ $$
 > $$
 > r = \sum_{c \in C} v[c] * M_{,c}
 > $$
-> 
+>
 > Where $r$ is an $R$-vector. In other words, the elements of $v$ act as the scalar values in a **linear combination** over $M$'s columns.
 > $$
 > \begin{bmatrix}
@@ -32,10 +32,10 @@ $$
 > a_{21} & a_{22} & \dots & a_{2C} \\
 > \vdots & \vdots & \dots & \vdots \\
 > a_{R1} & a_{R2} & \dots & a_{RC}
-> \end{bmatrix} 
-> * [x_1, x_2, \dots, x_C] 
+> \end{bmatrix}
+> * [x_1, x_2, \dots, x_C]
 >$$
->$$ 
+>$$
 > r = x_1 [a_{11}, a_{21}, \dots, a_{R1}]
 > + x_2 [a_{12}, a_{22}, \dots, a_{R2}]
 > + \dots
@@ -45,18 +45,18 @@ $$
 > [!example]
 > Let
 > $$
-> M = 
+> M =
 > \begin{bmatrix}
 > 1 & 2 & 3 \\
 > 10 & 20 & 30
 > \end{bmatrix},
 > v = [7, 0, 4]
 > $$
-> 
-> Then, 
+>
+> Then,
 > $$
 > \begin{align}
-> M * v &= 
+> M * v &=
 > \begin{bmatrix}
 > 1 & 2 & 3 \\
 > 10 & 20 & 30
@@ -72,17 +72,17 @@ $$
 
 > [!info] Dot Product
 > If $M$ is an $R \times C$ matrix and $u$ is an $C$-vector, then $M * u$ is the $R$-vector $v$ such that $v[r]$ is the **dot product** of $u$ and $M_{r,}$.
-> 
+>
 > $$
 > \begin{bmatrix}
 > a_{11} & a_{12} & \dots & a_{1C} \\
 > a_{21} & a_{22} & \dots & a_{2C} \\
 > \vdots & \vdots & \dots & \vdots \\
 > a_{R1} & a_{R2} & \dots & a_{RC}
-> \end{bmatrix} 
-> * [x_1, x_2, \dots, x_C] 
+> \end{bmatrix}
+> * [x_1, x_2, \dots, x_C]
 >$$
->$$ 
+>$$
 > r = [(x_1 * a_{11} + x_2 * a_{12} + \dots x_C * a_{1C}), (x_1 * a_{21} + \dots + x_C * a_{2C}), \dots, (x_1 * a_{R1} + \dots + x_C * a_{RC})]
 > $$
 
@@ -96,11 +96,11 @@ $$
 > 10 & 0
 > \end{bmatrix}, u = [3, 4]
 > \end{align}
-> $$ 
+> $$
 > then,
 > $$
 > \begin{align}
-> M * u &= 
+> M * u &=
 > \begin{bmatrix}
 > 1 & 2 \\
 > 3 & 4 \\
@@ -113,7 +113,7 @@ $$
 
 ## Vector-Matrix Multiplication
 
-When the vector is on the **left**, $v$ must have length/domain equal to the **rows** of $M$. 
+When the vector is on the **left**, $v$ must have length/domain equal to the **rows** of $M$.
 
 $$
 v * M = a
@@ -122,11 +122,11 @@ $$
 ### Linear Combination
 
 > [!info] Linear Combination
-> Let $M$ be an $R \times C$ matrix. Then $v * M$ is the **linear combination** 
+> Let $M$ be an $R \times C$ matrix. Then $v * M$ is the **linear combination**
 > $$
 > c = \sum_{r \in R} v[r] * M_{r,}
 > $$
-> 
+>
 > Where $c$ is a $C$-vector. In other words, the elements of $v$ are scalars in a linear combination over the rows of $M$.
 
 > [!example]
@@ -158,11 +158,11 @@ $$
 > 10 & 0
 > \end{bmatrix}, u = [1, 2, 3]
 > \end{align}
-> $$ 
+> $$
 > then,
 > $$
 > \begin{align}
-> u * M &= [1, 2, 3] * 
+> u * M &= [1, 2, 3] *
 > \begin{bmatrix}
 > 1 & 2 \\
 > 3 & 4 \\
@@ -188,7 +188,7 @@ We use the Dot Product representation in order to prove some helpful properties 
 > $$
 > M * (u + v) = M * u + M * v
 > $$
-> 
+>
 > Proof (1):
 > By definition of matrix-vector multiplication as a dot-product, we have
 > $$
@@ -199,7 +199,7 @@ We use the Dot Product representation in order to prove some helpful properties 
 > &= \alpha (M * v)
 > \end{align}
 > $$
-> 
+>
 > Proof (2):
 > Again by the definition of dot-product we have:
 > $$
@@ -209,5 +209,5 @@ We use the Dot Product representation in order to prove some helpful properties 
 > &= M * u + M * v
 > \end{align}
 > $$
-> 
+>
 > $\blacksquare$

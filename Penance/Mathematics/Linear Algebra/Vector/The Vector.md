@@ -1,7 +1,7 @@
 ## History
 Vector analysis was invented by Josiah Gibbs. Previously quaternions, invented by *something something* Hamilton.
 
-> [!note]- Quaternions 
+> [!note]- Quaternions
 > represent transformations in plane over the **Complex Field**
 > > [!todo] Add mind map link
 
@@ -37,7 +37,7 @@ We say a vector is sparse is most of its values are 0. If no more than $k$ entri
 - Attributes: name -> value
 - State of a System: $\{(0,1): 1, (0,2): 0, ..., (0, n): 1\}$
 - Probability Distribution
-- Images: A pixel $(i, j)$ maps to the relative "intensity" at the point in the image: 
+- Images: A pixel $(i, j)$ maps to the relative "intensity" at the point in the image:
 	- $f = \{(i, j) : 0 \leqslant i < 1024, 0 \leqslant j < 768 \}$
 	- $f : R\times R \rightarrow R$
 - Points in space

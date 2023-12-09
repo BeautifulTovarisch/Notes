@@ -7,7 +7,7 @@ For every matrix $M$, we define a function $x \mapsto M * x$ called $f_M$:
 
 ## From Function to Matrix
 
-Given $f : \mathbb{F}^A \to \mathbb{F}^B$ we would like to compute $M$ such that $f_M(x) = M *x$. We start by determining the dimension of $M$ and $x$. Since $x \in \mathbb{F}^A$, it is an $A$-vector, and because the co-domain of $f$ is $\mathbb{F}^B$, $M$ must be a $B \times A$ matrix (since the product must produce a vector in the domain of $M$'s rows). 
+Given $f : \mathbb{F}^A \to \mathbb{F}^B$ we would like to compute $M$ such that $f_M(x) = M *x$. We start by determining the dimension of $M$ and $x$. Since $x \in \mathbb{F}^A$, it is an $A$-vector, and because the co-domain of $f$ is $\mathbb{F}^B$, $M$ must be a $B \times A$ matrix (since the product must produce a vector in the domain of $M$'s rows).
 
 We attempt to use to the [[Generators#Standard Generators]] of $A$ to work backwards to find $M$.
 
@@ -16,9 +16,9 @@ We attempt to use to the [[Generators#Standard Generators]] of $A$ to work backw
 > [!warning] We learn after this section that one of the examples is **invalid**. I've included the proof alongside the example below.
 
 > [!example]
-> Let $S(.)$, $S: \mathbb{R}^2 \to \mathbb{R}^2$ be defined by $S([x, y]) = [2x, y]$. Assume $S([x, y]) = M * [x, y]$. Using our standard generators for $\mathbb{R}^2$, $S([1, 0]) = [2, 0]$, and $S([0, 1]) = [0, 1]$.  Then 
+> Let $S(.)$, $S: \mathbb{R}^2 \to \mathbb{R}^2$ be defined by $S([x, y]) = [2x, y]$. Assume $S([x, y]) = M * [x, y]$. Using our standard generators for $\mathbb{R}^2$, $S([1, 0]) = [2, 0]$, and $S([0, 1]) = [0, 1]$.  Then
 >$$
->M = 
+>M =
 >\begin{bmatrix}
 >2 & 0 \\
 >0 & 1
@@ -50,17 +50,17 @@ We attempt to use to the [[Generators#Standard Generators]] of $A$ to work backw
 > [!example]
 > Let $t: R^2 \to R^2$ be defined as $t(.)$ such that $t$ translates the $x$ component of a vector one to the right and the $y$ component two up. Then $t([1, 0]) = [2, 2]$ and $t([0, 1]) = [1, 3]$ so then
 > $$
-> M = 
+> M =
 > \begin{bmatrix}
 > 2 & 1 \\
-> 2 & 3 
+> 2 & 3
 > \end{bmatrix}
 > $$
-> 
+>
 > Let $v = [2, 3]$, then $M * v = 2[2, 2] + 3[1, 3] = [7, 13]$
 
 > [!warning] Counterexample
 > In the [[Linear Functions|next section]] we determine the properties for which an function can be written in terms of a matrix-vector multiplication. We show that $t(.)$ above **does not** meet the requirements to be a linear transformation:
-> 
+>
 > Counterexample.
 > Suppose $u = [1, 0], v = [0, 1]$, then $u + v = [1, 1]$, so then $t(u + v) = [2, 3]$, but $t(u) + t(v) = [2, 2] + [1, 3] = [3, 5]$.

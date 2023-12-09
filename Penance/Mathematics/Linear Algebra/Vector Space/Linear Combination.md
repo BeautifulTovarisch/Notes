@@ -4,7 +4,7 @@ Linear Combinations, such as [[Line Segments#Convex Combinations]] are defined a
 > $$
 > 	\alpha_1 v_1 + \alpha_2 v_2 + \dots + \alpha_n v_n
 > $$
-> 
+>
 > where $\alpha_1, \dots, \alpha_n$ are scalars and $v_1, \dots, v_n$ are vectors. We call the set of scalars the **coefficients** of the linear combination. If all coefficients of the linear combination are $0$, it is called the **trivial combination**.
 
 > [!example]

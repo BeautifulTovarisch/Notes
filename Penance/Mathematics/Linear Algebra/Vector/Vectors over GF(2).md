@@ -47,7 +47,7 @@ $$
 \underbrace{\left[ \begin{array}{cc}
 (0, 0):1 & (0, 1):1 & (1, 0):1
 \end{array} \right]}_\text{Button Push vector}
-= 
+=
 \left[ \begin{array}{cc}
 0 & 0 & 1 & 1 & 0 \\
 0 & 0 & 1 & 0 & 1 \\

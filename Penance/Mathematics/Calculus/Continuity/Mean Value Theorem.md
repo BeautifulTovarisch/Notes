@@ -12,17 +12,17 @@ We begin by establishing the small span theorem, which states that we can choose
 >> Not to be confused with the Linear Algebra "Span"
 >
 > For every $\epsilon \gt 0$ there is a sub-interval of $[a, b]$ such that $\text{Span} \; f \lt \epsilon$.
-> 
+>
 > Proof.
 > We once again assume no such sub-interval can be constructed and proceed by successive bisections on $[a, b]$. Assume there is some $\epsilon_0$ such that $\text{Span} \; f \geqslant \epsilon_0$. Continue the bisection process as before and assume without loss of generality that the left sub-interval contains the minimum span at each stage of the process. Let $S$ be the set of left endpoints of each sub-interval and $\alpha = \sup S$. By continuity of $f$, there exists an interval about $\alpha$, $(\alpha - \delta, \alpha + \delta)$ such that $\text{Span} \; f \; \lt \epsilon_0$. Moreover, we know this interval about $\alpha$ is within $[a, b]$ whenever $\delta \lt \frac {b - a} {2^n}$, contradicting the assumption that the span of $f$ was at least $\epsilon_0$ over $[a, b]$.
-> 
+>
 > $\blacksquare$
 
 We can now use the small span theorem to prove that $f$ is integratable.
 
 > [!abstract] Theorem (3.14)
 > If $f$ is continuous on $[a, b]$, then it is integratable on $[a, b]$.
-> 
+>
 > Proof.
 > Since $f$ is bounded on $[a, b$, we know it has upper and lower integrals $\underline I = \int_a^b f(x) \; dx$, and $\overline I = \int_a^b f(x) \; dx$. Choose an arbitrary positive integer $N$ and let $\epsilon = \frac 1 N$. By the small span theorem, we may construct a partition of $[a, b]$ such that the span of $f$ in each of $n$ sub-intervals is less than our choice of $\epsilon$. Denote the endpoints of such intervals by $\min(f_k), \max(f_k)$, respectively, for $1 \leqslant k \leqslant n$ and notice
 > $$
@@ -32,7 +32,7 @@ We can now use the small span theorem to prove that $f$ is integratable.
 > $$
 > \begin{align}
 > &s_n(x) = \min(f(x)) \; \text{if} \; x_{k-1} \lt x \leqslant x_{k+1} \\
-> &t_n(x) = \max(f(x)) \; \text{if} \; x_{k-1} \leqslant x \lt x_{k+1} 
+> &t_n(x) = \max(f(x)) \; \text{if} \; x_{k-1} \leqslant x \lt x_{k+1}
 > \end{align}
 > $$
 
@@ -48,7 +48,7 @@ We now have everything set up to prove the mean value theorem. We want to show t
 > $$
 > f(c) = \frac 1 {b - a} \int_a^b f(x) \; dx \iff (b-a)f(c) = \int_a^b f(x) \; dx
 > $$
-> 
+>
 > Proof.
 > By the [[Extreme Values#Extreme Value Theorem]], we know that $f$ has a maximum and minimum on $[a, b]$. Let $m = \min(f)$ and $M = \max(f)$ on the interval and write:
 > $$
@@ -59,5 +59,5 @@ We now have everything set up to prove the mean value theorem. We want to show t
 > \end{align}
 > $$
 > So clearly the arithmetic mean of $f$ lies between its maximum and minimum and the proof is complete.
-> 
+>
 > $\blacksquare$

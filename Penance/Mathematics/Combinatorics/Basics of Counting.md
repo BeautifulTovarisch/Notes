@@ -51,9 +51,9 @@ graph LR
 	subgraph X
 		1
 		2
-		3	
+		3
 	end
-	
+
 	subgraph Y
 		a
 		b
@@ -114,7 +114,7 @@ graph LR
 > &f(2) = \text{a or b} = \text{2 choices} \\ \\
 > \end{align}
 > $$
-> 
+>
 > We see that this number is the same as the number of **2-permutations** of a 3-element set
 > $$
 > 3 \cdot 2 = \frac {3!} {(3-2)!} = 6
@@ -131,10 +131,10 @@ We can see generality of the $k$-permutation formula as it applies to the number
 ### Surjective Functions
 
 > [!todo]
-> Find whatever black magic describes this  
+> Find whatever black magic describes this
 
 ## Combinations
 
-To develop the intuition behind combinations, we consider forming partitions (based on [[Relations#Equivalence Relations]]) over the set of $k$-permutations of a given set $S$. 
+To develop the intuition behind combinations, we consider forming partitions (based on [[Relations#Equivalence Relations]]) over the set of $k$-permutations of a given set $S$.
 
 ## Pascal's Identity

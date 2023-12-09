@@ -2,7 +2,7 @@ Recurrence relations are sequences defined in terms of previous elements. In oth
 
 > [!info] Recurrence Relation
 > A **recurrence relation** is a formula that, for some $N$, relates each term $k$ to a certain number of its predecessors (i.e) $a_{k-1}, a_{k-2}, \dots, a_{k-i}$ where $i \in \mathbb{N}$ and $k - i \geq 0$.
-> 
+>
 > A recurrence relation also defines **initial conditions**, $a_0, \dots, a_m$, $m \in \mathbb{N}$.
 
 ## Fibonacci
@@ -12,17 +12,17 @@ The Fibonacci sequence comes from a bizarre puzzle created by [an Italian](https
 Starting with 1 male and female newborn rabbits and $n = 0$:
 
 | $n$ | Pairs |
-| --- | ----- | 
-| 0   | 1     | 
-| 1   | 1     | 
-| 2   | 2     | 
-| 3   | 3     | 
-| 4   | 5     | 
+| --- | ----- |
+| 0   | 1     |
+| 1   | 1     |
+| 2   | 2     |
+| 3   | 3     |
+| 4   | 5     |
 
 and so on. We can see that the current $n$ is computed by adding the values for $n - 1$ and $n - 2$. We use this finding to construct a recurrence relation:
 
 $$
-f(n) = 
+f(n) =
 \begin{cases}
 1 & \text{if $n \leq 1$} \\
 f(n-1) + f(n-2) & \text{otherwise}
@@ -78,10 +78,10 @@ We can prove a closed form of the above recurrence relation so that the results 
 > $$
 > m_k = 2m_{k-1} + 1 = 2^k - 1
 > $$
-> 
+>
 > Proof.
 > By induction on $k$. Suppose $k = 1$. Then by the initial conditions on $m$, $m_0 = 1 = 2^1 - 1$. Hence $\exists K \geq 1$ such that $m_k = 2^k - 1$.
-> 
+>
 > Now suppose $K = k + 1$, then we have:
 > $$
 > \begin{align}
@@ -91,5 +91,5 @@ We can prove a closed form of the above recurrence relation so that the results 
 > &= 2^{k+1} - 1 &\text{Algebra}
 > \end{align}
 > $$
-> 
+>
 > $\blacksquare$

@@ -56,7 +56,7 @@ def find(e, S):
 
 	Parameters:
 		e (T): An arbitrary element in some set of S
-		S (list): A list containing all the sets of interest. 
+		S (list): A list containing all the sets of interest.
 
 	Output:
 		The set in [S] to which [e] belongs.
@@ -103,7 +103,7 @@ graph BT
 	e3
 	e4
 	e5
-	
+
 	subgraph S1
 		e3-->e2-->e1
 	end

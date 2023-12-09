@@ -1,8 +1,8 @@
 We develop discrete methods analogous to the methods of integration and differentiation in order to [[Manipulation|manipulate sums]] when we don't know how to deal with them.
 
-## Notation 
+## Notation
 
-Finite calculus offers method analogous to [[The Derivative]] and [[Integrals of more General Functions|Integration]] for a large classification of problems. 
+Finite calculus offers method analogous to [[The Derivative]] and [[Integrals of more General Functions|Integration]] for a large classification of problems.
 
 ### Finite Difference
 
@@ -19,7 +19,7 @@ We begin by defining the finite **difference operator** which bears resemblance 
 > $$
 
 > [!example]
-> Let $f(x) = x^3$. Then 
+> Let $f(x) = x^3$. Then
 > $$
 > \Delta (x^3) = (x + 1)^3  - x^3 = 3x^2 + 3x + 1
 > $$
@@ -48,7 +48,7 @@ Knuth introduces notation indicating whether the terms of a factorial product ar
 > \end{align}
 > $$
 > When $m \lt 0$ we have $x^{\underline m} = 1 / {x^{\overline m}}$.
->>[!tip] 
+>>[!tip]
 >>$(x + m - 1 - x) + 1 = (x - (x - m + 1)) + 1 = m \; \text{terms}$
 
 ### Finite Derivative
@@ -57,7 +57,7 @@ We can compute the finite derivative of a term raised to a rising or falling fac
 
 > [!abstract] Finite Derivative of a Power Function
 > Let $f(x) = x^{\underline m}$. Then the finite derivative of $f = \Delta(x^{\underline m}) = m x^{\underline {m-1}}$
-> 
+>
 > Proof.
 > By definition of the finite difference operator we have:
 > $$
@@ -85,18 +85,18 @@ By the Fundamental Theorem of Calculus, we find that the integral is the inverse
 > \sum_a^b g(x) \delta x = f(x) \mid_b^a = f(b) - f(a)
 > $$
 > With the **critical difference** that this summation is taken over a half-open interval: $[a, b)$.
->> [!warning] 
+>> [!warning]
 >> Remember that this means the limits of the summation are from $a \to b-1$
 
 Next for posterity we prove the relationship between  "normal" summation and the finite integral:
 
 > [!abstract] Theorem
 > Let $g(x) = \Delta f(x)$ be defined over an interval $[a, b)$, then $\sum_a^b g(x) \delta x = f(b) - f(a)$.
-> 
+>
 > Proof.
 > We see immediately that the summation of the difference operator is telescoping:
 > $$
-> \sum_a^b g(x) \delta x 
+> \sum_a^b g(x) \delta x
 > = f(a + 1) - f(a) + f(a+2) - f(a+1) + \dots + f(b) - f(b-1)
 > = f(b) - f(a)
 > $$
@@ -105,7 +105,7 @@ We can use this fact when taking the finite integral of certain terms:
 
 > [!example]
 > $$
-> \sum_{0 \leqslant k \lt n} k^{\underline m} 
+> \sum_{0 \leqslant k \lt n} k^{\underline m}
 > = \sum_0^n x^{\underline m}
 > = \frac {x^{\underline {m+1}}} {m + 1} \mid_0^n
 > = \frac {n^{\underline {m+1}}} {m + 1}

@@ -9,7 +9,7 @@ We suppose $f$ is a step function constant over $n$ equal sub-intervals and show
 > $$
 > \frac 1 n \sum_{k=1}^n f(x_k) = \frac 1 {b - a} \int_a^b f(x) \; dx
 > $$
-> 
+>
 > Proof.
 > Since $f$ is a step function, we have $f(x) = x_k$ if $x_{k-1} < x < x_k$. Let $x_k$ be the $k$-th sub-interval of $[a, b]$ given by $x_k = a + \frac {b -a} n \cdot k$ and notice that $x_k - x_{k-1} = \frac {b - a} n$. By definition of the integral of a step function we have:
 > $$
@@ -26,11 +26,11 @@ We suppose $f$ is a step function constant over $n$ equal sub-intervals and show
 
 We can weight an average by computing the integral of the product of a weight function, $w(x)$, and $f(x)$ divided by the integral of $w(x)$
 
-> [!todo] 
+> [!todo]
 > Find out why this is.
 
 $$
-\frac {\sum_{k=1}^n w_k a_k} {\sum_{k=1}^n w_k} = 
+\frac {\sum_{k=1}^n w_k a_k} {\sum_{k=1}^n w_k} =
 \frac {\int_a^b w(x) f(x)} {\int_a^b w(x)}
 $$
 

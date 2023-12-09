@@ -18,8 +18,8 @@ The above is a 2 x 3 matrix, since it has two rows and three columns.
 
 '''
 [
-	[0, 0, 0, 0], 
-	[0, 0, 0, 0], 
+	[0, 0, 0, 0],
+	[0, 0, 0, 0],
 	[0, 0, 0, 0]
 ]
 '''
@@ -43,9 +43,9 @@ The above is a 2 x 3 matrix, since it has two rows and three columns.
 
 '''
 [
-	[0, 1, 2], 
-	[-1, 0, 1], 
-	[-2, -1, 0], 
+	[0, 1, 2],
+	[-1, 0, 1],
+	[-2, -1, 0],
 	[-3, -2, -1]]
 '''
 ```
@@ -84,9 +84,9 @@ There are two vector spaces, the **column space** and **row space** associated w
 > - The row space of $M$, $\text{Row} \; M$ is the spanned by $M$'s rows
 
 > [!example] Row and Column Spaces
-> Let 
+> Let
 > $$
-> M = 
+> M =
 > \begin{bmatrix}
 > 1 & 2 & 3 \\
 > 10 & 20 & 30
@@ -101,7 +101,7 @@ There are two vector spaces, the **column space** and **row space** associated w
 > &= \alpha [1, 2, 3] + \beta [10, 20, 30]
 > \end{align}
 > $$
-> 
+>
 > In the above examples, we could reduce the column space to $\text{Span}([1, 10])$ and row space to $\text{Span}([1, 2, 3])$.
 
 ## Transpose
@@ -119,7 +119,7 @@ Taking the transpose of a matrix means "flipping" its rows and columns.
 > 1 & 2 \\
 > 2 & 4
 > \end{bmatrix}
-> = 
+> =
 > \begin{bmatrix}
 > 1 & 2 \\
 > 2 & 4

@@ -18,7 +18,7 @@ We want to look at the common properties between the [[Span]] and [[Homogeneous 
 > \begin{align}
 > &u = \alpha_1v_1, \alpha_2v_2, \dots, \alpha_nv_n \\
 > &v = \beta_1v_1, \beta_2v_2, \dots, \beta_nv_n \\ \\
-> &u + v = (\alpha_1 + \beta_1)v_1, (\alpha_2 + \beta_2)v_2, \dots, (\alpha_n + \beta_n)v_n  
+> &u + v = (\alpha_1 + \beta_1)v_1, (\alpha_2 + \beta_2)v_2, \dots, (\alpha_n + \beta_n)v_n
 > \end{align}
 > $$
 > $\blacksquare$
@@ -52,7 +52,7 @@ If a vector space is a subset of another, it is called a subspace.
 - $[0,0]$ is a subspace of $\{ \alpha[2, 1]: \alpha \in \mathbb{R}^2 \}$, which is a subspace of $\mathbb{R}^2$.
 - $\mathbb{R}^2$ **is not** a subspace of $\mathbb{R}^3$, since there are **no 2-vectors** in $\mathbb{R}^3$.
 
-## Example 
+## Example
 
 We want to show that a given subspace with certain properties is equal to $\mathbb{R}^2$
 
@@ -60,13 +60,13 @@ We want to show that a given subspace with certain properties is equal to $\math
 > Proof. Suppose $\mathcal{V}$ is a subspace of $\mathbb{R}^2$ containing some non-zero vector $[a, b]$ and some other vector $[c, d]$ not in the $\text{Span}([a, b])$. We will show that $\mathcal{V} = \mathbb{R}^2$.
 > > [!abstract] Lemma a. $ad \neq bc$
 > > Proof. Since $[a, b] \neq [0, 0]$ by assumption, either of $a$ or $b$ or both are nonzero. Consider the following cases:
-> > 
+> >
 > > **($a \neq 0$):** Since $[c, d]$ is not in the Span of $[a, b]$, then $[c, d] \neq \alpha [a, b]$. Let $\alpha = \frac c a$.  Then we have $[c, d] \neq [c, \alpha b] \implies d \neq \alpha b$, so $d \neq \frac c a b$. Multiplying through we find $ad \neq bc$.
-> > 
+> >
 > > **($b \neq 0$):** Let $\alpha = \frac d b$. Then similarly, we have $[c, d] \neq [\alpha a, d] \implies c \neq \alpha a$, so $c \neq \frac d b a$. Multiplying by $b$ we have: $ad \neq bc$.
-> > 
+> >
 > > Thus, in either case we find that $ad \neq bc$.
-> 
+>
 > Now we want to show that every vector in $\mathbb{R}^2$ can be written as a linear combination of $[a, b], [c, d]$. Then we must choose scalars $\alpha, \beta$ such that for some $[p, q] \in \mathbb{R}^2$, we have
 > $$
 > [p, q] = \alpha[a, b] + \beta[c, d]

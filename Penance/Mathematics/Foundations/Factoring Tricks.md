@@ -9,7 +9,7 @@ $$
 &(a + b)^2 = a^2 + 2ab + b^2 &\text{Square of Sum} \\ \\
 &(a - b)^2 = a^2 - 2ab + b^2 &\text{Square of Difference} \\ \\
 &(a^2 - b^2) = (a + b)(a - b) &\text{Difference of Squares} \\ \\
-&(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 &\text{Cube of Sum} 
+&(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 &\text{Cube of Sum}
 \end{align}
 $$
 
@@ -66,7 +66,7 @@ $$
 
 > [!tip]
 > An extremely common situation is when $b = 1$:
-> 
+>
 > $$
 > a^n - 1 = a^n - 1^n = (a - 1)(a^{n-1} + a^{n-2} + \dots + 1)
 > $$
@@ -110,7 +110,7 @@ Some examples. To make them a little easier to follow, we've used $u$ and $v$ to
 
 $$
 \begin{align}
-(a^6 + b^6) &= (a^2)^3 + (a^2)^3 \\ 
+(a^6 + b^6) &= (a^2)^3 + (a^2)^3 \\
 &= (u^3 + v^3) &(u = a^2, v = b^2) \\
 &= (u + v)(u^2 - uv + v^2) &(a^3 + b^3) \\
 &= (a^2 + b^2)(a^4 - a^2b^2 + b^4) \\ \\

@@ -41,7 +41,7 @@ We can express the idea of neighborhoods more compactly by letting $\epsilon$ an
 > |f(x) - A| < \epsilon \; \text{whenever} \; |x - p| < \delta
 > $$
 
-In other words, for every (arbitrarily small) interval we can choose for the value of $f$ at $x$, there must be another arbitrarily small distance between $x$ and $p$. 
+In other words, for every (arbitrarily small) interval we can choose for the value of $f$ at $x$, there must be another arbitrarily small distance between $x$ and $p$.
 
 ## Algebraic Properties of the Limit
 
@@ -49,9 +49,9 @@ Limits exhibit similar properties to the integral. These directly imply the cont
 
 > [!abstract] Addition Rule
 > $$
-> \lim_{x \to p} f(x) + \lim_{x \to p} g(x) = \lim_{x \to p} [f(x) + g(x)] 
+> \lim_{x \to p} f(x) + \lim_{x \to p} g(x) = \lim_{x \to p} [f(x) + g(x)]
 > $$
-> 
+>
 > Proof.
 > Suppose for functions $f$ and $g$ we have:
 > $$
@@ -71,35 +71,35 @@ Limits exhibit similar properties to the integral. These directly imply the cont
 > \end{align}
 > $$
 > From the final inequality, we see that $\lim_{x \to p} [f(x) + g(x)] = L_1 + L_2$.
-> 
+>
 > $\blacksquare$
 
 
 > [!abstract] Difference Rule
 > $$
-> \lim_{x \to p} f(x) - \lim_{x \to p} g(x) = \lim_{x \to p} [f(x) - g(x)] 
+> \lim_{x \to p} f(x) - \lim_{x \to p} g(x) = \lim_{x \to p} [f(x) - g(x)]
 > $$
-> 
+>
 > Proof.
 > Equality follows immediately from the addition rule:
 > $$
 > \lim_{x \to p} f(x) - \lim_{x \to p} g(x) = \lim_{x \to p} f(x) + -\lim_{x \to p} g(x) = \lim_{x \to p}[f(x) - g(x)]
 > $$
-> 
+>
 > $\blacksquare$
 
 > [!abstract] Product Rule
 > $$
-> \lim_{x \to p} f(x) \cdot \lim_{x \to p} g(x) = \lim_{x \to p} [f(x) \cdot g(x)] 
+> \lim_{x \to p} f(x) \cdot \lim_{x \to p} g(x) = \lim_{x \to p} [f(x) \cdot g(x)]
 > $$
-> 
+>
 > Proof.
 
 > [!abstract] Quotient Rule
 > $$
-> \frac {\lim_{x \to p} f(x)} {\lim_{x \to p} g(x)} = \lim_{x \to p} \frac {f(x)} {g(x)} 
+> \frac {\lim_{x \to p} f(x)} {\lim_{x \to p} g(x)} = \lim_{x \to p} \frac {f(x)} {g(x)}
 > $$
-> 
+>
 > Proof.
 
 ## Continuity
@@ -118,7 +118,7 @@ If we can find two functions that "squeeze" or bound another above and below the
 
 > [!abstract] Squeeze Theorem
 > Suppose that $f(x) \leqslant g(x) \leqslant h(x)$ for all $x \neq p$ in some $N(p)$. Suppose also that $\lim_{x \to p} f(x) = \lim_{x \to p} h(x) = a$. Then $\lim_{x \to p} g(x) = a$.
-> 
+>
 > Proof.
 > Suppose $\epsilon > 0$ is given and notice that by assumption we have $|f(x) - a| < \epsilon$ whenever $0 < |x - p| < \delta$ and similarly for $h(x)$. Choose the minimum $\delta$ between the two inequality for $f$ and $h$ and write,
 > $$
@@ -129,7 +129,7 @@ If we can find two functions that "squeeze" or bound another above and below the
 > \end{align}
 > $$
 > Whenever $0 < |x - p| < \delta$ and so by definition of the limit we have $\lim_{x \to p} g(x) = a$.
-> 
+>
 > $\blacksquare$
 
 ### Continuity of Indefinite Integrals
@@ -138,13 +138,13 @@ Using the fact that an integratable function over an interval $[a, b]$ is bounde
 
 > [!abstract] Continuity of Indefinite Integrals
 > Assume $f$ is integratable over $[a, b]$ and $A(x) = \int_a^x f(t) \; dt$. Then $A$ is continuous at each point in $[a, b]$.
-> 
+>
 > Proof.
 > Choose $p$ to be an arbitrary point in $[a, b]$. We must show that $\lim_{x \to p} A(x) = A(p)$. Notice that $A(x) - A(p) = \int_0^x f(t) - \; dt \int_0^p f(t) \; dt = \int_p^x f(t) \; dt$ and also notice that since $f$ is bounded there are constants, say, $M$ and $-M$ which form the inequality:
 > $$
-> -M \leqslant f(t) \leqslant M \iff 
+> -M \leqslant f(t) \leqslant M \iff
 > -M(x-p) \leqslant A(x) - A(p) \leqslant M(x-p)
 > $$
 > Where the right hand side of the inequality was obtained by taking the indefinite integral. But then we know the limit of the (identity) function $|M(x-p)|$ is $0$ and so by the squeeze theorem $\lim_{x \to p} [A(x) - A(p)] = 0 \iff \lim_{x \to p} A(x) = A(p)$ as was to be shown.
-> 
+>
 > $\blacksquare$

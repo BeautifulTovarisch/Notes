@@ -17,14 +17,14 @@ $$
 H * \tilde{c} = H * c + H * e = 0 + H * e = H * e
 $$
 
-thus we can determine $H * e$ (called the *error syndrome*) from $H * \tilde{c}$. 
+thus we can determine $H * e$ (called the *error syndrome*) from $H * \tilde{c}$.
 
 ## The Hamming Code
 
 The first family of linear codes consisted of 7-vectors such that the column number of matrix $H$ was represented by the binary integer obtained by reading the column:
 
 $$
-H = 
+H =
 \begin{bmatrix}
 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
@@ -45,7 +45,7 @@ $$
 > &= [0, 1, 1] = 3 = H_{, 3}
 > \end{align}
 > $$
-> 
+>
 > Thus we know the error occurred in the 3rd bit, and the recipient can invert it.
 
 We note that this code can only work if $e$ has **at most 1** error.

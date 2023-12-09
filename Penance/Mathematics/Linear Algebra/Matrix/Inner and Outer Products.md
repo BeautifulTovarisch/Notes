@@ -2,7 +2,7 @@ We can treat vectors as "1-dimensional matrices" and perform a kind of multiplic
 
 ## Inner Product
 
-This definition is the most similar to [[Multiplying Matrices and Vectors#Matrix-Vector Multiplication]]. 
+This definition is the most similar to [[Multiplying Matrices and Vectors#Matrix-Vector Multiplication]].
 
 > [!info] Inner Product of two Vectors
 > Let $u, v$ be two $D$-vectors and consider the "matrix-matrix" multiplication $u^Tv$. By the dot-product representation of matrix multiplication, we have $u^Tv = u \cdot v$. We call $u^Tv$ the **inner product** of $u$ and $v$.
@@ -33,7 +33,7 @@ This definition is similar to the dot-product definition of matrix-matrix multip
 
 > [!example]
 > $$
-> u = 
+> u =
 > \begin{bmatrix}
 > u_1 \\
 > u_2 \\
@@ -43,7 +43,7 @@ This definition is similar to the dot-product definition of matrix-matrix multip
 > $$
 > Then
 > $$
-> uv^T = 
+> uv^T =
 > \begin{bmatrix}
 > u_1v_1 & u_1v_2 & u_1v_3 & u_1v_4 \\
 > u_2v_1 & u_2v_2 & u_2v_3 & u_2v_4 \\

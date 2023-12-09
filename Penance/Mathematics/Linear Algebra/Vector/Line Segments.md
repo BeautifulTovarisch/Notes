@@ -6,16 +6,16 @@ We can use [[The Vector|vectors]] to represent line segments in a plane.
 
 We can represent vectors as arrows in $R^n$
 
-> [!example]- 
+> [!example]-
 > $u = {3, 1.5}$
 > $u$ is a vector with its tail at the origin and head at $(3, 1.5)$
 
 ## Segments Through the Origin
-Let $v = \{3, 2\}$ and consider the set of scalars: $\{0.1, 0.2, \dots, 0.9, 1.0\}$. For every scalar $\alpha$ in this set, $\alpha v$ is a vector shorter than $v$ and in the same direction. We represent a line segment between the origin and point $v$ as follows: 
+Let $v = \{3, 2\}$ and consider the set of scalars: $\{0.1, 0.2, \dots, 0.9, 1.0\}$. For every scalar $\alpha$ in this set, $\alpha v$ is a vector shorter than $v$ and in the same direction. We represent a line segment between the origin and point $v$ as follows:
 $$
 \{ \alpha v : \alpha \in \mathbb{R}, 0 \leqslant \alpha \leqslant 1\}
 $$
-A **line** through the origin is expressed as follows: 
+A **line** through the origin is expressed as follows:
 $$
 \{ \alpha v : \alpha \in \mathbb{R} \}
 $$
@@ -23,7 +23,7 @@ $$
 
 ## Arbitrary Line Segments
 
-We can combine [[The Vector#Vector Addition|vector addition]] and [[The Vector#Scalar Multiplication|scalar multiplication]] to produce arbitrary line segments in a plane: 
+We can combine [[The Vector#Vector Addition|vector addition]] and [[The Vector#Scalar Multiplication|scalar multiplication]] to produce arbitrary line segments in a plane:
 $$
 \{\alpha u + v : \alpha \in \mathbb{R}, 0 \leqslant \alpha \leqslant 1\}
 $$
@@ -32,8 +32,8 @@ where $u, v$ are vectors representing the endpoints of the line segment. The ide
 > [!example] Line through $u = (0.5, 1)$ and $v = (3.5, 3)$
 > Suppose we wish to express a line segment from $u \to v$. This can be expressed by translating the segment $(0,0) \to (3, 2)$ by $(0.5, 1)$:
 > $$
-> \{ [0.5, 1] + \alpha [3, 2] : 
-> \alpha \in \mathbb{R}, 
+> \{ [0.5, 1] + \alpha [3, 2] :
+> \alpha \in \mathbb{R},
 > 0 \leqslant \alpha \leqslant 1 \}
 > $$
 
@@ -51,12 +51,12 @@ Ideally, the expression of a line segment would reference both endpoints symmetr
 >$$
 >Now letting $\beta = (1 - \alpha)$ we have
 >$$
-> \alpha [3.5, 3] + \beta [0.5, 1] 
+> \alpha [3.5, 3] + \beta [0.5, 1]
 >$$
 >And so we describe the line segment from $[0.5, 1] \to [3.5, 3]$ as:
 >$$
 >\{ \alpha [3.5, 3] + \beta [0.5, 1] : \;
->	\alpha,\beta \in \mathbb{R}, \; 
+>	\alpha,\beta \in \mathbb{R}, \;
 >	\alpha,\beta \geqslant 0 \;
 >	\alpha + \beta = 1\}
 >$$
@@ -69,6 +69,6 @@ Ideally, the expression of a line segment would reference both endpoints symmetr
 We define an affine combination similarly:
 
 > [!info] Definition: Affine Combination
-> We say the combination $\alpha u + \beta v$ is **Affine** if $\alpha + \beta = 1$ 
+> We say the combination $\alpha u + \beta v$ is **Affine** if $\alpha + \beta = 1$
 
 Notice that this implies $\alpha$ or $\beta$  may be negative.
