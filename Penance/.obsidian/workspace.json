@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/CheatSheet.md",
+                "file": "Mathematics/Exponents and Logarithms/Polynomial Approximation of the Logarithm.md",
                 "mode": "source",
                 "source": true
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/CheatSheet.md",
+                "file": "Mathematics/Exponents and Logarithms/Polynomial Approximation of the Logarithm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/CheatSheet.md",
+                "file": "Mathematics/Exponents and Logarithms/Polynomial Approximation of the Logarithm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/CheatSheet.md"
+                "file": "Mathematics/Exponents and Logarithms/Polynomial Approximation of the Logarithm.md"
               }
             }
           },
@@ -171,6 +171,8 @@
   },
   "active": "ca40887ea79f30de",
   "lastOpenFiles": [
+    "Mathematics/Calculus/CheatSheet.md",
+    "Mathematics/Exponents and Logarithms/Polynomial Approximation of the Logarithm.md",
     "Mathematics/Linear Algebra/Vector Space/sedN0GNhs",
     "Computer Science/sed2lu1aI",
     "sedbmENAU",
@@ -186,7 +188,6 @@
     "Mathematics/Calculus/Integration/Applications of Integration.md",
     "Mathematics/Calculus/Integration/Integration of Polynomials.md",
     "Mathematics/Foundations/Functional Equations.md",
-    "Mathematics/Calculus/CheatSheet.md",
     "Mathematics/Calculus/Plots/polynomial-integral.svg",
     "Curriculum.md",
     "Mathematics/Sums/Finite Calculus.md",
@@ -207,7 +208,6 @@
     "Mathematics/Sums",
     "Mathematics/Calculus/Differentiation",
     "Mathematics/Combinatorics",
-    "Mathematics/Calculus/Integration",
     "Mathematics/Foundations/example.svg",
     "Mathematics/Foundations/plot.svg",
     "Untitled.canvas",

@@ -14,13 +14,13 @@ Important derivations and/or results that I forget all the time.
 
 ---
 
-| $f$           | $\int f$                               |
-| :-----------: | :-----------------------------------: |
-| $x \cos x$     | $x \sin x + \cos x$                     |
-| $x \sin x$     | $\sin x - x \cos x$                     |
-| $x^2 \cos x$   | $x^2\sin x + 2(x \cos x - \sin x)$        |
-| $x^2 \sin x$   | $2(x \cos x + \cos x) - x^2\cos x$       |
-| $x^3 \cos x$   | $x \sin x(x^2 - 6) + 3\cos x(x^2 - 2)$    |
+| $f$      | $\int f$                               |
+| :------: | :------------------------------------: |
+| $x \cos x$   | $x \sin x + \cos x$                   |
+| $x \sin x$   | $\sin x - x \cos x$ |
+| $x^2 \cos x$   | $x^2\sin x + 2(x \cos x - \sin x)$ |
+| $x^2 \sin x$   | $2(x \cos x + \cos x) - x^2\cos x$ |
+| $x^3 \cos x$   | $x \sin x(x^2 - 6) + 3\cos x(x^2 - 2)$ |
 | $x^3 \sin x$   | $x \cos x(6 - x^2) + 3\sin x(x^2 - 2)$ |
 | $\sin x \cos x$   | $\frac 1 2 \sin^2 x$ |
 | $x \sin x \cos x$   | $\frac 1 8 (\sin 2x - 2x \cos 2x)$ |
@@ -33,16 +33,10 @@ Important derivations and/or results that I forget all the time.
 | $x \log x$   | $\frac 1 2 x^2(\log x - \frac 1 2)$ |
 | $x \log^2 x$   | $\frac 1 2 x^2 \log^2 x - \frac 1 2 x^2(\log x - \frac 1 2)$ |
 | $x^n \log ax$   | $\frac {x^{n+1}} {n+1}(\log ax - \frac 1 {n+1})$ |
-| $x^3 \cos x$   | $x \sin x(x^2 - 6) + 3\cos x(x^2 - 2)$ |
-| $x^3 \sin x$   | $x \cos x(6 - x^2) + 3\sin x(x^2 - 2)$ |
-| $\sin x \cos x$   | $\frac 1 2 \sin^2 x$ |
-| $x \sin x \cos x$   | $\frac 1 8 (\sin 2x - 2x \cos 2x)$ |
-| $\sin^2x$ | $\frac 1 2 x - \frac 1 4 \sin (2x)$ |
-|| $-\sin x\cos x + \int \cos^2 x \; dx$ |
+| $x^2 \log^2 x$   | $\frac {x^3} 3 \log^2 x - \frac 2 9 x^3 \log x + \frac 2 {27} x^3$ |
+| $\frac 1 {x \log x}$   | $\log \log x$ |
 
 ## Miscellaneous
-
----
 
 $$
 \begin{align}
@@ -56,4 +50,8 @@ $$
 \int \cos^n x \; dx &= \sin x \cos^{n-1} x - (n-1) \int \sin^2 x \cos^{n-2} x \; dx \\
 &= \frac {\sin x \cos^{n-1} x} n - \frac {n-1} n \int \cos^{n-2} x \; dx
 \end{align}
+$$
+
+$$
+\int x^m \log^n x \; dx = \frac {x^{m+1} \log^n x} {m+1} - \frac n {m+1} \int x^m \log^{n-1} \; dx
 $$
