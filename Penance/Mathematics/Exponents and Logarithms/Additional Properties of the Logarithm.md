@@ -46,7 +46,7 @@ Recall that $f(ab) = f(a) + f(b)$. We would like to show that $\ln(x)$ is unboun
 >
 > $\blacksquare$
 
-## Injectivity of the Logarithm
+## Bijectivity of the Logarithm
 
 Previously, we had shown our functional equation was monotonic. We now use this property to show that the logarithm is uniquely defined over its domain.
 
