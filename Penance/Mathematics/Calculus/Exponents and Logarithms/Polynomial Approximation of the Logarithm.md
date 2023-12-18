@@ -85,7 +85,66 @@ We can denote the integral $\int_0^x \frac {u^n} {1-u} \; du$ by a function repr
 > $$
 >
 > Proof.
-> Assume $0 \lt x \lt 1$. We have $0 \leqslant u \leqslant x$ (todo: determine why) and so $1-x \leqslant 1 -u \leqslant 1$
+> Assume $0 \lt x \lt 1$. We have $0 \leqslant u \leqslant x$ (todo: determine why) and so $1-x \leqslant 1 -u \leqslant 1 \implies u^n \leqslant \frac {u^n} {1-u} \leqslant \frac {u^n} {1-x}$. Integrating,
+> $$
+> \frac {x^{x+1}} {x+1}
+> \leqslant E_n(x) = \int_0^x \frac {u^n} {1-u} \; du
+> \leqslant \frac 1 {1-x} \frac {x^{x+1}} {x+1}
+> $$
+>
+> Which shows the first property. Now assume $x \lt 0$ and let $t = -x$. Then for $t \gt 0$, $t = |x|$. Then,
+> $$
+> E_n(x) = E_n(-t) = \int_0^{-t} \frac {u^n} {1-u} \; du
+> = -\int_0^t \frac {u^n} {1 + u} \; du
+> = (-1)^{n+1} \int_0^t \frac {u^n} {1 + u} \; du
+> $$
+>
+> From this, we see that $E_n(x)$ has the same sign as $(-1)^{n+1}$. Finally, we notice that $(-1)^{n+1} \cdot (-1)^{n+1} = 1$, we find that:
+> $$
+> (-1)^{n+1} E_n(x) = \int_0^t \frac {u^n} {1+u} \; du \leqslant \int_0^t u^n \; du = \frac {t^{n+1}} {n+1} = \frac {|x|^{n+1}} {n+1}
+> $$
+> Which shows the inequality in the second property.
+>
+> $\blacksquare$
+
+## Approximation of the Logarithm
+
+Finally, we prove a formula for small positive values of $x$ which approximates the natural logarithm to an arbitrary precision dependent on the choice of degree $m$. We define a new term to represent the integral of $E_n(x)$. Therefore, we let $R_n(x) = E_n(x) - E_n(-x)$
+
+> [!abstract] Theorem.
+> If $0 \lt x \lt 1$ and $m \geqslant 1$ we have
+> $$
+> \log \frac {1+x} {1-x} = 2(x + \frac {x^3} 3 + \dots + \frac {x^{2m-1}} {2m-1}) + R_m(x)
+> $$
+> where
+> $$
+> \frac {x^{2m+1}} {2m+1} \lt R_m(x)
+> \leqslant \frac {2-x} {1-x} \frac {x^{2m+1}} {2m+1}
+> $$
+>
+> Proof.
+> First, we notice that since $0 \lt x \lt 1$,
+> $$
+> \frac {x^{n+1}} {n+1} \leqslant
+> E_n(x) \leqslant
+> \frac 1 {1-x} \frac {x^{n+1}} {n+1}
+> $$
+>
+> We want to manipulate the formula from the first theorem in order to arrive at $\log (1+x) - \log (1-x)$. We produce a new formula by letting $x = -x$ and subtract from the original:
+> $$
+> \begin{align}
+> &-\log(1-x) + \log(1+x) = P_n(x) + E_n(x) - P_n(-x) - E_n(-x) \\ \\
+> &= \log(1+x) - \log(1-x) = P_n(x) - P_n(-x) + R_n(x) \\ \\
+> &= \log \frac {1+x} {1-x} = P_n(x) - P_n(-x) + R_n(x)
+> \end{align}
+> $$
+>
+> Finally, to see that $P_n(x) - P_n(-x)$ is the desired polynomial, notice that every term in the polynomial of even degree remains even and each of the terms of odd degree are negative in $P_n(-x)$. Hence we are left with a polynomial which is twice the sum of the odd-degree terms of $P_n(x)$ and so,
+> $$
+> \log \frac {1+x} {1-x} = 2(x + \frac {x^3} 3 + \dots + \frac {x^{2m-1}} {2m-1}) + R_n(x)
+> $$
+>
+> $\blacksquare$
 
 
 ## Program to Approximate the Natural Logarithm
