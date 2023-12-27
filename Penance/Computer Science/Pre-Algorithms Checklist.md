@@ -16,24 +16,24 @@ Mathematical background required to perform algorithmic analyses.
 	- [x] Manipulation
 	- [ ] "Finite Calculus"
 	- [ ] Stirling Numbers
-- [ ] Logarithms and Exponents
-	- [ ] Natural Log
+- [x] Logarithms and Exponents
+	- [x] Natural Log
 	- [x] Changing Bases
 	- [x] Logarithmic Identities
 - [ ] Number Theory
 	- [ ] Modular Arithmetic
 - [ ] Combinatorics
 	- [x] Counting
-	- [ ] Binomial Coefficients
+	- [x] Binomial Coefficients
 	- [ ] Generating Functions
 - [ ] Probability
-- [ ] Integration Techniques
+- [x] Integration Techniques
 	- [x] u-substitution
-	- [ ] Tabular integration
+	- [x] Tabular integration
 	- [x] Integration by Parts
-- [ ] Differentiation Techniques
+- [x] Differentiation Techniques
 	- [x] Limits
-	- [ ] Epsilon-Delta proofs
+	- [x] Epsilon-Delta proofs
 - [ ] Recurrence Relations
 	- [x] Basic Review
 	- [ ] Characteristic Equation
@@ -56,7 +56,7 @@ Implement the following data structures and have a thorough understanding before
 	- [ ] Dijkstra's
 	- [ ] Prim's
 	- [ ] Kruskal's
-	- [ ] Breadth-First
+	- [x] Breadth-First
 - [ ] Dynamic Programming
 	- [ ] Practice
 	- [ ] Practice

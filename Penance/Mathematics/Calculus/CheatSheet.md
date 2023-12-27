@@ -84,6 +84,10 @@ Then we have from the above formula that $g'(x)f(x) = f'(x)$. This is generally 
 > \end{align}
 > $$
 
+## Taylor Polynomials
+
+
+
 ## Miscellaneous
 
 > [!tip] Formula

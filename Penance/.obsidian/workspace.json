@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3c15eb099e61a235",
+        "id": "c1b1615693c95ae2",
         "type": "tabs",
         "children": [
           {
-            "id": "847aa0bd41381997",
+            "id": "3a53bf697e79f482",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Hyperbolic Functions.md",
-                "mode": "source",
+                "file": "Mathematics/Calculus/Approximation/Calculus of Taylor Polynomials.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Hyperbolic Functions.md",
+                "file": "Mathematics/Calculus/Approximation/Calculus of Taylor Polynomials.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Hyperbolic Functions.md",
+                "file": "Mathematics/Calculus/Approximation/Calculus of Taylor Polynomials.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Hyperbolic Functions.md"
+                "file": "Mathematics/Calculus/Approximation/Calculus of Taylor Polynomials.md"
               }
             }
           },
@@ -156,45 +156,44 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "847aa0bd41381997",
+  "active": "3a53bf697e79f482",
   "lastOpenFiles": [
+    "Mathematics/Calculus/Approximation/Taylor Polynomial.md",
+    "Mathematics/Calculus/Approximation/Taylor's Formula with Remainder.md",
+    "Taylor Polynomial.md",
+    "Computer Science/Formal Methods/sedjS7p4q",
+    "Computer Science/Formal Methods/sed4ti3nl",
+    "Computer Science/Graphs/sedNAb5Lb",
+    "Computer Science/Graphs/sedUulIy5",
+    "Mathematics/Calculus/Approximation/Estimates for the Error in Taylor's Formula.md",
+    "Computer Science/Pre-Algorithms Checklist.md",
+    "Computer Science/Graphs/Basic Definition.md",
+    "Mathematics/Calculus/Approximation/Calculus of Taylor Polynomials.md",
+    "Mathematics/Calculus/Exponents and Logarithms/Journey to the Natural Log.md",
+    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
+    "Mathematics/Calculus/Approximation/Polynomial Approximation.md",
+    "Mathematics/Calculus/The Inverse Trigonometric Functions.md",
+    "Mathematics/Calculus/Approximation",
+    "Mathematics/Calculus/Hyperbolic Functions.md",
+    "Mathematics/Foundations/Factoring Tricks.md",
+    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
+    "Mathematics/Calculus/CheatSheet.md",
+    "Mathematics/Calculus/Continuity/Extreme Values.md",
+    "Mathematics/Foundations/Trig Functions.md",
+    "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
+    "Mathematics/Calculus/Exponents and Logarithms/The Exponential Function.md",
+    "Mathematics/Calculus/Integration/Applications of Integration.md",
+    "Mathematics/Calculus/Integration/Properties of the Integral of a Step Function.md",
+    "Computer Science/Graphs/Graph Traversal.md",
+    "Curriculum.md",
+    "Mathematics/Sums/Worked Examples.md",
+    "Computer Science/Sorting",
+    "Computer Science/Sorting and Searching",
     "Mathematics/Foundations/sedYlFdwV",
     "Mathematics/Foundations/Relations/sedTPZ9X0",
     "Mathematics/Foundations/Relations/sediLedqH",
-    "Computer Science/Graphs/sedZJHjyR",
-    "Mathematics/Calculus/CheatSheet.md",
-    "Mathematics/Calculus/The Inverse Trigonometric Functions.md",
-    "Mathematics/Foundations/Trig Functions.md",
-    "Mathematics/Foundations/Factoring Tricks.md",
-    "Mathematics/Foundations/Quadratics.md",
-    "Mathematics/Calculus/Exponents and Logarithms/Journey to the Natural Log.md",
-    "Mathematics/Calculus/Exponents and Logarithms/The Exponential Function.md",
-    "Mathematics/Calculus/Differentiation/Derivatives of Inverse Functions.md",
-    "Mathematics/Calculus/Exponents and Logarithms/Polynomial Approximation of the Logarithm.md",
-    "Mathematics/Calculus/Hyperbolic Functions.md",
-    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
-    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
-    "Mathematics/Calculus/Differentiation/The Derivative.md",
-    "Mathematics/Calculus/Exponents and Logarithms/The Natural Logarithm.md",
-    "Mathematics/Calculus/Exponents and Logarithms/Additional Properties of the Logarithm.md",
-    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
-    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
-    "Mathematics/Calculus/Continuity/Extreme Values.md",
-    "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
-    "Mathematics/Linear Algebra/Vector Space/sedN0GNhs",
-    "Computer Science/sed2lu1aI",
-    "sedbmENAU",
-    "Mathematics/Foundations/Exponents and Logarithms.md",
-    "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
-    "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
-    "Mathematics/Calculus/Integration/Applications of Integration.md",
-    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
-    "Mathematics/Foundations/Functional Equations.md",
     "Mathematics/Calculus/Plots/polynomial-integral.svg",
-    "Mathematics/Calculus/Exponents and Logarithms",
-    "Computer Science/Graphs",
-    "Mathematics/Foundations/powerset.ipynb",
-    "Mathematics/Foundations/fibonacci.ipynb",
     "Mathematics/Foundations/example.svg",
     "Mathematics/Foundations/plot.svg",
     "Untitled.canvas",
