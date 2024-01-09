@@ -86,7 +86,40 @@ Then we have from the above formula that $g'(x)f(x) = f'(x)$. This is generally 
 
 ## Taylor Polynomials
 
+$$
+\begin{array}{c l r}
+f(x) & P(x) & o \\ \\
 
+\frac 1 {1-x}
+& 1 + x + x^2 + \dots + x^n + \frac {x^{n+1}} {1 - x}
+& o(x^n) \\ \\
+
+\log(1 + x)
+& x - \frac {x^2} 2 + \frac {x^3} 3 - \dots + (-1)^{n-1} \frac {x^n} n
+& o(x^n) \\ \\
+
+e^x
+& 1 + x + \frac {x^2} 2 + \frac {x^3} {3!} + \dots + \frac {x^n} {n!}
+& o(x^n) \\ \\
+
+\sin x
+& x - \frac {x^3} {3!} + \frac {x^5} {5!} + \dots + (-1)^{n-1} \frac {x^{2n}} {(2n)!}
+& o(x^{2n}) \\ \\
+
+\cos x
+& 1 - \frac {x^2} {2!} + \frac {x^4} {4!} + \dots + (-1)^n \frac {x^{2n+1}} {(2n+1)!}
+& o(x^{2n+1}) \\ \\
+
+\tan x
+& x + \frac {x^3} 3 + \frac {x^5} 5 + \dots + \frac {x^{2n+1}} {2n+1}
+& o(x^{2n+1}) \\ \\
+
+\arctan x
+& x - \frac {x^3} 3 + \frac {x^5} 5 - \dots + (-1)^{n-1} \frac {x^{2n-1}} {2n-1}
+& o(x^{2n}) \\ \\
+
+\end{array}
+$$
 
 ## Miscellaneous
 

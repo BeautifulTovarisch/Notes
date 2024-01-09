@@ -27,7 +27,7 @@ The next theorem is shown by induction. We prove the definition of the error for
 > E_1(x) &= f(x) - T_1 f(x) \\ \\
 > &= f(x) - \sum_{k=0}^1 \frac {f^{(k)}(a)} {k!} (x-a)^k \\ \\
 > &= f(x) - f(a) + f'(a)(x - a) \\ \\
-> &= \int_a^x f'(t) + \int_a^x f'(a) \; dt \; dt &\text{FTC} \\ \\
+> &= \int_a^x f'(t) \; dt + \int_a^x f'(a) \; dt \; &\text{FTC} \\ \\
 > &= \int_a^x [f'(t) + f'(a)] \; dt
 > \end{align}
 > $$
