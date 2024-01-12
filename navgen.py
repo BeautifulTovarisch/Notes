@@ -13,14 +13,24 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
    scaffolding for use in creating a Sphinx Table of Contents.
 """
 
-def dir_tree(root):
+# TODO: Produce this hash from configuration
+ignore_patterns = [
+  '.obsidian',
+  '__pycache__',
+  '.ipynb_checkpoints/',
+  '*.pyc',
+  '.venv/'
+]
+
+def dir_tree(root, dest):
   """
   dir_tree produces a directed graph representing the directory
   structure under [root]. The graph is represented as an adjacency list.
 
   Parameters:
     root (string): The root to the root directory
-
+    dest (string): The destination of the nav files. This is used to compute
+    relative paths to ensure the TOCs point to the correct files.
 
   Output:
     A dictionary containing an adjacency list correponding to the directory
@@ -48,18 +58,15 @@ def dir_tree(root):
   tree[key] = []
 
   for child in children:
-    fullroot = os.path.join(root, child)
-    tree[key].append(fullroot)
+    relpath = os.path.relpath(os.path.join(root, child), dest)
+    tree[key].append(relpath)
 
-    tree = {**tree, **dir_tree(fullroot)}
+    tree = {**tree, **dir_tree(relpath, dest)}
 
   return tree
 
 # Configure Jinja environment and fetch nav template
 def get_template(templatesDir, navTemplate):
-  """
-  """
-
   env = Environment(
     loader=FileSystemLoader(templatesDir),
     autoescape=select_autoescape()
@@ -100,13 +107,16 @@ def nav_gen(tree, template, dest):
   """
 
   for key in tree:
-    with open(f'{dest}/{key}.md', 'a') as nav:
+    with open(f'{dest}/{key}.md', 'w') as nav:
       nav.write(template.render(title=key, files=tree[key]))
 
 # TODO: Add support for ignoring files (--gitignore, etc.)
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Generate navigation files for a directory. ')
+
+  parser.add_argument("--dry-run", default=False,
+                      help="Execute a dry run without writing files to disk.")
 
   parser.add_argument("root", default=os.getcwd(),
                       help="Path to root directory.")
@@ -118,6 +128,7 @@ if __name__ == "__main__":
 
   root = args.root
   dest = args.dest
+  dry = args.dry_run
 
   # TODO: Proper error handling
   if not os.path.exists(root):
@@ -127,8 +138,8 @@ if __name__ == "__main__":
     os.makedirs(dest, exist_ok=True)
 
   # TODO: Add an arg to specify nav template.
-  template = get_template("_templates", "nav.md")
+  template = get_template("site/_templates", "nav.md")
 
-  t = dir_tree(root)
+  t = dir_tree(root, dest)
 
   nav_gen(t, template, dest)

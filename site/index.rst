@@ -10,11 +10,8 @@ Welcome to Anthony's notes!
    :titlesonly:
    :glob:
    :maxdepth: 1
-   :caption: Calculus
 
-   Notes/Mathematics/Calculus/CheatSheet
-
-   nav/*
+   nav/Calculus
 
 Indices and tables
 ==================

@@ -1,4 +1,4 @@
-# The Derivative 
+# The Derivative
 
 > [!todo]
 > Plot a tangent line:
