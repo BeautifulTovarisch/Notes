@@ -1,28 +1,26 @@
 #!/usr/bin/env python3
 
+import os
 import os.path
-
-import json
+import argparse
 
 """navgen
-   Simple script that recursively walks a directory path and generates an MD
-   scaffolding that enables nested TOC generation in Sphinx.
-
-   USAGE
+   Simple script that recursively walks a directory path and generates a nav
+   scaffolding for use in creating a Sphinx Table of Contents.
 """
 
-def dir_tree(path):
+def dir_tree(root):
   """
   dir_tree produces a directed graph representing the directory
-  structure under [path]. The graph is represented as an adjacency list.
+  structure under [root]. The graph is represented as an adjacency list.
 
   Parameters:
-    path (string): The path to the root directory
+    root (string): The root to the root directory
 
 
   Output:
     A dictionary containing an adjacency list correponding to the directory
-    structure under [path].
+    structure under [root].
 
   Example:
     dir_tree("rootDir")
@@ -34,30 +32,21 @@ def dir_tree(path):
     }
   """
 
-  # Check if path exists. Throw appropriate exception
-  # Recursively build dictionary by appending files to list, recursing through
-  # directories
-
-  if not os.path.exists(path):
-    raise FileNotFoundError(path)
-
-  # Consider whether I can support a lone file
-  if not os.path.isdir(path):
+  # Basis. I don't need the files themselves in the list of keys
+  if not os.path.isdir(root):
     return {}
 
   tree = {}
 
-  children = os.listdir(path)
+  children = os.listdir(root)
 
-  tree[os.path.basename(path)] = children
+  key = os.path.basename(os.path.normpath(root))
+  tree[key] = children
 
   for child in children:
-    fullpath = os.path.join(path, child)
+    fullroot = os.path.join(root, child)
 
-    tree = {**tree, **dir_tree(fullpath)}
-
-    # print(f'dir_tree({child}) => {ret}')
-
+    tree = {**tree, **dir_tree(fullroot)}
 
   return tree
 
@@ -74,6 +63,19 @@ def write_navfile(filename):
   return ""
 
 if __name__ == "__main__":
-  t = dir_tree("./site/Notes/Mathematics/Foundations")
+  parser = argparse.ArgumentParser(description='Generate navigation files for a directory. ')
 
-  print(json.dumps(t, indent=2))
+  parser.add_argument("root", default=os.getcwd(),
+                      help="Path to root directory.")
+
+  args = parser.parse_args()
+  root = args.root
+
+  if not os.path.exists(root):
+    raise FileNotFoundError(root)
+
+ # TODO: Proper error reporting.
+  t = dir_tree(root)
+
+  print(t)
+
