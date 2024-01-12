@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md",
+                "file": "Mathematics/Calculus/Integration/Step Functions.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md",
+                "file": "Mathematics/Calculus/Integration/Step Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md",
+                "file": "Mathematics/Calculus/Integration/Step Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md"
+                "file": "Mathematics/Calculus/Integration/Step Functions.md"
               }
             }
           },
@@ -159,40 +159,42 @@
   },
   "active": "012b501686969a4b",
   "lastOpenFiles": [
+    "Mathematics/Calculus/Integration/Properties of the Integral of a Step Function.md",
+    "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
+    "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
+    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
+    "Mathematics/Calculus/Integration/Integrals of more General Functions.md",
+    "Mathematics/Calculus/Integration/Area as a Set Function.md",
+    "Mathematics/Calculus/Integration/Applications of Integration.md",
+    "Mathematics/Calculus/Exponents and Logarithms/The Natural Logarithm.md",
+    "Mathematics/Calculus/Exponents and Logarithms/The Exponential Function.md",
+    "Mathematics/Calculus/Exponents and Logarithms/Journey to the Natural Log.md",
+    "Mathematics/Calculus/Exponents and Logarithms/Additional Properties of the Logarithm.md",
+    "Mathematics/Calculus/Differentiation/The Derivative.md",
+    "Mathematics/Calculus/Differentiation/Derivatives of Inverse Functions.md",
+    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
+    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
+    "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
+    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
+    "Mathematics/Calculus/Continuity/Extreme Values.md",
+    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
+    "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md",
     "Mathematics/Calculus/Approximation/Taylor Polynomial.md",
     "Mathematics/Calculus/Approximation/Taylor's Formula with Remainder.md",
     "Mathematics/Calculus/Approximation/Polynomial Approximation of the Logarithm.md",
     "Mathematics/Calculus/Approximation/Polynomial Approximation.md",
     "Mathematics/Calculus/Approximation/Little-o Notation.md",
     "Mathematics/Calculus/Approximation/Indeterminate Forms.md",
-    "Mathematics/Calculus/Approximation/Estimates for the Error in Taylor's Formula.md",
-    "Mathematics/Calculus/Approximation/Calculus of Taylor Polynomials.md",
-    "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md",
     "Mathematics/Calculus/Plots.rst",
     "Mathematics/Calculus/Integration.rst",
     "Mathematics/Calculus/Exponents and Logarithms.rst",
     "Mathematics/Calculus/Differentiation.rst",
     "Mathematics/Calculus/Continuity.rst",
     "Mathematics/Calculus/Approximation.rst",
-    "Mathematics/Calculus/The Inverse Trigonometric Functions.md",
-    "Mathematics/Calculus/Hyperbolic Functions.md",
-    "Mathematics/Calculus/CheatSheet.md",
-    "Computer Science/Formal Methods/Algorithms.md",
-    "intro.md",
     "Mathematics/Foundations/Relations/sedGY1C7B",
     "Computer Science/Graphs/sednBTJ5v",
-    "Computer Science/Formal Methods/Correctness of Algorithms.md",
-    "Computer Science/Algorithms/Hashes and Dictionaries.md",
-    "Curriculum.md",
-    "Computer Science/Pre-Algorithms Checklist.md",
-    "Computer Science/Basic Algorithms/Representations of Sets.md",
-    "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
     "Computer Science/Basic Algorithms",
     "Overview",
-    "Computer Science/Computer Science.md",
-    "Computer Science/Algorithms/Representations of Sets.md",
-    "Computer Science/Algorithms/Pre-Algorithms Checklist.md",
-    "Mathematics/Mathematics.md",
     "_build/html/_static/check-solid.svg",
     "_build/html/_static/copy-button.svg",
     "_build/html/_static/images/logo_jupyterhub.svg",
@@ -203,8 +205,6 @@
     "_build/html/_static/minus.png",
     "_build/html/_static/file.png",
     "_build/html/_images/f75951aa19aa519e78aead7613e3c19dc483cea00d1cff8f9b16f70a19162c05.png",
-    "_build/html/_sources/Mathematics/Sums/Worked Examples.md",
-    "_build/html/_sources/Mathematics/Sums/Manipulation.md",
     "Untitled.canvas"
   ]
 }

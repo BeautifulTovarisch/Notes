@@ -1,3 +1,5 @@
+# The Derivative 
+
 > [!todo]
 > Plot a tangent line:
 > - Either use fancy gnuplot hacks or

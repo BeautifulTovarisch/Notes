@@ -1,3 +1,4 @@
+# Additional Properties of the Logarithm
 
 From our [[The Natural Logarithm#Properties of the Natural Logarithm]] in combination with our original [[Journey to the Natural Log#A Functional Equation]] we can deduce additional properties of the logarithm.
 

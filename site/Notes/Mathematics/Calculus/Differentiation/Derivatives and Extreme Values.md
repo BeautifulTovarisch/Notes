@@ -1,3 +1,5 @@
+# Derivatives and Extreme Values
+
 Computing the first and second derivatives of a function reveal important information about relative maxima and minima. This has direct applications in optimization problems and can be helpful in finding roots of polynomials.
 
 > [!todo]

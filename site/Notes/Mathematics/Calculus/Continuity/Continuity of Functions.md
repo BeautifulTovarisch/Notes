@@ -1,3 +1,5 @@
+# Continuity of Functions
+
 Intuitively, we say a function is continuous of there are no "gaps", "kinks" or asymptotes in its graph. In order to rigorously define continuity, however, we need the notion of a limit.
 
 > [!todo]

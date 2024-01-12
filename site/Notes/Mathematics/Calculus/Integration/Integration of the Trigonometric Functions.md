@@ -1,3 +1,5 @@
+# Integration of the Trigonometric Functions
+
 $$
 \begin{align}
 &\int_a^b \sin x \; dx = -(\cos b - \cos a) \\

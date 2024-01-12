@@ -1,3 +1,5 @@
+# Applications of Integration
+
 Computing the integral has applications for the calculation of:
 - Area
 - Work

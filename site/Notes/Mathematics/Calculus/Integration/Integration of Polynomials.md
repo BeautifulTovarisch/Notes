@@ -1,3 +1,5 @@
+# Integration of Polynomials 
+
 We use the [[Integrals of more General Functions#Calculation of the Integral of a Bounded Monotonic Function]] to prove an important result which will lead to us being able to integrate arbitrary polynomials.
 
 ## Definite Integral of $x^p$

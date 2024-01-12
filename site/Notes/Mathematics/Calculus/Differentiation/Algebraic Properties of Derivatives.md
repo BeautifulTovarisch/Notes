@@ -1,3 +1,5 @@
+# Algebraic Properties of Derivatives
+
 Similar to the [[Continuity of Functions#Algebraic Properties of the Limit]], derivatives exhibit basic algebraic properties which allow them to be manipulated. This is often necessary to reduce a complicated derivative into one that can be evaluated more easily.
 
 ## Algebraic Properties

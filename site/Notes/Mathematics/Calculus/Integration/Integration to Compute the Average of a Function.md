@@ -1,3 +1,5 @@
+# Integration to Compute the Average of a Function
+
 A useful application of the definite integral is to compute the average of a function over an interval. The intuition behind the formula is to divide $f(x)$ into $n$ equal sub-intervals over $[a, b]$.
 
 ## Average Value of a Function over $[a, b]$

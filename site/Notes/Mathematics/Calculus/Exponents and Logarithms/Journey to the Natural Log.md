@@ -1,3 +1,5 @@
+# Journey to the Natural Log
+
 We want to define the natural log as an integral in order to take advantage of the [[Properties of the Integral of a Step Function]]. We start by examining a [[functional equation]] and reason about some characteristics of a solution.
 
 ## A Functional Equation

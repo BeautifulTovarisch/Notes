@@ -1,3 +1,5 @@
+# The Natural Logarithm 
+
 Recall from [[Journey to the Natural Log#A Closer Look at Our Formula]] the general form of the solution we'd like to see:
 
 $$

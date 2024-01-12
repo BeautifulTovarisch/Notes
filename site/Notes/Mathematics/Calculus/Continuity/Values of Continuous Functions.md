@@ -1,3 +1,5 @@
+# Values of Continuous Functions
+
 We develop from Bolzano's theorem a result helpful in proving several properties of functions continuous over some $[a, b]$.
 
 ## Bolzano's Theorem

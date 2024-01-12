@@ -1,3 +1,5 @@
+# Properties of the Integral of a Step Function
+
 Using the properties of summations, we can establish helpful manipulations of the [[Step Functions#Definite Integral of a Step Function]], which end up generalizing to other functions later on.
 
 > [!abstract] Additive Property

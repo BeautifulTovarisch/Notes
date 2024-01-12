@@ -1,3 +1,5 @@
+# Extreme Values
+
 We can use the [[Values of Continuous Functions#Intermediate Value Theorem]] to show that a continuous function is bounded and always contains an absolute maximum and minimum along a given interval. This lets us establish that such a function is integratable and leads to a helpful technique for estimating the integral of certain products of functions.
 
 ## Extrema

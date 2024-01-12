@@ -1,3 +1,5 @@
+# Derivatives of Inverse Functions
+
 We want to prove that the property of differentiability transfers to a function's inverse. Additionally, we prove that the derivative of a function is the reciprocal of the derivative of its inverse
 
 > [!abstract] Differentiability of an Inverse

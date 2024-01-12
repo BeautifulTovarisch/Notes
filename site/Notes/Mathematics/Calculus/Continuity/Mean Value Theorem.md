@@ -1,3 +1,5 @@
+# Mean Value Theorem
+
 We continue [[Extreme Values|previous efforts]] to prove properties about continuous functions over a closed interval. In order to build up the foundations for the Mean Value Theorem, we first establish that continuous functions are integratable over the interval.
 
 ## Integratability

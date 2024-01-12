@@ -1,3 +1,5 @@
+# Step Functions
+
 We introduce a step function as a simple basis for computing the integral of more general functions later on. We build up the rigorous foundation for a step function by considering [[Area as a Set Function#Partitions over an Interval]].
 
 > [!info] Step Function

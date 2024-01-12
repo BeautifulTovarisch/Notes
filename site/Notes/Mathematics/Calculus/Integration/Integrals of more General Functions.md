@@ -1,3 +1,5 @@
+# Integrals of more General Functions
+
 We can now extend the [[Step Functions#Definite Integral of a Step Function]] definition to other functions by using two step functions to approximate.
 
 ## Approximation using Step Functions

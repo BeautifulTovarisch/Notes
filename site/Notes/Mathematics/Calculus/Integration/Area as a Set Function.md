@@ -1,3 +1,5 @@
+# Area as a Set Function
+
 The treatment of integration begins by defining a function from Cartesian coordinates in a plane to the real numbers. We say this *set* of points is mapped by a *set function* which produces the area.
 
 > [!info] Measurable Sets

@@ -1,3 +1,5 @@
+# The Exponential Function
+
 [[Additional Properties of the Logarithm#Bijectivity of the Logarithm|Previously]] we showed that the logarithm is bijective, and therefore has an inverse. We define this inverse as follows:
 
 > [!info] The Exponential Function
