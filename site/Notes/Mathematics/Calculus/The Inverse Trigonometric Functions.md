@@ -1,3 +1,5 @@
+# The Inverse Trigonometric Functions
+
 In order to define an inverse for the [[Trig Functions]], we need to restrict the domain to an interval which is strictly monotonic (in order to preserve injectivity). For $\sin$ this is conventionally $[-\pi/2, \pi/2]$, for $\cos$, $[0, \pi]$.
 
 ## The Inverse Sine Function

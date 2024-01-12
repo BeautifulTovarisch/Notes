@@ -1,3 +1,5 @@
+# Taylor's Formula with Remainder
+
 As with the [[Polynomial Approximation of the Logarithm#Error Component]], we want to bound the size of the error in order to determine the precision of the approximation.
 
 We begin by defining the error term and later rewrite it as an integral.

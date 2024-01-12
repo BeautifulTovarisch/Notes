@@ -1,3 +1,5 @@
+# Taylor Polynomial
+
 From the discussion in [[Polynomial Approximation]], we found a general formula describing a polynomial which can be used to approximate a function.
 
 > [!info] Taylor's Formula

@@ -1,3 +1,5 @@
+# Polynomial Approximation of the Logarithm
+
 We can use certain polynomials to approximate the value of the logarithm to an arbitrary precision. Via a series of substitutions, we can obtain an approximation which contains an integral and error component.
 
 ## Motivating Example

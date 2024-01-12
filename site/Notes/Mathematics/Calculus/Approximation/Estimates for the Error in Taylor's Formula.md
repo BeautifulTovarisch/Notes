@@ -1,3 +1,5 @@
+# Estimates for the Error in Taylor's Formula
+
 Given a Taylor Polynomial representing some function, we want to determine the bounds on the [[Taylor's Formula with Remainder#Error as an Integral|error component]] $E_n$.
 
 ## Bounds Using the N+1st Derivative

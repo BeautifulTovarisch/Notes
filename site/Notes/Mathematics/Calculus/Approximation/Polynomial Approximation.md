@@ -1,3 +1,5 @@
+# Polynomial Approximation
+
 Polynomials exhibit properties which often make them easier to deal with than other functions (as was the case for [[Polynomial Approximation of the Logarithm]]. In particular, we may use polynomials of arbitrary degree to approximate the value of other types of functions whose computation may be difficult.
 
 ## Background

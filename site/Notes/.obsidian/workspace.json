@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Formal Methods/Algorithms.md",
-                "mode": "preview",
+                "file": "Mathematics/Calculus/Approximation/Taylor Polynomial.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Science/Formal Methods/Algorithms.md",
+                "file": "Mathematics/Calculus/Approximation/Taylor Polynomial.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Science/Formal Methods/Algorithms.md",
+                "file": "Mathematics/Calculus/Approximation/Taylor Polynomial.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Science/Formal Methods/Algorithms.md"
+                "file": "Mathematics/Calculus/Approximation/Taylor Polynomial.md"
               }
             }
           },
@@ -141,7 +141,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -152,14 +153,32 @@
     "hiddenItems": {
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false
     }
   },
-  "active": "5f3377f6ed1914f5",
+  "active": "012b501686969a4b",
   "lastOpenFiles": [
+    "Mathematics/Calculus/Approximation/Taylor's Formula with Remainder.md",
+    "Mathematics/Calculus/Approximation/Polynomial Approximation of the Logarithm.md",
+    "Mathematics/Calculus/Approximation/Polynomial Approximation.md",
+    "Mathematics/Calculus/Approximation/Little-o Notation.md",
+    "Mathematics/Calculus/Approximation/Indeterminate Forms.md",
+    "Mathematics/Calculus/Approximation/Estimates for the Error in Taylor's Formula.md",
+    "Mathematics/Calculus/Approximation/Calculus of Taylor Polynomials.md",
+    "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md",
+    "Mathematics/Calculus/Approximation/Taylor Polynomial.md",
+    "Mathematics/Calculus/Plots.rst",
+    "Mathematics/Calculus/Integration.rst",
+    "Mathematics/Calculus/Exponents and Logarithms.rst",
+    "Mathematics/Calculus/Differentiation.rst",
+    "Mathematics/Calculus/Continuity.rst",
+    "Mathematics/Calculus/Approximation.rst",
+    "Mathematics/Calculus/The Inverse Trigonometric Functions.md",
+    "Mathematics/Calculus/Hyperbolic Functions.md",
+    "Mathematics/Calculus/CheatSheet.md",
+    "Computer Science/Formal Methods/Algorithms.md",
+    "intro.md",
     "Mathematics/Foundations/Relations/sedGY1C7B",
     "Computer Science/Graphs/sednBTJ5v",
     "Computer Science/Formal Methods/Correctness of Algorithms.md",
@@ -170,18 +189,10 @@
     "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
     "Computer Science/Basic Algorithms",
     "Overview",
-    "Mathematics/Calculus/CheatSheet.md",
     "Computer Science/Computer Science.md",
     "Computer Science/Algorithms/Representations of Sets.md",
     "Computer Science/Algorithms/Pre-Algorithms Checklist.md",
     "Mathematics/Mathematics.md",
-    "_build/html/index.html",
-    "_build/html/_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css",
-    "_build/html/objects.inv",
-    "_build/html/searchindex.js",
-    "_build/html/_static/design-style.4045f2051d55cab465a707391d5b2007.min.css",
-    "_build/html/_static/design-tabs.js",
-    "_build/html/_static/sphinx-thebe.js",
     "_build/html/_static/check-solid.svg",
     "_build/html/_static/copy-button.svg",
     "_build/html/_static/images/logo_jupyterhub.svg",
@@ -194,18 +205,6 @@
     "_build/html/_images/f75951aa19aa519e78aead7613e3c19dc483cea00d1cff8f9b16f70a19162c05.png",
     "_build/html/_sources/Mathematics/Sums/Worked Examples.md",
     "_build/html/_sources/Mathematics/Sums/Manipulation.md",
-    "_build/html/_sources/Mathematics/Sums/Finite Calculus.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector/Vectors over GF(2).md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector/The Vector.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector/Linear Equations.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector/Line Segments.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector/Dot Product.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector Space/Vector Spaces.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector Space/Span.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector Space/Linear Systems.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector Space/Linear Combination.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector Space/Homogeneous Linear Systems.md",
-    "_build/html/_sources/Mathematics/Linear Algebra/Vector Space/Geometry of Sets of Vectors.md",
     "Untitled.canvas"
   ]
 }

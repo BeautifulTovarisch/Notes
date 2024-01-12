@@ -1,5 +1,6 @@
-Taylor approximations can help evaluate limits which would otherwise be in some indeterminate form.
+# Indeterminate Forms
 
+Taylor approximations can help evaluate limits which would otherwise be in some indeterminate form.
 
 ## Taylor Expansion
 

@@ -1,3 +1,6 @@
+
+# Hyperbolic Functions
+
 The hyperbolic functions are analogous to the [[Trig Functions]], but defined in terms of hyperbola instead of the unit circle.
 
 > [!info] Hyperbolic Functions

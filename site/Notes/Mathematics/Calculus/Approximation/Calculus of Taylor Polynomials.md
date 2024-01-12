@@ -1,3 +1,6 @@
+
+# Calculus of Taylor Polynomials
+
 [[Taylor Polynomial]]s have the helpful property of closure under integration and differentiation and also exhibit linearity. This allows us to create other Taylor formulas using one that is known.
 
 > [!tip]

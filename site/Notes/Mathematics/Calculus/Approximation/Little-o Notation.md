@@ -1,3 +1,5 @@
+# Little-o Notation
+
 The little-oh $o$ notation is used to relate a function to another when we want to indicate the latter grows faster than the former as $x \to a$.
 
 > [!info] Little-Oh Notation

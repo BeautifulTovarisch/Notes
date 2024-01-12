@@ -1,5 +1,7 @@
 Important derivations and/or results that I forget all the time.
 
+# CheatSheet
+
 ## Basic  Integrals
 
 | $f$       | $f'$         | $\int f$        |
