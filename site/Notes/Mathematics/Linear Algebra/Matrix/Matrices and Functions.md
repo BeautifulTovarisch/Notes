@@ -1,3 +1,5 @@
+# Matrices and Functions
+
 > This section defines a linear transformation in a non-traditional way.
 
 For every matrix $M$, we define a function $x \mapsto M * x$ called $f_M$:

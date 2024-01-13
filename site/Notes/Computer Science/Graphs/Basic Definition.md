@@ -1,3 +1,5 @@
+# Basic Definition
+
 Mathematically a graph is represented by a pair of sets, $V, E$ corresponding to its vertices and edges.
 
 ```mermaid

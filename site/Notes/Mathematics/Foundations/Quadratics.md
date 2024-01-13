@@ -1,3 +1,5 @@
+# Quadratics
+
 Expressions of the form $ax^2 + bx + c$ are called **quadratic**. The graph of a quadratic expression is called a parabola. Often times we're interested in values of $x$ (roots) for which the expression equals zero.
 
 > [!info] Quadratic Expression

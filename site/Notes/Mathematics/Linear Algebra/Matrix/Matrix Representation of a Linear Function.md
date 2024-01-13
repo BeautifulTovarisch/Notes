@@ -1,3 +1,5 @@
+# Matrix Representation of  Linear Function
+
 We want to find a compact representation of a [[Linear Functions]]. We use [[Generators#Standard Generators]] under the image of the function to produce a matrix.
 
 > [!info] Matrix Representation of a Linear Function

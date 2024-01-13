@@ -1,3 +1,5 @@
+# Affine Spaces
+
 We consider a [[Line Segments#Segments Through the Origin|line through the origin]], which forms a [[Vector Spaces|vector space]], say, $\mathcal{V}$. Take some vector $a$ and add it to every vector in $\mathcal{V}$ to obtain:
 
 $$

@@ -1,4 +1,4 @@
-# Line Segments as Vectors
+# Line Segments
 
 We can use [[The Vector|vectors]] to represent line segments in a plane.
 

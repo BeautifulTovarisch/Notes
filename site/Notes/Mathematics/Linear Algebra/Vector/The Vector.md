@@ -1,3 +1,5 @@
+# The Vector
+
 ## History
 Vector analysis was invented by Josiah Gibbs. Previously quaternions, invented by *something something* Hamilton.
 

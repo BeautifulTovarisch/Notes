@@ -1,3 +1,5 @@
+# Closure
+
 ## Transitive Closure
 
 We want to find the **smallest relation** $R^T$ that expresses transitivity over a relation $R$.

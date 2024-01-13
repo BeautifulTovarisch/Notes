@@ -1,3 +1,4 @@
+# Basics of Counting
 
 We develop the intuition behind the basic counting principles here. We start with unrestricted permutations and work up to combinations and permutations subject to certain symmetries.
 

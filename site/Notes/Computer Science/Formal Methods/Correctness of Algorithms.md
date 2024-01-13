@@ -1,3 +1,5 @@
+# Correctness of Algorithms
+
 We want to be able to prove that our algorithms are correct beyond the empirical evidence of automated testing or peer review. In general we want to establish **pre-conditions** and show that certain **post-conditions** hold throughout the execution of the algorithm.
 
 > [!info] Definition

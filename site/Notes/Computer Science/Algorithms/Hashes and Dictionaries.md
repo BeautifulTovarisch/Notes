@@ -1,3 +1,5 @@
+# Hashes and Dictionaries
+
 Hashes are one of the most versatile data structures and find their way into a wide variety of problems in computer science.  The core ideas are:
 
 - Use a **hash function** to produce some numerical index representation of an object

@@ -1,3 +1,5 @@
+# The Matrix
+
 A traditional matrix is a two-dimensional array whose entries are elements of the same field.
 
 $$

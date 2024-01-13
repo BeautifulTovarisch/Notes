@@ -1,3 +1,5 @@
+# Relations
+
 If $A, B$ are sets, we define a **relation** $R$ as a subset of $A \times B$. For $a \in A, \; b \in B$, if $(a, b) \in R$, we say "$a$ is related to $b$".
 
 ## Manipulation

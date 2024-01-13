@@ -1,3 +1,5 @@
+# Worked Examples
+
 We work through some example derivations using the techniques of [[Finite Calculus]].
 
 ## Natural Log

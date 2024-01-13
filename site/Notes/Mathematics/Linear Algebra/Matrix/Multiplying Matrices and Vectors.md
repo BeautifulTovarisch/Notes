@@ -1,3 +1,5 @@
+# Multiplying Matrices and Vectors
+
 This section defines several representations of multiplication involving a matrix and vector.
 
 > A "mnemonic" I like for remembering legal operations:

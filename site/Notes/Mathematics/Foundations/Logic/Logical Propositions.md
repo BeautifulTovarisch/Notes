@@ -1,3 +1,5 @@
+# Logical Propositions
+
 The validity of a logical construct comes from its **structure**, not its **contents**.
 
 ## Proposition

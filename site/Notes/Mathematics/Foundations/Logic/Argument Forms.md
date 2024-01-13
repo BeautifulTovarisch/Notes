@@ -1,3 +1,5 @@
+# Argument Forms
+
 An argument is a sequence of [[Logical Propositions]]. Arguments allow a more sophisticated composition of logical deduction than a single, large proposition.
 
 ## Argument

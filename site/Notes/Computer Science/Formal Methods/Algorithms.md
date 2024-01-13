@@ -1,3 +1,5 @@
+# Algorithms
+
 This section contains some basic algorithms and nicely transitions to proofs of correctness for algorithms later on.
 
 > [!info] Algorithm

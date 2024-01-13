@@ -1,3 +1,5 @@
+# Linear Systems
+
 The solution set to an arbitrary [[Linear Equations#System of Equations]], if it exists, is an [[Affine Spaces|affine space]]. We would like to know whether the solution is **unique**.
 
 > [!abstract] Uniqueness of a solution to a linear system

@@ -1,3 +1,5 @@
+# Hamming Code
+
 In the olden days, computers sending signals over a long distance were subject to interference which may corrupt an incoming message. Computers were able to detect these errors, but Richard Hamming wanted to devise a way to automatically correct them.
 
 We call Hamming codes, "Linear Binary Block Codes" in the modern era.

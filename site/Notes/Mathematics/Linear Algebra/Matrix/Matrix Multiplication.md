@@ -1,3 +1,5 @@
+# Matrix Multiplication
+
 There are a few strategies for computing the product of two matrices. We revisit the representations in [[Multiplying Matrices and Vectors]] and reduce the problem to either a matrix-vector or vector-matrix multiplication over the respective dimensions of the matrices.
 
 > [!info] Legal Multiplication

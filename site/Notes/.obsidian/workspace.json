@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Calculus/Integration/Step Functions.md",
+                "file": "Mathematics/Foundations/Relations/Closure.md",
                 "mode": "source",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Calculus/Integration/Step Functions.md",
+                "file": "Mathematics/Foundations/Relations/Closure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Calculus/Integration/Step Functions.md",
+                "file": "Mathematics/Foundations/Relations/Closure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Calculus/Integration/Step Functions.md"
+                "file": "Mathematics/Foundations/Relations/Closure.md"
               }
             }
           },
@@ -157,8 +157,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "012b501686969a4b",
+  "active": "5f3377f6ed1914f5",
   "lastOpenFiles": [
+    "Mathematics/Foundations/Relations/Closure.md~",
+    "Mathematics/Foundations/Logic/Logical Propositions.md",
+    "Mathematics/Foundations/Logic/Induction.md",
+    "Mathematics/Foundations/Logic/Common Syllogisms.md",
+    "Mathematics/Foundations/Logic/Argument Forms.md",
+    "Mathematics/Calculus/Cheatsheet.md",
+    "Mathematics/Calculus/Approximation/Estimates for the Error in Taylor's Formula.md",
+    "Computer Science/Algorithmic Analysis Background.md",
+    "Computer Science/Graphs/Spanning Tree.md",
+    "Computer Science/Graphs/Graph Traversal.md",
+    "Computer Science/Graphs/Checking Component Connectedness.md",
+    "Computer Science/Graphs/Basic Definition.md",
+    "Computer Science/Algorithms/Pre-Algorithms Checklist.md",
+    "Computer Science/Formal Methods/Theorems to Algorithms.md",
+    "Computer Science/Formal Methods/Correctness of Algorithms.md",
+    "Computer Science/Formal Methods/Algorithms.md",
+    "Computer Science/Algorithms/Representations of Sets.md",
+    "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
+    "Computer Science/Algorithms/Hashes and Dictionaries.md",
+    "Curriculum.md",
+    "Mathematics/Sums/Worked Examples.md",
+    "Mathematics/Sums/Manipulation.md",
+    "Mathematics/Sums/Finite Calculus.md",
+    "Mathematics/Linear Algebra/Vector Space/Vector Spaces.md",
+    "Mathematics/Linear Algebra/Vector Space/Span.md",
+    "Mathematics/Linear Algebra/Vector Space/Linear Systems.md",
     "Mathematics/Calculus/Differentiation/sedtkFI6U",
     "Mathematics/Calculus/Differentiation/sed00L2SP",
     "Mathematics/Calculus/sedXL3sNL",
@@ -169,32 +195,6 @@
     "Mathematics/Linear Algebra/Vector Space/sed557xpQ",
     "Mathematics/Linear Algebra/Vector Space/sedOg2eNJ",
     "Mathematics/Linear Algebra/Matrix/sedjhBpKv",
-    "Mathematics/Linear Algebra/Matrix/sedQ0zHer",
-    "Mathematics/Calculus/Integration/Properties of the Integral of a Step Function.md",
-    "Mathematics/Calculus/Integration/Integration to Compute the Average of a Function.md",
-    "Mathematics/Calculus/Integration/Integration of the Trigonometric Functions.md",
-    "Mathematics/Calculus/Integration/Integration of Polynomials.md",
-    "Mathematics/Calculus/Integration/Integrals of more General Functions.md",
-    "Mathematics/Calculus/Integration/Area as a Set Function.md",
-    "Mathematics/Calculus/Integration/Applications of Integration.md",
-    "Mathematics/Calculus/Exponents and Logarithms/The Natural Logarithm.md",
-    "Mathematics/Calculus/Exponents and Logarithms/The Exponential Function.md",
-    "Mathematics/Calculus/Exponents and Logarithms/Journey to the Natural Log.md",
-    "Mathematics/Calculus/Exponents and Logarithms/Additional Properties of the Logarithm.md",
-    "Mathematics/Calculus/Differentiation/The Derivative.md",
-    "Mathematics/Calculus/Differentiation/Derivatives of Inverse Functions.md",
-    "Mathematics/Calculus/Differentiation/Derivatives and Extreme Values.md",
-    "Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md",
-    "Mathematics/Calculus/Continuity/Values of Continuous Functions.md",
-    "Mathematics/Calculus/Continuity/Mean Value Theorem.md",
-    "Mathematics/Calculus/Continuity/Extreme Values.md",
-    "Mathematics/Calculus/Continuity/Continuity of Functions.md",
-    "Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md",
-    "Mathematics/Calculus/Approximation/Taylor Polynomial.md",
-    "Mathematics/Calculus/Approximation/Taylor's Formula with Remainder.md",
-    "Mathematics/Calculus/Approximation/Polynomial Approximation of the Logarithm.md",
-    "Mathematics/Calculus/Approximation/Polynomial Approximation.md",
-    "Mathematics/Calculus/Approximation/Little-o Notation.md",
     "_build/html/_static/check-solid.svg",
     "_build/html/_static/copy-button.svg",
     "_build/html/_static/images/logo_jupyterhub.svg",

@@ -1,3 +1,5 @@
+# Representation of Sets
+
 We examine a few options (and tradeoffs) between various underlying data structures chosen to represent a "set".
 
 ## Sets as Lists

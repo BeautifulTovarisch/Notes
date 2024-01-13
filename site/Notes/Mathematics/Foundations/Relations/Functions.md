@@ -1,3 +1,5 @@
+# Functions
+
 A function $f$ is a relation defined as a mapping from a domain to a co-domain. It imposes the stricter requirement such that each element in the domain is mapped to exactly one in the co-domain (i.e f(x) = exactly one y).
 
 > [!info] Well-Defined Relation

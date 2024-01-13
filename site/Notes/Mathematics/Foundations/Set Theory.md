@@ -1,3 +1,5 @@
+# Set Theory
+
 Sets represent unordered, arbitrary collections.
 
 > [!info] Axiomatic Foundations

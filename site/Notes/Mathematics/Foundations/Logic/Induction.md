@@ -1,3 +1,5 @@
+# Induction
+
 Induction is a proof technique which shows that for some $n \in \mathbb{Z}, I(n) \implies I(n+1)$. The idea is to establish a basis and proof the next step can be reached by assuming $I(n)$.
 
 > [!info] General Structure of an Inductive Proof

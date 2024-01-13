@@ -1,3 +1,5 @@
+# Partial Order
+
 A partial order is a [[Relations|relation]] that enforces some ordering on **comparable** elements. In other words, we want to establish a relation such that, for two elements, either one precedes the other or they are **unrelated**.
 
 > [!info] Partial Order

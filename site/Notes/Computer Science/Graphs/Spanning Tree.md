@@ -1,3 +1,5 @@
+# Spanning Tree
+
 A spanning tree is an important bread-and-butter data structure in a variety of disciplines including computer networking, city planning, social media, etc.
 
 > [!info] Spanning Tree

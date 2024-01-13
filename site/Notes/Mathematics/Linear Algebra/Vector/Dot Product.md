@@ -1,3 +1,5 @@
+# Dot Product
+
 The dot product is the **scalar** result of adding the component-wise products of two vectors:
 
 >[!info] Definition Dot Product:

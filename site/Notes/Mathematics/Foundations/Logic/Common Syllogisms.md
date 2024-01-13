@@ -1,3 +1,5 @@
+# Common Syllogisms
+
 Several [[Argument Forms]] are very common:
 
 Modus Ponens:

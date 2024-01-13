@@ -1,3 +1,5 @@
+# Exponents and Logarithms
+
 Exponentiation is defined as repeated multiplication of some base. We denote "x raised to the yth power" as $x^y$.
 
 ## Exponent Laws

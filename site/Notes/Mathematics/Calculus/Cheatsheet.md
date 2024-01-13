@@ -1,6 +1,6 @@
-Important derivations and/or results that I forget all the time.
+# Cheatsheet
 
-# CheatSheet
+Important derivations and/or results that I forget all the time.
 
 ## Basic  Integrals
 
@@ -13,8 +13,6 @@ Important derivations and/or results that I forget all the time.
 | $\log x$   | $\frac 1 x$  | $x\log x - x$    |
 
 ## Table of Integrals
-
----
 
 | $f$      | $\int f$                               |
 | :------: | :------------------------------------: |

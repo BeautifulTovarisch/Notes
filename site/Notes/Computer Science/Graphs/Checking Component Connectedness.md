@@ -1,3 +1,5 @@
+# Checking Component Connectedness
+
 A critical optimization of [[Spanning Tree#Borůvka's Algorithm]] is an efficient mechanism to determine the connectedness of disjoint components. We could repeatedly perform graph traversals, but this would be $O(N + E)$ for each pair of nodes!
 
 ## Disjoint Set

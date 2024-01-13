@@ -80,7 +80,7 @@ We can take advantage of the fact that if $m \leqslant f^{(n+1)}(x) \leqslant M$
 ### Estimating the error for $e^x$
 
 > [!tip]
-> See [[CheatSheet]] for more example approximations.
+> See [[Cheatsheet]] for more example approximations.
 
 > [!example]
 > Let $f(x) = e^x, a = 0$. Then using Taylor's formula:

@@ -1,3 +1,5 @@
+# Curriculum
+
 Curriculum Plan for topics in undergraduate mathematics and computer science. I plan on using the General Study Plan as a guideline.
 
 ## Mathematics

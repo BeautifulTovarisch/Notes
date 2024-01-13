@@ -1,3 +1,5 @@
+# Manipulation
+
 Our goal is to find closed forms of summations which allow either more efficient computation or easier analysis. These notes use the bizarre notation introduced by Knuth.
 
 ## Notation

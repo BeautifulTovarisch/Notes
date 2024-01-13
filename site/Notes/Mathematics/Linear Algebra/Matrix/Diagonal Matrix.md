@@ -1,3 +1,5 @@
+# Diagonal Matrix
+
 A diagonal matrix is a matrix such that its "diagonal" entries are allowed to be non-zero and all other entries must zero.
 
 > [!info] Diagonal Matrix

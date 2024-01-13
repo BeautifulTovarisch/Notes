@@ -1,3 +1,5 @@
+# Factoring Tricks
+
 Clever factorization of ugly polynomials can help reduce a problem into something that's more manageable (or possible).
 
 ## Basic Identities

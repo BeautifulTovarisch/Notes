@@ -1,3 +1,5 @@
+# Linear Equations
+
 > [!info] Definition: Linear Equation
 > A **linear equation** is an equation of the form:
 > $$

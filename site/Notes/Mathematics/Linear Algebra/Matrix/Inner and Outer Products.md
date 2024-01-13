@@ -1,3 +1,5 @@
+# Inner and Outer Products
+
 We can treat vectors as "1-dimensional matrices" and perform a kind of multiplication between them.
 
 ## Inner Product

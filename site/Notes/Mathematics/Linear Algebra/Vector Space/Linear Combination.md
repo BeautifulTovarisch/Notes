@@ -1,3 +1,5 @@
+# Linear Combination
+
 Linear Combinations, such as [[Line Segments#Convex Combinations]] are defined as follows:
 
 > [!info] Linear Combination

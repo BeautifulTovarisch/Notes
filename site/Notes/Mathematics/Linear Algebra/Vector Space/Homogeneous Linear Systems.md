@@ -1,3 +1,5 @@
+# Homogeneous Linear Systems
+
 We want to look at the relationship between solution sets of **homogeneous linear systems** and the [[Span]] of a set of vectors.
 
 > [!info] Homogeneous Linear Equation/System

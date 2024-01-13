@@ -1,3 +1,5 @@
+# Graph Traversal
+
 ## Representing a Graph
 
 We start off by using an **adjacency list** to represent a graph $G$. An **adjacency list** contains all vertices of $G$ as well as the nodes with which they share a connection.

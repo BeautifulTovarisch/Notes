@@ -1,3 +1,5 @@
+# Sequences and Series
+
 A sequence is a list of terms defined by some rule, and the corresponding series is the summation of some sequence.
 
 ## Arithmetic

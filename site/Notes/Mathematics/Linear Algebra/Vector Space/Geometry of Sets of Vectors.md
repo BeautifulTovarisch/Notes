@@ -1,3 +1,5 @@
+# Geometry of Sets of Vectors
+
 We look at geometric representations of the span of a set of vectors.
 
 ## Geometry of Span $\mathbb{R}$

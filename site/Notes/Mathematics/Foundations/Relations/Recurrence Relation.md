@@ -1,3 +1,5 @@
+# Recurrence Relation
+
 Recurrence relations are sequences defined in terms of previous elements. In other words, for some sequence (function with domain of $\mathbb{N}$), a recurrence relation is way to compute the "current" element by looking at the results of previous computations.
 
 > [!info] Recurrence Relation

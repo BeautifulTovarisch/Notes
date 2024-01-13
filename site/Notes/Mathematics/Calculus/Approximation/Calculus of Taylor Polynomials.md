@@ -4,7 +4,7 @@
 [[Taylor Polynomial]]s have the helpful property of closure under integration and differentiation and also exhibit linearity. This allows us to create other Taylor formulas using one that is known.
 
 > [!tip]
-> See [[CheatSheet#Taylor Polynomials]] for useful examples
+> See [[Cheatsheet#Taylor Polynomials]] for useful examples
 
 ## Properties of The Taylor Operation
 

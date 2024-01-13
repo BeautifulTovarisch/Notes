@@ -1,3 +1,5 @@
+# Matrix Inverse
+
 We often want to find the inverse of a matrix as a means of "reversing" a linear transformation (such as decoding a [[Hamming Code#Linear Codes]]).
 
 > [!info] Inverse of a Matrix

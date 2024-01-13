@@ -1,3 +1,5 @@
+# Generators
+
 If a set of vectors can be used to construct (or **generate**) the [[Span]] of a set, then we call that set a **generating set** and its elements **generators**. More formally:
 
 > [!info] Generating Set

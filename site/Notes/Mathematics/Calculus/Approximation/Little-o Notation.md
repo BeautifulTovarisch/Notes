@@ -15,7 +15,7 @@ The little-oh $o$ notation is used to relate a function to another when we want 
 > 2. $f(x) = o(x) \iff \lim_{x \to a} \frac {f(x)} x = 0$
 > 3. $f(x) = h(x) + o(g(x)) \iff \lim_{x \to a} \frac{f(x) - h(x)} {g(x)} = 0$
 
-See [[CheatSheet#Taylor Polynomials]] for the use of little-oh notation in Taylor series.
+See [[Cheatsheet#Taylor Polynomials]] for the use of little-oh notation in Taylor series.
 
 ## Algebra of Little-oh
 

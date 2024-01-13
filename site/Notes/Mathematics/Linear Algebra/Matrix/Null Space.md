@@ -1,3 +1,5 @@
+# Null Space
+
 The null space of a matrix can represent the solution sets of [[Homogeneous Linear Systems]] represented by:
 
 $$

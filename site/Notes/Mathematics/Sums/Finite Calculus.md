@@ -1,3 +1,5 @@
+# Finite Calculus
+
 We develop discrete methods analogous to the methods of integration and differentiation in order to [[Manipulation|manipulate sums]] when we don't know how to deal with them.
 
 ## Notation

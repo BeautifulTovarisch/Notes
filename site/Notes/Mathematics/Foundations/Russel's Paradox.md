@@ -1,3 +1,5 @@
+# Russel's Paradox
+
 Modern [[Set Theory|Set Theory]] is carefully constructed to avoid paradoxes arising from its axioms. One such paradox is Russel's Paradox:
 
 Suppose $S$ is a set, and construct $R_s$ as follows:

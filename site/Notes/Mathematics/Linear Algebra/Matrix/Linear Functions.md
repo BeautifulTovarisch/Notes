@@ -1,3 +1,5 @@
+# Linear Functions
+
 We want to be able to determine whether a function can be expressed in terms of a matrix-vector multiplication, in other words, if such a function is **linear**.
 
 > [!info] Linear Function (Linear Transformation)

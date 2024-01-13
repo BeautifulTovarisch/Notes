@@ -1,3 +1,4 @@
+# Trig Functions
 
 ## Fundamental Properties of Sine and Cosine
 
