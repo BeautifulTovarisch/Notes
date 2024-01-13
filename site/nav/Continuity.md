@@ -4,6 +4,7 @@
 ---
 caption: Continuity
 titlesonly: true
+maxdepth: 1
 ---
 
 ../Notes/Mathematics/Calculus/Continuity/Continuity of Functions.md

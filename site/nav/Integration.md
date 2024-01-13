@@ -4,6 +4,7 @@
 ---
 caption: Integration
 titlesonly: true
+maxdepth: 1
 ---
 
 ../Notes/Mathematics/Calculus/Integration/Integrals of more General Functions.md

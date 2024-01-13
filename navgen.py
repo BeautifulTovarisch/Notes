@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+# coding: utf-8
+
+"""navgen
+
+   Simple script that recursively walks a directory path and generates a nav
+   scaffolding for use in creating a Sphinx Table of Contents.
+
+   Usage: navgen.py [-h] [--dry-run DRY_RUN] root dest
+"""
+
 import os
 import os.path
 import argparse
@@ -8,29 +18,25 @@ import json
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-"""navgen
-   Simple script that recursively walks a directory path and generates a nav
-   scaffolding for use in creating a Sphinx Table of Contents.
-"""
-
-# TODO: Produce this hash from configuration
+# TODO: Find an efficient way to perform these checks.
 ignore_patterns = [
   '.obsidian',
   '__pycache__',
   '.ipynb_checkpoints/',
-  '*.pyc',
   '.venv/'
 ]
 
-def dir_tree(root, dest):
+# Slight hack to ensure constant time lookups for exact matches. This works for
+# now, but is less general than matching on regex patterns.
+ignore_hash = {pat: 1 for pat in ignore_patterns}
+
+def dir_tree(root):
   """
   dir_tree produces a directed graph representing the directory
   structure under [root]. The graph is represented as an adjacency list.
 
   Parameters:
     root (string): The root to the root directory
-    dest (string): The destination of the nav files. This is used to compute
-    relative paths to ensure the TOCs point to the correct files.
 
   Output:
     A dictionary containing an adjacency list correponding to the directory
@@ -46,22 +52,25 @@ def dir_tree(root, dest):
     }
   """
 
+  if os.path.basename(root) in ignore_hash:
+    return {}
+
   # Basis. I don't need the files themselves in the list of keys
   if not os.path.isdir(root):
     return {}
 
-  tree = {}
-
   children = os.listdir(root)
 
-  key = os.path.basename(os.path.normpath(root))
-  tree[key] = []
+  key = os.path.normpath(root)
+
+  tree = { key: [] }
 
   for child in children:
-    relpath = os.path.relpath(os.path.join(root, child), dest)
-    tree[key].append(relpath)
+    if child not in ignore_hash:
+      path = os.path.normpath(os.path.join(root, child))
+      tree[key].append(path)
 
-    tree = {**tree, **dir_tree(relpath, dest)}
+    tree = {**tree, **dir_tree(path)}
 
   return tree
 
@@ -107,15 +116,22 @@ def nav_gen(tree, template, dest):
   """
 
   for key in tree:
-    with open(f'{dest}/{key}.md', 'w') as nav:
-      nav.write(template.render(title=key, files=tree[key]))
+    navFile = os.path.normpath(f'{dest}/{os.path.basename(key)}.md')
+
+    with open(navFile, 'w') as nav:
+      # When a directory is found, write its name rather than its relative path
+      # on disk. This will correspond to a navigation file under [dest] which
+      # the Sphinx TOC directive can reference.
+      files = [os.path.basename(f) if f in tree else os.path.relpath(f, dest) for f in tree[key]]
+
+      nav.write(template.render(title=os.path.basename(key), files=files))
 
 # TODO: Add support for ignoring files (--gitignore, etc.)
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Generate navigation files for a directory. ')
 
-  parser.add_argument("--dry-run", default=False,
+  parser.add_argument("--dry-run", default=False, action="store_true",
                       help="Execute a dry run without writing files to disk.")
 
   parser.add_argument("root", default=os.getcwd(),
@@ -140,6 +156,6 @@ if __name__ == "__main__":
   # TODO: Add an arg to specify nav template.
   template = get_template("site/_templates", "nav.md")
 
-  t = dir_tree(root, dest)
+  t = dir_tree(root)
 
   nav_gen(t, template, dest)

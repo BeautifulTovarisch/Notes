@@ -4,6 +4,7 @@
 ---
 caption: Exponents and Logarithms
 titlesonly: true
+maxdepth: 1
 ---
 
 ../Notes/Mathematics/Calculus/Exponents and Logarithms/Additional Properties of the Logarithm.md

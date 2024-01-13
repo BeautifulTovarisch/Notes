@@ -4,6 +4,7 @@
 ---
 caption: Approximation
 titlesonly: true
+maxdepth: 1
 ---
 
 ../Notes/Mathematics/Calculus/Approximation/Approximation and Indeterminate Forms.md

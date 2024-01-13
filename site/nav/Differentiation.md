@@ -4,6 +4,7 @@
 ---
 caption: Differentiation
 titlesonly: true
+maxdepth: 1
 ---
 
 ../Notes/Mathematics/Calculus/Differentiation/Algebraic Properties of Derivatives.md
