@@ -33,3 +33,21 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: "build/"
+
+  deploy:
+    needs: build
+
+    permission:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Deploy to Github Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
