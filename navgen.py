@@ -69,8 +69,7 @@ def dir_tree(root):
     if child not in ignore_hash:
       path = os.path.normpath(os.path.join(root, child))
       tree[key].append(path)
-
-    tree = {**tree, **dir_tree(path)}
+      tree = {**tree, **dir_tree(path)}
 
   return tree
 
