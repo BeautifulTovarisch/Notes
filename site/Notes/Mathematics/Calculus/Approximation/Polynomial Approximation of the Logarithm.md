@@ -32,7 +32,7 @@ $$
 Thus we have:
 
 $$
--log(1-x) = x + \frac {x^2} 2 + \int_0^x \frac {u^2} {1-u} \; dx
+-\log(1-x) = x + \frac {x^2} 2 + \int_0^x \frac {u^2} {1-u} \; dx
 $$
 
 We can generalize this process to an arbitrary level of precision based on the degree of the polynomial.
