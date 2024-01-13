@@ -25,3 +25,11 @@ jobs:
 
       - name: Build sphinx website
         run: make html
+
+      - name: Fix permissions
+        run: chmod -R +rX "build/"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "build/"
