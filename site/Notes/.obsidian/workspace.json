@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mathematics/Foundations/Relations/Closure.md",
-                "mode": "source",
+                "file": "Mathematics/Calculus/Approximation/Polynomial Approximation of the Logarithm.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mathematics/Foundations/Relations/Closure.md",
+                "file": "Mathematics/Calculus/Approximation/Polynomial Approximation of the Logarithm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mathematics/Foundations/Relations/Closure.md",
+                "file": "Mathematics/Calculus/Approximation/Polynomial Approximation of the Logarithm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mathematics/Foundations/Relations/Closure.md"
+                "file": "Mathematics/Calculus/Approximation/Polynomial Approximation of the Logarithm.md"
               }
             }
           },
@@ -157,8 +157,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5f3377f6ed1914f5",
+  "active": "012b501686969a4b",
   "lastOpenFiles": [
+    "Mathematics/Calculus/Approximation/Indeterminate Forms.md",
+    "Mathematics/Foundations/Relations/Closure.md",
     "Mathematics/Foundations/Relations/Closure.md~",
     "Mathematics/Foundations/Logic/Logical Propositions.md",
     "Mathematics/Foundations/Logic/Induction.md",
@@ -184,7 +186,6 @@
     "Mathematics/Sums/Finite Calculus.md",
     "Mathematics/Linear Algebra/Vector Space/Vector Spaces.md",
     "Mathematics/Linear Algebra/Vector Space/Span.md",
-    "Mathematics/Linear Algebra/Vector Space/Linear Systems.md",
     "Mathematics/Calculus/Differentiation/sedtkFI6U",
     "Mathematics/Calculus/Differentiation/sed00L2SP",
     "Mathematics/Calculus/sedXL3sNL",
@@ -194,7 +195,6 @@
     "Mathematics/Linear Algebra/Vector/sedWku48m",
     "Mathematics/Linear Algebra/Vector Space/sed557xpQ",
     "Mathematics/Linear Algebra/Vector Space/sedOg2eNJ",
-    "Mathematics/Linear Algebra/Matrix/sedjhBpKv",
     "_build/html/_static/check-solid.svg",
     "_build/html/_static/copy-button.svg",
     "_build/html/_static/images/logo_jupyterhub.svg",
