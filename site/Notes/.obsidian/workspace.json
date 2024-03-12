@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "c1b1615693c95ae2",
+        "id": "571de90d0bf08bee",
         "type": "tabs",
         "children": [
           {
-            "id": "012b501686969a4b",
+            "id": "e2033f1b8eb8a3e0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Algorithms/Divide and Conquer.md",
+                "mode": "preview",
+                "source": true
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Algorithms/Divide and Conquer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Algorithms/Divide and Conquer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Algorithms/Divide and Conquer.md"
+              }
             }
           },
           {
@@ -149,8 +157,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "012b501686969a4b",
+  "active": "e2033f1b8eb8a3e0",
   "lastOpenFiles": [
+    "Algorithms/Divide and Conquer.md",
+    "Algorithms/Algorithmic Analysis Background.md",
+    "Algorithms/Checking Component Connectedness.md",
+    "Algorithms/Dynamic Programming.md",
+    "Algorithms/Spanning Tree.md",
+    "Algorithms/Randomization.md",
+    "Algorithms/Greedy.md",
+    "Algorithms/Graph Traversal.md",
+    "Algorithms/Graphs/Basic Definition.md",
+    "Algorithms/Dynamic Programming",
+    "Algorithms/Divide and Conquer",
+    "Algorithms/Greedy",
+    "Algorithms",
+    "Algorithms/Representations of Sets.md",
+    "Algorithms/Hashes and Dictionaries.md",
+    "Foundations/Exponents and Logarithms.md",
+    "Calculus/Exponents and Logarithms/Additional Properties of the Logarithm.md",
+    "Calculus/Exponents and Logarithms/The Natural Logarithm.md",
+    "Calculus/Cheatsheet.md",
+    "Calculus/Approximation/Calculus of Taylor Polynomials.md",
+    "Combinatorics/Basics of Counting.md",
+    "Combinatorics/Example Bijections.md",
     "Mathematics/Calculus/Approximation/Indeterminate Forms.md",
     "Mathematics/Foundations/Relations/Closure.md",
     "Mathematics/Foundations/Relations/Closure.md~",
@@ -160,33 +190,11 @@
     "Mathematics/Foundations/Logic/Argument Forms.md",
     "Mathematics/Calculus/Cheatsheet.md",
     "Mathematics/Calculus/Approximation/Estimates for the Error in Taylor's Formula.md",
-    "Computer Science/Algorithmic Analysis Background.md",
-    "Computer Science/Graphs/Spanning Tree.md",
-    "Computer Science/Graphs/Graph Traversal.md",
-    "Computer Science/Graphs/Checking Component Connectedness.md",
-    "Computer Science/Graphs/Basic Definition.md",
-    "Computer Science/Algorithms/Pre-Algorithms Checklist.md",
-    "Computer Science/Formal Methods/Theorems to Algorithms.md",
-    "Computer Science/Formal Methods/Correctness of Algorithms.md",
-    "Computer Science/Formal Methods/Algorithms.md",
-    "Computer Science/Algorithms/Representations of Sets.md",
-    "Computer Science/Basic Algorithms/Hashes and Dictionaries.md",
-    "Computer Science/Algorithms/Hashes and Dictionaries.md",
-    "Curriculum.md",
-    "Mathematics/Sums/Worked Examples.md",
-    "Mathematics/Sums/Manipulation.md",
-    "Mathematics/Sums/Finite Calculus.md",
-    "Mathematics/Linear Algebra/Vector Space/Vector Spaces.md",
-    "Mathematics/Linear Algebra/Vector Space/Span.md",
     "Mathematics/Calculus/Differentiation/sedtkFI6U",
     "Mathematics/Calculus/Differentiation/sed00L2SP",
     "Mathematics/Calculus/sedXL3sNL",
     "Mathematics/Calculus/sedWnSESF",
     "Mathematics/Linear Algebra/Vector/sedhCrHZA",
-    "Mathematics/Linear Algebra/Vector/sedhAoabx",
-    "Mathematics/Linear Algebra/Vector/sedWku48m",
-    "Mathematics/Linear Algebra/Vector Space/sed557xpQ",
-    "Mathematics/Linear Algebra/Vector Space/sedOg2eNJ",
     "_build/html/_static/check-solid.svg",
     "_build/html/_static/copy-button.svg",
     "_build/html/_static/images/logo_jupyterhub.svg",

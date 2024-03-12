@@ -47,22 +47,28 @@ Mathematical background required to perform algorithmic analyses.
 Implement the following data structures and have a thorough understanding before tackling a more challenging algorithms book:
 
 - [ ] Balanced Binary Search Tree
-	- [ ] Heap
+	- [x] Heap
 	- [ ] AVL Tree
 	- [ ] Splay Tree
 	- [ ] RB Tree
-- [ ] Priority Queue
-- [ ] Randomized Quicksort
+- [x] Priority Queue
+- [x] Randomized Quicksort
 - [x] Mergesort
-- [ ] Graphs
-	- [ ] Dijkstra's
-	- [ ] Prim's
-	- [ ] Kruskal's
+- [x] Graphs
+	- [x] Dijkstra's
+	- [x] Prim's
+	- [x] Kruskal's
 	- [x] Breadth-First
 - [ ] Dynamic Programming
+	- [x] Practice
 	- [ ] Practice
 	- [ ] Practice
-	- [ ] Practice
+	- [x] Knapsack
+	- [x] Sequence Alignment
+	- [ ] Optimal Binary Search Tree
+- [ ] Advanced Dynamic Programming
+	- [ ] Bellman-Ford
+	- [ ] Floyd-Warshall
 
 Implementations should include worst-case analysis and unit tests (ideally against a brute-force oracle).
 

@@ -86,7 +86,7 @@ $$
 f(x) = c \log(x) = \frac {\log(x)} {\log(b)} = \log_b(x)
 $$
 
-This show an alternative proof to the change of base [[Exponents and Logarithms#Logarithmic Identities]]:
+This shows an alternative proof to the change of base [[Exponents and Logarithms#Logarithmic Identities]]:
 
 $$
 \log_b x = \frac {\log x} {\log b}
