@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Algorithms/Divide and Conquer.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -159,10 +159,10 @@
   },
   "active": "e2033f1b8eb8a3e0",
   "lastOpenFiles": [
-    "Algorithms/Divide and Conquer.md",
-    "Algorithms/Algorithmic Analysis Background.md",
-    "Algorithms/Checking Component Connectedness.md",
     "Algorithms/Dynamic Programming.md",
+    "Algorithms/Divide and Conquer.md",
+    "Algorithms/Checking Component Connectedness.md",
+    "Algorithms/Algorithmic Analysis Background.md",
     "Algorithms/Spanning Tree.md",
     "Algorithms/Randomization.md",
     "Algorithms/Greedy.md",

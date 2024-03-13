@@ -4,5 +4,7 @@
   "livePreview": false,
   "attachmentFolderPath": "Computer Science/AWS/Compute",
   "autoPairBrackets": false,
-  "autoPairMarkdown": false
+  "autoPairMarkdown": false,
+  "tabSize": 4,
+  "showInlineTitle": false
 }
