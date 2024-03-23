@@ -116,7 +116,7 @@ We can employ the same technique of using a [[Heap]] as in Dijkstra's algorithm 
 
 ## Kruskal's MST Algorithm
 
-Kruskal's algorithm adopts a different approach, instead opting to choose the minimum edge that would not introduce a cycle. This algorithm lends itself better to parallelism as it is independent of a starting node.
+Kruskal's algorithm adopts a different approach, instead opting to choose the minimum edge that would not introduce a cycle.
 
 ```tikz
 \usetikzlibrary{positioning}

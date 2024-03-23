@@ -69,6 +69,9 @@ Implement the following data structures and have a thorough understanding before
 - [ ] Advanced Dynamic Programming
 	- [ ] Bellman-Ford
 	- [ ] Floyd-Warshall
+- [ ] Divide and Conquer
+	- [ ] Maximum Subarray
+	- [x] Maximum Profit from Stocks
 
 Implementations should include worst-case analysis and unit tests (ideally against a brute-force oracle).
 

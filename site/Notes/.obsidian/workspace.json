@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "c0dbc84046539486",
+        "id": "d684264f07795193",
         "type": "tabs",
         "children": [
           {
-            "id": "b55c1f383bdabcb9",
+            "id": "c51d74002e84fb7f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithms/Greedy.md",
-                "mode": "preview",
+                "file": "Data Structures/LinkedList.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithms/Greedy.md",
+                "file": "Data Structures/LinkedList.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithms/Greedy.md",
+                "file": "Data Structures/LinkedList.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithms/Greedy.md"
+                "file": "Data Structures/LinkedList.md"
               }
             }
           },
@@ -157,16 +157,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b55c1f383bdabcb9",
+  "active": "c51d74002e84fb7f",
   "lastOpenFiles": [
+    "Algorithms/Graphs.md",
     "Algorithms/Divide and Conquer.md",
+    "Algorithms/Algorithmic Analysis Background.md",
+    "Algorithms/Dynamic Programming.md",
+    "Algorithms/Graph Traversal.md",
+    "Data Structures/Queue.md",
+    "Data Structures/Heap.md",
+    "Data Structures/Graph.md",
+    "Data Structures/LinkedList.md",
+    "Algorithms/Greedy.md",
+    "Data Structures/Stack.md",
+    "Data Structures",
     "Algorithms/Randomization.md",
     "Algorithms/Spanning Tree.md",
-    "Algorithms/Graph Traversal.md",
-    "Algorithms/Dynamic Programming.md",
-    "Algorithms/Greedy.md",
     "Algorithms/Checking Component Connectedness.md",
-    "Algorithms/Algorithmic Analysis Background.md",
     "Algorithms/Graphs/Basic Definition.md",
     "Algorithms/Dynamic Programming",
     "Algorithms/Divide and Conquer",
@@ -184,17 +191,10 @@
     "Mathematics/Calculus/Approximation/Indeterminate Forms.md",
     "Mathematics/Foundations/Relations/Closure.md",
     "Mathematics/Foundations/Relations/Closure.md~",
-    "Mathematics/Foundations/Logic/Logical Propositions.md",
-    "Mathematics/Foundations/Logic/Induction.md",
-    "Mathematics/Foundations/Logic/Common Syllogisms.md",
-    "Mathematics/Foundations/Logic/Argument Forms.md",
-    "Mathematics/Calculus/Cheatsheet.md",
-    "Mathematics/Calculus/Approximation/Estimates for the Error in Taylor's Formula.md",
     "Mathematics/Calculus/Differentiation/sedtkFI6U",
     "Mathematics/Calculus/Differentiation/sed00L2SP",
     "Mathematics/Calculus/sedXL3sNL",
     "Mathematics/Calculus/sedWnSESF",
-    "Mathematics/Linear Algebra/Vector/sedhCrHZA",
     "_build/html/_static/check-solid.svg",
     "_build/html/_static/copy-button.svg",
     "_build/html/_static/images/logo_jupyterhub.svg",
