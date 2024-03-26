@@ -70,12 +70,39 @@ Such orderings are typically used to determine whether a precedence graph is log
 	\begin{algorithm}
 	\caption{TopoSort}
 	\begin{algorithmic}
-
-	\end{algorithmic}
+	\Input{$G = (V, E)$}
+	\Require{$G$ is a directed acyclic graph}
+	\State visited = $\empty$
+	\State processing = $\empty$
+	\State ordering = Stack \\\\
+	\Procedure{DFS}{$v$}
+	\State mark $v$ as visited
+	\State processing(v) = \True
+	\For{$u$ such that $(v, u) \in E$}
+	\If{$u \not \in visited$}
+	\State DFS($u$)
+	\Elif{$u$ is a node currently being processed}
+	\Return	"no topological ordering"
+	\EndIf
+    \EndFor
+    \State processing(v) = \False
+    \State ordering.push(v)
+    \EndProcedure
+    \State \\
+    \For{$v \in V$}
+    \If {$v \not \in visited$}
+    \State DFS($v$)
+    \EndIf
+    \EndFor
+    \State \\
+    \Return ordering
+    \end{algorithmic}
 	\end{algorithm}
 ```
 
 ### Analysis
+
+`TopoSort` owes its $O(|V| + |E|)$ runtime to the depth-first traversal in its implementation, assuming $O(1)$ insert operations onto the stack.
 
 ### Proof
 
