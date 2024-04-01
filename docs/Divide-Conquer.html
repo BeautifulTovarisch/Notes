@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Anthony" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="Personal notes on Mathematics and Computer Science" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes on Everything — Divide and Conquer</title>
+<link rel="stylesheet" type="text/css" href="lwarp.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+  subequations: "0",
+  section: "",
+  loader: {
+    load: ['[tex]/tagformat', '[tex]/textmacros'],
+  },
+  startup: {
+    ready() {
+      // These would be replaced by import commands if you wanted to make
+      // a proper extension.
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      const Macro = MathJax._.input.tex.Symbol.Macro;
+      const TexError = MathJax._.input.tex.TexError.default;
+      const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+      const expandable = MathJax._.util.Options.expandable;
+
+       // Insert the replacement string into the TeX string, and check
+       // that there haven't been too many maxro substitutions (prevents
+       // infinite loops).
+       const useArgument = (parser, text) => {
+         parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+         parser.i = 0;
+         if (++parser.macroCount > parser.configuration.options.maxMacros) {
+           throw new TexError('MaxMacroSub1',
+           'MathJax maximum macro substitution count exceeded; ' +
+           'is there a recursive macro call?');
+         }
+       }
+
+       // Create the command map for:
+       //     \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+       new CommandMap('Lwarp-macros', {
+         ifstar: 'IfstarFunction',
+         ifnextchar: 'IfnextcharFunction',
+         ifblank: 'IfblankFunction',
+         ifstrequal: 'IfstrequalFunction',
+         gsubstitute: 'GsubstituteFunction',
+         seteqnumber: 'SeteqnumberFunction'
+       }, {
+         // This function implements an ifstar macro.
+         IfstarFunction(parser, name) {
+            const resultstar = parser.GetArgument(name);
+            const resultnostar = parser.GetArgument(name);
+            const star = parser.GetStar();                 // true if there is a *
+            useArgument(parser, star ? resultstar : resultnostar);
+         },
+
+          // This function implements an ifnextchar macro.
+          IfnextcharFunction(parser, name) {
+            let whichchar = parser.GetArgument(name);
+            if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+              // $ syntax highlighting
+              whichchar = String.fromCodePoint(parseInt(whichchar));
+            }
+            const resultnextchar = parser.GetArgument(name);
+            const resultnotnextchar = parser.GetArgument(name);
+            const gotchar = (parser.GetNext() === whichchar);
+            useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+          },
+
+          // This function implements an ifblank macro.
+          IfblankFunction(parser, name) {
+            const blankarg = parser.GetArgument(name);
+            const resultblank = parser.GetArgument(name);
+            const resultnotblank = parser.GetArgument(name);
+            const isblank = (blankarg.trim() == "");
+            useArgument(parser, isblank ? resultblank : resultnotblank);
+          },
+
+          // This function implements an ifstrequal macro.
+          IfstrequalFunction(parser, name) {
+            const strequalfirst = parser.GetArgument(name);
+            const strequalsecond = parser.GetArgument(name);
+            const resultequal = parser.GetArgument(name);
+            const resultnotequal = parser.GetArgument(name);
+            const isequal = (strequalfirst == strequalsecond);
+            useArgument(parser, isequal ? resultequal : resultnotequal);
+          },
+
+          // This function implements a gsub macro.
+          GsubstituteFunction(parser, name) {
+            const gsubfirst = parser.GetArgument(name);
+            const gsubsecond = parser.GetArgument(name);
+            const gsubthird = parser.GetArgument(name);
+            let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+            useArgument(parser, gsubresult);
+          },
+
+          // This function modifies the equation numbers.
+          SeteqnumberFunction(parser, name) {
+              // Get the macro parameters
+              const star = parser.GetStar();                  // true if there is a *
+              const optBrackets = parser.GetBrackets(name);   // contents of optional brackets
+              const newsubequations = parser.GetArgument(name); // the subequations argument
+              const neweqsection = parser.GetArgument(name); // the eq section argument
+              const neweqnumber = parser.GetArgument(name);   // the eq number argument
+              MathJax.config.subequations=newsubequations ;   // a string with boolean meaning
+              MathJax.config.section=neweqsection ;           // a string with numeric meaning
+              parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+          }
+
+       });
+
+       // Create the Lwarp-macros package
+       Configuration.create('Lwarp-macros', {
+         handler: {macro: ['Lwarp-macros']}
+       });
+
+       MathJax.startup.defaultReady();
+
+       // For forward references:
+       MathJax.startup.input[0].preFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             MathJax.config.subequations = math.inputData.recompile.subequations;
+             MathJax.config.section = math.inputData.recompile.section;
+         }
+       });
+       MathJax.startup.input[0].postFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             math.inputData.recompile.subequations = MathJax.config.subequations;
+             math.inputData.recompile.section = MathJax.config.section;
+         }
+       });
+
+         // For \left, \right with unicode-math:
+         const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+         const {Symbol} = MathJax._.input.tex.Symbol;
+         const {MapHandler} = MathJax._.input.tex.MapHandler;
+         const delimiter = MapHandler.getMap('delimiter');
+         delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+         delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+         delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+         delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+         delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+         delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+         delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+         delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+         delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+         delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+         delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+         delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+         delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+         delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+         delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+         delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+         delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+         delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+         delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+         delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+         delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+         delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+         delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+         delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+         delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+         delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+         delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+         delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+         delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+         delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+         delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+         delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+         delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+         delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+         delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+         delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+         delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+         delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+         delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+   }     // ready
+ },      // startup
+
+ tex: {
+   packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+   tags: "ams",
+        tagformat: {
+            number: function (n) {
+                if(MathJax.config.subequations==0)
+                    return(MathJax.config.section + n);
+                else
+                    return(MathJax.config.section + String.fromCharCode(96+n));
+            },
+        },
+ }
+}
+</script>
+
+<script
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="index-autopage-36"></a>
+<nav class="topnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+
+<div class="bodyandsidetoc">
+<div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">Notes on Everything</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Sums.html#autosec-6" class="tocchapter" >
+Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-7" class="tocsection" >
+Manipulating Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-8" class="tocsubsection" >
+Basic Rules</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-10" class="tocsubsection" >
+Iverson Notation</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-11" class="tocsubsection" >
+Perturbing the Sum</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-15" class="tocchapter" >
+Algorithms</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-16" class="tocsection" >
+Greedy</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-17" class="tocsubsection" >
+Dijkstra’s Shortest Path Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-22" class="tocsubsection" >
+Prim’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+Kruskal’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-32" class="tocsubsection" >
+Huffman Codes</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-37" class="tocsection" >
+Divide and Conquer</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-38" class="tocsubsection" >
+Master Theorem</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-40" class="tocsubsection" >
+MergeSort</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-42" class="tocsubsection" >
+Counting Array Inversions</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-45" class="tocsubsection" >
+Karatsuba Multiplication</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+<h1>Notes on Everything</h1>
+
+<!--MathJax customizations:-->
+<div data-nosnippet
+    style="display:none"
+>
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<!--
+...... section Divide and Conquer ......
+-->
+<h4 id="autosec-37">Divide and Conquer</h4>
+<a id="index-autopage-37"></a>
+<a id="index-autofile-3"></a>
+
+<p>
+Divide and conquer algorithms are characterized by a procedure which breaks a problem into distinct subproblems (divide) and produces the solution to the overall problem by combining the results of the subproblems (conquer).
+</p>
+
+<p>
+This paradigm differs from Dynamic Programming in that the subproblems produced by the divide step are usually independent.
+</p>
+<!--
+...... subsection Master Theorem ......
+-->
+<h5 id="autosec-38">Master Theorem</h5>
+<a id="index-autopage-38"></a>
+
+
+<p>
+The master theorem is a concise summary of the runtime of certain specific recurrences which come about naturally in divide-and-conquer algorithms. This is mainly a shortcut to avoid the verbose computation of determining the value of a geometric series.
+</p>
+
+<p>
+Let \(T(n)\) be a recurrence with upper bound defined as follows:
+</p>
+
+<p>
+\[ T(n) \leqslant a \cdot T(\frac n b) + O(n^d) \]
+</p>
+
+<p>
+Then we have,
+</p>
+
+<p>
+\[ T(n) = \begin {cases} O(n^d \log n) &amp; \text {if $a = b^d$} \\ O(n^d) &amp; \text {if $a &lt; b^d$} \\ O(n^{\log _b a}) &amp; \text {if $a &gt; b^d$} \\ \end {cases} \]
+</p>
+
+<p>
+Where
+</p>
+<ul class="itemize" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker">•</span> \(a\) Is the number of recursive calls,
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker">•</span> \(b\) Is the decrease in the size of a subproblem in a recursive call, and
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker">•</span> \(d\) Is the order of the work performed for each subproblem
+</p>
+</li>
+</ul>
+
+<p>
+The runtimes follow naturally from reasoning about the upper bound in each case.
+</p>
+<!--
+...... subsubsection Proof ......
+-->
+<h6 id="autosec-39">Proof</h6>
+<a id="index-autopage-39"></a>
+
+
+<p>
+TODO
+</p>
+<!--
+...... subsection MergeSort ......
+-->
+<h5 id="autosec-40">MergeSort</h5>
+<a id="index-autopage-40"></a>
+
+
+<p>
+Probably the most famous divide and conquer algorithm. The core idea behind MergeSort is to repeatedly bisect an array until reaching a trivial sorting problem of one element and then recursively merge each subarray, placing the element in ascending order in the final
+output.
+</p>
+
+<figure id="autoid-6" class="algorithm ruled">
+
+<div class="figurecaption">
+<p>
+Algorithm&nbsp;5:&nbsp;MergeSort
+</p>
+</div>
+<ul class="list" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>procedure</b> <span class="textsc">Merge</span>(\(A, B\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>\(i = 0, j = 0\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>\(C = []\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>for</b> \(k = 0\) To \(n-1\) <b>do</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>           <span style="width:24pt; display:inline-block;"></span><b>if</b> \(A[i] &lt; B[j]\) <b>then</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>              <span style="width:36pt; display:inline-block;"></span>\(C[k] = A[i]\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>              <span style="width:36pt; display:inline-block;"></span>\(i = i + 1\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>           <span style="width:24pt; display:inline-block;"></span><b>else</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>              <span style="width:36pt; display:inline-block;"></span>\(C[k] = B[j]\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>              <span style="width:36pt; display:inline-block;"></span>\(j = j + 1\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>           <span style="width:24pt; display:inline-block;"></span><b>end</b> <b>if</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>end</b> <b>for</b><b>return</b> \(C\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>procedure</b>
+</p>
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>procedure</b> <span class="textsc">MergeSort</span>(\(A\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>if</b> \(len(A) \leqslant 1\) <b>then</b> <b>return</b> \(A\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>end</b> <b>if</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>\(L =\) <span class="textsc">MergeSort</span>(left half of \(A\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>\(R =\) <span class="textsc">MergeSort</span>(right half of \(A\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <b>return</b> <span class="textsc">Merge</span>(\(L, R\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>procedure</b>
+</p>
+</li>
+</ul>
+
+</figure>
+<!--
+...... subsubsection Analysis ......
+-->
+<h6 id="autosec-41">Analysis</h6>
+<a id="index-autopage-41"></a>
+
+
+<p>
+From the pseudocode, we see there are 2 recursive calls per iteration, each dividing the input in half. Additionally, the ‘Merge‘ routine performs linear work per call, leading to the following recurrence:
+</p>
+
+<p>
+\[ T(n) \leqslant 2 \cdot T(\frac n 2) + O(n) \]
+</p>
+
+<p>
+Applying the master theorem with \(a = 2 = 2^1 = b^d\), we arrive at a runtime of \(O(n\log n)\).
+</p>
+<!--
+...... subsection Counting Array Inversions ......
+-->
+<h5 id="autosec-42">Counting Array Inversions</h5>
+<a id="index-autopage-42"></a>
+
+
+<p>
+Array inversions are the number of ”out of place” element with respect to the sorted list. For example,
+</p>
+<pre class="verbatim">
+  A = [3, 1, 2]
+
+</pre>
+
+<p>
+has 2 inversions. The trivial brute-force solution involves comparing every element against the rest of the \(n-1\) items, leading to a quadratic runtime.
+</p>
+
+<p>
+The divide-and-conquer approach employs the generally useful idea of counting the inversions in the left and right subhalves as well as those than span the middle of the array. The following strategy sorts each subarray, counting the split inversions during the combine step.
+</p>
+
+<figure id="autoid-7" class="algorithm ruled">
+
+<div class="figurecaption">
+<p>
+Algorithm&nbsp;6:&nbsp;Count Inversions
+</p>
+</div>
+<ul class="list" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>procedure</b> <span class="textsc">CountSplitInv</span>(\(A, B\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>i = j = 0
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>inv = 0
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>Out = []
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>for</b> \(k\) To \(n-1\) <b>do</b> <span class="floatright">&#x25B7; No Inversion</span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>            <span style="width:24pt; display:inline-block;"></span><b>if</b> A[i] < B[j] <b>then</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>               <span style="width:36pt; display:inline-block;"></span>Out[k] = B[j]
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>               <span style="width:36pt; display:inline-block;"></span>i = i + 1
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>            <span style="width:24pt; display:inline-block;"></span><b>else</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>               <span style="width:36pt; display:inline-block;"></span>Out[k] = A[j]
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>               <span style="width:36pt; display:inline-block;"></span>j = j + 1
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>               <span style="width:36pt; display:inline-block;"></span>inv = inv + (n - i)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>            <span style="width:24pt; display:inline-block;"></span><b>end</b> <b>if</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>end</b> <b>for</b><b>return</b> (Out, inv)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>procedure</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>procedure</b> <span class="textsc">CountInv</span>(\(A\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>if</b> \(n \leqslant 1\) <b>then</b> <b>return</b> (A, 0)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>end</b> <b>if</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>(L, leftInv) = <span class="textsc">CountInv</span>(left half of \(A\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>(R, rightInv) = <span class="textsc">CountInv</span>(right half of \(A\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span>(Merged, splitInv) = <span class="textsc">CountSplitInv</span>(L, R)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <b>return</b> (Merged, leftInv + rightInv + splitInv)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>procedure</b>
+</p>
+</li>
+</ul>
+
+</figure>
+<!--
+...... subsubsection Analysis ......
+-->
+<h6 id="autosec-44">Analysis</h6>
+<a id="index-autopage-44"></a>
+
+
+<p>
+Similar to <b>MergeSort</b>, we see two recursive calls and linear work per recursive iteration:
+</p>
+
+<p>
+\[ T(n) \leqslant 2 \cdot T(\frac n 2) + O(n) \]
+</p>
+
+<p>
+And therefore <b>CountInv</b> has a runtime of \(O(n \log n)\) as well.
+</p>
+<!--
+...... subsection Karatsuba Multiplication ......
+-->
+<h5 id="autosec-45">Karatsuba Multiplication</h5>
+<a id="index-autopage-45"></a>
+
+
+<p>
+Anatoly Karatsuba invented this algorithm as a faster way to multiply very large integers. This happens to be the multiplication algorithm used by Python. The idea behind the algorithm is to recursively split apart each integer into halves until they are small enough to
+be multiplied in constant time with the normal ‘*‘ operator.
+</p>
+
+<p>
+The combine step involves some manipulation of the quadratic identity.
+</p>
+
+<figure id="autoid-8" class="algorithm ruled">
+
+<div class="figurecaption">
+<p>
+Algorithm&nbsp;7:&nbsp;Karatsuba
+</p>
+</div>
+<ul class="list" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker"><b>Require:</b></span> \(x\) and \(y\) have the same number of digits
+</p>
+</li>
+</ul>
+
+</figure>
+<a id="index-autofile-last"></a>
+</section>
+
+</main>
+
+</div>
+
+<footer>
+
+<p>
+anthonyjosephre@gmail.com
+</p>
+
+</footer>
+
+
+<nav class="botnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>
