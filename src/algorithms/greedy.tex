@@ -18,23 +18,28 @@ from a starting vertex by choose the least costly edge spanning a graph "cut"
 or partition incident to the visited nodes. In other words, greedily choose the
 edge which minimizes the current distance traveled.
 
-\begin{tikzpicture}[
-vertex/.style={circle, draw, fill=white, thick, minimum size=20},
-]
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[
+  vertex/.style={circle, draw, fill=white, thick, minimum size=20},
+  ]
 
-% Vertices
-\node[vertex] (S) {$S$};
-\node[vertex] (V) [above right=of S] {$V$};
-\node[vertex] (W) [below right=of S] {$W$};
-\node[vertex] (T) [below right=of V] {$T$};
+  % Vertices
+  \node[vertex] (S) {$S$};
+  \node[vertex] (V) [above right=of S] {$V$};
+  \node[vertex] (W) [below right=of S] {$W$};
+  \node[vertex] (T) [below right=of V] {$T$};
 
-% Edges
-\draw[->, thick] (S) to node[above] {1} (V);
-\draw[->, thick] (S) to node[below] {4} (W);
-\draw[->, thick] (V) to node[right] {2} (W);
-\draw[->, thick] (V) to node[above] {6} (T);
-\draw[->, thick] (W) to node[below] {3} (T);
-\end{tikzpicture}
+  % Edges
+  \draw[->, thick] (S) to node[above] {1} (V);
+  \draw[->, thick] (S) to node[below] {4} (W);
+  \draw[->, thick] (V) to node[right] {2} (W);
+  \draw[->, thick] (V) to node[above] {6} (T);
+  \draw[->, thick] (W) to node[below] {3} (T);
+  \end{tikzpicture}
+  \caption{Weighted, directed graph}
+  \label{fig:dijkstra1}
+\end{figure}
 
  The shortest path algorithm outputs the following when starting from $S$:
 
@@ -92,9 +97,9 @@ vertex/.style={circle, draw, fill=white, thick, minimum size=20},
 \caption{Prim's MST Algorithm}
 \begin{algorithmic}
   \State $X = \{s\}$
-  \State $T = \empty$
+  \State $T = \emptyset$
   \While{There is an edge $(v, w)$ s.t $v \in X$, $w \not \in X$}
-    \State $(v', w')$ = minimum cost edge \\\\
+    \State $(v', w')$ = minimum cost edge \\
     \State Add $w'$ to $X$
     \State Add $(v', w')$ to $T$
   \EndWhile
@@ -164,11 +169,11 @@ pre-processing step to avoid quadratic searches for successive minima.
 \begin{algorithm}
 \caption{Kruskal's Algorithm}
 \begin{algorithmic}
-  \State $T = \empty$
-  \State sort $E$ by edge weight \\\\
+  \State $T = \emptyset$
+  \State sort $E$ by edge weight \\
   \For{$(v, w) \in E$}
     \If{$(v, w)$ does not produce a cycle in $T$}
-      \State add $(v, w)$ to $T$ \\\\
+      \State add $(v, w)$ to $T$ \\
     \EndIf
   \EndFor
   \Return $T$
@@ -199,8 +204,7 @@ possible depth.
 \begin{algorithm}
 \caption{Huffman Encoding}
 \begin{algorithmic}
-  \Comment{Preprocessing}
-  \State $H = \empty$
+  \State $H = \emptyset$
   \For{symbol $\sigma \in \sum$}
     \State ${T_\sigma} = (\sigma, P_\sigma)$
     \State $H = H \cup T_\sigma$

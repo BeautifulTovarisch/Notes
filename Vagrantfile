@@ -2,18 +2,18 @@
 # vi: set ft=ruby :
 
 $tex = <<-TEX
-curl -L -O https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 
-tar -xvf install-tl-unx.tar.gz
+tar xvf install-tl-unx.tar.gz
+cd install-tl-2024*
 
-# TODO: Find a cleaner way to do this.
-find . -type f -name "install-tl" -exec perl {} -profile /vagrant/texlive.profile \';'
+perl ./install-tl --no-interaction -profile /vagrant/texlive.profile
 
-echo 'export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux' >> /home/vagrant/.bashrc
+echo 'export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux' >> /home/vagrant/.bashrc
 
 # Not necessary for root to have tlmgr in its path
 # lwarp packages
-/usr/local/texlive/2023/bin/x86_64-linux/tlmgr install lwarp \
+/usr/local/texlive/2024/bin/x86_64-linux/tlmgr install lwarp \
 luatex \
 fontspec \
 float \
@@ -41,7 +41,7 @@ svn-prov \
 algorithms
 
 # other packages
-/usr/local/texlive/2023/bin/x86_64-linux/tlmgr install pgf pgfplots amsmath standalone xcolor bibtex algorithmicx
+/usr/local/texlive/2024/bin/x86_64-linux/tlmgr install pgf pgfplots amsmath standalone xcolor bibtex algorithmicx
 TEX
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure

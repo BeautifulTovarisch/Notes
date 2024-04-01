@@ -11,11 +11,11 @@ This is especially helpful when dealing with multiple summations and loops in wh
 
 Often times a complex summation can be simplified using a few simple rules:
 
-\begin{align}
+\begin{align*}
   &\sum_{k \in K} c a_k = c \sum_{k \in K} a_k &\text{Distribution} \\
   &\sum_{k \in K} (a_k + b_k) = \sum_{k \in K} a_k + \sum_{k \in K} b_k &\text{Association} \\
   &\sum_{k \in K} (a_k + b_k) = \sum_{p(k) \in K'} a_{p(k)} &\text{Commutativity}
-\end{align}
+\end{align*}
 
 where $p(k)$ is a \emph{permutation} of the elements of $k$ to some set with image $p(k)$
 
@@ -26,21 +26,98 @@ The end result is the terms of $K$ are rearranged, and by \textbf{commutativity}
 
 Using the rules above, we can simplify the following summation:
 
-\begin{align}
+\begin{align*} \label{eq:sum_manip_example}
   S &= \sum_{0 \leqslant k \leqslant n} (a + bk) \\
   &= a(n+1) + \sum_{0 \leqslant k \leqslant n} bk &\text{$a$ is constant} \\
   &= a(n+1) + \sum_{0 \leqslant n-k \leqslant n} bn - bk &\text{$k \to n-k$} \\
   &= a(n+1) + \sum_{0 \leqslant k \leqslant n} bn - bk &\text{$n-k \to k$} \\
-\end{align}
+\end{align*}
 
 We employ another technique of adding $S$ to itself and solving a simplified expression
 
-\begin{align}
+\begin{align*}
   2S &= \sum_{0 \leqslant k \leqslant n} (a + bk) + a(n+1) + \sum_{0 \leqslant k \leqslant n} bn - bk \\
   &= a(n+1) \sum_{0 \leqslant k \leqslant n} (an + bn) &\text{combining summations and simplifying} \\
   &= (n+1)(2a + bn) &\text{$an$, $bn$ constant}
-\end{align}
+\end{align*}
 
 Finally, dividing by 2 we get $S = (a + \frac 1 2 bn)(n+1)$
+
+\subsection{Iverson Notation}
+
+In order to make manipulation of indexes easier, we can use notation invented
+by Kenneth E. Iverson as an indicator function:
+
+\begin{equation*} \label{eqn:iverson}
+[P] =
+\begin{cases}
+  1 & \text{if $P$ is true} \\
+  0 & \text{otherwise}
+\end{cases}
+\end{equation*}
+
+This lets the terms of a summation be written as a linear combination with the
+values of the Iverson predicate as coefficients. The "double-counting" rule of
+summations follows immediately from manipulating Iverson notation:
+
+\begin{equation*}
+  [k \in K] + [k \in K'] = [k \in K \cap K'] + [k \in K \cup K']
+\end{equation*}
+
+which translates to summations with indices:
+
+\begin{equation*}
+  \sum_{k \in K} a_k + \sum_{k \in K'} a_k = \sum_{k \in k \cap K'} a_k + \sum_{k \in k \cup K'} a_k
+\end{equation*}
+
+\subsection{Perturbing the Sum}
+
+Another technique is to manipulate the first and last terms. This reveal a way
+to solve the summation via the above manipulations.
+
+\subsubsection{Example}
+
+For example, take the following summation representing a geometric series. A
+good approach is to write $S_{n+1}$ in terms of $S_n$ and simplify the right
+side of the equation.
+
+Consider the following summation:
+
+\[
+  S_n = \sum_{0 \leqslant k \leqslant n} ax^k
+\]
+
+Adding the $n+1$st term and solving for $S_n$:
+
+\begin{align*}
+  S_n + ax^{n+1} &= a + \sum_{1 \leqslant k \leqslant n+1} ax^k \\
+  &\iff S_n + ax^{n+1} = a + \sum_{1 \leqslant k+1 \leqslant n+1} ax^{k+1} \\
+  &\iff S_n + ax^{n+1} = a + \sum_{0 \leqslant k \leqslant n} ax^{k+1} \\
+  &\iff S_n + ax^{n+1} = a + xS_n \\
+  &\iff S_n = \frac {a - ax^{n+1}} {1 - x}
+\end{align*}
+
+\subsubsection{Example}
+
+Taking another example and using the results from the previous derivation, the
+following sum is solved almost in the exact same way:
+
+\[
+  S_n = \sum_{0 \leqslant k \leqslant n} k2^k
+\]
+
+Once again perturbing the sum:
+
+\begin{align*}
+  S_n + (n+1)2^{n+1} &= 0 + \sum_{1 \leqslant k \leqslant n+1} k2^{k+1} \\
+  &= \sum_{1 \leqslant k+1 \leqslant n+1} k2^{k+1} + \sum_{1 \leqslant k+1 \leqslant n+1} 2^{k+1} \\
+  &= 2S_n + \sum_{0 \leqslant k \leqslant n} 2^{k+1} \\
+\end{align*}
+
+The second sum is a geometric series, and so after evaluating and simplifying:
+
+\[
+  S_n = \frac {2 - 2^{n+2}} {1 - 2} - (n+1)2^{n+1} = (n-1)2^{n+1} + 2
+\]
 
 \end{document}
