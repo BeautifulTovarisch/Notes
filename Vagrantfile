@@ -15,6 +15,8 @@ echo 'export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux' >> /home/vagra
 # lwarp packages
 /usr/local/texlive/2023/bin/x86_64-linux/tlmgr install lwarp \
 luatex \
+fontspec \
+float \
 xindy \
 pdfcrop \
 ifptex \
@@ -35,7 +37,8 @@ cleveref \
 ifmtarg \
 capt-of \
 filehook \
-svn-prov
+svn-prov \
+algorithms
 
 # other packages
 /usr/local/texlive/2023/bin/x86_64-linux/tlmgr install pgf pgfplots amsmath standalone xcolor bibtex algorithmicx
