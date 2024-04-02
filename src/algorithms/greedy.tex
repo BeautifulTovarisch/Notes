@@ -41,14 +41,21 @@ edge which minimizes the current distance traveled.
   \label{fig:dijkstra1}
 \end{figure}
 
- The shortest path algorithm outputs the following when starting from $S$:
+The shortest path algorithm outputs the following when starting from $S$:
 
-% |Vertex     |Shortest Path |
-% | --------- | ------------ |
-% |S          |0             |
-% |V          |1             |
-% |W          |3             |
-% |T          |6             |
+\begin{tabular}{ |c|c| }
+  \hline
+  Vertex & Shortest Path \\
+  \hline
+  S & 0 \\
+  \hline
+  V & 1 \\
+  \hline
+  W & 3 \\
+  \hline
+  T & 6 \\
+  \hline
+\end{tabular}
 
 \begin{algorithm}
 \caption{Dijkstra's Shortest-Path}
@@ -220,12 +227,19 @@ possible depth.
 
 For example, given the frequencies:
 
-% |Symbol     |Frequency     |
-% | --------- | ------------ |
-% |a          |0.60          |
-% |b          |0.25          |
-% |c          |0.10          |
-% |d          |0.05          |
+\begin{tabular}{ |c|r| }
+  \hline
+  Symbol & Frequency \\
+  \hline
+  a & 0.60 \\
+  \hline
+  b & 0.25 \\
+  \hline
+  c & 0.10 \\
+  \hline
+  d & 0.05 \\
+  \hline
+\end{tabular}
 
 Huffman's greedy algorithm will produce the following encoding tree
 
