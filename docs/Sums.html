@@ -277,74 +277,122 @@ Iverson Notation</a>
 
 
 <p>
-<a href="Sums.html#autosec-11" class="tocsubsection" >
+<a href="Sums.html#autosec-13" class="tocsubsection" >
 Perturbing the Sum</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-15" class="tocchapter" >
+<a href="Sums.html#autosec-16" class="tocsubsection" >
+Multiple Sums</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
 Algorithms</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-16" class="tocsection" >
+<a href="Algorithms.html#autosec-25" class="tocsection" >
 Greedy</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-17" class="tocsubsection" >
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
 Dijkstra’s Shortest Path Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-22" class="tocsubsection" >
+<a href="Algorithms.html#autosec-32" class="tocsubsection" >
 Prim’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+<a href="Algorithms.html#autosec-36" class="tocsubsection" >
 Kruskal’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-32" class="tocsubsection" >
+<a href="Algorithms.html#autosec-42" class="tocsubsection" >
 Huffman Codes</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-37" class="tocsection" >
+<a href="Divide-Conquer.html#autosec-48" class="tocsection" >
 Divide and Conquer</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-38" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-49" class="tocsubsection" >
 Master Theorem</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-40" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-51" class="tocsubsection" >
 MergeSort</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-42" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-53" class="tocsubsection" >
 Counting Array Inversions</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-45" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-56" class="tocsubsection" >
 Karatsuba Multiplication</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-58" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-59" class="tocsection" >
+Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-60" class="tocsubsection" >
+Product Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-61" class="tocsubsection" >
+Complement Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-62" class="tocsubsection" >
+Sum Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-63" class="tocsubsection" >
+Inclusion/Exclusion</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-64" class="tocsubsection" >
+Permutations</a>
 </p>
 
 
@@ -664,7 +712,7 @@ In order to make manipulation of indexes easier, we can use notation invented by
 
                                                                         1 if \(P\) is true
                                                                     (
-                                                           [P ] =                                                                                                            --><a id="eqn:iverson"></a><!--
+                                                           [P ] =                                                               --><a id="eqn:iverson"></a><!--
                                                                         0 otherwise
 
 -->
@@ -676,9 +724,57 @@ In order to make manipulation of indexes easier, we can use notation invented by
 \end{equation*}
 
 </p>
+<!--
+...... subsubsection Properties ......
+-->
+<h6 id="autosec-11">Properties</h6>
+<a id="index-autopage-11"></a>
+
 
 <p>
-This lets the terms of a summation be written as a linear combination with the values of the Iverson predicate as coefficients. The ”double-counting” rule of summations follows immediately from manipulating Iverson notation:
+Iverson brackets can be manipulated in the same way as set operations:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                                                 [P ∧ Q] = [P ][Q]
+
+
+                                                                                                          [P ∨ Q] = [P ] + [Q] − [P ∪ Q]
+
+
+                                                                                                                  [¬P ] = 1 − [P ]
+
+
+                                                                                                   [k ∈ A] + [k ∈ B] = [k ∈ A ∪ B] + [k ∈ A ∩ B]
+
+
+                                                                                                           [k ∈ A ∩ B] = [k ∈ A][k ∈ B]
+
+
+-->
+
+
+<p>
+
+\begin{gather*}
+[P \land Q] = [P][Q] \\\\ [P \lor Q] = [P] + [Q] - [P \cup Q] \\\\ [\lnot P] = 1 - [P] \\\\ [k \in A] + [k \in B] = [k \in A \cup B] + [k \in A \cap B] \\\\ [k \in A \cap B] = [k \in A][k \in B]
+\end{gather*}
+
+</p>
+<!--
+...... subsubsection Example ......
+-->
+<h6 id="autosec-12">Example</h6>
+<a id="index-autopage-12"></a>
+
+
+<p>
+Using Iverson brackets, the ”double-counting” summation identity can be derived directly from the above properties.
 </p>
 
 <span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
@@ -706,7 +802,7 @@ which translates to summations with indices:
 
 <!--
 
-                                                                                                                 X           X               X                X
+                                                                                                                X            X               X                X
                                                                                                                       ak +           ak =             ak +             ak
                                                                                                                 k∈K          k∈K 0          k∈k∩K 0          k∈k∪K 0
 
@@ -722,8 +818,8 @@ which translates to summations with indices:
 <!--
 ...... subsection Perturbing the Sum ......
 -->
-<h5 id="autosec-11">Perturbing the Sum</h5>
-<a id="index-autopage-11"></a>
+<h5 id="autosec-13">Perturbing the Sum</h5>
+<a id="index-autopage-13"></a>
 
 
 <p>
@@ -732,8 +828,8 @@ Another technique is to manipulate the first and last terms. This reveal a way t
 <!--
 ...... subsubsection Example ......
 -->
-<h6 id="autosec-12">Example</h6>
-<a id="index-autopage-12"></a>
+<h6 id="autosec-14">Example</h6>
+<a id="index-autopage-14"></a>
 
 
 <p>
@@ -788,8 +884,8 @@ S_n + ax^{n+1} = a + xS_n \\ &amp;\iff S_n = \frac {a - ax^{n+1}} {1 - x}
 <!--
 ...... subsubsection Example ......
 -->
-<h6 id="autosec-13">Example</h6>
-<a id="index-autopage-13"></a>
+<h6 id="autosec-15">Example</h6>
+<a id="index-autopage-15"></a>
 
 
 <p>
@@ -813,13 +909,16 @@ Once again perturbing the sum:
                                                                                                                                        X
                                                                                                          Sn + (n + 1)2n+1 = 0 +                k2k+1
                                                                                                                                   1⩽k⩽n+1
+
+
                                                                                                                                   X                       X
                                                                                                                            =                k2k+1 +                2k+1
                                                                                                                                1⩽k+1⩽n+1               1⩽k+1⩽n+1
+
+
                                                                                                                                         X
                                                                                                                            = 2Sn +             2k+1
                                                                                                                                        0⩽k⩽n
-
 
 
 
@@ -829,8 +928,8 @@ Once again perturbing the sum:
 <p>
 
 \begin{align*}
-S_n + (n+1)2^{n+1} &amp;= 0 + \sum _{1 \leqslant k \leqslant n+1} k2^{k+1} \\ &amp;= \sum _{1 \leqslant k+1 \leqslant n+1} k2^{k+1} + \sum _{1 \leqslant k+1 \leqslant n+1} 2^{k+1} \\ &amp;= 2S_n + \sum _{0 \leqslant k \leqslant n} 2^{k+1}
-\\
+S_n + (n+1)2^{n+1} &amp;= 0 + \sum _{1 \leqslant k \leqslant n+1} k2^{k+1} \\\\ &amp;= \sum _{1 \leqslant k+1 \leqslant n+1} k2^{k+1} + \sum _{1 \leqslant k+1 \leqslant n+1} 2^{k+1} \\\\ &amp;= 2S_n + \sum _{0 \leqslant k \leqslant n}
+2^{k+1}
 \end{align*}
 
 </p>
@@ -841,6 +940,166 @@ The second sum is a geometric series, and so after evaluating and simplifying:
 
 <p>
 \[ S_n = \frac {2 - 2^{n+2}} {1 - 2} - (n+1)2^{n+1} = (n-1)2^{n+1} + 2 \]
+</p>
+<!--
+...... subsection Multiple Sums ......
+-->
+<h5 id="autosec-16">Multiple Sums</h5>
+<a id="index-autopage-16"></a>
+
+
+<p>
+When a summation is indexed by two or more indices, it can be written with more than one sigma:
+</p>
+
+<p>
+\[ \sum _{1 \leqslant j, k \leqslant n} a_j b_k = \sum _{1 \leqslant j \leqslant n} \sum _{1 \leqslant k \leqslant n} b_k \]
+</p>
+
+<p>
+Summations of this form are evaulated ”right-to-left” or by taking the ”inner” summtation first. In the above example, the summation over \(k\) happens first.
+</p>
+<!--
+...... subsubsection Interchanging Indices ......
+-->
+<h6 id="autosec-17">Interchanging Indices</h6>
+<a id="index-autopage-17"></a>
+
+
+<p>
+When indices are independent, this is simply a matter of rearranging the sums. Complications arise when the inner index depends on the outer. The abstract way of denoting an exchange of indicies:
+</p>
+
+<p>
+\[ \sum _j \sum _k a_{j,k} [P(j, k)] = \sum _{P(j,k)} a_{j,k} [P(j,k)] = \sum _k \sum _j a_{j,k} [P(j,k)] \]
+</p>
+
+<p>
+is a generalization of the associativity rule.
+</p>
+<!--
+...... subsubsection Example ......
+-->
+<h6 id="autosec-18">Example</h6>
+<a id="index-autopage-18"></a>
+
+
+<p>
+This example shows how multiple summations can be split apart by applying the associative rule and using Iverson notation.
+</p>
+
+<p>
+Since the indices are independent, the summations can occur in either order.
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                                              X                 X
+                                                                                                                      aj bk =         aj bk [1 ⩽ j ⩽ 3][1 ⩽ k ⩽ 3]
+                                                                                                            1⩽j,k⩽3             j,k
+                                                                                                                                X                      X
+                                                                                                                           =          aj [1 ⩽ j ⩽ 3]       bk [1 ⩽ k ⩽ 3]
+                                                                                                                                 j                     k
+                                                                                                                                3
+                                                                                                                                X          3
+                                                                                                                                           X
+                                                                                                                           =          aj         bk
+                                                                                                                                j=1        k=1
+
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+\sum _{1 \leqslant j,k \leqslant 3} a_j b_k &amp;= \sum _{j,k} a_j b_k [1 \leqslant j \leqslant 3][1 \leqslant k \leqslant 3] \\ &amp;= \sum _j a_j [1 \leqslant j \leqslant 3] \sum _k b_k [1 \leqslant k \leqslant 3] \\ &amp;= \sum
+_{j=1}^3 a_j \sum _{k=1}^3 b_k
+\end{align*}
+
+</p>
+<!--
+...... subsubsection Harder Example ......
+-->
+<h6 id="autosec-19">Harder Example</h6>
+<a id="index-autopage-19"></a>
+
+
+<p>
+In this example, \(j\) is related to the value of \(k\). Again, the problem can be reduced into manipulating the inequalities using Iverson notation. Using the following identity written in Iverson brackets:
+</p>
+
+<p>
+\[ [1 \leqslant j \leqslant n][j \leqslant k \leqslant n] = [1 \leqslant j,k \leqslant n] = [1 \leqslant k \leqslant n][1 \leqslant j \leqslant k] \]
+</p>
+<div class="center">
+
+<p>
+<span
+    id="lateximage-index-1"
+    class="lateximagesource"
+><!--
+1   j   k   n
+--><img
+    src="index-images/image-1.svg"
+    alt="(-tikz-&nbsp;diagram)"
+    style=""
+    class="lateximage"
+></span>
+</p>
+</div>
+
+<p>
+This holds by combining the first two brackets by writing their intersection as one inequality and by splitting it apart again.
+</p>
+
+<p>
+An equivalent double summation can be manipulated using the above identity:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                                                         X        X              X
+                                                                                                                                      aj,k =             aj,k
+                                                                                                                        1⩽j⩽n j⩽k⩽n            1⩽j,k⩽n
+
+
+                                                                                                                                                X        X
+                                                                                                                                          =                     aj,k
+                                                                                                                                               1⩽k⩽n 1⩽j⩽k
+
+
+
+                                                                                                                                               n X
+                                                                                                                                               X k
+                                                                                                                                          =              aj,k
+                                                                                                                                               k=1 j=1
+
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+\sum _{1 \leqslant j \leqslant n} \sum _{j \leqslant k \leqslant n} a_{j,k} &amp;= \sum _{1 \leqslant j,k \leqslant n} a_{j,k} \\\\ &amp;= \sum _{1 \leqslant k \leqslant n} \sum _{1 \leqslant j \leqslant k} a_{j,k} \\\\ &amp;= \sum
+_{k=1}^n \sum _{j=1}^k a_{j,k}
+\end{align*}
+
+</p>
+
+<p>
+Hopefully, the second summation turns out to be easier to evaluate.
 </p>
 
 </section>

@@ -380,7 +380,7 @@ Anthony
 <div class="titledate">
 
 <p>
-April 1, 2024
+April 2, 2024
 </p>
 </div>
 
@@ -412,20 +412,32 @@ Manipulating Sums</a>
 
 
 <p>
-<a href="Algorithms.html#autosec-15" class="tocchapter" >
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
 Algorithms</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-16" class="tocsection" >
+<a href="Algorithms.html#autosec-25" class="tocsection" >
 Greedy</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-37" class="tocsection" >
+<a href="Divide-Conquer.html#autosec-48" class="tocsection" >
 Divide and Conquer</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-58" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-59" class="tocsection" >
+Basics of Counting</a>
 </p>
 </nav>
 <!--
@@ -732,74 +744,122 @@ Iverson Notation</a>
 
 
 <p>
-<a href="Sums.html#autosec-11" class="tocsubsection" >
+<a href="Sums.html#autosec-13" class="tocsubsection" >
 Perturbing the Sum</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-15" class="tocchapter" >
+<a href="Sums.html#autosec-16" class="tocsubsection" >
+Multiple Sums</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
 Algorithms</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-16" class="tocsection" >
+<a href="Algorithms.html#autosec-25" class="tocsection" >
 Greedy</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-17" class="tocsubsection" >
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
 Dijkstra’s Shortest Path Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-22" class="tocsubsection" >
+<a href="Algorithms.html#autosec-32" class="tocsubsection" >
 Prim’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+<a href="Algorithms.html#autosec-36" class="tocsubsection" >
 Kruskal’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-32" class="tocsubsection" >
+<a href="Algorithms.html#autosec-42" class="tocsubsection" >
 Huffman Codes</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-37" class="tocsection" >
+<a href="Divide-Conquer.html#autosec-48" class="tocsection" >
 Divide and Conquer</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-38" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-49" class="tocsubsection" >
 Master Theorem</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-40" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-51" class="tocsubsection" >
 MergeSort</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-42" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-53" class="tocsubsection" >
 Counting Array Inversions</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-45" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-56" class="tocsubsection" >
 Karatsuba Multiplication</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-58" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-59" class="tocsection" >
+Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-60" class="tocsubsection" >
+Product Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-61" class="tocsubsection" >
+Complement Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-62" class="tocsubsection" >
+Sum Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-63" class="tocsubsection" >
+Inclusion/Exclusion</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-64" class="tocsubsection" >
+Permutations</a>
 </p>
 
 
@@ -1119,7 +1179,7 @@ In order to make manipulation of indexes easier, we can use notation invented by
 
                                                                         1 if \(P\) is true
                                                                     (
-                                                           [P ] =                                                                                                            --><a id="eqn:iverson"></a><!--
+                                                           [P ] =                                                               --><a id="eqn:iverson"></a><!--
                                                                         0 otherwise
 
 -->
@@ -1131,9 +1191,57 @@ In order to make manipulation of indexes easier, we can use notation invented by
 \end{equation*}
 
 </p>
+<!--
+...... subsubsection Properties ......
+-->
+<h6 id="autosec-11">Properties</h6>
+<a id="index-autopage-11"></a>
+
 
 <p>
-This lets the terms of a summation be written as a linear combination with the values of the Iverson predicate as coefficients. The ”double-counting” rule of summations follows immediately from manipulating Iverson notation:
+Iverson brackets can be manipulated in the same way as set operations:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                                                 [P ∧ Q] = [P ][Q]
+
+
+                                                                                                          [P ∨ Q] = [P ] + [Q] − [P ∪ Q]
+
+
+                                                                                                                  [¬P ] = 1 − [P ]
+
+
+                                                                                                   [k ∈ A] + [k ∈ B] = [k ∈ A ∪ B] + [k ∈ A ∩ B]
+
+
+                                                                                                           [k ∈ A ∩ B] = [k ∈ A][k ∈ B]
+
+
+-->
+
+
+<p>
+
+\begin{gather*}
+[P \land Q] = [P][Q] \\\\ [P \lor Q] = [P] + [Q] - [P \cup Q] \\\\ [\lnot P] = 1 - [P] \\\\ [k \in A] + [k \in B] = [k \in A \cup B] + [k \in A \cap B] \\\\ [k \in A \cap B] = [k \in A][k \in B]
+\end{gather*}
+
+</p>
+<!--
+...... subsubsection Example ......
+-->
+<h6 id="autosec-12">Example</h6>
+<a id="index-autopage-12"></a>
+
+
+<p>
+Using Iverson brackets, the ”double-counting” summation identity can be derived directly from the above properties.
 </p>
 
 <span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
@@ -1161,7 +1269,7 @@ which translates to summations with indices:
 
 <!--
 
-                                                                                                                 X           X               X                X
+                                                                                                                X            X               X                X
                                                                                                                       ak +           ak =             ak +             ak
                                                                                                                 k∈K          k∈K 0          k∈k∩K 0          k∈k∪K 0
 
@@ -1177,8 +1285,8 @@ which translates to summations with indices:
 <!--
 ...... subsection Perturbing the Sum ......
 -->
-<h5 id="autosec-11">Perturbing the Sum</h5>
-<a id="index-autopage-11"></a>
+<h5 id="autosec-13">Perturbing the Sum</h5>
+<a id="index-autopage-13"></a>
 
 
 <p>
@@ -1187,8 +1295,8 @@ Another technique is to manipulate the first and last terms. This reveal a way t
 <!--
 ...... subsubsection Example ......
 -->
-<h6 id="autosec-12">Example</h6>
-<a id="index-autopage-12"></a>
+<h6 id="autosec-14">Example</h6>
+<a id="index-autopage-14"></a>
 
 
 <p>
@@ -1243,8 +1351,8 @@ S_n + ax^{n+1} = a + xS_n \\ &amp;\iff S_n = \frac {a - ax^{n+1}} {1 - x}
 <!--
 ...... subsubsection Example ......
 -->
-<h6 id="autosec-13">Example</h6>
-<a id="index-autopage-13"></a>
+<h6 id="autosec-15">Example</h6>
+<a id="index-autopage-15"></a>
 
 
 <p>
@@ -1268,13 +1376,16 @@ Once again perturbing the sum:
                                                                                                                                        X
                                                                                                          Sn + (n + 1)2n+1 = 0 +                k2k+1
                                                                                                                                   1⩽k⩽n+1
+
+
                                                                                                                                   X                       X
                                                                                                                            =                k2k+1 +                2k+1
                                                                                                                                1⩽k+1⩽n+1               1⩽k+1⩽n+1
+
+
                                                                                                                                         X
                                                                                                                            = 2Sn +             2k+1
                                                                                                                                        0⩽k⩽n
-
 
 
 
@@ -1284,8 +1395,8 @@ Once again perturbing the sum:
 <p>
 
 \begin{align*}
-S_n + (n+1)2^{n+1} &amp;= 0 + \sum _{1 \leqslant k \leqslant n+1} k2^{k+1} \\ &amp;= \sum _{1 \leqslant k+1 \leqslant n+1} k2^{k+1} + \sum _{1 \leqslant k+1 \leqslant n+1} 2^{k+1} \\ &amp;= 2S_n + \sum _{0 \leqslant k \leqslant n} 2^{k+1}
-\\
+S_n + (n+1)2^{n+1} &amp;= 0 + \sum _{1 \leqslant k \leqslant n+1} k2^{k+1} \\\\ &amp;= \sum _{1 \leqslant k+1 \leqslant n+1} k2^{k+1} + \sum _{1 \leqslant k+1 \leqslant n+1} 2^{k+1} \\\\ &amp;= 2S_n + \sum _{0 \leqslant k \leqslant n}
+2^{k+1}
 \end{align*}
 
 </p>
@@ -1296,6 +1407,166 @@ The second sum is a geometric series, and so after evaluating and simplifying:
 
 <p>
 \[ S_n = \frac {2 - 2^{n+2}} {1 - 2} - (n+1)2^{n+1} = (n-1)2^{n+1} + 2 \]
+</p>
+<!--
+...... subsection Multiple Sums ......
+-->
+<h5 id="autosec-16">Multiple Sums</h5>
+<a id="index-autopage-16"></a>
+
+
+<p>
+When a summation is indexed by two or more indices, it can be written with more than one sigma:
+</p>
+
+<p>
+\[ \sum _{1 \leqslant j, k \leqslant n} a_j b_k = \sum _{1 \leqslant j \leqslant n} \sum _{1 \leqslant k \leqslant n} b_k \]
+</p>
+
+<p>
+Summations of this form are evaulated ”right-to-left” or by taking the ”inner” summtation first. In the above example, the summation over \(k\) happens first.
+</p>
+<!--
+...... subsubsection Interchanging Indices ......
+-->
+<h6 id="autosec-17">Interchanging Indices</h6>
+<a id="index-autopage-17"></a>
+
+
+<p>
+When indices are independent, this is simply a matter of rearranging the sums. Complications arise when the inner index depends on the outer. The abstract way of denoting an exchange of indicies:
+</p>
+
+<p>
+\[ \sum _j \sum _k a_{j,k} [P(j, k)] = \sum _{P(j,k)} a_{j,k} [P(j,k)] = \sum _k \sum _j a_{j,k} [P(j,k)] \]
+</p>
+
+<p>
+is a generalization of the associativity rule.
+</p>
+<!--
+...... subsubsection Example ......
+-->
+<h6 id="autosec-18">Example</h6>
+<a id="index-autopage-18"></a>
+
+
+<p>
+This example shows how multiple summations can be split apart by applying the associative rule and using Iverson notation.
+</p>
+
+<p>
+Since the indices are independent, the summations can occur in either order.
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                                              X                 X
+                                                                                                                      aj bk =         aj bk [1 ⩽ j ⩽ 3][1 ⩽ k ⩽ 3]
+                                                                                                            1⩽j,k⩽3             j,k
+                                                                                                                                X                      X
+                                                                                                                           =          aj [1 ⩽ j ⩽ 3]       bk [1 ⩽ k ⩽ 3]
+                                                                                                                                 j                     k
+                                                                                                                                3
+                                                                                                                                X          3
+                                                                                                                                           X
+                                                                                                                           =          aj         bk
+                                                                                                                                j=1        k=1
+
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+\sum _{1 \leqslant j,k \leqslant 3} a_j b_k &amp;= \sum _{j,k} a_j b_k [1 \leqslant j \leqslant 3][1 \leqslant k \leqslant 3] \\ &amp;= \sum _j a_j [1 \leqslant j \leqslant 3] \sum _k b_k [1 \leqslant k \leqslant 3] \\ &amp;= \sum
+_{j=1}^3 a_j \sum _{k=1}^3 b_k
+\end{align*}
+
+</p>
+<!--
+...... subsubsection Harder Example ......
+-->
+<h6 id="autosec-19">Harder Example</h6>
+<a id="index-autopage-19"></a>
+
+
+<p>
+In this example, \(j\) is related to the value of \(k\). Again, the problem can be reduced into manipulating the inequalities using Iverson notation. Using the following identity written in Iverson brackets:
+</p>
+
+<p>
+\[ [1 \leqslant j \leqslant n][j \leqslant k \leqslant n] = [1 \leqslant j,k \leqslant n] = [1 \leqslant k \leqslant n][1 \leqslant j \leqslant k] \]
+</p>
+<div class="center">
+
+<p>
+<span
+    id="lateximage-index-1"
+    class="lateximagesource"
+><!--
+1   j   k   n
+--><img
+    src="index-images/image-1.svg"
+    alt="(-tikz-&nbsp;diagram)"
+    style=""
+    class="lateximage"
+></span>
+</p>
+</div>
+
+<p>
+This holds by combining the first two brackets by writing their intersection as one inequality and by splitting it apart again.
+</p>
+
+<p>
+An equivalent double summation can be manipulated using the above identity:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                                                         X        X              X
+                                                                                                                                      aj,k =             aj,k
+                                                                                                                        1⩽j⩽n j⩽k⩽n            1⩽j,k⩽n
+
+
+                                                                                                                                                X        X
+                                                                                                                                          =                     aj,k
+                                                                                                                                               1⩽k⩽n 1⩽j⩽k
+
+
+
+                                                                                                                                               n X
+                                                                                                                                               X k
+                                                                                                                                          =              aj,k
+                                                                                                                                               k=1 j=1
+
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+\sum _{1 \leqslant j \leqslant n} \sum _{j \leqslant k \leqslant n} a_{j,k} &amp;= \sum _{1 \leqslant j,k \leqslant n} a_{j,k} \\\\ &amp;= \sum _{1 \leqslant k \leqslant n} \sum _{1 \leqslant j \leqslant k} a_{j,k} \\\\ &amp;= \sum
+_{k=1}^n \sum _{j=1}^k a_{j,k}
+\end{align*}
+
+</p>
+
+<p>
+Hopefully, the second summation turns out to be easier to evaluate.
 </p>
 
 </section>
@@ -1542,7 +1813,7 @@ MathJax = {
 <body>
 
 
-<a id="index-autopage-14"></a>
+<a id="index-autopage-23"></a>
 <nav class="topnavigation"><a href="index.html" class="linkhome" >
 Home</a></nav>
 
@@ -1598,74 +1869,122 @@ Iverson Notation</a>
 
 
 <p>
-<a href="Sums.html#autosec-11" class="tocsubsection" >
+<a href="Sums.html#autosec-13" class="tocsubsection" >
 Perturbing the Sum</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-15" class="tocchapter" >
+<a href="Sums.html#autosec-16" class="tocsubsection" >
+Multiple Sums</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
 Algorithms</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-16" class="tocsection" >
+<a href="Algorithms.html#autosec-25" class="tocsection" >
 Greedy</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-17" class="tocsubsection" >
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
 Dijkstra’s Shortest Path Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-22" class="tocsubsection" >
+<a href="Algorithms.html#autosec-32" class="tocsubsection" >
 Prim’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+<a href="Algorithms.html#autosec-36" class="tocsubsection" >
 Kruskal’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-32" class="tocsubsection" >
+<a href="Algorithms.html#autosec-42" class="tocsubsection" >
 Huffman Codes</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-37" class="tocsection" >
+<a href="Divide-Conquer.html#autosec-48" class="tocsection" >
 Divide and Conquer</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-38" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-49" class="tocsubsection" >
 Master Theorem</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-40" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-51" class="tocsubsection" >
 MergeSort</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-42" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-53" class="tocsubsection" >
 Counting Array Inversions</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-45" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-56" class="tocsubsection" >
 Karatsuba Multiplication</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-58" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-59" class="tocsection" >
+Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-60" class="tocsubsection" >
+Product Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-61" class="tocsubsection" >
+Complement Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-62" class="tocsubsection" >
+Sum Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-63" class="tocsubsection" >
+Inclusion/Exclusion</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-64" class="tocsubsection" >
+Permutations</a>
 </p>
 
 
@@ -1813,14 +2132,14 @@ Karatsuba Multiplication</a>
 <!--
 ...... chapter Algorithms ......
 -->
-<h3 id="autosec-15">Algorithms</h3>
-<a id="index-autopage-15"></a>
+<h3 id="autosec-24">Algorithms</h3>
+<a id="index-autopage-24"></a>
 <a id="index-autofile-2"></a>
 <!--
 ...... section Greedy ......
 -->
-<h4 id="autosec-16">Greedy</h4>
-<a id="index-autopage-16"></a>
+<h4 id="autosec-25">Greedy</h4>
+<a id="index-autopage-25"></a>
 
 
 <p>
@@ -1833,8 +2152,8 @@ In general, the strategy is to choose a locally optimal solution in the hopes th
 <!--
 ...... subsection Dijkstra's Shortest Path Algorithm ......
 -->
-<h5 id="autosec-17">Dijkstra’s Shortest Path Algorithm</h5>
-<a id="index-autopage-17"></a>
+<h5 id="autosec-26">Dijkstra’s Shortest Path Algorithm</h5>
+<a id="index-autopage-26"></a>
 
 
 <p>
@@ -1847,7 +2166,7 @@ distance traveled.
 
 <p>
 <span
-    id="lateximage-index-1"
+    id="lateximage-index-2"
     class="lateximagesource"
 ><!--
         V
@@ -1858,7 +2177,7 @@ S           2       T
     4           3
         W
 --><img
-    src="index-images/image-1.svg"
+    src="index-images/image-2.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
@@ -1880,6 +2199,40 @@ Figure&nbsp;1:&nbsp;Weighted, directed graph
 <p>
 The shortest path algorithm outputs the following when starting from \(S\):
 </p>
+<table>
+
+<tr style="display:none"><th>.</th></tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">Vertex</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">Shortest Path</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">S</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">0</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">V</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">1</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">W</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">3</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">T</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">6</td>
+</tr>
+
+<tr class="hline" aria-hidden="true">
+<td class="tdc"></td>
+<td class="tdc"></td>
+</tr>
+</table>
 
 <figure id="autoid-2" class="algorithm ruled">
 
@@ -1927,21 +2280,21 @@ Algorithm&nbsp;1:&nbsp;Dijkstra’s Shortest-Path
 <li>
 
 <p>
-<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>\((v&apos;, w&apos;)\) = edge minimizing \(len(v) + l_{vw}\)
+<span class="listmarker"></span>     <span style="width:12pt; display:inline-block;"></span>\((v&apos;, w&apos;)\) = edge minimizing \(len(v) + l_{vw}\)
 </p>
 
 </li>
 <li>
 
 <p>
-<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>Add \(w&apos;\) to \(X\)
+<span class="listmarker"></span>     <span style="width:12pt; display:inline-block;"></span>Add \(w&apos;\) to \(X\)
 </p>
 
 </li>
 <li>
 
 <p>
-<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>len(w’) = len(v’) + \(l_{v&apos;w&apos;}\)
+<span class="listmarker"></span>     <span style="width:12pt; display:inline-block;"></span>len(w’) = len(v’) + \(l_{v&apos;w&apos;}\)
 </p>
 
 </li>
@@ -1964,8 +2317,8 @@ Algorithm&nbsp;1:&nbsp;Dijkstra’s Shortest-Path
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-21">Analysis</h6>
-<a id="index-autopage-21"></a>
+<h6 id="autosec-31">Analysis</h6>
+<a id="index-autopage-31"></a>
 
 
 <p>
@@ -1979,8 +2332,8 @@ Using a [[Heap]] this algorithm can be sped up significantly, achieving \(O((|E|
 <!--
 ...... subsection Prim's MST Algorithm ......
 -->
-<h5 id="autosec-22">Prim’s MST Algorithm</h5>
-<a id="index-autopage-22"></a>
+<h5 id="autosec-32">Prim’s MST Algorithm</h5>
+<a id="index-autopage-32"></a>
 
 
 <p>
@@ -1989,7 +2342,7 @@ Prim’s algorithm for computing a minimum-spanning tree. The algorithm function
 
 <p>
 <span
-    id="lateximage-index-2"
+    id="lateximage-index-3"
     class="lateximagesource"
 ><!--
         1
@@ -2000,7 +2353,7 @@ Prim’s algorithm for computing a minimum-spanning tree. The algorithm function
     c       d
         5
 --><img
-    src="index-images/image-2.svg"
+    src="index-images/image-3.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
@@ -2076,8 +2429,8 @@ Algorithm&nbsp;2:&nbsp;Prim’s MST Algorithm
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-25">Analysis</h6>
-<a id="index-autopage-25"></a>
+<h6 id="autosec-35">Analysis</h6>
+<a id="index-autopage-35"></a>
 
 
 <p>
@@ -2090,8 +2443,8 @@ We can employ the same technique of using a Heap as in Dijkstra’s algorithm to
 <!--
 ...... subsection Kruskal's MST Algorithm ......
 -->
-<h5 id="autosec-26">Kruskal’s MST Algorithm</h5>
-<a id="index-autopage-26"></a>
+<h5 id="autosec-36">Kruskal’s MST Algorithm</h5>
+<a id="index-autopage-36"></a>
 
 
 <p>
@@ -2100,7 +2453,7 @@ Kruskal’s algorithm adopts a different approach, instead opting to choose the 
 
 <p>
 <span
-    id="lateximage-index-3"
+    id="lateximage-index-4"
     class="lateximagesource"
 ><!--
         1
@@ -2111,7 +2464,7 @@ Kruskal’s algorithm adopts a different approach, instead opting to choose the 
     c       d
         5
 --><img
-    src="index-images/image-3.svg"
+    src="index-images/image-4.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
@@ -2154,7 +2507,7 @@ Kruskal’s algorithm would execute the following steps:
 
 <p>
 <span
-    id="lateximage-index-4"
+    id="lateximage-index-5"
     class="lateximagesource"
 ><!--
         1
@@ -2164,7 +2517,7 @@ Kruskal’s algorithm would execute the following steps:
 
     c       d
 --><img
-    src="index-images/image-4.svg"
+    src="index-images/image-5.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
@@ -2251,8 +2604,8 @@ Algorithm&nbsp;3:&nbsp;Kruskal’s Algorithm
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-31">Analysis</h6>
-<a id="index-autopage-31"></a>
+<h6 id="autosec-41">Analysis</h6>
+<a id="index-autopage-41"></a>
 
 
 <p>
@@ -2270,8 +2623,8 @@ By using a Union-Find data structure, we can dramatically improve the runtime. I
 <!--
 ...... subsection Huffman Codes ......
 -->
-<h5 id="autosec-32">Huffman Codes</h5>
-<a id="index-autopage-32"></a>
+<h5 id="autosec-42">Huffman Codes</h5>
+<a id="index-autopage-42"></a>
 
 
 <p>
@@ -2384,6 +2737,40 @@ Algorithm&nbsp;4:&nbsp;Huffman Encoding
 <p>
 For example, given the frequencies:
 </p>
+<table>
+
+<tr style="display:none"><th>.</th></tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">Symbol</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">Frequency</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">a</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.60</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">b</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.25</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">c</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.10</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">d</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.05</td>
+</tr>
+
+<tr class="hline" aria-hidden="true">
+<td class="tdc"></td>
+<td class="tdr"></td>
+</tr>
+</table>
 
 <p>
 Huffman’s greedy algorithm will produce the following encoding tree
@@ -2391,7 +2778,7 @@ Huffman’s greedy algorithm will produce the following encoding tree
 
 <p>
 <span
-    id="lateximage-index-5"
+    id="lateximage-index-6"
     class="lateximagesource"
 ><!--
     0           1
@@ -2404,7 +2791,7 @@ a
 
                     c               d
 --><img
-    src="index-images/image-5.svg"
+    src="index-images/image-6.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
@@ -2417,8 +2804,8 @@ which ensures that symbol \(a\), the most frequently encountered will be the qui
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-35">Analysis</h6>
-<a id="index-autopage-35"></a>
+<h6 id="autosec-46">Analysis</h6>
+<a id="index-autopage-46"></a>
 
 
 <p>
@@ -2673,7 +3060,7 @@ MathJax = {
 <body>
 
 
-<a id="index-autopage-36"></a>
+<a id="index-autopage-47"></a>
 <nav class="topnavigation"><a href="index.html" class="linkhome" >
 Home</a></nav>
 
@@ -2729,74 +3116,122 @@ Iverson Notation</a>
 
 
 <p>
-<a href="Sums.html#autosec-11" class="tocsubsection" >
+<a href="Sums.html#autosec-13" class="tocsubsection" >
 Perturbing the Sum</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-15" class="tocchapter" >
+<a href="Sums.html#autosec-16" class="tocsubsection" >
+Multiple Sums</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
 Algorithms</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-16" class="tocsection" >
+<a href="Algorithms.html#autosec-25" class="tocsection" >
 Greedy</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-17" class="tocsubsection" >
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
 Dijkstra’s Shortest Path Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-22" class="tocsubsection" >
+<a href="Algorithms.html#autosec-32" class="tocsubsection" >
 Prim’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+<a href="Algorithms.html#autosec-36" class="tocsubsection" >
 Kruskal’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-32" class="tocsubsection" >
+<a href="Algorithms.html#autosec-42" class="tocsubsection" >
 Huffman Codes</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-37" class="tocsection" >
+<a href="Divide-Conquer.html#autosec-48" class="tocsection" >
 Divide and Conquer</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-38" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-49" class="tocsubsection" >
 Master Theorem</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-40" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-51" class="tocsubsection" >
 MergeSort</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-42" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-53" class="tocsubsection" >
 Counting Array Inversions</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-45" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-56" class="tocsubsection" >
 Karatsuba Multiplication</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-58" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-59" class="tocsection" >
+Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-60" class="tocsubsection" >
+Product Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-61" class="tocsubsection" >
+Complement Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-62" class="tocsubsection" >
+Sum Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-63" class="tocsubsection" >
+Inclusion/Exclusion</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-64" class="tocsubsection" >
+Permutations</a>
 </p>
 
 
@@ -2944,8 +3379,8 @@ Karatsuba Multiplication</a>
 <!--
 ...... section Divide and Conquer ......
 -->
-<h4 id="autosec-37">Divide and Conquer</h4>
-<a id="index-autopage-37"></a>
+<h4 id="autosec-48">Divide and Conquer</h4>
+<a id="index-autopage-48"></a>
 <a id="index-autofile-3"></a>
 
 <p>
@@ -2958,8 +3393,8 @@ This paradigm differs from Dynamic Programming in that the subproblems produced 
 <!--
 ...... subsection Master Theorem ......
 -->
-<h5 id="autosec-38">Master Theorem</h5>
-<a id="index-autopage-38"></a>
+<h5 id="autosec-49">Master Theorem</h5>
+<a id="index-autopage-49"></a>
 
 
 <p>
@@ -3014,8 +3449,8 @@ The runtimes follow naturally from reasoning about the upper bound in each case.
 <!--
 ...... subsubsection Proof ......
 -->
-<h6 id="autosec-39">Proof</h6>
-<a id="index-autopage-39"></a>
+<h6 id="autosec-50">Proof</h6>
+<a id="index-autopage-50"></a>
 
 
 <p>
@@ -3024,8 +3459,8 @@ TODO
 <!--
 ...... subsection MergeSort ......
 -->
-<h5 id="autosec-40">MergeSort</h5>
-<a id="index-autopage-40"></a>
+<h5 id="autosec-51">MergeSort</h5>
+<a id="index-autopage-51"></a>
 
 
 <p>
@@ -3213,8 +3648,8 @@ Algorithm&nbsp;5:&nbsp;MergeSort
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-41">Analysis</h6>
-<a id="index-autopage-41"></a>
+<h6 id="autosec-52">Analysis</h6>
+<a id="index-autopage-52"></a>
 
 
 <p>
@@ -3231,8 +3666,8 @@ Applying the master theorem with \(a = 2 = 2^1 = b^d\), we arrive at a runtime o
 <!--
 ...... subsection Counting Array Inversions ......
 -->
-<h5 id="autosec-42">Counting Array Inversions</h5>
-<a id="index-autopage-42"></a>
+<h5 id="autosec-53">Counting Array Inversions</h5>
+<a id="index-autopage-53"></a>
 
 
 <p>
@@ -3453,8 +3888,8 @@ Algorithm&nbsp;6:&nbsp;Count Inversions
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-44">Analysis</h6>
-<a id="index-autopage-44"></a>
+<h6 id="autosec-55">Analysis</h6>
+<a id="index-autopage-55"></a>
 
 
 <p>
@@ -3471,8 +3906,8 @@ And therefore <b>CountInv</b> has a runtime of \(O(n \log n)\) as well.
 <!--
 ...... subsection Karatsuba Multiplication ......
 -->
-<h5 id="autosec-45">Karatsuba Multiplication</h5>
-<a id="index-autopage-45"></a>
+<h5 id="autosec-56">Karatsuba Multiplication</h5>
+<a id="index-autopage-56"></a>
 
 
 <p>
@@ -3501,6 +3936,753 @@ Algorithm&nbsp;7:&nbsp;Karatsuba
 </ul>
 
 </figure>
+
+</section>
+
+</main>
+
+</div>
+
+<footer>
+
+<p>
+anthonyjosephre@gmail.com
+</p>
+
+</footer>
+
+
+<nav class="botnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>
+<!--|Start file|Combinatorics.html|-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Anthony" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="Personal notes on Mathematics and Computer Science" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes on Everything — Combinatorics</title>
+<link rel="stylesheet" type="text/css" href="lwarp.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+  subequations: "0",
+  section: "",
+  loader: {
+    load: ['[tex]/tagformat', '[tex]/textmacros'],
+  },
+  startup: {
+    ready() {
+      // These would be replaced by import commands if you wanted to make
+      // a proper extension.
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      const Macro = MathJax._.input.tex.Symbol.Macro;
+      const TexError = MathJax._.input.tex.TexError.default;
+      const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+      const expandable = MathJax._.util.Options.expandable;
+
+       // Insert the replacement string into the TeX string, and check
+       // that there haven't been too many maxro substitutions (prevents
+       // infinite loops).
+       const useArgument = (parser, text) => {
+         parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+         parser.i = 0;
+         if (++parser.macroCount > parser.configuration.options.maxMacros) {
+           throw new TexError('MaxMacroSub1',
+           'MathJax maximum macro substitution count exceeded; ' +
+           'is there a recursive macro call?');
+         }
+       }
+
+       // Create the command map for:
+       //     \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+       new CommandMap('Lwarp-macros', {
+         ifstar: 'IfstarFunction',
+         ifnextchar: 'IfnextcharFunction',
+         ifblank: 'IfblankFunction',
+         ifstrequal: 'IfstrequalFunction',
+         gsubstitute: 'GsubstituteFunction',
+         seteqnumber: 'SeteqnumberFunction'
+       }, {
+         // This function implements an ifstar macro.
+         IfstarFunction(parser, name) {
+            const resultstar = parser.GetArgument(name);
+            const resultnostar = parser.GetArgument(name);
+            const star = parser.GetStar();                 // true if there is a *
+            useArgument(parser, star ? resultstar : resultnostar);
+         },
+
+          // This function implements an ifnextchar macro.
+          IfnextcharFunction(parser, name) {
+            let whichchar = parser.GetArgument(name);
+            if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+              // $ syntax highlighting
+              whichchar = String.fromCodePoint(parseInt(whichchar));
+            }
+            const resultnextchar = parser.GetArgument(name);
+            const resultnotnextchar = parser.GetArgument(name);
+            const gotchar = (parser.GetNext() === whichchar);
+            useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+          },
+
+          // This function implements an ifblank macro.
+          IfblankFunction(parser, name) {
+            const blankarg = parser.GetArgument(name);
+            const resultblank = parser.GetArgument(name);
+            const resultnotblank = parser.GetArgument(name);
+            const isblank = (blankarg.trim() == "");
+            useArgument(parser, isblank ? resultblank : resultnotblank);
+          },
+
+          // This function implements an ifstrequal macro.
+          IfstrequalFunction(parser, name) {
+            const strequalfirst = parser.GetArgument(name);
+            const strequalsecond = parser.GetArgument(name);
+            const resultequal = parser.GetArgument(name);
+            const resultnotequal = parser.GetArgument(name);
+            const isequal = (strequalfirst == strequalsecond);
+            useArgument(parser, isequal ? resultequal : resultnotequal);
+          },
+
+          // This function implements a gsub macro.
+          GsubstituteFunction(parser, name) {
+            const gsubfirst = parser.GetArgument(name);
+            const gsubsecond = parser.GetArgument(name);
+            const gsubthird = parser.GetArgument(name);
+            let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+            useArgument(parser, gsubresult);
+          },
+
+          // This function modifies the equation numbers.
+          SeteqnumberFunction(parser, name) {
+              // Get the macro parameters
+              const star = parser.GetStar();                  // true if there is a *
+              const optBrackets = parser.GetBrackets(name);   // contents of optional brackets
+              const newsubequations = parser.GetArgument(name); // the subequations argument
+              const neweqsection = parser.GetArgument(name); // the eq section argument
+              const neweqnumber = parser.GetArgument(name);   // the eq number argument
+              MathJax.config.subequations=newsubequations ;   // a string with boolean meaning
+              MathJax.config.section=neweqsection ;           // a string with numeric meaning
+              parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+          }
+
+       });
+
+       // Create the Lwarp-macros package
+       Configuration.create('Lwarp-macros', {
+         handler: {macro: ['Lwarp-macros']}
+       });
+
+       MathJax.startup.defaultReady();
+
+       // For forward references:
+       MathJax.startup.input[0].preFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             MathJax.config.subequations = math.inputData.recompile.subequations;
+             MathJax.config.section = math.inputData.recompile.section;
+         }
+       });
+       MathJax.startup.input[0].postFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             math.inputData.recompile.subequations = MathJax.config.subequations;
+             math.inputData.recompile.section = MathJax.config.section;
+         }
+       });
+
+         // For \left, \right with unicode-math:
+         const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+         const {Symbol} = MathJax._.input.tex.Symbol;
+         const {MapHandler} = MathJax._.input.tex.MapHandler;
+         const delimiter = MapHandler.getMap('delimiter');
+         delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+         delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+         delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+         delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+         delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+         delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+         delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+         delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+         delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+         delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+         delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+         delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+         delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+         delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+         delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+         delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+         delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+         delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+         delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+         delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+         delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+         delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+         delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+         delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+         delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+         delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+         delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+         delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+         delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+         delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+         delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+         delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+         delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+         delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+         delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+         delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+         delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+         delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+         delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+   }     // ready
+ },      // startup
+
+ tex: {
+   packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+   tags: "ams",
+        tagformat: {
+            number: function (n) {
+                if(MathJax.config.subequations==0)
+                    return(MathJax.config.section + n);
+                else
+                    return(MathJax.config.section + String.fromCharCode(96+n));
+            },
+        },
+ }
+}
+</script>
+
+<script
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="index-autopage-57"></a>
+<nav class="topnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+
+<div class="bodyandsidetoc">
+<div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">Notes on Everything</span>
+</p>
+
+<p>
+Contents
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Sums.html#autosec-6" class="tocchapter" >
+Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-7" class="tocsection" >
+Manipulating Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-8" class="tocsubsection" >
+Basic Rules</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-10" class="tocsubsection" >
+Iverson Notation</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-13" class="tocsubsection" >
+Perturbing the Sum</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-16" class="tocsubsection" >
+Multiple Sums</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
+Algorithms</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-25" class="tocsection" >
+Greedy</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+Dijkstra’s Shortest Path Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-32" class="tocsubsection" >
+Prim’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-36" class="tocsubsection" >
+Kruskal’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-42" class="tocsubsection" >
+Huffman Codes</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-48" class="tocsection" >
+Divide and Conquer</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-49" class="tocsubsection" >
+Master Theorem</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-51" class="tocsubsection" >
+MergeSort</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-53" class="tocsubsection" >
+Counting Array Inversions</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-56" class="tocsubsection" >
+Karatsuba Multiplication</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-58" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-59" class="tocsection" >
+Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-60" class="tocsubsection" >
+Product Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-61" class="tocsubsection" >
+Complement Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-62" class="tocsubsection" >
+Sum Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-63" class="tocsubsection" >
+Inclusion/Exclusion</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-64" class="tocsubsection" >
+Permutations</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+<h1>Notes on Everything</h1>
+
+<!--MathJax customizations:-->
+<div data-nosnippet
+    style="display:none"
+>
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<!--
+...... chapter Combinatorics ......
+-->
+<h3 id="autosec-58">Combinatorics</h3>
+<a id="index-autopage-58"></a>
+<a id="index-autofile-4"></a>
+<!--
+...... section Basics of Counting ......
+-->
+<h4 id="autosec-59">Basics of Counting</h4>
+<a id="index-autopage-59"></a>
+
+
+<p>
+These are the basic ”rules” of counting. In general, counting using these rules involves modeling the problem as a correct sequence of choices and applying the appropriate strategy to the sequence.
+</p>
+<!--
+...... subsection Product Rule ......
+-->
+<h5 id="autosec-60">Product Rule</h5>
+<a id="index-autopage-60"></a>
+
+
+<p>
+The Product rule is applied to combinatorial problems that can be modeled as a ”process” of making mutually exclusive choices. For such problems the total number of ways to perform the process is given by multiplying the number of options at each step.
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+<!--
+
+
+                                                                                                                   number of ways = N1 · N2 · · · · · Nk                                                                                                       (1)
+
+-->
+
+<p>
+
+\begin{equation}
+\text {number of ways} = N_1 \cdot N_2 \cdot \dots \cdot N_k
+\end{equation}
+
+</p>
+
+<p>
+where \(N_i\) is the number of ways of performing the \(i\)th step of the process.
+</p>
+<!--
+...... subsection Complement Rule ......
+-->
+<h5 id="autosec-61">Complement Rule</h5>
+<a id="index-autopage-61"></a>
+
+
+<p>
+The Complement rule is helpful when expressing the size of a subset. Suppose \(A \subseteq U\), then
+</p>
+
+<p>
+\[ |A| = |U| - |U - A| \]
+</p>
+
+<p>
+In other words, the size of \(A\) is the same as the size of \(U\) when taking away the elements of \(U\) which are also in \(A\) (leaving behind only those elements which belong to \(A\)).
+</p>
+
+<p>
+(I remember this ”algebraically”: \(U - (U - A) = U - U + A = A\))
+</p>
+<!--
+...... subsection Sum Rule ......
+-->
+<h5 id="autosec-62">Sum Rule</h5>
+<a id="index-autopage-62"></a>
+
+
+<p>
+This is a specicial form of the Inclusion/Exclusion rule applicable for sets of elements who are mutually disjoint.
+</p>
+<!--
+...... subsection Inclusion/Exclusion ......
+-->
+<h5 id="autosec-63">Inclusion/Exclusion</h5>
+<a id="index-autopage-63"></a>
+
+
+<p>
+The Inclusion/Exclusion rule is a generalization of the Sum rule, and can be used when sets are not-disjoint. The intuition here is to subtract the ”double- counted” elements from the union of two sets.
+</p>
+
+<p>
+\[ |A \cup B| = |A| + |B| - |A \cap B| \]
+</p>
+
+<p>
+For example, let \(A = \{1, 2, 3\}, \; B = \{2, 3\}\). Since \(A\) and \(B\) are not disjoint, we only want to count the elements in their union once:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                                         A = {1, 2, 3}
+                                                                                                                         B = {2, 3}
+                                                                                                                         A ∪ B = {1, 2, 3, 2, 3}
+                                                                                                                         A ∩ B = {2, 3}
+                                                                                                                         (A ∪ B) − (A ∩ B) = {1, 2, 3}
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+&amp;A = \{1, 2, 3\} \\ &amp;B = \{2, 3\} \\ &amp;A \cup B = \{1, 2, 3, 2, 3\} \\ &amp;A \cap B = \{2, 3\} \\ &amp;(A \cup B) - (A \cap B) = \{1, 2, 3\}
+\end{align*}
+
+</p>
+
+<p>
+When \(A\) and \(B\) are disjoint, their intersection is \(0\), and so the formula holds.
+</p>
+<!--
+...... subsection Permutations ......
+-->
+<h5 id="autosec-64">Permutations</h5>
+<a id="index-autopage-64"></a>
+
+
+<p>
+We can think of a permutation of a sequence \(n\) as a particular ordering of its elements. We consider each ordering to be a unique object. Another way to think of a permutation is a function that sends an item located at index \(i\) to index \(j\) in the output.
+</p>
+
+<p>
+for example, consider the string \(S = \text {abc}\). Then the permutations of \(S\) are:
+</p>
+
+<p>
+\[ \{ abc, acb, bac, bca, cab, cba \} \]
+</p>
+
+<p>
+The process of arranging the elements of \(S\) is called <b>permuting</b>.
+</p>
+
+<p>
+To count how many permutations a given string has, model the process of forming the permutations of \(S\) as a sequence of choices among the characters of \(S\). If \(S\) has length \(n\), we first have \(n\) choices for the posistion of the first character. Next, the
+\(n-1\)st position has to be chosen, and so on. Using the Product Rule:
+</p>
+
+<p>
+\[ n(n-1)(n-2) \dots 1 = n! \]
+</p>
+<!--
+...... subsubsection K-Permutations ......
+-->
+<h6 id="autosec-65">K-Permutations</h6>
+<a id="index-autopage-65"></a>
+
+
+<p>
+A \(K\)-Permutation follows the same basic idea of a permutation. The goal here is to count the number of subsets of size \(K\) a given set.
+</p>
+
+<p>
+(Permutations can be thought of as \(k\)-permutations where \(k=n\))
+</p>
+
+<p>
+Let \(S = \text {abc}, \; k = 2\). Then the \(2\)-permutations of \(S\) are:
+</p>
+
+<p>
+\[ \{ ab, ba, ac, ca, bc, cb \} \]
+</p>
+
+<p>
+The formula for a \(k\)-permutation uses the product rule again, this time making choices on a sequence of length \(n-k+1\):
+</p>
+
+<p>
+\[ (n)(n-1)(n-2)\dots (n-k+1) = \frac {n!} {(n-k)!} \]
+</p>
 <a id="index-autofile-last"></a>
 </section>
 
