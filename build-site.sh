@@ -25,6 +25,9 @@ bash -- <<-BUILD
   lwarpmk limages
   lwarpmk html
 
+  # lwarpmk runs asynchronously for some reason, need to identify better fix
+  sleep 2
+
   tar -cvf site.tar *.html *.css
   tar -r -f site.tar index-images
 BUILD
@@ -36,7 +39,8 @@ rm -rf docs/*
 podman cp texbuild:/app/dist/site.tar ./docs
 podman rm texbuild
 
-cd docs/
+# In docs directory
+cd ./docs/
 tar -xvf site.tar
 
-rm docs/site.tar
+rm site.tar
