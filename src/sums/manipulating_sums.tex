@@ -55,9 +55,22 @@ by Kenneth E. Iverson as an indicator function:
 \end{cases}
 \end{equation*}
 
-This lets the terms of a summation be written as a linear combination with the
-values of the Iverson predicate as coefficients. The "double-counting" rule of
-summations follows immediately from manipulating Iverson notation:
+\subsubsection{Properties}
+
+Iverson brackets can be manipulated in the same way as set operations:
+
+\begin{gather*}
+  [P \land Q] = [P][Q] \\\\
+  [P \lor Q] = [P] + [Q] - [P \cup Q] \\\\
+  [\lnot P] = 1 - [P] \\\\
+  [k \in A] + [k \in B] = [k \in A \cup B] + [k \in A \cap B] \\\\
+  [k \in A \cap B] = [k \in A][k \in B]
+\end{gather*}
+
+\subsubsection{Example}
+
+Using Iverson brackets, the "double-counting" summation identity can be derived
+directly from the above properties.
 
 \begin{equation*}
   [k \in K] + [k \in K'] = [k \in K \cap K'] + [k \in K \cup K']
@@ -108,9 +121,9 @@ following sum is solved almost in the exact same way:
 Once again perturbing the sum:
 
 \begin{align*}
-  S_n + (n+1)2^{n+1} &= 0 + \sum_{1 \leqslant k \leqslant n+1} k2^{k+1} \\
-  &= \sum_{1 \leqslant k+1 \leqslant n+1} k2^{k+1} + \sum_{1 \leqslant k+1 \leqslant n+1} 2^{k+1} \\
-  &= 2S_n + \sum_{0 \leqslant k \leqslant n} 2^{k+1} \\
+  S_n + (n+1)2^{n+1} &= 0 + \sum_{1 \leqslant k \leqslant n+1} k2^{k+1} \\\\
+  &= \sum_{1 \leqslant k+1 \leqslant n+1} k2^{k+1} + \sum_{1 \leqslant k+1 \leqslant n+1} 2^{k+1} \\\\
+  &= 2S_n + \sum_{0 \leqslant k \leqslant n} 2^{k+1}
 \end{align*}
 
 The second sum is a geometric series, and so after evaluating and simplifying:
@@ -118,5 +131,79 @@ The second sum is a geometric series, and so after evaluating and simplifying:
 \[
   S_n = \frac {2 - 2^{n+2}} {1 - 2} - (n+1)2^{n+1} = (n-1)2^{n+1} + 2
 \]
+
+\subsection{Multiple Sums}
+
+When a summation is indexed by two or more indices, it can be written with more
+than one sigma:
+
+\[
+  \sum_{1 \leqslant j, k \leqslant n} a_j b_k = \sum_{1 \leqslant j \leqslant n} \sum_{1 \leqslant k \leqslant n} b_k
+\]
+
+Summations of this form are evaulated "right-to-left" or by taking the "inner"
+summtation first. In the above example, the summation over $k$ happens first.
+
+\subsubsection{Interchanging Indices}
+
+When indices are independent, this is simply a matter of rearranging the sums.
+Complications arise when the inner index depends on the outer. The abstract way
+of denoting an exchange of indicies:
+
+\[
+  \sum_j \sum_k a_{j,k} [P(j, k)] = \sum_{P(j,k)} a_{j,k} [P(j,k)] = \sum_k \sum_j a_{j,k} [P(j,k)]
+\]
+
+is a generalization of the associativity rule.
+
+\subsubsection{Example}
+
+This example shows how multiple summations can be split apart by applying the
+associative rule and using Iverson notation.
+
+Since the indices are independent, the summations can occur in either order.
+
+\begin{align*}
+  \sum_{1 \leqslant j,k \leqslant 3} a_j b_k
+  &= \sum_{j,k} a_j b_k [1 \leqslant j \leqslant 3][1 \leqslant k \leqslant 3] \\
+  &= \sum_j a_j [1 \leqslant j \leqslant 3] \sum_k b_k [1 \leqslant k \leqslant 3] \\
+  &= \sum_{j=1}^3 a_j \sum_{k=1}^3 b_k
+\end{align*}
+
+\subsubsection{Harder Example}
+
+In this example, $j$ is related to the value of $k$. Again, the problem can be
+reduced into manipulating the inequalities using Iverson notation. Using the
+following identity written in Iverson brackets:
+
+\[
+  [1 \leqslant j \leqslant n][j \leqslant k \leqslant n]
+  = [1 \leqslant j,k \leqslant n]
+  = [1 \leqslant k \leqslant n][1 \leqslant j \leqslant k]
+\]
+
+% TODO: Better tikz drawing
+
+\begin{center}
+  \begin{tikzpicture}[scale=2.5]
+    \foreach \x/\y in {0/1, 1/j, 4/k, 5/n}
+     \draw[ultra thick] (\x,0.25) -- (\x,-0.25) node[below]{$\y$};
+    \draw[ultra thick] (-0.5,0)--(5.5,0);
+  \end{tikzpicture}
+\end{center}
+
+This holds by combining the first two brackets by writing their intersection as
+one inequality and by splitting it apart again.
+
+An equivalent double summation can be manipulated using the above identity:
+
+\begin{align*}
+  \sum_{1 \leqslant j \leqslant n} \sum_{j \leqslant k \leqslant n} a_{j,k}
+  &= \sum_{1 \leqslant j,k \leqslant n} a_{j,k} \\\\
+  &= \sum_{1 \leqslant k \leqslant n} \sum_{1 \leqslant j \leqslant k} a_{j,k} \\\\
+  &= \sum_{k=1}^n \sum_{j=1}^k a_{j,k}
+\end{align*}
+
+Hopefully, the second summation turns out to be easier to evaluate.
 
 \end{document}
