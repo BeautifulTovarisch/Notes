@@ -154,21 +154,26 @@ Kruskal's algorithm would execute the following steps:
   \item The chosen edges form a spanning tree of minimum cost!
 \end{enumerate}
 
-\begin{tikzpicture}[
-vertex/.style={circle, draw, fill=white, thick, minimum size=20},
-]
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[
+  vertex/.style={circle, draw, fill=white, thick, minimum size=20},
+  ]
 
-% Vertices
-\node[vertex] (a) {$a$};
-\node[vertex] (b) [right=of a] {$b$};
-\node[vertex] (c) [below=of a] {$c$};
-\node[vertex] (d) [below=of b] {$d$};
+  % Vertices
+  \node[vertex] (a) {$a$};
+  \node[vertex] (b) [right=of a] {$b$};
+  \node[vertex] (c) [below=of a] {$c$};
+  \node[vertex] (d) [below=of b] {$d$};
 
-% Edges
-\draw[-, thick] (a) to node[above] {1} (b);
-\draw[-, thick] (a) to node[left] {4} (c);
-\draw[-, thick] (b) to node[right] {2} (d);
-\end{tikzpicture}
+  % Edges
+  \draw[-, thick] (a) to node[above] {1} (b);
+  \draw[-, thick] (a) to node[left] {4} (c);
+  \draw[-, thick] (b) to node[right] {2} (d);
+  \end{tikzpicture}
+  \caption{Minimum spanning tree}
+  \label{fig:kruskal-mst}
+\end{figure}
 
 In a real program, we sort the edges of the input graph $G$ by weight as a
 pre-processing step to avoid quadratic searches for successive minima.
