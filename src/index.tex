@@ -45,6 +45,7 @@ mathjax, % Use MathJax to display math.
 % --- LATEX AND HTML CUSTOMIZATION ---
 \title{Notes on Everything}
 \author{Anthony}
+\date{\today}
 
 \setcounter{tocdepth}{1}
 \setcounter{secnumdepth}{-1}
@@ -52,6 +53,9 @@ mathjax, % Use MathJax to display math.
 \booltrue{CombineHigherDepths}
 \setcounter{SideTOCDepth}{2}
 
+% Renew commands
+
+\renewcommand*\contentsname{Subjects}
 \renewcommand\sidetocname{Subjects}
 
 % HTML Directives
@@ -69,9 +73,10 @@ mathjax, % Use MathJax to display math.
 \maketitle % Or titlepage/titlingpage environment.
 % An article abstract would go here.
 
-Notes on Mathematics and Computer Science topics.
+Notes on Mathematics and Computer Science.
 
 \tableofcontents % MUST BE BEFORE THE FIRST SECTION BREAK!
+
 \listoffigures
 
 \input{./sums/index}

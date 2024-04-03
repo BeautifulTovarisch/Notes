@@ -11,7 +11,7 @@ texlive="/usr/local/texlive/2024/bin/x86_64-linux"
 
 # Inside the TeXLive container with the source latex mounted, we perform all
 # necessary compilation and archive the HTML and CSS as a tarball
-podman run -i -v ./src:/app/src:z --name texbuild --env-merge PATH=${PATH},":$texlive" localhost/texlive-2024 \
+podman run -i -v ./src:/app/src:z --replace --name texbuild --env-merge PATH=${PATH},":$texlive" localhost/texlive-2024 \
 bash -- <<-BUILD
   mkdir -p /app/dist
   cp -r /app/src/* /app/dist
