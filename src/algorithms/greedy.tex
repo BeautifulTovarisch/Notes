@@ -72,6 +72,49 @@ The shortest path algorithm outputs the following when starting from $S$:
 \end{algorithmic}
 \end{algorithm}
 
+The proof of Dijkstra's shortest-path algorithm differs from that of Prim's and
+Kruskal's in that it proceeds by basic induction rather than presenting a proof
+by contradiction and exchange argument\footnote{Consequently, I find this proof
+to be slightly more difficult}.
+
+First, a precise statement of the theorem:
+
+\begin{theorem} \label{thm:dijkstra}
+  For every directed graph $G = (V, E)$, for every starting vertex $s \in V$,
+  Dijkstra's shortest-path algorithm outputs the distance of the shortest paths
+  from $s$ to every (reachable) $v \in V$.
+\end{theorem}
+
+\begin{proof}[Proof of Dijkstra's Shortest-Path Algorithm] \label{prf:dijkstra}
+  Some initial setup. Let $k$ be the number of a vertex added to the solution,
+  and $P(k)$ be the statement that distance from the starting vertex $s$ to the
+  $k$th vertex, say $v$, is the shortest such distance.
+
+  During this proof, we'll denote the \emph{true} shortest-path distance with
+  $dist(s, v), \; v \in V$ and the \emph{computed} value to be $len(v)$. Our
+  job is to prove that these values are equal at every iteration.
+
+  Proceeding by induction, consider the graph consisting of only $s$. In this
+  case $n = 1$, and by the definition of the algorithm, $dist(s, s) = 0$. Now
+  assume the correctness of Dijkstra's for all $N \geqslant n$ and consider a
+  graph with $n + 1$ vertices. By the inductive hypothesis, all of $P(1) \dots
+  P(n)$ hold, and so we consider the moment the algorithm must choose to add
+  vertex $n + 1$ to the solution.
+
+  Label the edge the algorithm chooses $(v', w')$. The distance from $s$ to $w'$
+  is given by:
+
+  \[
+    len(w') = len(v') + weight((v', w'))
+  \]
+
+  By the inductive hypothesis, we know $len(v') = dist(s, v')$. What remains to
+  be shown is that adding edge $(v', w')$ in the above formula is the optimal
+  choice at the $n+1$st iteration.
+
+  TODO: ?
+\end{proof}
+
 \subsubsection{Analysis}
 
 The cost of repeatedly selecting the minimum edge via brute force dominates the runtime of the algorithm. For $G = (V, E)$, we traverse $|V|$ nodes, each time performing $O(|E|)$ work to select the minimum edge crossing the cut. Therefore, the naive version of Dijkstra's runs in $O(|E||V|)$.
