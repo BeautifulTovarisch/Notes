@@ -1,0 +1,155 @@
+\documentclass{standalone}
+\begin{document}
+
+\section{Quadratics}
+
+Polynomials of the form $ax^2 + bx + c$ are called \textbf{quadratic}. They can
+also be described as polynomials of degree 2, or \textbf{second order}. A huge
+number of problems in physics and engineering can be modeled after a quadratic
+equation, and they occur frequently enough to warrant some special techniques.
+
+\[
+  \boxed{ax^2 + bx + c}
+\]
+
+where $a \neq 0$
+
+\subsection{Finding Roots of a Quadratic Function}
+
+A \textbf{root} of a polynomial function $f$ is a number, say, $\alpha$, such
+that $f(\alpha) = 0$. Finding roots of a quadratic function is equivalent to
+solving $f(x) = ax^2 + bx + c = 0$.
+
+Several techniques for finding roots exist:
+
+\subsubsection{Factoring}
+
+Factoring here is used in the same context as listing the factors of an integer,
+such as in \emph{prime factorization}. Factoring allows the polynomial to be
+written in such as a way as to make the values for which it takes on the value
+zero to be obvious.
+
+Every polynomial can be written as a product of its factors. Quadratics have a
+simple form:
+
+\[
+  P(x) = (x - \alpha)(x - \beta)
+\]
+
+where $\alpha$ and $\beta$ are roots of polynomial $P$.
+
+For example,
+
+\[
+  x^2 - 4 = (x - 2)(x + 2) = 0
+\]
+
+This can easily be factored by noticing the expression is the difference of two
+squares. This equation has solutions at $x \pm 2$.
+
+% \ref{sec:factoring_tricks} are incredibly helpful here.
+
+\subsubsection{Completing the Square}
+
+A good indication to try this technique is when a quadratic function has a 1 as
+its first coefficient.
+
+\[
+  x^2 + bx + c
+\]
+
+This is referred to as a \textbf{reduced quadratic} form.
+
+Completing the square is often taught as a formula to be memorized without any
+context or justification as to why it works. It helps to consider both what we
+mean geometrically and then derive the formula with algebra.
+
+\paragraph{Geometric}
+
+TODO
+
+\paragraph{Algebraic}
+
+The clever idea behind coming up with the formula lies in thinking about what
+term would need to be added to $x^2 + bx$ in order to make it a perfect square.
+Another way of thinking about this is how we could start with the square of a
+binomial, $(x + k)^2$ and figure out what $k$ and $c$ need to be in order to be
+equivalent to the lefthand side\footnote{Working backwards like this is the way
+that clicked for me when nothing else did}:
+
+\[
+  x^2 + bx = (x + k)^2 - c
+\]
+
+Naively computing $(x + b)^2$ might reveal a hint, since we'd end up with the
+square of a binomial by design. let $k = b$:
+
+\[
+  (x + b)^2 = x^2 + 2bx + b^2
+\]
+
+This is closer, but we got $2bx$ instead of $bx$ like we wanted. To get $bx$,
+we could let $k = \frac b 2$. Now see what happens:
+
+\[
+  (x + \frac b 2)^2 = x^2 + 2 (\frac b 2) x + (\frac b 2)^2
+\]
+
+Nearly there! All that's left to do is subtract $c = (\frac b 2)^2$ from the
+equation. This gives us:
+
+\[
+  \boxed{x^2 + bx = (x + \frac b 2)^2 - (\frac b 2)^2}
+\]
+
+A typical follow-up to completing the square is solving for $x$ via a shortcut
+used when an expression is the \emph{difference of two squares}.
+
+\subsection{Vieta's Theorem}
+
+Vieta's theorem describes the roots of a quadratic polynomial in terms of its
+coefficients. This is especially helpful in eliminating candidates for roots if
+a more straightforward approach fails.
+
+If a quadratic expression $x^2 + px + q$ has distinct roots $\alpha, \beta$,
+then
+
+\begin{align}
+  &\alpha + \beta &= -p \\
+  &\alpha \beta &= -q
+\end{align}
+
+\begin{proof}
+  (Theorem):
+\end{proof}
+
+Vieta's theorem also has a corollary:
+
+If a quadratic expression $x^2 + px + q$ has distinct roots $\alpha, \beta$,
+
+\[
+  (x - \alpha)(x - \beta) = x^2 - (\alpha + \beta) + \alpha \beta
+\]
+
+\begin{proof}
+\end{proof}
+
+\subsection{The Quadratic Formula}
+
+The famous quadratic formula has a surprisingly simple derivation based on the
+formula for completing the square. Simply solving a "completed square" for $x$
+yields the formula.
+
+Begin by factoring out the leading coefficient $a$:
+
+\begin{align*} \label{eqn:quadratic_formula}
+  ax^2 + bx + c
+  &= x^2 + (\frac b a)x + \frac c a \\\\
+  &= (x + \frac b {2a})^2 - (\frac b {2a})x - \frac c a &\text{completing the square} \\\\
+  &= (x + \frac b {2a})^2 - \frac {b^2 - 4ac} {4a^2} &\text{by algebra} \\\\
+  &= (x + \frac b {2a} + \sqrt{\frac {b^2 - 4ac} {4a^2}})(x + \frac b {2a} - \sqrt{\frac {b^2 - 4ac} {4a^2}}) &\text{difference of squares} \\\\
+  &\implies x = -\frac b {2a} \pm \frac{\sqrt{b^2 - 4ac}} {2a} \\\\
+  &\implies x = \frac {-b \pm \sqrt{b^2 - 4ac}} {2a}
+\end{align*}
+
+\end{document}

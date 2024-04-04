@@ -7,7 +7,7 @@
 <meta name="generator" content="LaTeX Lwarp package" />
 <meta name="description" content="Personal notes on Mathematics and Computer Science" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Notes on Everything — Combinatorics</title>
+<title>Notes on Everything — Foundations</title>
 <link rel="stylesheet" type="text/css" href="lwarp.css" />
 
 <script>
@@ -221,7 +221,7 @@ MathJax = {
 <body>
 
 
-<a id="index-autopage-58"></a>
+<a id="index-autopage-67"></a>
 <nav class="topnavigation"><a href="index.html" class="linkhome" >
 Home</a></nav>
 
@@ -568,101 +568,187 @@ The Quadratic Formula</a>
 </div>
 
 <!--
-...... chapter Combinatorics ......
+...... chapter Foundations ......
 -->
-<h3 id="autosec-59">Combinatorics</h3>
-<a id="index-autopage-59"></a>
-<a id="index-autofile-4"></a>
-<!--
-...... section Basics of Counting ......
--->
-<h4 id="autosec-60">Basics of Counting</h4>
-<a id="index-autopage-60"></a>
-
+<h3 id="autosec-68">Foundations</h3>
+<a id="index-autopage-68"></a>
+<a id="index-autofile-5"></a>
 
 <p>
-These are the basic ”rules” of counting. In general, counting using these rules involves modeling the problem as a correct sequence of choices and applying the appropriate strategy to the sequence.
+This section explains a lot of what highschool teachers ought to have during math class. Oh well.
 </p>
 <!--
-...... subsection Product Rule ......
+...... section Quadratics ......
 -->
-<h5 id="autosec-61">Product Rule</h5>
-<a id="index-autopage-61"></a>
+<h4 id="autosec-69">Quadratics</h4>
+<a id="index-autopage-69"></a>
 
 
 <p>
-The Product rule is applied to combinatorial problems that can be modeled as a ”process” of making mutually exclusive choices. For such problems the total number of ways to perform the process is given by multiplying the number of options at each step.
-</p>
-
-<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
-
-<!--
-
-
-                                                                                                                   number of ways = N1 · N2 · · · · · Nk                                                                                                       (1)
-
--->
-
-<p>
-
-\begin{equation}
-\text {number of ways} = N_1 \cdot N_2 \cdot \dots \cdot N_k
-\end{equation}
-
+Polynomials of the form \(ax^2 + bx + c\) are called <b>quadratic</b>. They can also be described as polynomials of degree 2, or <b>second order</b>. A huge number of problems in physics and engineering can be modeled after a quadratic equation, and they occur
+frequently enough to warrant some special techniques.
 </p>
 
 <p>
-where \(N_i\) is the number of ways of performing the \(i\)th step of the process.
+\[ \boxed {ax^2 + bx + c} \]
+</p>
+
+<p>
+where \(a \neq 0\)
 </p>
 <!--
-...... subsection Complement Rule ......
+...... subsection Finding Roots of a Quadratic Function ......
 -->
-<h5 id="autosec-62">Complement Rule</h5>
-<a id="index-autopage-62"></a>
+<h5 id="autosec-70">Finding Roots of a Quadratic Function</h5>
+<a id="index-autopage-70"></a>
 
 
 <p>
-The Complement rule is helpful when expressing the size of a subset. Suppose \(A \subseteq U\), then
+A <b>root</b> of a polynomial function \(f\) is a number, say, \(\alpha \), such that \(f(\alpha ) = 0\). Finding roots of a quadratic function is equivalent to solving \(f(x) = ax^2 + bx + c = 0\).
 </p>
 
 <p>
-\[ |A| = |U| - |U - A| \]
-</p>
-
-<p>
-In other words, the size of \(A\) is the same as the size of \(U\) when taking away the elements of \(U\) which are also in \(A\) (leaving behind only those elements which belong to \(A\)).
-</p>
-
-<p>
-(I remember this ”algebraically”: \(U - (U - A) = U - U + A = A\))
+Several techniques for finding roots exist:
 </p>
 <!--
-...... subsection Sum Rule ......
+...... subsubsection Factoring ......
 -->
-<h5 id="autosec-63">Sum Rule</h5>
-<a id="index-autopage-63"></a>
+<h6 id="autosec-71">Factoring</h6>
+<a id="index-autopage-71"></a>
 
 
 <p>
-This is a specicial form of the Inclusion/Exclusion rule applicable for sets of elements who are mutually disjoint.
+Factoring here is used in the same context as listing the factors of an integer, such as in <em>prime factorization</em>. Factoring allows the polynomial to be written in such as a way as to make the values for which it takes on the value zero to be obvious.
+</p>
+
+<p>
+Every polynomial can be written as a product of its factors. Quadratics have a simple form:
+</p>
+
+<p>
+\[ P(x) = (x - \alpha )(x - \beta ) \]
+</p>
+
+<p>
+where \(\alpha \) and \(\beta \) are roots of polynomial \(P\).
+</p>
+
+<p>
+For example,
+</p>
+
+<p>
+\[ x^2 - 4 = (x - 2)(x + 2) = 0 \]
+</p>
+
+<p>
+This can easily be factored by noticing the expression is the difference of two squares. This equation has solutions at \(x \pm 2\).
 </p>
 <!--
-...... subsection Inclusion/Exclusion ......
+...... subsubsection Completing the Square ......
 -->
-<h5 id="autosec-64">Inclusion/Exclusion</h5>
-<a id="index-autopage-64"></a>
+<h6 id="autosec-72">Completing the Square</h6>
+<a id="index-autopage-72"></a>
 
 
 <p>
-The Inclusion/Exclusion rule is a generalization of the Sum rule, and can be used when sets are not-disjoint. The intuition here is to subtract the ”double- counted” elements from the union of two sets.
+A good indication to try this technique is when a quadratic function has a 1 as its first coefficient.
 </p>
 
 <p>
-\[ |A \cup B| = |A| + |B| - |A \cap B| \]
+\[ x^2 + bx + c \]
 </p>
 
 <p>
-For example, let \(A = \{1, 2, 3\}, \; B = \{2, 3\}\). Since \(A\) and \(B\) are not disjoint, we only want to count the elements in their union once:
+This is referred to as a <b>reduced quadratic</b> form.
+</p>
+
+<p>
+Completing the square is often taught as a formula to be memorized without any context or justification as to why it works. It helps to consider both what we mean geometrically and then derive the formula with algebra.
+</p>
+<!--
+...... paragraph Geometric ......
+-->
+
+
+<p>
+<span class="paragraph" id="autosec-73">Geometric</span>
+<a id="index-autopage-73"></a>
+
+</p>
+
+<p>
+TODO
+</p>
+<!--
+...... paragraph Algebraic ......
+-->
+
+
+<p>
+<span class="paragraph" id="autosec-74">Algebraic</span>
+<a id="index-autopage-74"></a>
+
+</p>
+
+<p>
+The clever idea behind coming up with the formula lies in thinking about what term would need to be added to \(x^2 + bx\) in order to make it a perfect square. Another way of thinking about this is how we could start with the square of a binomial, \((x + k)^2\) and
+figure out what \(k\) and \(c\) need to be in order to be equivalent to the lefthand side<sup>1</sup>:
+</p>
+
+<p>
+\[ x^2 + bx = (x + k)^2 - c \]
+</p>
+
+<p>
+Naively computing \((x + b)^2\) might reveal a hint, since we’d end up with the square of a binomial by design. let \(k = b\):
+</p>
+
+<p>
+\[ (x + b)^2 = x^2 + 2bx + b^2 \]
+</p>
+
+<p>
+This is closer, but we got \(2bx\) instead of \(bx\) like we wanted. To get \(bx\), we could let \(k = \frac b 2\). Now see what happens:
+</p>
+
+<p>
+\[ (x + \frac b 2)^2 = x^2 + 2 (\frac b 2) x + (\frac b 2)^2 \]
+</p>
+
+<p>
+Nearly there! All that’s left to do is subtract \(c = (\frac b 2)^2\) from the equation. This gives us:
+</p>
+
+<p>
+\[ \boxed {x^2 + bx = (x + \frac b 2)^2 - (\frac b 2)^2} \]
+</p>
+
+<p>
+A typical follow-up to completing the square is solving for \(x\) via a shortcut used when an expression is the <em>difference of two squares</em>.
+</p>
+<div role="note" class="footnotes">
+
+<a id="index-autopage-75"></a>
+<p>
+<sup>1</sup>&nbsp;Working backwards like this is the way that clicked for me when nothing else did
+</p>
+
+
+</div>
+<!--
+...... subsection Vieta's Theorem ......
+-->
+<h5 id="autosec-76">Vieta’s Theorem</h5>
+<a id="index-autopage-76"></a>
+
+
+<p>
+Vieta’s theorem describes the roots of a quadratic polynomial in terms of its coefficients. This is especially helpful in eliminating candidates for roots if a more straightforward approach fails.
+</p>
+
+<p>
+If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \), then
 </p>
 
 <span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
@@ -671,11 +757,114 @@ For example, let \(A = \{1, 2, 3\}, \; B = \{2, 3\}\). Since \(A\) and \(B\) are
 <!--
 
 
-                                                                                                                         A = {1, 2, 3}
-                                                                                                                         B = {2, 3}
-                                                                                                                         A ∪ B = {1, 2, 3, 2, 3}
-                                                                                                                         A ∩ B = {2, 3}
-                                                                                                                         (A ∪ B) − (A ∩ B) = {1, 2, 3}
+                                                                                         α+β                                                                                            = −p           (2)
+                                                                                         αβ                                                                                             = −q           (3)
+
+
+-->
+
+
+<p>
+
+\begin{align}
+&amp;\alpha + \beta &amp;= -p \\ &amp;\alpha \beta &amp;= -q
+\end{align}
+
+</p>
+<div class="amsthmproof">
+
+<a id="index-autopage-77"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> (Theorem): <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Vieta’s theorem also has a corollary:
+</p>
+
+<p>
+If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \),
+</p>
+
+<p>
+\[ (x - \alpha )(x - \beta ) = x^2 - (\alpha + \beta ) + \alpha \beta \]
+</p>
+<div class="amsthmproof">
+
+<a id="index-autopage-78"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<!--
+...... subsection The Quadratic Formula ......
+-->
+<h5 id="autosec-79">The Quadratic Formula</h5>
+<a id="index-autopage-79"></a>
+
+
+<p>
+The famous quadratic formula has a surprisingly simple derivation based on the formula for completing the square. Simply solving a ”completed square” for \(x\) yields the formula.
+</p>
+
+<p>
+Begin by factoring out the leading coefficient \(a\):
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{3}\)</span>
+
+
+<!--
+
+
+                                                                                  b     c
+                                                             ax2 + bx + c = x2 + ( )x +
+                                                                                  a     a
+
+                                                                                    b 2     b    c
+                                                                          = (x +      ) − ( )x −                                                                                      completing the square
+                                                                                   2a      2a    a
+
+
+                                                                                    b 2   b2 − 4ac
+                                                                          = (x +      ) −                                                                                                        by algebra
+                                                                                   2a        4a2
+
+                                                                                        s                         s
+                                                                                  b         b2 − 4ac        b         b2 − 4ac
+                                                                          = (x +    +                )(x +    −                )                                                       difference of squares
+                                                                                 2a            4a2         2a            4a2
+
+                                                                                                √
+                                                                                        b           b2 − 4ac
+                                                                           =⇒ x = −       ±
+                                                                                       2a             2a
+
+                                                                                            √
+                                                                                     −b ±     b2 − 4ac
+                                                                           =⇒ x =
+                                                                                             2a
 
 
 -->
@@ -684,76 +873,13 @@ For example, let \(A = \{1, 2, 3\}, \; B = \{2, 3\}\). Since \(A\) and \(B\) are
 <p>
 
 \begin{align*}
-&amp;A = \{1, 2, 3\} \\ &amp;B = \{2, 3\} \\ &amp;A \cup B = \{1, 2, 3, 2, 3\} \\ &amp;A \cap B = \{2, 3\} \\ &amp;(A \cup B) - (A \cap B) = \{1, 2, 3\}
+\label {eqn:quadratic_formula} ax^2 + bx + c &amp;= x^2 + (\frac b a)x + \frac c a \\\\ &amp;= (x + \frac b {2a})^2 - (\frac b {2a})x - \frac c a &amp;\text {completing the square} \\\\ &amp;= (x + \frac b {2a})^2 - \frac {b^2 - 4ac}
+{4a^2} &amp;\text {by algebra} \\\\ &amp;= (x + \frac b {2a} + \sqrt {\frac {b^2 - 4ac} {4a^2}})(x + \frac b {2a} - \sqrt {\frac {b^2 - 4ac} {4a^2}}) &amp;\text {difference of squares} \\\\ &amp;\implies x = -\frac b {2a} \pm \frac {\sqrt
+{b^2 - 4ac}} {2a} \\\\ &amp;\implies x = \frac {-b \pm \sqrt {b^2 - 4ac}} {2a}
 \end{align*}
 
 </p>
-
-<p>
-When \(A\) and \(B\) are disjoint, their intersection is \(0\), and so the formula holds.
-</p>
-<!--
-...... subsection Permutations ......
--->
-<h5 id="autosec-65">Permutations</h5>
-<a id="index-autopage-65"></a>
-
-
-<p>
-We can think of a permutation of a sequence \(n\) as a particular ordering of its elements. We consider each ordering to be a unique object. Another way to think of a permutation is a function that sends an item located at index \(i\) to index \(j\) in the output.
-</p>
-
-<p>
-for example, consider the string \(S = \text {abc}\). Then the permutations of \(S\) are:
-</p>
-
-<p>
-\[ \{ abc, acb, bac, bca, cab, cba \} \]
-</p>
-
-<p>
-The process of arranging the elements of \(S\) is called <b>permuting</b>.
-</p>
-
-<p>
-The number of permutations a given string has can be modeled as a sequence of choices for the positions of each of its characters. For a string of length \(n\) there are initially \(n\) choices. After the first character is chosen, there are \(n-1\) choices, and so on. Using the
-Product Rule:
-</p>
-
-<p>
-\[ n(n-1)(n-2) \dots 1 = n! \]
-</p>
-<!--
-...... subsubsection K-Permutations ......
--->
-<h6 id="autosec-66">K-Permutations</h6>
-<a id="index-autopage-66"></a>
-
-
-<p>
-A \(K\)-Permutation follows the same basic idea of a permutation. The goal here is to count the number of subsets of size \(K\) a given set.
-</p>
-
-<p>
-(Permutations can be thought of as \(k\)-permutations where \(k=n\))
-</p>
-
-<p>
-Let \(S = \text {abc}, \; k = 2\). Then the \(2\)-permutations of \(S\) are:
-</p>
-
-<p>
-\[ \{ ab, ba, ac, ca, bc, cb \} \]
-</p>
-
-<p>
-The formula for a \(k\)-permutation uses the product rule again, this time making choices on a sequence of length \(n-k+1\):
-</p>
-
-<p>
-\[ (n)(n-1)(n-2)\dots (n-k+1) = \frac {n!} {(n-k)!} \]
-</p>
-
+<a id="index-autofile-last"></a>
 </section>
 
 </main>

@@ -380,7 +380,7 @@ Anthony
 <div class="titledate">
 
 <p>
-April 3, 2024
+April 4, 2024
 </p>
 </div>
 
@@ -438,6 +438,18 @@ Combinatorics</a>
 <p>
 <a href="Combinatorics.html#autosec-60" class="tocsection" >
 Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-68" class="tocchapter" >
+Foundations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-69" class="tocsection" >
+Quadratics</a>
 </p>
 </nav>
 <!--
@@ -866,6 +878,36 @@ Inclusion/Exclusion</a>
 <p>
 <a href="Combinatorics.html#autosec-65" class="tocsubsection" >
 Permutations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-68" class="tocchapter" >
+Foundations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-69" class="tocsection" >
+Quadratics</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-70" class="tocsubsection" >
+Finding Roots of a Quadratic Function</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-76" class="tocsubsection" >
+Vieta’s Theorem</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-79" class="tocsubsection" >
+The Quadratic Formula</a>
 </p>
 
 
@@ -1992,6 +2034,36 @@ Inclusion/Exclusion</a>
 <p>
 <a href="Combinatorics.html#autosec-65" class="tocsubsection" >
 Permutations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-68" class="tocchapter" >
+Foundations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-69" class="tocsection" >
+Quadratics</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-70" class="tocsubsection" >
+Finding Roots of a Quadratic Function</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-76" class="tocsubsection" >
+Vieta’s Theorem</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-79" class="tocsubsection" >
+The Quadratic Formula</a>
 </p>
 
 
@@ -3258,6 +3330,36 @@ Permutations</a>
 </p>
 
 
+<p>
+<a href="Foundations.html#autosec-68" class="tocchapter" >
+Foundations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-69" class="tocsection" >
+Quadratics</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-70" class="tocsubsection" >
+Finding Roots of a Quadratic Function</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-76" class="tocsubsection" >
+Vieta’s Theorem</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-79" class="tocsubsection" >
+The Quadratic Formula</a>
+</p>
+
+
 </div>
 
 </nav>
@@ -4380,6 +4482,36 @@ Permutations</a>
 </p>
 
 
+<p>
+<a href="Foundations.html#autosec-68" class="tocchapter" >
+Foundations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-69" class="tocsection" >
+Quadratics</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-70" class="tocsubsection" >
+Finding Roots of a Quadratic Function</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-76" class="tocsubsection" >
+Vieta’s Theorem</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-79" class="tocsubsection" >
+The Quadratic Formula</a>
+</p>
+
+
 </div>
 
 </nav>
@@ -4670,8 +4802,8 @@ The process of arranging the elements of \(S\) is called <b>permuting</b>.
 </p>
 
 <p>
-To count how many permutations a given string has, model the process of forming the permutations of \(S\) as a sequence of choices among the characters of \(S\). If \(S\) has length \(n\), we first have \(n\) choices for the posistion of the first character. Next, the
-\(n-1\)st position has to be chosen, and so on. Using the Product Rule:
+The number of permutations a given string has can be modeled as a sequence of choices for the positions of each of its characters. For a string of length \(n\) there are initially \(n\) choices. After the first character is chosen, there are \(n-1\) choices, and so on. Using the
+Product Rule:
 </p>
 
 <p>
@@ -4706,6 +4838,910 @@ The formula for a \(k\)-permutation uses the product rule again, this time makin
 
 <p>
 \[ (n)(n-1)(n-2)\dots (n-k+1) = \frac {n!} {(n-k)!} \]
+</p>
+
+</section>
+
+</main>
+
+</div>
+
+<footer>
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+</footer>
+
+
+<nav class="botnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>
+<!--|Start file|Foundations.html|-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Anthony" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="Personal notes on Mathematics and Computer Science" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes on Everything — Foundations</title>
+<link rel="stylesheet" type="text/css" href="lwarp.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+  subequations: "0",
+  section: "",
+  loader: {
+    load: ['[tex]/tagformat', '[tex]/textmacros'],
+  },
+  startup: {
+    ready() {
+      // These would be replaced by import commands if you wanted to make
+      // a proper extension.
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      const Macro = MathJax._.input.tex.Symbol.Macro;
+      const TexError = MathJax._.input.tex.TexError.default;
+      const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+      const expandable = MathJax._.util.Options.expandable;
+
+       // Insert the replacement string into the TeX string, and check
+       // that there haven't been too many maxro substitutions (prevents
+       // infinite loops).
+       const useArgument = (parser, text) => {
+         parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+         parser.i = 0;
+         if (++parser.macroCount > parser.configuration.options.maxMacros) {
+           throw new TexError('MaxMacroSub1',
+           'MathJax maximum macro substitution count exceeded; ' +
+           'is there a recursive macro call?');
+         }
+       }
+
+       // Create the command map for:
+       //     \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+       new CommandMap('Lwarp-macros', {
+         ifstar: 'IfstarFunction',
+         ifnextchar: 'IfnextcharFunction',
+         ifblank: 'IfblankFunction',
+         ifstrequal: 'IfstrequalFunction',
+         gsubstitute: 'GsubstituteFunction',
+         seteqnumber: 'SeteqnumberFunction'
+       }, {
+         // This function implements an ifstar macro.
+         IfstarFunction(parser, name) {
+            const resultstar = parser.GetArgument(name);
+            const resultnostar = parser.GetArgument(name);
+            const star = parser.GetStar();                 // true if there is a *
+            useArgument(parser, star ? resultstar : resultnostar);
+         },
+
+          // This function implements an ifnextchar macro.
+          IfnextcharFunction(parser, name) {
+            let whichchar = parser.GetArgument(name);
+            if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+              // $ syntax highlighting
+              whichchar = String.fromCodePoint(parseInt(whichchar));
+            }
+            const resultnextchar = parser.GetArgument(name);
+            const resultnotnextchar = parser.GetArgument(name);
+            const gotchar = (parser.GetNext() === whichchar);
+            useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+          },
+
+          // This function implements an ifblank macro.
+          IfblankFunction(parser, name) {
+            const blankarg = parser.GetArgument(name);
+            const resultblank = parser.GetArgument(name);
+            const resultnotblank = parser.GetArgument(name);
+            const isblank = (blankarg.trim() == "");
+            useArgument(parser, isblank ? resultblank : resultnotblank);
+          },
+
+          // This function implements an ifstrequal macro.
+          IfstrequalFunction(parser, name) {
+            const strequalfirst = parser.GetArgument(name);
+            const strequalsecond = parser.GetArgument(name);
+            const resultequal = parser.GetArgument(name);
+            const resultnotequal = parser.GetArgument(name);
+            const isequal = (strequalfirst == strequalsecond);
+            useArgument(parser, isequal ? resultequal : resultnotequal);
+          },
+
+          // This function implements a gsub macro.
+          GsubstituteFunction(parser, name) {
+            const gsubfirst = parser.GetArgument(name);
+            const gsubsecond = parser.GetArgument(name);
+            const gsubthird = parser.GetArgument(name);
+            let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+            useArgument(parser, gsubresult);
+          },
+
+          // This function modifies the equation numbers.
+          SeteqnumberFunction(parser, name) {
+              // Get the macro parameters
+              const star = parser.GetStar();                  // true if there is a *
+              const optBrackets = parser.GetBrackets(name);   // contents of optional brackets
+              const newsubequations = parser.GetArgument(name); // the subequations argument
+              const neweqsection = parser.GetArgument(name); // the eq section argument
+              const neweqnumber = parser.GetArgument(name);   // the eq number argument
+              MathJax.config.subequations=newsubequations ;   // a string with boolean meaning
+              MathJax.config.section=neweqsection ;           // a string with numeric meaning
+              parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+          }
+
+       });
+
+       // Create the Lwarp-macros package
+       Configuration.create('Lwarp-macros', {
+         handler: {macro: ['Lwarp-macros']}
+       });
+
+       MathJax.startup.defaultReady();
+
+       // For forward references:
+       MathJax.startup.input[0].preFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             MathJax.config.subequations = math.inputData.recompile.subequations;
+             MathJax.config.section = math.inputData.recompile.section;
+         }
+       });
+       MathJax.startup.input[0].postFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             math.inputData.recompile.subequations = MathJax.config.subequations;
+             math.inputData.recompile.section = MathJax.config.section;
+         }
+       });
+
+         // For \left, \right with unicode-math:
+         const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+         const {Symbol} = MathJax._.input.tex.Symbol;
+         const {MapHandler} = MathJax._.input.tex.MapHandler;
+         const delimiter = MapHandler.getMap('delimiter');
+         delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+         delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+         delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+         delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+         delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+         delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+         delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+         delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+         delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+         delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+         delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+         delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+         delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+         delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+         delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+         delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+         delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+         delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+         delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+         delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+         delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+         delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+         delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+         delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+         delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+         delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+         delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+         delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+         delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+         delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+         delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+         delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+         delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+         delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+         delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+         delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+         delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+         delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+         delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+   }     // ready
+ },      // startup
+
+ tex: {
+   packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+   tags: "ams",
+        tagformat: {
+            number: function (n) {
+                if(MathJax.config.subequations==0)
+                    return(MathJax.config.section + n);
+                else
+                    return(MathJax.config.section + String.fromCharCode(96+n));
+            },
+        },
+ }
+}
+</script>
+
+<script
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="index-autopage-67"></a>
+<nav class="topnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+
+<div class="bodyandsidetoc">
+<div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">Notes on Everything</span>
+</p>
+
+<p>
+Subjects
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Sums.html#autosec-6" class="tocchapter" >
+Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-7" class="tocsection" >
+Manipulating Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-8" class="tocsubsection" >
+Basic Rules</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-10" class="tocsubsection" >
+Iverson Notation</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-13" class="tocsubsection" >
+Perturbing the Sum</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-16" class="tocsubsection" >
+Multiple Sums</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
+Algorithms</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-25" class="tocsection" >
+Greedy</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+Dijkstra’s Shortest Path Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-32" class="tocsubsection" >
+Prim’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-36" class="tocsubsection" >
+Kruskal’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-43" class="tocsubsection" >
+Huffman Codes</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-49" class="tocsection" >
+Divide and Conquer</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-50" class="tocsubsection" >
+Master Theorem</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-52" class="tocsubsection" >
+MergeSort</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-54" class="tocsubsection" >
+Counting Array Inversions</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-57" class="tocsubsection" >
+Karatsuba Multiplication</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-59" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-60" class="tocsection" >
+Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-61" class="tocsubsection" >
+Product Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-62" class="tocsubsection" >
+Complement Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-63" class="tocsubsection" >
+Sum Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-64" class="tocsubsection" >
+Inclusion/Exclusion</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-65" class="tocsubsection" >
+Permutations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-68" class="tocchapter" >
+Foundations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-69" class="tocsection" >
+Quadratics</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-70" class="tocsubsection" >
+Finding Roots of a Quadratic Function</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-76" class="tocsubsection" >
+Vieta’s Theorem</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-79" class="tocsubsection" >
+The Quadratic Formula</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+<h1>Notes on Everything</h1>
+
+<!--MathJax customizations:-->
+<div data-nosnippet
+    style="display:none"
+>
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<!--
+...... chapter Foundations ......
+-->
+<h3 id="autosec-68">Foundations</h3>
+<a id="index-autopage-68"></a>
+<a id="index-autofile-5"></a>
+
+<p>
+This section explains a lot of what highschool teachers ought to have during math class. Oh well.
+</p>
+<!--
+...... section Quadratics ......
+-->
+<h4 id="autosec-69">Quadratics</h4>
+<a id="index-autopage-69"></a>
+
+
+<p>
+Polynomials of the form \(ax^2 + bx + c\) are called <b>quadratic</b>. They can also be described as polynomials of degree 2, or <b>second order</b>. A huge number of problems in physics and engineering can be modeled after a quadratic equation, and they occur
+frequently enough to warrant some special techniques.
+</p>
+
+<p>
+\[ \boxed {ax^2 + bx + c} \]
+</p>
+
+<p>
+where \(a \neq 0\)
+</p>
+<!--
+...... subsection Finding Roots of a Quadratic Function ......
+-->
+<h5 id="autosec-70">Finding Roots of a Quadratic Function</h5>
+<a id="index-autopage-70"></a>
+
+
+<p>
+A <b>root</b> of a polynomial function \(f\) is a number, say, \(\alpha \), such that \(f(\alpha ) = 0\). Finding roots of a quadratic function is equivalent to solving \(f(x) = ax^2 + bx + c = 0\).
+</p>
+
+<p>
+Several techniques for finding roots exist:
+</p>
+<!--
+...... subsubsection Factoring ......
+-->
+<h6 id="autosec-71">Factoring</h6>
+<a id="index-autopage-71"></a>
+
+
+<p>
+Factoring here is used in the same context as listing the factors of an integer, such as in <em>prime factorization</em>. Factoring allows the polynomial to be written in such as a way as to make the values for which it takes on the value zero to be obvious.
+</p>
+
+<p>
+Every polynomial can be written as a product of its factors. Quadratics have a simple form:
+</p>
+
+<p>
+\[ P(x) = (x - \alpha )(x - \beta ) \]
+</p>
+
+<p>
+where \(\alpha \) and \(\beta \) are roots of polynomial \(P\).
+</p>
+
+<p>
+For example,
+</p>
+
+<p>
+\[ x^2 - 4 = (x - 2)(x + 2) = 0 \]
+</p>
+
+<p>
+This can easily be factored by noticing the expression is the difference of two squares. This equation has solutions at \(x \pm 2\).
+</p>
+<!--
+...... subsubsection Completing the Square ......
+-->
+<h6 id="autosec-72">Completing the Square</h6>
+<a id="index-autopage-72"></a>
+
+
+<p>
+A good indication to try this technique is when a quadratic function has a 1 as its first coefficient.
+</p>
+
+<p>
+\[ x^2 + bx + c \]
+</p>
+
+<p>
+This is referred to as a <b>reduced quadratic</b> form.
+</p>
+
+<p>
+Completing the square is often taught as a formula to be memorized without any context or justification as to why it works. It helps to consider both what we mean geometrically and then derive the formula with algebra.
+</p>
+<!--
+...... paragraph Geometric ......
+-->
+
+
+<p>
+<span class="paragraph" id="autosec-73">Geometric</span>
+<a id="index-autopage-73"></a>
+
+</p>
+
+<p>
+TODO
+</p>
+<!--
+...... paragraph Algebraic ......
+-->
+
+
+<p>
+<span class="paragraph" id="autosec-74">Algebraic</span>
+<a id="index-autopage-74"></a>
+
+</p>
+
+<p>
+The clever idea behind coming up with the formula lies in thinking about what term would need to be added to \(x^2 + bx\) in order to make it a perfect square. Another way of thinking about this is how we could start with the square of a binomial, \((x + k)^2\) and
+figure out what \(k\) and \(c\) need to be in order to be equivalent to the lefthand side<sup>1</sup>:
+</p>
+
+<p>
+\[ x^2 + bx = (x + k)^2 - c \]
+</p>
+
+<p>
+Naively computing \((x + b)^2\) might reveal a hint, since we’d end up with the square of a binomial by design. let \(k = b\):
+</p>
+
+<p>
+\[ (x + b)^2 = x^2 + 2bx + b^2 \]
+</p>
+
+<p>
+This is closer, but we got \(2bx\) instead of \(bx\) like we wanted. To get \(bx\), we could let \(k = \frac b 2\). Now see what happens:
+</p>
+
+<p>
+\[ (x + \frac b 2)^2 = x^2 + 2 (\frac b 2) x + (\frac b 2)^2 \]
+</p>
+
+<p>
+Nearly there! All that’s left to do is subtract \(c = (\frac b 2)^2\) from the equation. This gives us:
+</p>
+
+<p>
+\[ \boxed {x^2 + bx = (x + \frac b 2)^2 - (\frac b 2)^2} \]
+</p>
+
+<p>
+A typical follow-up to completing the square is solving for \(x\) via a shortcut used when an expression is the <em>difference of two squares</em>.
+</p>
+<div role="note" class="footnotes">
+
+<a id="index-autopage-75"></a>
+<p>
+<sup>1</sup>&nbsp;Working backwards like this is the way that clicked for me when nothing else did
+</p>
+
+
+</div>
+<!--
+...... subsection Vieta's Theorem ......
+-->
+<h5 id="autosec-76">Vieta’s Theorem</h5>
+<a id="index-autopage-76"></a>
+
+
+<p>
+Vieta’s theorem describes the roots of a quadratic polynomial in terms of its coefficients. This is especially helpful in eliminating candidates for roots if a more straightforward approach fails.
+</p>
+
+<p>
+If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \), then
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                         α+β                                                                                            = −p           (2)
+                                                                                         αβ                                                                                             = −q           (3)
+
+
+-->
+
+
+<p>
+
+\begin{align}
+&amp;\alpha + \beta &amp;= -p \\ &amp;\alpha \beta &amp;= -q
+\end{align}
+
+</p>
+<div class="amsthmproof">
+
+<a id="index-autopage-77"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> (Theorem): <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+
+<p>
+Vieta’s theorem also has a corollary:
+</p>
+
+<p>
+If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \),
+</p>
+
+<p>
+\[ (x - \alpha )(x - \beta ) = x^2 - (\alpha + \beta ) + \alpha \beta \]
+</p>
+<div class="amsthmproof">
+
+<a id="index-autopage-78"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<!--
+...... subsection The Quadratic Formula ......
+-->
+<h5 id="autosec-79">The Quadratic Formula</h5>
+<a id="index-autopage-79"></a>
+
+
+<p>
+The famous quadratic formula has a surprisingly simple derivation based on the formula for completing the square. Simply solving a ”completed square” for \(x\) yields the formula.
+</p>
+
+<p>
+Begin by factoring out the leading coefficient \(a\):
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{3}\)</span>
+
+
+<!--
+
+
+                                                                                  b     c
+                                                             ax2 + bx + c = x2 + ( )x +
+                                                                                  a     a
+
+                                                                                    b 2     b    c
+                                                                          = (x +      ) − ( )x −                                                                                      completing the square
+                                                                                   2a      2a    a
+
+
+                                                                                    b 2   b2 − 4ac
+                                                                          = (x +      ) −                                                                                                        by algebra
+                                                                                   2a        4a2
+
+                                                                                        s                         s
+                                                                                  b         b2 − 4ac        b         b2 − 4ac
+                                                                          = (x +    +                )(x +    −                )                                                       difference of squares
+                                                                                 2a            4a2         2a            4a2
+
+                                                                                                √
+                                                                                        b           b2 − 4ac
+                                                                           =⇒ x = −       ±
+                                                                                       2a             2a
+
+                                                                                            √
+                                                                                     −b ±     b2 − 4ac
+                                                                           =⇒ x =
+                                                                                             2a
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+\label {eqn:quadratic_formula} ax^2 + bx + c &amp;= x^2 + (\frac b a)x + \frac c a \\\\ &amp;= (x + \frac b {2a})^2 - (\frac b {2a})x - \frac c a &amp;\text {completing the square} \\\\ &amp;= (x + \frac b {2a})^2 - \frac {b^2 - 4ac}
+{4a^2} &amp;\text {by algebra} \\\\ &amp;= (x + \frac b {2a} + \sqrt {\frac {b^2 - 4ac} {4a^2}})(x + \frac b {2a} - \sqrt {\frac {b^2 - 4ac} {4a^2}}) &amp;\text {difference of squares} \\\\ &amp;\implies x = -\frac b {2a} \pm \frac {\sqrt
+{b^2 - 4ac}} {2a} \\\\ &amp;\implies x = \frac {-b \pm \sqrt {b^2 - 4ac}} {2a}
+\end{align*}
+
 </p>
 <a id="index-autofile-last"></a>
 </section>
