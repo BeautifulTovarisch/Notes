@@ -86,33 +86,56 @@ First, a precise statement of the theorem:
 \end{theorem}
 
 \begin{proof}[Proof of Dijkstra's Shortest-Path Algorithm] \label{prf:dijkstra}
-  Some initial setup. Let $k$ be the number of a vertex added to the solution,
-  and $P(k)$ be the statement that distance from the starting vertex $s$ to the
-  $k$th vertex, say $v$, is the shortest such distance.
+  Let $k$ be the current iteration of the while loop in Dijkstra's algorithm,
+  that is, the $k$th choice of vertex, say, $v$ to be added to the solution.
+  During this iteration, the shortest distance $dist[v]$ from $s$ is computed.
+  The goal of this proof is to show that every iteration of the algorithm gives
+  the correct distance from $s$ for all vertices.
 
-  During this proof, we'll denote the \emph{true} shortest-path distance with
-  $dist(s, v), \; v \in V$ and the \emph{computed} value to be $len(v)$. Our
-  job is to prove that these values are equal at every iteration.
+  Proceeding by induction, for $k = 1$ the computed distance from the starting
+  vertex $s$ to itself is 0, which is clearly correct. Now assume the correct
+  distance is computed for all $k = 1, 2, \dots n-1$, and consider the moment
+  the algorithm must choose the $n$th vertex, call it $u$, to add to the
+  solution and let the edge chosen by the algorithm be labeled $(v, u)$.
 
-  Proceeding by induction, consider the graph consisting of only $s$. In this
-  case $n = 1$, and by the definition of the algorithm, $dist(s, s) = 0$. Now
-  assume the correctness of Dijkstra's for all $N \geqslant n$ and consider a
-  graph with $n + 1$ vertices. By the inductive hypothesis, all of $P(1) \dots
-  P(n)$ hold, and so we consider the moment the algorithm must choose to add
-  vertex $n + 1$ to the solution.
-
-  Label the edge the algorithm chooses $(v', w')$. The distance from $s$ to $w'$
-  is given by:
+  By the algorithm, $u$'s distance is computed to be:
 
   \[
-    len(w') = len(v') + weight((v', w'))
+    dist[u] = dist[v] + length_{vu}
   \]
 
-  By the inductive hypothesis, we know $len(v') = dist(s, v')$. What remains to
-  be shown is that adding edge $(v', w')$ in the above formula is the optimal
-  choice at the $n+1$st iteration.
+  To show that this is indeed the shortest path from $s$ to $u$, consider an
+  arbitrary path $P$ from $s$ to $u$. We will show the length of this path is
+  at least the value produced by Dijkstra's algorithm. We can deduce that $P$
+  must be comprised of three segments:
 
-  TODO: ?
+  \begin{itemize}
+    \item A prefix of vertices already processed
+    \item At least one edge crossing the cut of visited and unvisited nodes
+    \item A path consisting of unvisited nodes that reaches $u$
+  \end{itemize}
+
+  Let $(a, b)$ be the edge in $P$ bridging the aforementioned cut. It suffices
+  to compute a lower bound for the length of $P$. The first segment consisting
+  of a path from $s$ to $a$ has length $dist[a]$. By the inductive hypothesis,
+  each vertex in the first segment has its correct shortest distance recorded.
+  The segment consisting of only the edge $(a, b)$ has length $length_{ab}$.
+  Finally, the final segment must be non-negative due to the restrictions the
+  algorithm imposes on the input graph.
+
+  \[
+    len(P) \geqslant dist[a] + length_{ab}
+  \]
+
+  The final step in the proof makes use of the fact that Dijkstra's algorithm
+  always chooses the edge which minimizes the sum of a candidate path's prefix
+  and the edge cross the cut. In other words, we have shown:
+
+  \[
+    dist[u] + l_{uw} \leqslant dist[a] + length_{ab} \leqslant len(P)
+  \]
+
+  therefore, the path chosen by the algorithm is always the shortest such path.
 \end{proof}
 
 \subsubsection{Analysis}
