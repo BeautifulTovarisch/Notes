@@ -21,7 +21,7 @@ edge which minimizes the current distance traveled.
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}[
-  vertex/.style={circle, draw, fill=white, thick, minimum size=20},
+  vertex/.style={circle, draw, fill=white, thick, minimum size=15, scale=1.5},
   ]
 
   % Vertices
@@ -115,6 +115,17 @@ First, a precise statement of the theorem:
     \item A path consisting of unvisited nodes that reaches $u$
   \end{itemize}
 
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[outer sep=auto]
+      \graph[nodes={draw, circle, fill=white, thick, minimum size=15, scale=1.5}] {
+        s -> a -> b -> u
+      };
+    \end{tikzpicture}
+    \caption{Arbitrary shortest path}
+    \label{fig:shortest_path}
+  \end{figure}
+
   Let $(a, b)$ be the edge in $P$ bridging the aforementioned cut. It suffices
   to compute a lower bound for the length of $P$. The first segment consisting
   of a path from $s$ to $a$ has length $dist[a]$. By the inductive hypothesis,
@@ -132,7 +143,7 @@ First, a precise statement of the theorem:
   and the edge cross the cut. In other words, we have shown:
 
   \[
-    dist[u] + l_{uw} \leqslant dist[a] + length_{ab} \leqslant len(P)
+    dist[u] + length_{uw} \leqslant dist[a] + length_{ab} \leqslant len(P)
   \]
 
   therefore, the path chosen by the algorithm is always the shortest such path.
@@ -148,23 +159,25 @@ Using a [[Heap]] this algorithm can be sped up significantly, achieving $O((|E| 
 
 Prim's algorithm for computing a minimum-spanning tree. The algorithm functions almost identically to Dijkstra's algorithm in that the minimum incident edge is always chosen for the solution.
 
-\begin{tikzpicture}[
-vertex/.style={circle, draw, fill=white, thick, minimum size=20},
-]
+\begin{center}
+  \begin{tikzpicture}[
+  vertex/.style={circle, draw, fill=white, thick, minimum size=15, scale=1.5},
+  ]
 
-% Vertices
-\node[vertex] (a) {$a$};
-\node[vertex] (b) [right=of a] {$b$};
-\node[vertex] (c) [below=of a] {$c$};
-\node[vertex] (d) [below=of b] {$d$};
+  % Vertices
+  \node[vertex] (a) {$a$};
+  \node[vertex] (b) [right=of a] {$b$};
+  \node[vertex] (c) [below=of a] {$c$};
+  \node[vertex] (d) [below=of b] {$d$};
 
-% Edges
-\draw[-, thick] (a) to node[above] {1} (b);
-\draw[-, thick] (a) to node[above] {3} (d);
-\draw[-, thick] (a) to node[left] {4} (c);
-\draw[-, thick] (b) to node[right] {2} (d);
-\draw[-, thick] (c) to node[below] {5} (d);
-\end{tikzpicture}
+  % Edges
+  \draw[-, thick] (a) to node[above] {1} (b);
+  \draw[-, thick] (a) to node[above] {3} (d);
+  \draw[-, thick] (a) to node[left] {4} (c);
+  \draw[-, thick] (b) to node[right] {2} (d);
+  \draw[-, thick] (c) to node[below] {5} (d);
+  \end{tikzpicture}
+\end{center}
 
 \begin{algorithm}
 \caption{Prim's MST Algorithm}
@@ -194,7 +207,7 @@ Kruskal's algorithm adopts a different approach, instead opting to choose the
 minimum edge that would not introduce a cycle.
 
 \begin{tikzpicture}[
-vertex/.style={circle, draw, fill=white, thick, minimum size=20},
+vertex/.style={circle, draw, fill=white, thick, scale=2},
 ]
 
 % Vertices
@@ -223,7 +236,7 @@ Kruskal's algorithm would execute the following steps:
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}[
-  vertex/.style={circle, draw, fill=white, thick, minimum size=20},
+  vertex/.style={circle, draw, fill=white, thick, minimum size=1.5, scale=1.5},
   ]
 
   % Vertices
@@ -314,31 +327,36 @@ For example, given the frequencies:
 
 Huffman's greedy algorithm will produce the following encoding tree
 
-\begin{tikzpicture}[
-vertex/.style={circle, draw, fill=white, thick, minimum size=20},
-]
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[
+  vertex/.style={circle, draw, fill=white, thick, minimum size=15, scale=1.5},
+  ]
 
-% Vertices
-\node[vertex] (r1) {};
-\node[vertex] (a) [below left=of r1] {$a$};
-\node[vertex] (r2) [below right=of r1] {};
+  % Vertices
+  \node[vertex] (r1) {};
+  \node[vertex] (a) [below left=of r1] {$a$};
+  \node[vertex] (r2) [below right=of r1] {};
 
-\node[vertex] (b) [below left=of r2] {$b$};
-\node[vertex] (r3) [below right=of r2] {};
+  \node[vertex] (b) [below left=of r2] {$b$};
+  \node[vertex] (r3) [below right=of r2] {};
 
-\node[vertex] (c) [below left=of r3] {$c$};
-\node[vertex] (d) [below right=of r3] {$d$};
+  \node[vertex] (c) [below left=of r3] {$c$};
+  \node[vertex] (d) [below right=of r3] {$d$};
 
-% Edges
-\draw[-, thick] (r1) to node[above left] {0} (a);
-\draw[-, thick] (r1) to node[above right] {1} (r2);
+  % Edges
+  \draw[-, thick] (r1) to node[above left] {0} (a);
+  \draw[-, thick] (r1) to node[above right] {1} (r2);
 
-\draw[-, thick] (r2) to node[above left] {0} (b);
-\draw[-, thick] (r2) to node[above right] {1} (r3);
+  \draw[-, thick] (r2) to node[above left] {0} (b);
+  \draw[-, thick] (r2) to node[above right] {1} (r3);
 
-\draw[-, thick] (r3) to node[above left] {0} (c);
-\draw[-, thick] (r3) to node[above right] {1} (d);
-\end{tikzpicture}
+  \draw[-, thick] (r3) to node[above left] {0} (c);
+  \draw[-, thick] (r3) to node[above right] {1} (d);
+  \end{tikzpicture}
+  \caption{The output of Huffman's greedy algorithm}
+  \label{fig:huffman_tree}
+\end{figure}
 
 which ensures that symbol $a$, the most frequently encountered will be the quickest to encode and decode since its depth in minimized in the output.
 

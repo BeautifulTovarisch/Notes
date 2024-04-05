@@ -307,121 +307,121 @@ Dijkstra’s Shortest Path Algorithm</a>
 
 
 <p>
-<a href="Algorithms.html#autosec-34" class="tocsubsection" >
+<a href="Algorithms.html#autosec-37" class="tocsubsection" >
 Prim’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-38" class="tocsubsection" >
+<a href="Algorithms.html#autosec-42" class="tocsubsection" >
 Kruskal’s MST Algorithm</a>
 </p>
 
 
 <p>
-<a href="Algorithms.html#autosec-45" class="tocsubsection" >
+<a href="Algorithms.html#autosec-49" class="tocsubsection" >
 Huffman Codes</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-51" class="tocsection" >
+<a href="Divide-Conquer.html#autosec-56" class="tocsection" >
 Divide and Conquer</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-52" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-57" class="tocsubsection" >
 Master Theorem</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-54" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-59" class="tocsubsection" >
 MergeSort</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-56" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-61" class="tocsubsection" >
 Counting Array Inversions</a>
 </p>
 
 
 <p>
-<a href="Divide-Conquer.html#autosec-59" class="tocsubsection" >
+<a href="Divide-Conquer.html#autosec-64" class="tocsubsection" >
 Karatsuba Multiplication</a>
 </p>
 
 
 <p>
-<a href="Combinatorics.html#autosec-61" class="tocchapter" >
+<a href="Combinatorics.html#autosec-66" class="tocchapter" >
 Combinatorics</a>
 </p>
 
 
 <p>
-<a href="Combinatorics.html#autosec-62" class="tocsection" >
+<a href="Combinatorics.html#autosec-67" class="tocsection" >
 Basics of Counting</a>
 </p>
 
 
 <p>
-<a href="Combinatorics.html#autosec-63" class="tocsubsection" >
+<a href="Combinatorics.html#autosec-68" class="tocsubsection" >
 Product Rule</a>
 </p>
 
 
 <p>
-<a href="Combinatorics.html#autosec-64" class="tocsubsection" >
+<a href="Combinatorics.html#autosec-69" class="tocsubsection" >
 Complement Rule</a>
 </p>
 
 
 <p>
-<a href="Combinatorics.html#autosec-65" class="tocsubsection" >
+<a href="Combinatorics.html#autosec-70" class="tocsubsection" >
 Sum Rule</a>
 </p>
 
 
 <p>
-<a href="Combinatorics.html#autosec-66" class="tocsubsection" >
+<a href="Combinatorics.html#autosec-71" class="tocsubsection" >
 Inclusion/Exclusion</a>
 </p>
 
 
 <p>
-<a href="Combinatorics.html#autosec-67" class="tocsubsection" >
+<a href="Combinatorics.html#autosec-72" class="tocsubsection" >
 Permutations</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-70" class="tocchapter" >
+<a href="Foundations.html#autosec-75" class="tocchapter" >
 Foundations</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-71" class="tocsection" >
+<a href="Foundations.html#autosec-76" class="tocsection" >
 Quadratics</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-72" class="tocsubsection" >
+<a href="Foundations.html#autosec-77" class="tocsubsection" >
 Finding Roots of a Quadratic Function</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-78" class="tocsubsection" >
+<a href="Foundations.html#autosec-83" class="tocsubsection" >
 Vieta’s Theorem</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-81" class="tocsubsection" >
+<a href="Foundations.html#autosec-86" class="tocsubsection" >
 The Quadratic Formula</a>
 </p>
 
@@ -610,9 +610,10 @@ distance traveled.
         V
     1           6
 
-S           2       T
 
+S           2       T
     4           3
+
         W
 --><img
     src="index-images/image-2.svg"
@@ -849,6 +850,36 @@ segments:
 </li>
 </ul>
 
+<figure id="autoid-3" class="figure ">
+<div class="center">
+
+<p>
+<span
+      id="lateximage-index-3"
+      class="lateximagesource"
+><!--
+s   a   b   u
+--><img
+      src="index-images/image-3.svg"
+      alt="(-tikz-&nbsp;diagram)"
+      style=""
+      class="lateximage"
+></span>
+</p>
+
+
+<div class="figurecaption">
+<p>
+Figure&nbsp;2:&nbsp;Arbitrary                                                                                                                    shortest                                                                                                                     path
+</p>
+</div>
+
+<a id="fig:shortest_path"></a>
+
+</div>
+
+</figure>
+
 <p>
 Let \((a, b)\) be the edge in \(P\) bridging the aforementioned cut. It suffices to compute a lower bound for the length of \(P\). The first segment consisting of a path from \(s\) to \(a\) has length \(dist[a]\). By the inductive hypothesis, each vertex in the first
 segment has its correct shortest distance recorded. The segment consisting of only the edge \((a, b)\) has length \(length_{ab}\). Finally, the final segment must be non-negative due to the restrictions the algorithm imposes on the input graph.
@@ -863,7 +894,7 @@ The final step in the proof makes use of the fact that Dijkstra’s algorithm al
 </p>
 
 <p>
-\[ dist[u] + l_{uw} \leqslant dist[a] + length_{ab} \leqslant len(P) \]
+\[ dist[u] + length_{uw} \leqslant dist[a] + length_{ab} \leqslant len(P) \]
 </p>
 
 <p>
@@ -878,8 +909,8 @@ therefore, the path chosen by the algorithm is always the shortest such path. <s
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-33">Analysis</h6>
-<a id="index-autopage-33"></a>
+<h6 id="autosec-36">Analysis</h6>
+<a id="index-autopage-36"></a>
 
 
 <p>
@@ -893,35 +924,37 @@ Using a [[Heap]] this algorithm can be sped up significantly, achieving \(O((|E|
 <!--
 ...... subsection Prim's MST Algorithm ......
 -->
-<h5 id="autosec-34">Prim’s MST Algorithm</h5>
-<a id="index-autopage-34"></a>
+<h5 id="autosec-37">Prim’s MST Algorithm</h5>
+<a id="index-autopage-37"></a>
 
 
 <p>
 Prim’s algorithm for computing a minimum-spanning tree. The algorithm functions almost identically to Dijkstra’s algorithm in that the minimum incident edge is always chosen for the solution.
 </p>
+<div class="center">
 
 <p>
 <span
-    id="lateximage-index-3"
+    id="lateximage-index-4"
     class="lateximagesource"
 ><!--
         1
-    a       b
+a           b
         3
 4               2
 
     c       d
         5
 --><img
-    src="index-images/image-3.svg"
+    src="index-images/image-4.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
 ></span>
 </p>
+</div>
 
-<figure id="autoid-3" class="algorithm ruled">
+<figure id="autoid-4" class="algorithm ruled">
 
 <div class="figurecaption">
 <p>
@@ -990,8 +1023,8 @@ Algorithm&nbsp;2:&nbsp;Prim’s MST Algorithm
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-37">Analysis</h6>
-<a id="index-autopage-37"></a>
+<h6 id="autosec-41">Analysis</h6>
+<a id="index-autopage-41"></a>
 
 
 <p>
@@ -1004,8 +1037,8 @@ We can employ the same technique of using a Heap as in Dijkstra’s algorithm to
 <!--
 ...... subsection Kruskal's MST Algorithm ......
 -->
-<h5 id="autosec-38">Kruskal’s MST Algorithm</h5>
-<a id="index-autopage-38"></a>
+<h5 id="autosec-42">Kruskal’s MST Algorithm</h5>
+<a id="index-autopage-42"></a>
 
 
 <p>
@@ -1014,18 +1047,18 @@ Kruskal’s algorithm adopts a different approach, instead opting to choose the 
 
 <p>
 <span
-    id="lateximage-index-4"
+    id="lateximage-index-5"
     class="lateximagesource"
 ><!--
-        1
-    a       b
-        3
-4               2
+    1
+a       b
+    3
+4       2
 
-    c       d
-        5
+
+c   5   d
 --><img
-    src="index-images/image-4.svg"
+    src="index-images/image-5.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
@@ -1066,22 +1099,21 @@ Kruskal’s algorithm would execute the following steps:
 </li>
 </ul>
 
-<figure id="autoid-4" class="figure ">
+<figure id="autoid-5" class="figure ">
 <div class="center">
 
 <p>
 <span
-    id="lateximage-index-5"
+    id="lateximage-index-6"
     class="lateximagesource"
 ><!--
         1
-    a       b
-
+a           b
 4               2
 
     c       d
 --><img
-    src="index-images/image-5.svg"
+    src="index-images/image-6.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
@@ -1090,7 +1122,7 @@ Kruskal’s algorithm would execute the following steps:
 
 <div class="figurecaption">
 <p>
-Figure&nbsp;2:&nbsp;Minimum spanning tree
+Figure&nbsp;3:&nbsp;Minimum spanning tree
 </p>
 </div>
 
@@ -1104,7 +1136,7 @@ Figure&nbsp;2:&nbsp;Minimum spanning tree
 In a real program, we sort the edges of the input graph \(G\) by weight as a pre-processing step to avoid quadratic searches for successive minima.
 </p>
 
-<figure id="autoid-5" class="algorithm ruled">
+<figure id="autoid-6" class="algorithm ruled">
 
 <div class="figurecaption">
 <p>
@@ -1180,8 +1212,8 @@ Algorithm&nbsp;3:&nbsp;Kruskal’s Algorithm
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-44">Analysis</h6>
-<a id="index-autopage-44"></a>
+<h6 id="autosec-48">Analysis</h6>
+<a id="index-autopage-48"></a>
 
 
 <p>
@@ -1199,8 +1231,8 @@ By using a Union-Find data structure, we can dramatically improve the runtime. I
 <!--
 ...... subsection Huffman Codes ......
 -->
-<h5 id="autosec-45">Huffman Codes</h5>
-<a id="index-autopage-45"></a>
+<h5 id="autosec-49">Huffman Codes</h5>
+<a id="index-autopage-49"></a>
 
 
 <p>
@@ -1208,7 +1240,7 @@ Invented by David Huffman in the 50s as a way to compute the optimal prefix-free
 to ensure the most frequently occurring have minimum possible depth.
 </p>
 
-<figure id="autoid-6" class="algorithm ruled">
+<figure id="autoid-7" class="algorithm ruled">
 
 <div class="figurecaption">
 <p>
@@ -1352,27 +1384,44 @@ For example, given the frequencies:
 Huffman’s greedy algorithm will produce the following encoding tree
 </p>
 
+<figure id="autoid-8" class="figure ">
+<div class="center">
+
 <p>
 <span
-    id="lateximage-index-6"
+    id="lateximage-index-7"
     class="lateximagesource"
 ><!--
     0           1
 
+
 a
             0               1
+
 
         b
                         0       1
 
                     c               d
 --><img
-    src="index-images/image-6.svg"
+    src="index-images/image-7.svg"
     alt="(-tikz-&nbsp;diagram)"
     style=""
     class="lateximage"
 ></span>
 </p>
+
+<div class="figurecaption">
+<p>
+Figure&nbsp;4:&nbsp;The output of Huffman’s greedy algorithm
+</p>
+</div>
+
+<a id="fig:huffman_tree"></a>
+
+</div>
+
+</figure>
 
 <p>
 which ensures that symbol \(a\), the most frequently encountered will be the quickest to encode and decode since its depth in minimized in the output.
@@ -1380,8 +1429,8 @@ which ensures that symbol \(a\), the most frequently encountered will be the qui
 <!--
 ...... subsubsection Analysis ......
 -->
-<h6 id="autosec-49">Analysis</h6>
-<a id="index-autopage-49"></a>
+<h6 id="autosec-54">Analysis</h6>
+<a id="index-autopage-54"></a>
 
 
 <p>
