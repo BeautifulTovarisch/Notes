@@ -404,24 +404,42 @@ Foundations</a>
 
 <p>
 <a href="Foundations.html#autosec-76" class="tocsection" >
+Set Theory</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-80" class="tocsubsection" >
+Basic Definitions</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-81" class="tocsubsection" >
+Laws</a>
+</p>
+
+
+<p>
+<a href="Quadratics.html#autosec-107" class="tocsection" >
 Quadratics</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-77" class="tocsubsection" >
+<a href="Quadratics.html#autosec-108" class="tocsubsection" >
 Finding Roots of a Quadratic Function</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-83" class="tocsubsection" >
+<a href="Quadratics.html#autosec-114" class="tocsubsection" >
 Vieta’s Theorem</a>
 </p>
 
 
 <p>
-<a href="Foundations.html#autosec-86" class="tocsubsection" >
+<a href="Quadratics.html#autosec-117" class="tocsubsection" >
 The Quadratic Formula</a>
 </p>
 
@@ -578,210 +596,49 @@ The Quadratic Formula</a>
 This section explains a lot of what highschool teachers ought to have during math class. Oh well.
 </p>
 <!--
-...... section Quadratics ......
+...... section Set Theory ......
 -->
-<h4 id="autosec-76">Quadratics</h4>
+<h4 id="autosec-76">Set Theory</h4>
 <a id="index-autopage-76"></a>
 
 
 <p>
-Polynomials of the form \(ax^2 + bx + c\) are called <b>quadratic</b>. They can also be described as polynomials of degree 2, or <b>second order</b>. A huge number of problems in physics and engineering can be modeled after a quadratic equation, and they occur
-frequently enough to warrant some special techniques.
+Sets represent unordered, arbitrary collections. Most of modern mathematics is founded on the basics of set theory, and they show up in any serious treatment of a mathematical subject. These notes contain some simple proofs about sets. I hope I have provided an
+unbearable amount of detail in the explanations.
 </p>
 
 <p>
-\[ \boxed {ax^2 + bx + c} \]
+Despite usually being among the first proofs students learn, some of the longer set proofs can be somewhat tricky, and involve multiple proof techniques.
 </p>
-
-<p>
-where \(a \neq 0\)
-</p>
-<!--
-...... subsection Finding Roots of a Quadratic Function ......
--->
-<h5 id="autosec-77">Finding Roots of a Quadratic Function</h5>
-<a id="index-autopage-77"></a>
-
-
-<p>
-A <b>root</b> of a polynomial function \(f\) is a number, say, \(\alpha \), such that \(f(\alpha ) = 0\). Finding roots of a quadratic function is equivalent to solving \(f(x) = ax^2 + bx + c = 0\).
-</p>
-
-<p>
-Several techniques for finding roots exist:
-</p>
-<!--
-...... subsubsection Factoring ......
--->
-<h6 id="autosec-78">Factoring</h6>
-<a id="index-autopage-78"></a>
-
-
-<p>
-Factoring here is used in the same context as listing the factors of an integer, such as in <em>prime factorization</em>. Factoring allows the polynomial to be written in such as a way as to make the values for which it takes on the value zero to be obvious.
-</p>
-
-<p>
-Every polynomial can be written as a product of its factors. Quadratics have a simple form:
-</p>
-
-<p>
-\[ P(x) = (x - \alpha )(x - \beta ) \]
-</p>
-
-<p>
-where \(\alpha \) and \(\beta \) are roots of polynomial \(P\).
-</p>
-
-<p>
-For example,
-</p>
-
-<p>
-\[ x^2 - 4 = (x - 2)(x + 2) = 0 \]
-</p>
-
-<p>
-This can easily be factored by noticing the expression is the difference of two squares. This equation has solutions at \(x \pm 2\).
-</p>
-<!--
-...... subsubsection Completing the Square ......
--->
-<h6 id="autosec-79">Completing the Square</h6>
-<a id="index-autopage-79"></a>
-
-
-<p>
-A good indication to try this technique is when a quadratic function has a 1 as its first coefficient.
-</p>
-
-<p>
-\[ x^2 + bx + c \]
-</p>
-
-<p>
-This is referred to as a <b>reduced quadratic</b> form.
-</p>
-
-<p>
-Completing the square is often taught as a formula to be memorized without any context or justification as to why it works. It helps to consider both what we mean geometrically and then derive the formula with algebra.
-</p>
-<!--
-...... paragraph Geometric ......
--->
-
-
-<p>
-<span class="paragraph" id="autosec-80">Geometric</span>
-<a id="index-autopage-80"></a>
-
-</p>
-
-<p>
-TODO
-</p>
-<!--
-...... paragraph Algebraic ......
--->
-
-
-<p>
-<span class="paragraph" id="autosec-81">Algebraic</span>
-<a id="index-autopage-81"></a>
-
-</p>
-
-<p>
-The clever idea behind coming up with the formula lies in thinking about what term would need to be added to \(x^2 + bx\) in order to make it a perfect square. Another way of thinking about this is how we could start with the square of a binomial, \((x + k)^2\) and
-figure out what \(k\) and \(c\) need to be in order to be equivalent to the lefthand side<sup>2</sup>:
-</p>
-
-<p>
-\[ x^2 + bx = (x + k)^2 - c \]
-</p>
-
-<p>
-Naively computing \((x + b)^2\) might reveal a hint, since we’d end up with the square of a binomial by design. let \(k = b\):
-</p>
-
-<p>
-\[ (x + b)^2 = x^2 + 2bx + b^2 \]
-</p>
-
-<p>
-This is closer, but we got \(2bx\) instead of \(bx\) like we wanted. To get \(bx\), we could let \(k = \frac b 2\). Now see what happens:
-</p>
-
-<p>
-\[ (x + \frac b 2)^2 = x^2 + 2 (\frac b 2) x + (\frac b 2)^2 \]
-</p>
-
-<p>
-Nearly there! All that’s left to do is subtract \(c = (\frac b 2)^2\) from the equation. This gives us:
-</p>
-
-<p>
-\[ \boxed {x^2 + bx = (x + \frac b 2)^2 - (\frac b 2)^2} \]
-</p>
-
-<p>
-A typical follow-up to completing the square is solving for \(x\) via a shortcut used when an expression is the <em>difference of two squares</em>.
-</p>
-<div role="note" class="footnotes">
-
-<a id="index-autopage-82"></a>
-<p>
-<sup>2</sup>&nbsp;Working backwards like this is the way that clicked for me when nothing else did
-</p>
-
-
-</div>
-<!--
-...... subsection Vieta's Theorem ......
--->
-<h5 id="autosec-83">Vieta’s Theorem</h5>
-<a id="index-autopage-83"></a>
-
-
-<p>
-Vieta’s theorem describes the roots of a quadratic polynomial in terms of its coefficients. This is especially helpful in eliminating candidates for roots if a more straightforward approach fails.
-</p>
-
-<p>
-If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \), then
-</p>
-
-<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
-
-
-<!--
-
-
-                                                                                         α+β                                                                                            = −p           (2)
-                                                                                         αβ                                                                                             = −q           (3)
-
-
--->
-
-
-<p>
-
-\begin{align}
-&amp;\alpha + \beta &amp;= -p \\ &amp;\alpha \beta &amp;= -q
-\end{align}
-
-</p>
-<div class="amsthmproof">
-
-<a id="index-autopage-84"></a>
+<div class="amsthmbodyplain">
 
 <ul class="list" style="list-style-type:none">
 
 
 <li>
 <p>
-<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> (Theorem): <span class="theoremendmark">&#x25A1;</span>
+<span class="listmarker"><a id="index-autopage-77"></a>
+<span class="amsthmnameplain">Definition</span><span class="amsthmnumberplain"> <span class="textup">1</span></span>. </span> These two axioms form the basis for nearly all set identities and proofs.
 </p>
+
+<ul class="enumerate" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker">1.</span> There exists a set with no elements called the null set (\(\emptyset \))
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+<span class="listmarker">2.</span> If every element \(x \in X\) is also in \(Y\) and vice-versa, then \(X = Y\)
+</p>
+</li>
+</ul>
 
 </li>
 
@@ -790,16 +647,174 @@ If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \
 </div>
 
 <p>
-Vieta’s theorem also has a corollary:
+A clever proof by contradiction establishes the fact that \(\emptyset \) is unique (in other words, there is exactly one \(\emptyset \)). The main idea behind this proof is to use axiom two in order to prove that any two sets with no elements are actually subsets of one
+another and by definition the same set.
+</p>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-78"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">2</span></span>. </span> There is exactly one empty set.
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-79"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">There is exactly one empty set.</span></span> Suppose not, there there are at least two sets, \(\emptyset _1\) and \(\emptyset _2\) such that \(\emptyset _1 \neq \emptyset _2\). By definition of empty,
+there is no element \(x\) in either of the sets. However, this means that exactly the same elements are in \(\emptyset _1\) and \(\emptyset _2\), and axiom 2 establishes they must be equal. Therefore we have arrived at a contradiction, and so there can only be a single,
+unique empty set. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<!--
+...... subsection Basic Definitions ......
+-->
+<h5 id="autosec-80">Basic Definitions</h5>
+<a id="index-autopage-80"></a>
+
+
+<p>
+The following set operations are ubiquitous in set proofs.
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                    X = {x | x 6∈ X}                                                                              Complement
+
+
+                                                                X − Y = {x | x ∈ X, x 6∈ Y }                                                                        Difference
+
+
+                                                                 P(A) = {A0 | A0 ⊆ A}                                                                               Power Set
+
+
+                                                                X × Y = {(x, y) | x ∈ X, y ∈ Y }                                                             Cartesian Product
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+\overline {X} &amp;= \{ x \mid x \not \in X \} &amp;\text {Complement} \\\\ X - Y &amp;= \{ x \mid x \in X, x \not \in Y \} &amp;\text {Difference} \\\\ \mathcal {P}(A) &amp;= \{ A&apos; \mid A&apos; \subseteq A \} &amp;\text {Power Set}
+\\\\ X \times Y &amp;= \{ (x, y) \mid x \in X, y \in Y \} &amp;\text {Cartesian Product}
+\end{align*}
+
+</p>
+<!--
+...... subsection Laws ......
+-->
+<h5 id="autosec-81">Laws</h5>
+<a id="index-autopage-81"></a>
+
+
+<p>
+Set laws are identities proven by thinking through the membership of arbitrary elements in a set and applying some basic logical operators. These come up all the time, so it’s worth having a small list jotted down somewhere.
+</p>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-82"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">3</span></span>. </span> The set union operator \(\cup \) is associative, that is
 </p>
 
 <p>
-If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \),
+\[ A \cup (B \cup C) = (A \cup B) \cup C \]
 </p>
 
 <p>
-\[ (x - \alpha )(x - \beta ) = x^2 - (\alpha + \beta ) + \alpha \beta \]
+
+
 </p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-83"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> Suppose \(x \in A \cup (B \cup C)\). Then by definition of set union, \(x\) is either in \(A\) or \(B \cup C\) (or both). Breaking down these cases:
+</p>
+
+<p>
+If \(x \in A\). Then \(x\) is in \(A \cup B\), and so it is in the right-hand side.
+</p>
+
+<p>
+Alternatively, if \(x \in (B \cup C\), this breaks down into another two cases, \(x \in B\) or \(x \in C\). If \(x \in C\), then it’s automatically in the union of \(C\) and anything else, and if \(x \in B\), then \(x \in (A \cup B)\) and so must be in \((A \cup B)
+\cup C\).
+</p>
+
+<p>
+Since we’ve proven the two expressions are subsets of one another, they must be the same set by axiom two, and the proof is complete. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-84"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">4</span></span>. </span>
+</p>
+
+<p>
+\[ A \cap B \subseteq B \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
 <div class="amsthmproof">
 
 <a id="index-autopage-85"></a>
@@ -809,7 +824,12 @@ If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \
 
 <li>
 <p>
-<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> <span class="theoremendmark">&#x25A1;</span>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> Intuitively, this is saying that if an element is in \(A\) <em>and</em> \(B\), then it must be in \(B\). This is just the definition of set intersection. Formally:
+</p>
+
+<p>
+Suppose \(x \in A \cap B\), then \(x \in A\) and \(x \in B\). But then \(x\) must be an element in \(B\) by definition. Because \(x\) was arbitrarily chosen, every element in \(A \cap B\) must be in \(B\), and therefore the definition of subset is satisfied. <span
+class="theoremendmark">&#x25A1;</span>
 </p>
 
 </li>
@@ -817,69 +837,612 @@ If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \
 </ul>
 
 </div>
-<!--
-...... subsection The Quadratic Formula ......
--->
-<h5 id="autosec-86">The Quadratic Formula</h5>
-<a id="index-autopage-86"></a>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
 
 
+<li>
 <p>
-The famous quadratic formula has a surprisingly simple derivation based on the formula for completing the square. Simply solving a ”completed square” for \(x\) yields the formula.
+<span class="listmarker"><a id="index-autopage-86"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">5</span></span>. </span> The union operation is distributive over a set expression.
 </p>
 
 <p>
-Begin by factoring out the leading coefficient \(a\):
+\[ X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z) \]
 </p>
 
-<span class="hidden"> \(\seteqnumber{0}{}{3}\)</span>
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-87"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> Starting with the right-hand side, we see that \(X\) is involved in two unions, meaning that every element in \(X\) automatically shows up in the intersection. This is consistent with the
+left-hand side, since an element being in \(X\) can be thought of as ”short-circuting” the union expression; we don’t even need to consider the other operations to know an element is present in whatever comes next.
+</p>
+
+<p>
+On the other hand, if an element is not in \(X\), then it had better be in both \(Y\) <em>and</em> \(Z\). This is similar to the rules of logic, in which a known false combined with a proposition reduces to just the proposition. In other words, since we know the element is
+not in \(X\), we can imagine the form on the right as:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
 
 
 <!--
 
 
-                                                                                  b     c
-                                                             ax2 + bx + c = x2 + ( )x +
-                                                                                  a     a
 
-                                                                                    b 2     b    c
-                                                                          = (x +      ) − ( )x −                                                                                      completing the square
-                                                                                   2a      2a    a
+                                                                                                                      (x ∈ X ∨ x ∈ Y ) ∧ (x ∈ X ∨ x ∈ Z)
+                                                                                                                        ⇐⇒ (F ∨ x ∈ Y ) ∧ (F ∨ x ∈ Z)
+                                                                                                                        ⇐⇒ (x ∈ Y ) ∧ (x ∈ Z)
 
-
-                                                                                    b 2   b2 − 4ac
-                                                                          = (x +      ) −                                                                                                        by algebra
-                                                                                   2a        4a2
-
-                                                                                        s                         s
-                                                                                  b         b2 − 4ac        b         b2 − 4ac
-                                                                          = (x +    +                )(x +    −                )                                                       difference of squares
-                                                                                 2a            4a2         2a            4a2
-
-                                                                                                √
-                                                                                        b           b2 − 4ac
-                                                                           =⇒ x = −       ±
-                                                                                       2a             2a
-
-                                                                                            √
-                                                                                     −b ±     b2 − 4ac
-                                                                           =⇒ x =
-                                                                                             2a
 
 
 -->
 
 
 <p>
+
 
 \begin{align*}
-\label {eqn:quadratic_formula} ax^2 + bx + c &amp;= x^2 + (\frac b a)x + \frac c a \\\\ &amp;= (x + \frac b {2a})^2 - (\frac b {2a})x - \frac c a &amp;\text {completing the square} \\\\ &amp;= (x + \frac b {2a})^2 - \frac {b^2 - 4ac}
-{4a^2} &amp;\text {by algebra} \\\\ &amp;= (x + \frac b {2a} + \sqrt {\frac {b^2 - 4ac} {4a^2}})(x + \frac b {2a} - \sqrt {\frac {b^2 - 4ac} {4a^2}}) &amp;\text {difference of squares} \\\\ &amp;\implies x = -\frac b {2a} \pm \frac {\sqrt
-{b^2 - 4ac}} {2a} \\\\ &amp;\implies x = \frac {-b \pm \sqrt {b^2 - 4ac}} {2a}
+&amp;(x \in X \lor x \in Y) \land (x \in X \lor x \in Z) \\ &amp;\iff (F \lor x \in Y) \land (F \lor x \in Z) \\ &amp;\iff (x \in Y) \land (x \in Z)
 \end{align*}
 
+
 </p>
-<a id="index-autofile-last"></a>
+
+<p>
+which is precisely what the left-hand side is saying. More formally:
+</p>
+
+<p>
+Suppose \(x \in X\). Then \(x \in (X \cup Y)\) and \(x \in (X \cup Z)\) by union of two sets, and so \(x\) is in the right-hand expression. By similar argument, if \(x \in (Y \cap Z)\), then \(x \in (X \cup Y)\) and \(x \in (X \cup Z)\), and so the forward
+direction holds.
+</p>
+
+<p>
+Now suppose \(x \in (X \cup Y) \cap (X \cup Z)\). Then \(x \in X\) or \(x\) is in both \(Y\) and \(Z\) by definition of set union. But then \(x \in X \cup (Y \cap Z)\) and since both expressions are subsets of one another, the identity holds. <span
+class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-88"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">6</span></span>. </span> A Cartesian Product distributes over a set union.
+</p>
+
+<p>
+\[ A \times (B \cup C) = (A \times B) \cup (A \times C) \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-89"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> The main idea here is to think about all the ordered pairs that would end up on the left-hand side. Taking every element in \(A\) and forming a tuple with all the elements in either
+\(B\) or \(C\), we get
+</p>
+
+<p>
+\[ (a_1, b_1), (a_1, c_1), (a_2, b_1), \dots (a_n, b_m), (a_n, c_k) \]
+</p>
+
+<p>
+but these are the same ordered pairs as if we had taken each product by itself and combined the results together:
+</p>
+
+<p>
+\[ (a_1, b_1), (a_1, b_2), \dots (a_n, b_m) \cup (a_1, c_1) \dots (a_n, c_k) \]
+</p>
+
+<p>
+For the actual proof, we consider an arbitrary ordered pair in each of the expressions and once again prove both sides are subsets of one another.
+</p>
+
+<p>
+Take \((x, y) \in A \times (B \cup C)\), then by definition of set union and Cartesian product, \(x \in A\) and either \(y \in B\) or \(y \in C\).
+</p>
+
+<p>
+Suppose \(y \in B\), then \((x, y) \in (A \times B)\) and so it is in the union on the right. Now let \(y \in C\), and see by similar argument it is also in the union. Now assume \((x, y) \in (A \times B) \cup (A \times C)\). Then once againt, \(x \in A\) and
+\(y \in B\) or \(y \in C\). This completes the proof as in either case, \((x, y) \in A \times (B \cup C)\) and so the sets are equal. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-90"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">7</span></span>. </span>
+</p>
+
+<p>
+\[ A \setminus B \subseteq \overline {B} \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-91"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> Any element left over after \(A \setminus B\) couldn’t have been in \(B\) by the definition of set subtraction. In other words, every such element would have to be in \(\overline
+{B}\), otherwise it wouldn’t have survived the operation. This yields a fairly straightforward proof.
+</p>
+
+<p>
+Let \(x \in A \setminus B\). Then by definition of the set difference operator, \(x \in \overline {B}\) and so because \(x\) was arbitrarily chosen, the identity must hold for any element of \(A \setminus B\) and the subset relation is shown. <span
+class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-92"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">8</span></span>. </span>
+</p>
+
+<p>
+\[ A \cap \overline {B} = A \setminus B \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-93"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> As in the previous proof, we know that any element that is left over after a set subtraction must have been in the first set <em>and</em> not the second. But this is verbatim what the
+left side of the equation claims, so all that’s left to do is show the bi-directional relation once more.
+</p>
+
+<p>
+Let \(x\) be an element in \(A \cap \overline {B}\). Then by definition, \(x \in A\) and \(x \not \in B\) which means that \(x \in \overline {B}\). Then by set difference, \(x\) must be in \(A \setminus B\).
+</p>
+
+<p>
+Now assume \(x \in A \setminus B\). Once again, \(x \in A\) and \(x \not \in B\), and set equality is shown in both directions. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-94"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">9</span></span>. </span>
+</p>
+
+<p>
+\[ A \cup (A \cap B) = A \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-95"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> There are a couple of decent ways of thinking about this identity. The most straightforward way might be to say that this boils down to declaring all the elements in \(A\), do in fact,
+belong to \(A\). This line of thought comes from the fact that any element in \(A \cap B\) must be in \(A\), and so the expression reduces to \(A \cup A\), which of course is \(A\) itself.
+</p>
+
+<p>
+Another clever way of thinking about this is to consider the problem in terms of boolean logic, in which a similar identity is presented:
+</p>
+
+<p>
+\[ A \cup (A \cap B) \iff T \lor (T \land P) \iff T \]
+</p>
+
+<p>
+here, the value of \(P\) is irrelevant, because the \(T\) immediately renders the entire expression true regardless. Analogously, if we know \(x \in A\), then we don’t have to consider again whether \(x \in A\), since the intersection with \(B\) could only ever produce
+elements that were in \(A\) anyway.
+</p>
+
+<p>
+Let \(x \in A \cup (A \cap B)\). Then \(x \in A\) or \(x \in (A \cap B\). In either case, \(x \in A\). Now suppose \(x \in A\). It immediately follows that \(x\) is in the union by virtue of being in \(A\), and the proof is complete.
+</p>
+
+<p>
+Something interesting about this theorem is that we could instead try to apply the previously shown distributive property as a first step:
+</p>
+
+<p>
+\[ A \cup (A \cap B) = (A \cup A) \cap (A \cup B) = A \cap (A \cup B) \]
+</p>
+
+<p>
+Since we’ve proven the original identity and that this one is equivalent, we get another identity (basically) for free! <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-96"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">10</span></span>. </span> DeMorgan’s Law for Sets
+</p>
+
+<p>
+\[ \overline {A \cup B} = \overline {A} \cap \overline {B} \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-97"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> Another direct analog to boolean logic. Essentially this works in exactly the same way as applying DeMorgan’s law to logical operators. In plain English, this can be described as simply
+saying if an element is not in \(A\) or \(B\), it can’t be in \(A\) and it also can’t be in \(B\).
+</p>
+
+<p>
+Let \(x \in \overline {A \cup B}\), then by definition of set complement, \(x\) is not in the union of \(A\) and \(B\), which means \(x \not \in A\) and \(x \not \in B\). This implies that \(x \in \overline {A}\) and \(x \in \overline {B}\) and is therefore in
+the intersection of the two.
+</p>
+
+<p>
+Conversely, if \(x \in \overline {A} \cap \overline {B}\), it is neither in \(A\) nor \(B\), so it does not exist in their union and must therefore be in the complement of the union, \(\overline {A \cup B}\), and the proof is complete. <span
+class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-98"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">11</span></span>. </span>
+</p>
+
+<p>
+\[ (A \setminus B) \cap B = \emptyset \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-99"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> This theorem can be thought of as the logical negation of \(A \cup (A \cap B)\) if we treat the \(\emptyset \) as a contradiction (logically always false). This makes sense, since if we
+delete all the elements found in \(B\) from \(A\), and afterwards ask the question how many elements are now in both \(B\) and \(A\), we will always find exactly zero (we just got rid of any!).
+</p>
+
+<p>
+For ”fun” and variety, this proof can proceed by contradiction. It also makes subtle use of the very first proof in that once we show the left-hand side is empty, we have proven that is must be equal to the unique empty set, and so the proof of the converse statement can be
+skipped straight away.
+</p>
+
+<p>
+Suppose not, that there is some element \(x\) in \(A \setminus B \cap B\). Then it must be the case that \(x \in A \setminus B\) and \(x \in B\) by definition of intersection. However, if \(x \in A \setminus B\), then \(x\) cannot be in \(B\). This contradicts the
+original assumption that there was some element in the set, and so there can be no such element. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-100"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">12</span></span>. </span> This theorem is actually <b>false</b>, but sets up the next theorem nicely and demonstrates a disproof.
+</p>
+
+<p>
+\[ (A \setminus B) \cup B = A \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-101"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Counterexample.</span></span> As the next theorem shows, this is only true of \(B\) is a subset of \(A\). This can be shown with a simple counterexample:
+</p>
+
+<p>
+Let \(A = \{1\}, \; B = \{2\}\). Then \(A \setminus B = \{1\}\), but this set and \(B\) have a union of \(\{1, 2\} \neq A\).
+</p>
+
+<p>
+The reason this fails when \(B\) is not a subset of \(A\) is because when the set difference occurs, only those elements in \(B\) are taken away from \(A\). If any elements of \(B\) are not in \(A\), they’ll be tacked on as ”extra” in the union.
+</p>
+
+<p>
+The next theorem provides the corrected claim. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-102"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">13</span></span>. </span>
+</p>
+
+<p>
+\[ B \subseteq A \iff (A \setminus B) \cup B = A \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-103"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> In contrast to the previous false claim, the condition that \(B\) is a subset of \(A\) ensures that the elements we take away during the set difference are exactly the same as the ones
+added back during the set union. This follows from the definition of subset, which says that <em>every</em> element in \(B\) must also be in \(A\). This guarantees the operations cancel each other out.
+</p>
+
+<p>
+The first part of this proof shows the forward direction in the usual way, while the second proceeds by contradiction since it ties in nicely with the reasoning of the previous disproof.
+</p>
+
+<p>
+To see the forward claim, let \(B \subseteq A\) and let \(x\) be an element in \((A \setminus B) \cup B\). By definition of union and set difference, either \(x \in A\) and \(x \not \in B\) or \(x \in B\). In the first case, \(x \in A\) shows the identity immediately.
+Now assume \(x \in B\). Once again, we know \(x \in A\) by definition of subset and so the first part of the claim is proven.
+</p>
+
+<p>
+Now assume \((A \setminus B) \cup B = A\) and assume for the sake of obtaining a contradiction that \(B\) is not a subset of \(A\). Then there is some element, say, \(y \in B\) that is not in \(A\). But then \(y \in (A \setminus B) \cup B\), contradicting the
+assumption that this set was equal to \(A\). Therefore, \(B\) must be a subset of \(A\), and the claim holds in both directions. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"><a id="index-autopage-104"></a>
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">14</span></span>. </span>
+</p>
+
+<p>
+\[ A \cap (B \setminus (A \cap B)) = \emptyset \]
+</p>
+
+<p>
+
+
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-105"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> There’s a lot of notation here, but translating to English helps. This claims that there are no elements both in \(A\) and in \(B\) after taking away those in \(A\) and \(B\) from \(B\).
+This gets us a little closer to what’s going on, but we can break the problem down slowly and focus on the ”inner” expression first.
+</p>
+
+<p>
+\[ B \setminus (A \cap B) \]
+</p>
+
+<p>
+This expression remove anything in both \(B\) and \(A\) from \(B\). Crucially, this means any trace of \(A\) vanishes from \(B\), and so we’re left with exactly no elements in common between the two sets by the time we take the intersection. Of course, this shows that
+there can never be any element in this set!
+</p>
+
+<p>
+Doing this proof directly isn’t terribly difficult, but it is pretty tedious given the slighty subtle cases. Instead, we can try to find a contradiction.
+</p>
+
+<p>
+Suppose by way of contradiction there there is some element in the left-hand expression, call it \(x\). Then \(x \in A\) and \(x \in B \setminus (A \cap B)\). Because \(x \in B \setminus (A \cap B)\), it must also be in \(B\), and not in \(A \cap B\). However,
+this contradicts the fact that \(x\) must be in both \(A\) and \(B\) in order to be present in the intersection. Therefore, we have shown there can be no such element, and the proof is finished. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+
 </section>
 
 </main>
