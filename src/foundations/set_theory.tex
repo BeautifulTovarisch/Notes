@@ -1,0 +1,384 @@
+\documentclass{standalone}
+\begin{document}
+
+\section{Set Theory}
+
+Sets represent unordered, arbitrary collections. Most of modern mathematics is
+founded on the basics of set theory, and they show up in any serious treatment
+of a mathematical subject. These notes contain some simple proofs about sets. I
+hope I have provided an unbearable amount of detail in the explanations.
+
+Despite usually being among the first proofs students learn, some of the longer
+set proofs can be somewhat tricky, and involve multiple proof techniques.
+
+\begin{definition}
+  These two axioms form the basis for nearly all set identities and proofs.
+
+  \begin{enumerate}
+    \item There exists a set with no elements called the null set ($\emptyset$)
+    \item If every element $x \in X$ is also in $Y$ and vice-versa, then $X = Y$
+  \end{enumerate}
+\end{definition}
+
+A clever proof by contradiction establishes the fact that $\emptyset$ is unique
+(in other words, there is exactly one $\emptyset$). The main idea behind this
+proof is to use axiom two in order to prove that any two sets with no elements
+are actually subsets of one another and by definition the same set.
+
+\begin{theorem}
+  There is exactly one empty set.
+\end{theorem}
+
+\begin{proof}
+  Suppose not, there there are at least two sets, $\emptyset_1$ and $\emptyset_2$
+  such that $\emptyset_1 \neq \emptyset_2$. By definition of empty, there is no
+  element $x$ in either of the sets. However, this means that exactly the same
+  elements are in $\emptyset_1$ and $\emptyset_2$, and axiom 2 establishes they
+  must be equal. Therefore we have arrived at a contradiction, and so there can
+  only be a single, unique empty set.
+\end{proof}
+
+\subsection{Basic Definitions}
+
+The following set operations are ubiquitous in set proofs.
+
+\begin{align*}
+  \overline{X} &= \{ x \mid x \not \in X \}              &\text{Complement} \\\\
+  X - Y &= \{ x \mid x \in X, x \not \in Y \}       &\text{Difference} \\\\
+  \mathcal{P}(A) &= \{ A' \mid A' \subseteq A \}    &\text{Power Set} \\\\
+  X \times Y &= \{ (x, y) \mid x \in X, y \in Y \}  &\text{Cartesian Product}
+\end{align*}
+
+\subsection{Laws}
+
+Set laws are identities proven by thinking through the membership of arbitrary
+elements in a set and applying some basic logical operators. These come up all
+the time, so it's worth having a small list jotted down somewhere.
+
+\begin{theorem}
+  The set union operator $\cup$ is associative, that is
+
+  \[
+    A \cup (B \cup C) = (A \cup B) \cup C
+  \]
+\end{theorem}
+
+\begin{proof}
+  Suppose $x \in A \cup (B \cup C)$. Then by definition of set union, $x$ is
+  either in $A$ or $B \cup C$ (or both). Breaking down these cases:
+
+  If $x \in A$. Then $x$ is in $A \cup B$, and so it is in the right-hand side.
+
+  Alternatively, if $x \in (B \cup C$, this breaks down into another two cases,
+  $x \in B$ or $x \in C$. If $x \in C$, then it's automatically in the union of
+  $C$ and anything else, and if $x \in B$, then $x \in (A \cup B)$ and so must
+  be in $(A \cup B) \cup C$.
+
+  Since we've proven the two expressions are subsets of one another, they must
+  be the same set by axiom two, and the proof is complete.
+\end{proof}
+
+\begin{theorem}
+  \[
+    A \cap B \subseteq B
+  \]
+\end{theorem}
+
+\begin{proof}
+  Intuitively, this is saying that if an element is in $A$ \emph{and} $B$, then
+  it must be in $B$. This is just the definition of set intersection. Formally:
+
+  Suppose $x \in A \cap B$, then $x \in A$ and $x \in B$. But then $x$ must be
+  an element in $B$ by definition. Because $x$ was arbitrarily chosen, every
+  element in $A \cap B$ must be in $B$, and therefore the definition of subset
+  is satisfied.
+\end{proof}
+
+\begin{theorem}
+  The union operation is distributive over a set expression.
+
+  \[
+    X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)
+  \]
+\end{theorem}
+
+\begin{proof}
+  Starting with the right-hand side, we see that $X$ is involved in two unions,
+  meaning that every element in $X$ automatically shows up in the intersection.
+  This is consistent with the left-hand side, since an element being in $X$ can
+  be thought of as "short-circuting" the union expression; we don't even need to
+  consider the other operations to know an element is present in whatever comes
+  next.
+
+  On the other hand, if an element is not in $X$, then it had better be in both
+  $Y$ \emph{and} $Z$. This is similar to the rules of logic, in which a known
+  false combined with a proposition reduces to just the proposition. In other
+  words, since we know the element is not in $X$, we can imagine the form on
+  the right as:
+
+  \begin{align*}
+    &(x \in X \lor x \in Y) \land (x \in X \lor x \in Z) \\
+    &\iff (F \lor x \in Y) \land (F \lor x \in Z) \\
+    &\iff (x \in Y) \land (x \in Z)
+  \end{align*}
+
+  which is precisely what the left-hand side is saying. More formally:
+
+  Suppose $x \in X$. Then $x \in (X \cup Y)$ and $x \in (X \cup Z)$ by union of
+  two sets, and so $x$ is in the right-hand expression. By similar argument, if
+  $x \in (Y \cap Z)$, then $x \in (X \cup Y)$ and $x \in (X \cup Z)$, and so
+  the forward direction holds.
+
+  Now suppose $x \in (X \cup Y) \cap (X \cup Z)$. Then $x \in X$ or $x$ is in
+  both $Y$ and $Z$ by definition of set union. But then $x \in X \cup (Y \cap Z)$
+  and since both expressions are subsets of one another, the identity holds.
+\end{proof}
+
+\begin{theorem}
+  A Cartesian Product distributes over a set union.
+
+  \[
+    A \times (B \cup C) = (A \times B) \cup (A \times C)
+  \]
+\end{theorem}
+
+\begin{proof}
+  The main idea here is to think about all the ordered pairs that would end up
+  on the left-hand side. Taking every element in $A$ and forming a tuple with
+  all the elements in either $B$ or $C$, we get
+
+  \[
+    (a_1, b_1), (a_1, c_1), (a_2, b_1), \dots (a_n, b_m), (a_n, c_k)
+  \]
+
+  but these are the same ordered pairs as if we had taken each product by itself
+  and combined the results together:
+
+  \[
+    (a_1, b_1), (a_1, b_2), \dots (a_n, b_m) \cup (a_1, c_1) \dots (a_n, c_k)
+  \]
+
+  For the actual proof, we consider an arbitrary ordered pair in each of the
+  expressions and once again prove both sides are subsets of one another.
+
+  Take $(x, y) \in A \times (B \cup C)$, then by definition of set union and
+  Cartesian product, $x \in A$ and either $y \in B$ or $y \in C$.
+
+  Suppose $y \in B$, then $(x, y) \in (A \times B)$ and so it is in the union
+  on the right. Now let $y \in C$, and see by similar argument it is also in
+  the union. Now assume $(x, y) \in (A \times B) \cup (A \times C)$. Then once
+  againt, $x \in A$ and $y \in B$ or $y \in C$. This completes the proof as in
+  either case, $(x, y) \in A \times (B \cup C)$ and so the sets are equal.
+\end{proof}
+
+\begin{theorem}
+  \[
+    A \setminus B \subseteq \overline{B}
+  \]
+\end{theorem}
+
+\begin{proof}
+  Any element left over after $A \setminus B$ couldn't have been in $B$ by the
+  definition of set subtraction. In other words, every such element would have
+  to be in $\overline{B}$, otherwise it wouldn't have survived the operation. This
+  yields a fairly straightforward proof.
+
+  Let $x \in A \setminus B$. Then by definition of the set difference operator,
+  $x \in \overline{B}$ and so because $x$ was arbitrarily chosen, the identity must
+  hold for any element of $A \setminus B$ and the subset relation is shown.
+\end{proof}
+
+\begin{theorem}
+  \[
+    A \cap \overline{B} = A \setminus B
+  \]
+\end{theorem}
+
+\begin{proof}
+  As in the previous proof, we know that any element that is left over after a
+  set subtraction must have been in the first set \emph{and} not the second.
+  But this is verbatim what the left side of the equation claims, so all that's
+  left to do is show the bi-directional relation once more.
+
+  Let $x$ be an element in $A \cap \overline{B}$. Then by definition, $x \in A$ and
+  $x \not \in B$ which means that $x \in \overline{B}$. Then by set difference, $x$
+  must be in $A \setminus B$.
+
+  Now assume $x \in A \setminus B$. Once again, $x \in A$ and $x \not \in B$,
+  and set equality is shown in both directions.
+\end{proof}
+
+\begin{theorem}
+  \[
+    A \cup (A \cap B) = A
+  \]
+\end{theorem}
+
+\begin{proof}
+  There are a couple of decent ways of thinking about this identity. The most
+  straightforward way might be to say that this boils down to declaring all the
+  elements in $A$, do in fact, belong to $A$. This line of thought comes from
+  the fact that any element in $A \cap B$ must be in $A$, and so the expression
+  reduces to $A \cup A$, which of course is $A$ itself.
+
+  Another clever way of thinking about this is to consider the problem in terms
+  of boolean logic, in which a similar identity is presented:
+
+  \[
+    A \cup (A \cap B) \iff T \lor (T \land P) \iff T
+  \]
+
+  here, the value of $P$ is irrelevant, because the $T$ immediately renders the
+  entire expression true regardless. Analogously, if we know $x \in A$, then we
+  don't have to consider again whether $x \in A$, since the intersection with
+  $B$ could only ever produce elements that were in $A$ anyway.
+
+  Let $x \in A \cup (A \cap B)$. Then $x \in A$ or $x \in (A \cap B$. In either
+  case, $x \in A$. Now suppose $x \in A$. It immediately follows that $x$ is in
+  the union by virtue of being in $A$, and the proof is complete.
+
+  Something interesting about this theorem is that we could instead try to apply
+  the previously shown distributive property as a first step:
+
+  \[
+    A \cup (A \cap B) = (A \cup A) \cap (A \cup B) = A \cap (A \cup B)
+  \]
+
+  Since we've proven the original identity and that this one is equivalent, we
+  get another identity (basically) for free!
+\end{proof}
+
+\begin{theorem}
+  DeMorgan's Law for Sets
+
+  \[
+    \overline{A \cup B} = \overline{A} \cap \overline{B}
+  \]
+\end{theorem}
+
+\begin{proof}
+  Another direct analog to boolean logic. Essentially this works in exactly the
+  same way as applying DeMorgan's law to logical operators. In plain English,
+  this can be described as simply saying if an element is not in $A$ or $B$, it
+  can't be in $A$ and it also can't be in $B$.
+
+  Let $x \in \overline{A \cup B}$, then by definition of set complement, $x$ is not
+  in the union of $A$ and $B$, which means $x \not \in A$ and $x \not \in B$.
+  This implies that $x \in \overline{A}$ and $x \in \overline{B}$ and is therefore in the
+  intersection of the two.
+
+  Conversely, if $x \in \overline{A} \cap \overline{B}$, it is neither in $A$ nor $B$, so
+  it does not exist in their union and must therefore be in the complement of
+  the union, $\overline{A \cup B}$, and the proof is complete.
+\end{proof}
+
+\begin{theorem}
+  \[
+    (A \setminus B) \cap B = \emptyset
+  \]
+\end{theorem}
+
+\begin{proof}
+  This theorem can be thought of as the logical negation of $A \cup (A \cap B)$
+  if we treat the $\emptyset$ as a contradiction (logically always false). This
+  makes sense, since if we delete all the elements found in $B$ from $A$, and
+  afterwards ask the question how many elements are now in both $B$ and $A$, we
+  will always find exactly zero (we just got rid of any!).
+
+  For "fun" and variety, this proof can proceed by contradiction. It also makes
+  subtle use of the very first proof in that once we show the left-hand side is
+  empty, we have proven that is must be equal to the unique empty set, and so
+  the proof of the converse statement can be skipped straight away.
+
+  Suppose not, that there is some element $x$ in $A \setminus B \cap B$. Then
+  it must be the case that $x \in A \setminus B$ and $x \in B$ by definition of
+  intersection. However, if $x \in A \setminus B$, then $x$ cannot be in $B$.
+  This contradicts the original assumption that there was some element in the
+  set, and so there can be no such element.
+\end{proof}
+
+\begin{theorem}
+  This theorem is actually \textbf{false}, but sets up the next theorem nicely
+  and demonstrates a disproof.
+
+  \[
+    (A \setminus B) \cup B = A
+  \]
+\end{theorem}
+
+\begin{proof}[Counterexample]
+  As the next theorem shows, this is only true of $B$ is a subset of $A$. This
+  can be shown with a simple counterexample:
+
+  Let $A = \{1\}, \; B = \{2\}$. Then $A \setminus B = \{1\}$, but this set and
+  $B$ have a union of $\{1, 2\} \neq A$.
+
+  The reason this fails when $B$ is not a subset of $A$ is because when the set
+  difference occurs, only those elements in $B$ are taken away from $A$. If any
+  elements of $B$ are not in $A$, they'll be tacked on as "extra" in the union.
+
+  The next theorem provides the corrected claim.
+\end{proof}
+
+\begin{theorem}
+  \[
+    B \subseteq A \iff (A \setminus B) \cup B = A
+  \]
+\end{theorem}
+
+\begin{proof}
+  In contrast to the previous false claim, the condition that $B$ is a subset
+  of $A$ ensures that the elements we take away during the set difference are
+  exactly the same as the ones added back during the set union. This follows
+  from the definition of subset, which says that \emph{every} element in $B$
+  must also be in $A$. This guarantees the operations cancel each other out.
+
+  The first part of this proof shows the forward direction in the usual way,
+  while the second proceeds by contradiction since it ties in nicely with the
+  reasoning of the previous disproof.
+
+  To see the forward claim, let $B \subseteq A$ and let $x$ be an element in
+  $(A \setminus B) \cup B$. By definition of union and set difference, either
+  $x \in A$ and $x \not \in B$ or $x \in B$. In the first case, $x \in A$ shows
+  the identity immediately. Now assume $x \in B$. Once again, we know $x \in A$
+  by definition of subset and so the first part of the claim is proven.
+
+  Now assume $(A \setminus B) \cup B = A$ and assume for the sake of obtaining
+  a contradiction that $B$ is not a subset of $A$. Then there is some element,
+  say, $y \in B$ that is not in $A$. But then $y \in (A \setminus B) \cup B$,
+  contradicting the assumption that this set was equal to $A$. Therefore, $B$
+  must be a subset of $A$, and the claim holds in both directions.
+\end{proof}
+
+\begin{theorem}
+  \[
+    A \cap (B \setminus (A \cap B)) = \emptyset
+  \]
+\end{theorem}
+
+\begin{proof}
+  There's a lot of notation here, but translating to English helps. This claims
+  that there are no elements both in $A$ and in $B$ after taking away those in
+  $A$ and $B$ from $B$. This gets us a little closer to what's going on, but we
+  can break the problem down slowly and focus on the "inner" expression first.
+
+  \[
+    B \setminus (A \cap B)
+  \]
+
+  This expression remove anything in both $B$ and $A$ from $B$. Crucially, this
+  means any trace of $A$ vanishes from $B$, and so we're left with exactly no
+  elements in common between the two sets by the time we take the intersection.
+  Of course, this shows that there can never be any element in this set!
+
+  Doing this proof directly isn't terribly difficult, but it is pretty tedious
+  given the slighty subtle cases. Instead, we can try to find a contradiction.
+
+  Suppose by way of contradiction there there is some element in the left-hand
+  expression, call it $x$. Then $x \in A$ and $x \in B \setminus (A \cap B)$.
+  Because $x \in B \setminus (A \cap B)$, it must also be in $B$, and not in
+  $A \cap B$. However, this contradicts the fact that $x$ must be in both $A$
+  and $B$ in order to be present in the intersection. Therefore, we have shown
+  there can be no such element, and the proof is finished.
+\end{proof}
+\end{document}
