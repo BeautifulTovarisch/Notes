@@ -1,0 +1,112 @@
+\documentclass{standlone}
+\begin{document}
+
+\section{Basics of Counting}
+
+These are the basic "rules" of counting. In general, counting using these rules
+involves modeling the problem as a correct sequence of choices and applying the
+appropriate strategy to the sequence.
+
+\subsection{Product Rule}
+
+The Product rule is applied to combinatorial problems that can be modeled as a
+"process" of making mutually exclusive choices. For such problems the total
+number of ways to perform the process is given by multiplying the number of
+options at each step.
+
+\begin{equation}
+  \text{number of ways} = N_1 \cdot N_2 \cdot \dots \cdot N_k
+\end{equation}
+
+where $N_i$ is the number of ways of performing the $i$th step of the process.
+
+\subsection{Complement Rule}
+
+The Complement rule is helpful when expressing the size of a subset. Suppose
+$A \subseteq U$, then
+
+\[
+  |A| = |U| - |U - A|
+\]
+
+In other words, the size of $A$ is the same as the size of $U$ when taking away
+the elements of $U$ which are also in $A$ (leaving behind only those elements
+which belong to $A$).
+
+(I remember this "algebraically": $U - (U - A) = U - U + A = A$)
+
+\subsection{Sum Rule}
+
+This is a specicial form of the Inclusion/Exclusion rule applicable for
+sets of elements who are mutually disjoint.
+
+\subsection{Inclusion/Exclusion}
+
+The Inclusion/Exclusion rule is a generalization of the Sum rule, and can be
+used when sets are not-disjoint. The intuition here is to subtract the "double-
+counted" elements from the union of two sets.
+
+\[
+  |A \cup B| = |A| + |B| - |A \cap B|
+\]
+
+For example, let $A = \{1, 2, 3\}, \; B = \{2, 3\}$. Since $A$ and $B$ are not
+disjoint, we only want to count the elements in their union once:
+
+\begin{align*}
+  &A = \{1, 2, 3\} \\
+  &B = \{2, 3\} \\
+  &A \cup B = \{1, 2, 3, 2, 3\} \\
+  &A \cap B = \{2, 3\} \\
+  &(A \cup B) - (A \cap B) = \{1, 2, 3\}
+\end{align*}
+
+When $A$ and $B$ are disjoint, their intersection is $0$, and so the formula
+holds.
+
+\subsection{Permutations}
+
+We can think of a permutation of a sequence $n$ as a particular ordering of
+its elements. We consider each ordering to be a unique object. Another way to
+think of a permutation is a function that sends an item located at index $i$ to
+index $j$ in the output.
+
+for example, consider the string $S = \text{abc}$. Then the permutations of $S$
+are:
+
+\[
+  \{ abc, acb, bac, bca, cab, cba \}
+\]
+
+The process of arranging the elements of $S$ is called \textbf{permuting}.
+
+The number of permutations a given string has can be modeled as a sequence of
+choices for the positions of each of its characters. For a string of length $n$
+there are initially $n$ choices. After the first character is chosen, there are
+$n-1$ choices, and so on. Using the Product Rule:
+
+\[
+  n(n-1)(n-2) \dots 1 = n!
+\]
+
+\subsubsection{K-Permutations}
+
+A $K$-Permutation follows the same basic idea of a permutation. The goal here
+is to count the number of subsets of size $K$ a given set.
+
+(Permutations can be thought of as $k$-permutations where $k=n$)
+
+Let $S = \text{abc}, \; k = 2$. Then the $2$-permutations of $S$ are:
+
+\[
+  \{ ab, ba, ac, ca, bc, cb \}
+\]
+
+The formula for a $k$-permutation uses the product rule again, this time making
+choices on a sequence of length $n-k+1$:
+
+\[
+  (n)(n-1)(n-2)\dots(n-k+1) = \frac {n!} {(n-k)!}
+\]
+
+\end{document}

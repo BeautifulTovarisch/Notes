@@ -1,0 +1,206 @@
+\documentclass{standalone}
+\begin{document}
+
+\section{Factoring Tricks}
+
+Factoring a polynomial is a ubquitous technique and is especially helpful with
+certain types of integrals (or rather in avoiding their tedious computation).
+
+It is important to show the derivations of these "tricks", since they develop
+critical problem-solving ability. Many of the clever ideas used in obtaining a
+factorization (especially "adding zero") are helpful regardless of context.
+
+\subsection{Basic Identities}
+
+These are worth "memorizing" or rather, it's a very good idea to work enough
+problems involving these identities that they become muscle memory. Being able
+to recognize when a problem reduces to one of these expressions is incredibly
+satisfying.
+
+\begin{align*}
+  &(a + b)^2 = a^2 + 2ab + b^2 \\\\
+  &(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 \\\\
+  &(a^2 - b^2) = (a + b)(a - b)           &\text{Difference of Squares} \\\\
+  &(a^3 - b^3) = (a - b)(a^2 + ab + b^2)  &\text{Difference of Cubes} \\\\
+\end{align*}
+
+\subsection{Splitting Apart a Monomial}
+
+This strategy is mostly a matter of trial and error. The overall objective here
+varies, but usually what we want is to be able to decompose a single term into
+multiple in order to be able to apply a more straightforward technique.
+
+Splitting out terms like this doesn't always work, but it's simple and cheap to
+try.
+
+\begin{align*}
+  a^4 + 2a^2b^2 + b^4
+  &= a^4 + a^2b^2 + a^2b^2 + b^4 \\
+  &= a^4 + a^2b^2 + b^4 + a^2b^2 \\
+  &= a^2(a^2 + b^2) + b^2(a^2 + b^2) \\
+  &= (a^2 + b^2)^2
+\end{align*}
+
+Intuition for when this works is probably a matter of experience. Here we can
+see somewhat of a hint due to the fact that $2a^2b^2$ is suspiciously "close"
+to either $a^4$ or $b^4$. If a problem doesn't seem to work out after shuffling
+the terms around, it's likely a good idea to move on to another strategy rather
+than spend a lot of time fiddling with this one.
+
+\subsection{Adding Zero}
+
+A fan favorite. This is used quite frequently in clever proofs as well as in
+simplifying nasty computations. The intuition for when to try this comes with
+experience and time. Until then, it'll seem like a dirty trick reserved for the
+truly enlightened.
+
+Patience is key here.
+
+The idea is similar in spirit to splitting part a monomial with the exception
+that the term we're breaking up is "invisible". We're free to add and subtract
+the same quantity of course, since we'd just be \emph{adding zero}. This can be
+a good way to break up a rational expression or introduce a "missing" term that
+would support a factorization.
+
+\begin{align*}
+  x^5 + x + 1
+  &= x^5 + (x^4 + x^3 + x^2 - x^4 - x^3 - x^2) + x + 1 \\
+  &= x^3(x^2 + x + 1) - x^2(x^2 + x + 1) + x^2 + x + 1 \\
+  &= (x^3 - x^2 + 1)(x^2 + x + 1)
+\end{align*}
+
+The particular usage of adding zero above is sometimes called adding back the
+"annihilated" term(s). The reasoning behind this is that we imagine the term we
+want to add back as being cancelled out (annihiliated) at some point during the
+expansion of the polynomial.
+
+As with other techniques, there isn't a universal indicator as to whether this
+one will work. Even in the event that adding zero doesn't work, however, some
+information is usually gained from the attempt.
+
+\subsection{\( (a^n - b^n) \)}
+
+Here is a good example of where adding zero works really well. We know at some
+point in any polynomial of degree $n$ there must have been terms raised to the
+power $1, 2, \dots, n-1$, so the key idea is to enumerate them and see how the
+problem changes.
+
+Adding this many terms back ought to be done systematically so none is left out.
+If we ignore the coefficients (they get cancelled out anyway), we can make use
+of the binomial theorem as a completely mechanical way of writing down these
+terms in the same way every time.
+
+\[
+  \sum_{k=1}^n a^{n-k} b^k
+\]
+
+This has the somewhat unfortunate drawback of itemizing each term in a specific
+order, which may make it more difficult to see how the terms can be rearranged
+to work their magic. Some books that show off this strategy appear to magically
+place the terms in precisely the correct location that reveals the solution.
+
+Good for them.
+
+It's worth spending some time playing around with the ordering and making some
+educated guesses, but spending a lot of time trying dozens of permutations is
+ill-advised\footnote{Perhaps there is a rhyme or reason to figuring out the way
+to group the terms and unlock the secret of the factorization, but most of the
+time it feels like luck. Thankfully, this particular family of factorizations
+has a general form we can follow}.
+
+These derivations are worth working out as practice for manipulating terms and
+the satisfaction of solving the puzzle, however, after a few cases (maybe two),
+a general pattern starts to emerge. It's probably a good idea to conserve brain
+power and jot down the general identities somewhere (like GitHub) for posterity
+rather than working them out each time from scratch.
+
+After fooling around for awhile, the simplicity of having an $(a - b)$ factor in
+the solution seems plausible. It's good to stop and think about this hypothesis.
+If we're after $(a - b)$, it wouldn't make sense to group $(-ab^2 - b^3)$, since
+the $-1$ would factor out into $-(ab^2 + b^3)$. This at least tells us that we
+should think about grouping terms with alternate signs. Such clues are subtle,
+but can save some wasted effort.
+
+All that remains is to keep working at the problem until all the pieces fit or
+it's time to take a break and grab another coffee.
+
+\begin{align*}
+  a^3 - b^3
+  &= a^3 + (a^2b + ab^2 - a^2b - ab^2) - b^3 \\
+  &= (a^3 - a^2b) + (a^2b - ab^2) + (ab^3 - b^3) \\
+  &= a^2(a - b) + ab(a - b) + b^2(a-b) \\
+  &= (a - b)(a^2 + ab + b^2)
+\end{align*}
+
+Here's another example:
+
+\begin{align*}
+  a^4 - b^4
+  &= a^4 + a^3b + a^2b^2 + ab^3 -a^3b - a^2b^2 - ab^3 - b^4 \\
+  &= (a^4 - a^3b) + (a^2b^2 - ab^3) + (a^3b - a^2b^2) + (ab^3 - b^4) \\
+  &= a^3(a - b) + ab^2(a - b) + a^2b(a - b) + b^3(a - b) \\
+  &= (a - b)(a^3 + a^2b + ab^2 + b^3)
+\end{align*}
+
+Suspiciously similar to the cubic example. A mathematician may be inspired to
+pose a conjecture and provide a proof. For now, we'll be satisfied that one is
+likely to exist and move on.
+
+\[
+  a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b + \dots + ab^{n-2} + b^{n-1})
+\]
+
+The best thing to do when discovering a new tool is play around with it. Here's
+a general formula, so try some concrete values. An interesting identity arises
+when $b = 1$:
+
+\[
+  (a^n - 1) = (a - 1)(a^{n-1} + a^{n-2} + \dots + a + 1)
+\]
+
+\subsection{\( (a^n + b^n) \)}
+
+Approaching this kind of problem directly is too difficult. Breaking it into
+subproblems may reveal a way to re-use some of the techniques previously worked
+out. Since $n$ is a positive integer, a good guess is to consider the cases in
+which $n$ is even and odd\footnote{As it turns out, this is almost always worth
+a shot when dealing with integers.}
+
+\subsubsection{\(n\) is odd}
+
+What is special about numbers being raised to an odd power? There are a few
+ways to think about this, but scribbling down some examples is usually handy:
+
+\begin{gather*}
+  2^3 = 8 \\
+  4^3 = 64
+  5^3 = 125 \\
+  3^5 = 243
+\end{gather*}
+
+Nothing terribly insightful, however, this is due to our poor choices of $a$ and
+$b$. Variety is key here, since the forumla should hold for \emph{all} numbers
+$a$ and $b$. Trying out some negative numbers reveals a big clue:
+
+\begin{gather*}
+  -1^3 = -1 \\
+  -2^3 = -8 \\
+  -3^5 = -243 \\
+  -2^5 = -32
+\end{gather*}
+
+This shows that any number $b^n$ has the same sign as $b$ when $n$ is odd. This
+property combined with the fact that $a + b = a - (-b)$ allows the technique we
+showed previously to be used as-is:
+
+\begin{align*}
+  (a^n + b^n)
+  &= (a^n - (-b^n)) \\
+  &= (a - (-b))(a^{n-1} + a^{n-2}(-b) + \dots + a(-b)^{n-2} + (-b)^{n-1}) \\
+  &= (a + b)(a^{n-1} - a^{n-2}b + \dots - ab^{n-2} + b^{n-1})
+\end{align*}
+
+Thinking through whether $b$ is raised to an even power or odd power in each of
+the above terms explains why some terms are subtracted. Concrete examples help.
+
+\end{document}

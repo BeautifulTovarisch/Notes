@@ -7,7 +7,7 @@
 <meta name="generator" content="LaTeX Lwarp package" />
 <meta name="description" content="Personal notes on Mathematics and Computer Science" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Notes on Everything — Quadratics</title>
+<title>Notes on Everything — Factoring Tricks</title>
 <link rel="stylesheet" type="text/css" href="lwarp.css" />
 
 <script>
@@ -221,7 +221,7 @@ MathJax = {
 <body>
 
 
-<a id="index-autopage-116"></a>
+<a id="index-autopage-106"></a>
 <nav class="topnavigation"><a href="index.html" class="linkhome" >
 Home</a></nav>
 
@@ -622,177 +622,28 @@ The Quadratic Formula</a>
 </div>
 
 <!--
-...... section Quadratics ......
+...... section Factoring Tricks ......
 -->
-<h4 id="autosec-117">Quadratics</h4>
-<a id="index-autopage-117"></a>
-<a id="index-autofile-7"></a>
+<h4 id="autosec-107">Factoring Tricks</h4>
+<a id="index-autopage-107"></a>
+<a id="index-autofile-6"></a>
 
 <p>
-Polynomials of the form \(ax^2 + bx + c\) are called <b>quadratic</b>. They can also be described as polynomials of degree 2, or <b>second order</b>. A huge number of problems in physics and engineering can be modeled after a quadratic equation, and they occur
-frequently enough to warrant some special techniques.
+Factoring a polynomial is a ubquitous technique and is especially helpful with certain types of integrals (or rather in avoiding their tedious computation).
 </p>
 
 <p>
-\[ \boxed {ax^2 + bx + c} \]
-</p>
-
-<p>
-where \(a \neq 0\)
+It is important to show the derivations of these ”tricks”, since they develop critical problem-solving ability. Many of the clever ideas used in obtaining a factorization (especially ”adding zero”) are helpful regardless of context.
 </p>
 <!--
-...... subsection Finding Roots of a Quadratic Function ......
+...... subsection Basic Identities ......
 -->
-<h5 id="autosec-118">Finding Roots of a Quadratic Function</h5>
-<a id="index-autopage-118"></a>
+<h5 id="autosec-108">Basic Identities</h5>
+<a id="index-autopage-108"></a>
 
 
 <p>
-A <b>root</b> of a polynomial function \(f\) is a number, say, \(\alpha \), such that \(f(\alpha ) = 0\). Finding roots of a quadratic function is equivalent to solving \(f(x) = ax^2 + bx + c = 0\).
-</p>
-
-<p>
-Several techniques for finding roots exist:
-</p>
-<!--
-...... subsubsection Factoring ......
--->
-<h6 id="autosec-119">Factoring</h6>
-<a id="index-autopage-119"></a>
-
-
-<p>
-Factoring here is used in the same context as listing the factors of an integer, such as in <em>prime factorization</em>. Factoring allows the polynomial to be written in such as a way as to make the values for which it takes on the value zero to be obvious.
-</p>
-
-<p>
-Every polynomial can be written as a product of its factors. Quadratics have a simple form:
-</p>
-
-<p>
-\[ P(x) = (x - \alpha )(x - \beta ) \]
-</p>
-
-<p>
-where \(\alpha \) and \(\beta \) are roots of polynomial \(P\).
-</p>
-
-<p>
-For example,
-</p>
-
-<p>
-\[ x^2 - 4 = (x - 2)(x + 2) = 0 \]
-</p>
-
-<p>
-This can easily be factored by noticing the expression is the difference of two squares. This equation has solutions at \(x \pm 2\).
-</p>
-<!--
-...... subsubsection Completing the Square ......
--->
-<h6 id="autosec-120">Completing the Square</h6>
-<a id="index-autopage-120"></a>
-
-
-<p>
-A good indication to try this technique is when a quadratic function has a 1 as its first coefficient.
-</p>
-
-<p>
-\[ x^2 + bx + c \]
-</p>
-
-<p>
-This is referred to as a <b>reduced quadratic</b> form.
-</p>
-
-<p>
-Completing the square is often taught as a formula to be memorized without any context or justification as to why it works. It helps to consider both what we mean geometrically and then derive the formula with algebra.
-</p>
-<!--
-...... paragraph Geometric ......
--->
-
-
-<p>
-<span class="paragraph" id="autosec-121">Geometric</span>
-<a id="index-autopage-121"></a>
-
-</p>
-
-<p>
-TODO
-</p>
-<!--
-...... paragraph Algebraic ......
--->
-
-
-<p>
-<span class="paragraph" id="autosec-122">Algebraic</span>
-<a id="index-autopage-122"></a>
-
-</p>
-
-<p>
-The clever idea behind coming up with the formula lies in thinking about what term would need to be added to \(x^2 + bx\) in order to make it a perfect square. Another way of thinking about this is how we could start with the square of a binomial, \((x + k)^2\) and
-figure out what \(k\) and \(c\) need to be in order to be equivalent to the lefthand side<sup>4</sup>:
-</p>
-
-<p>
-\[ x^2 + bx = (x + k)^2 - c \]
-</p>
-
-<p>
-Naively computing \((x + b)^2\) might reveal a hint, since we’d end up with the square of a binomial by design. let \(k = b\):
-</p>
-
-<p>
-\[ (x + b)^2 = x^2 + 2bx + b^2 \]
-</p>
-
-<p>
-This is closer, but we got \(2bx\) instead of \(bx\) like we wanted. To get \(bx\), we could let \(k = \frac b 2\). Now see what happens:
-</p>
-
-<p>
-\[ (x + \frac b 2)^2 = x^2 + 2 (\frac b 2) x + (\frac b 2)^2 \]
-</p>
-
-<p>
-Nearly there! All that’s left to do is subtract \(c = (\frac b 2)^2\) from the equation. This gives us:
-</p>
-
-<p>
-\[ \boxed {x^2 + bx = (x + \frac b 2)^2 - (\frac b 2)^2} \]
-</p>
-
-<p>
-A typical follow-up to completing the square is solving for \(x\) via a shortcut used when an expression is the <em>difference of two squares</em>.
-</p>
-<div role="note" class="footnotes">
-
-<a id="index-autopage-123"></a>
-<p>
-<sup>4</sup>&nbsp;Working backwards like this is the way that clicked for me when nothing else did
-</p>
-
-
-</div>
-<!--
-...... subsection Vieta's Theorem ......
--->
-<h5 id="autosec-124">Vieta’s Theorem</h5>
-<a id="index-autopage-124"></a>
-
-
-<p>
-Vieta’s theorem describes the roots of a quadratic polynomial in terms of its coefficients. This is especially helpful in eliminating candidates for roots if a more straightforward approach fails.
-</p>
-
-<p>
-If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \), then
+These are worth ”memorizing” or rather, it’s a very good idea to work enough problems involving these identities that they become muscle memory. Being able to recognize when a problem reduces to one of these expressions is incredibly satisfying.
 </p>
 
 <span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
@@ -801,114 +652,18 @@ If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \
 <!--
 
 
-                                                                                         α+β                                                                                            = −p           (2)
-                                                                                         αβ                                                                                             = −q           (3)
+                                                                       (a + b)2 = a2 + 2ab + b2
 
 
--->
+                                                                       (a + b)3 = a3 + 3a2 b + 3ab2 + b3
 
 
-<p>
-
-\begin{align}
-&amp;\alpha + \beta &amp;= -p \\ &amp;\alpha \beta &amp;= -q
-\end{align}
-
-</p>
-<div class="amsthmproof">
-
-<a id="index-autopage-125"></a>
-
-<ul class="list" style="list-style-type:none">
+                                                                       (a2 − b2 ) = (a + b)(a − b)                                                                             Difference of Squares
 
 
-<li>
-<p>
-<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> (Theorem): <span class="theoremendmark">&#x25A1;</span>
-</p>
-
-</li>
-
-</ul>
-
-</div>
-
-<p>
-Vieta’s theorem also has a corollary:
-</p>
-
-<p>
-If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \),
-</p>
-
-<p>
-\[ (x - \alpha )(x - \beta ) = x^2 - (\alpha + \beta ) + \alpha \beta \]
-</p>
-<div class="amsthmproof">
-
-<a id="index-autopage-126"></a>
-
-<ul class="list" style="list-style-type:none">
+                                                                       (a3 − b3 ) = (a − b)(a2 + ab + b2 )                                                                       Difference of Cubes
 
 
-<li>
-<p>
-<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> <span class="theoremendmark">&#x25A1;</span>
-</p>
-
-</li>
-
-</ul>
-
-</div>
-<!--
-...... subsection The Quadratic Formula ......
--->
-<h5 id="autosec-127">The Quadratic Formula</h5>
-<a id="index-autopage-127"></a>
-
-
-<p>
-The famous quadratic formula has a surprisingly simple derivation based on the formula for completing the square. Simply solving a ”completed square” for \(x\) yields the formula.
-</p>
-
-<p>
-Begin by factoring out the leading coefficient \(a\):
-</p>
-
-<span class="hidden"> \(\seteqnumber{0}{}{3}\)</span>
-
-
-<!--
-
-
-                                                                                  b     c
-                                                             ax2 + bx + c = x2 + ( )x +
-                                                                                  a     a
-
-                                                                                    b 2     b    c
-                                                                          = (x +      ) − ( )x −                                                                                      completing the square
-                                                                                   2a      2a    a
-
-
-                                                                                    b 2   b2 − 4ac
-                                                                          = (x +      ) −                                                                                                        by algebra
-                                                                                   2a        4a2
-
-                                                                                        s                         s
-                                                                                  b         b2 − 4ac        b         b2 − 4ac
-                                                                          = (x +    +                )(x +    −                )                                                       difference of squares
-                                                                                 2a            4a2         2a            4a2
-
-                                                                                                √
-                                                                                        b           b2 − 4ac
-                                                                           =⇒ x = −       ±
-                                                                                       2a             2a
-
-                                                                                            √
-                                                                                     −b ±     b2 − 4ac
-                                                                           =⇒ x =
-                                                                                             2a
 
 
 -->
@@ -917,13 +672,333 @@ Begin by factoring out the leading coefficient \(a\):
 <p>
 
 \begin{align*}
-\label {eqn:quadratic_formula} ax^2 + bx + c &amp;= x^2 + (\frac b a)x + \frac c a \\\\ &amp;= (x + \frac b {2a})^2 - (\frac b {2a})x - \frac c a &amp;\text {completing the square} \\\\ &amp;= (x + \frac b {2a})^2 - \frac {b^2 - 4ac}
-{4a^2} &amp;\text {by algebra} \\\\ &amp;= (x + \frac b {2a} + \sqrt {\frac {b^2 - 4ac} {4a^2}})(x + \frac b {2a} - \sqrt {\frac {b^2 - 4ac} {4a^2}}) &amp;\text {difference of squares} \\\\ &amp;\implies x = -\frac b {2a} \pm \frac {\sqrt
-{b^2 - 4ac}} {2a} \\\\ &amp;\implies x = \frac {-b \pm \sqrt {b^2 - 4ac}} {2a}
+&amp;(a + b)^2 = a^2 + 2ab + b^2 \\\\ &amp;(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 \\\\ &amp;(a^2 - b^2) = (a + b)(a - b) &amp;\text {Difference of Squares} \\\\ &amp;(a^3 - b^3) = (a - b)(a^2 + ab + b^2) &amp;\text {Difference of Cubes}
+\\\\
 \end{align*}
 
 </p>
-<a id="index-autofile-last"></a>
+<!--
+...... subsection Splitting Apart a Monomial ......
+-->
+<h5 id="autosec-109">Splitting Apart a Monomial</h5>
+<a id="index-autopage-109"></a>
+
+
+<p>
+This strategy is mostly a matter of trial and error. The overall objective here varies, but usually what we want is to be able to decompose a single term into multiple in order to be able to apply a more straightforward technique.
+</p>
+
+<p>
+Splitting out terms like this doesn’t always work, but it’s simple and cheap to try.
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                                  a4 + 2a2 b2 + b4 = a4 + a2 b2 + a2 b2 + b4
+                                                                                                                                   = a4 + a2 b2 + b4 + a2 b2
+                                                                                                                                   = a2 (a2 + b2 ) + b2 (a2 + b2 )
+                                                                                                                                   = (a2 + b2 )2
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+a^4 + 2a^2b^2 + b^4 &amp;= a^4 + a^2b^2 + a^2b^2 + b^4 \\ &amp;= a^4 + a^2b^2 + b^4 + a^2b^2 \\ &amp;= a^2(a^2 + b^2) + b^2(a^2 + b^2) \\ &amp;= (a^2 + b^2)^2
+\end{align*}
+
+</p>
+
+<p>
+Intuition for when this works is probably a matter of experience. Here we can see somewhat of a hint due to the fact that \(2a^2b^2\) is suspiciously ”close” to either \(a^4\) or \(b^4\). If a problem doesn’t seem to work out after shuffling the terms around, it’s likely a
+good idea to move on to another strategy rather than spend a lot of time fiddling with this one.
+</p>
+<!--
+...... subsection Adding Zero ......
+-->
+<h5 id="autosec-110">Adding Zero</h5>
+<a id="index-autopage-110"></a>
+
+
+<p>
+A fan favorite. This is used quite frequently in clever proofs as well as in simplifying nasty computations. The intuition for when to try this comes with experience and time. Until then, it’ll seem like a dirty trick reserved for the truly enlightened.
+</p>
+
+<p>
+Patience is key here.
+</p>
+
+<p>
+The idea is similar in spirit to splitting part a monomial with the exception that the term we’re breaking up is ”invisible”. We’re free to add and subtract the same quantity of course, since we’d just be <em>adding zero</em>. This can be a good way to break up a rational
+expression or introduce a ”missing” term that would support a factorization.
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                             x5 + x + 1 = x5 + (x4 + x3 + x2 − x4 − x3 − x2 ) + x + 1
+                                                                                                                        = x3 (x2 + x + 1) − x2 (x2 + x + 1) + x2 + x + 1
+                                                                                                                        = (x3 − x2 + 1)(x2 + x + 1)
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+x^5 + x + 1 &amp;= x^5 + (x^4 + x^3 + x^2 - x^4 - x^3 - x^2) + x + 1 \\ &amp;= x^3(x^2 + x + 1) - x^2(x^2 + x + 1) + x^2 + x + 1 \\ &amp;= (x^3 - x^2 + 1)(x^2 + x + 1)
+\end{align*}
+
+</p>
+
+<p>
+The particular usage of adding zero above is sometimes called adding back the ”annihilated” term(s). The reasoning behind this is that we imagine the term we want to add back as being cancelled out (annihiliated) at some point during the expansion of the polynomial.
+</p>
+
+<p>
+As with other techniques, there isn’t a universal indicator as to whether this one will work. Even in the event that adding zero doesn’t work, however, some information is usually gained from the attempt.
+</p>
+<!--
+...... subsection ......
+-->
+<h5 id="autosec-111">\((a^n - b^n) \)</h5>
+<a id="index-autopage-111"></a>
+
+
+<p>
+Here is a good example of where adding zero works really well. We know at some point in any polynomial of degree \(n\) there must have been terms raised to the power \(1, 2, \dots , n-1\), so the key idea is to enumerate them and see how the problem changes.
+</p>
+
+<p>
+Adding this many terms back ought to be done systematically so none is left out. If we ignore the coefficients (they get cancelled out anyway), we can make use of the binomial theorem as a completely mechanical way of writing down these terms in the same way every time.
+</p>
+
+<p>
+\[ \sum _{k=1}^n a^{n-k} b^k \]
+</p>
+
+<p>
+This has the somewhat unfortunate drawback of itemizing each term in a specific order, which may make it more difficult to see how the terms can be rearranged to work their magic. Some books that show off this strategy appear to magically place the terms in precisely
+the correct location that reveals the solution.
+</p>
+
+<p>
+Good for them.
+</p>
+
+<p>
+It’s worth spending some time playing around with the ordering and making some educated guesses, but spending a lot of time trying dozens of permutations is ill-advised<sup>2</sup>.
+</p>
+
+<p>
+These derivations are worth working out as practice for manipulating terms and the satisfaction of solving the puzzle, however, after a few cases (maybe two), a general pattern starts to emerge. It’s probably a good idea to conserve brain power and jot down the general
+identities somewhere (like GitHub) for posterity rather than working them out each time from scratch.
+</p>
+
+<p>
+After fooling around for awhile, the simplicity of having an \((a - b)\) factor in the solution seems plausible. It’s good to stop and think about this hypothesis. If we’re after \((a - b)\), it wouldn’t make sense to group \((-ab^2 - b^3)\), since the \(-1\) would factor
+out into \(-(ab^2 + b^3)\). This at least tells us that we should think about grouping terms with alternate signs. Such clues are subtle, but can save some wasted effort.
+</p>
+
+<p>
+All that remains is to keep working at the problem until all the pieces fit or it’s time to take a break and grab another coffee.
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                                   a3 − b3 = a3 + (a2 b + ab2 − a2 b − ab2 ) − b3
+                                                                                                                            = (a3 − a2 b) + (a2 b − ab2 ) + (ab3 − b3 )
+                                                                                                                            = a2 (a − b) + ab(a − b) + b2 (a − b)
+                                                                                                                            = (a − b)(a2 + ab + b2 )
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+a^3 - b^3 &amp;= a^3 + (a^2b + ab^2 - a^2b - ab^2) - b^3 \\ &amp;= (a^3 - a^2b) + (a^2b - ab^2) + (ab^3 - b^3) \\ &amp;= a^2(a - b) + ab(a - b) + b^2(a-b) \\ &amp;= (a - b)(a^2 + ab + b^2)
+\end{align*}
+
+</p>
+
+<p>
+Here’s another example:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                           a4 − b4 = a4 + a3 b + a2 b2 + ab3 − a3 b − a2 b2 − ab3 − b4
+                                                                                                                   = (a4 − a3 b) + (a2 b2 − ab3 ) + (a3 b − a2 b2 ) + (ab3 − b4 )
+                                                                                                                   = a3 (a − b) + ab2 (a − b) + a2 b(a − b) + b3 (a − b)
+                                                                                                                   = (a − b)(a3 + a2 b + ab2 + b3 )
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+a^4 - b^4 &amp;= a^4 + a^3b + a^2b^2 + ab^3 -a^3b - a^2b^2 - ab^3 - b^4 \\ &amp;= (a^4 - a^3b) + (a^2b^2 - ab^3) + (a^3b - a^2b^2) + (ab^3 - b^4) \\ &amp;= a^3(a - b) + ab^2(a - b) + a^2b(a - b) + b^3(a - b) \\ &amp;= (a - b)(a^3 + a^2b +
+ab^2 + b^3)
+\end{align*}
+
+</p>
+
+<p>
+Suspiciously similar to the cubic example. A mathematician may be inspired to pose a conjecture and provide a proof. For now, we’ll be satisfied that one is likely to exist and move on.
+</p>
+
+<p>
+\[ a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b + \dots + ab^{n-2} + b^{n-1}) \]
+</p>
+
+<p>
+The best thing to do when discovering a new tool is play around with it. Here’s a general formula, so try some concrete values. An interesting identity arises when \(b = 1\):
+</p>
+
+<p>
+\[ (a^n - 1) = (a - 1)(a^{n-1} + a^{n-2} + \dots + a + 1) \]
+</p>
+<div role="note" class="footnotes">
+
+<a id="index-autopage-112"></a>
+<p>
+<sup>2</sup>&nbsp;Perhaps there is a rhyme or reason to figuring out the way to group the terms and unlock the secret of the factorization, but most of the time it feels like luck. Thankfully, this particular family of factorizations has a general form we can follow
+</p>
+
+
+</div>
+<!--
+...... subsection ......
+-->
+<h5 id="autosec-113">\((a^n + b^n) \)</h5>
+<a id="index-autopage-113"></a>
+
+
+<p>
+Approaching this kind of problem directly is too difficult. Breaking it into subproblems may reveal a way to re-use some of the techniques previously worked out. Since \(n\) is a positive integer, a good guess is to consider the cases in which \(n\) is even and
+odd<sup>3</sup>
+</p>
+<div role="note" class="footnotes">
+
+<a id="index-autopage-114"></a>
+<p>
+<sup>3</sup>&nbsp;As it turns out, this is almost always worth a shot when dealing with integers.
+</p>
+
+
+</div>
+<!--
+...... subsubsection is odd ......
+-->
+<h6 id="autosec-115">\(n\) is odd</h6>
+<a id="index-autopage-115"></a>
+
+
+<p>
+What is special about numbers being raised to an odd power? There are a few ways to think about this, but scribbling down some examples is usually handy:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                                                     23 = 8
+                                                                                                                                 43 = 6453 = 125
+                                                                                                                                    35 = 243
+
+
+-->
+
+
+<p>
+
+\begin{gather*}
+2^3 = 8 \\ 4^3 = 64 5^3 = 125 \\ 3^5 = 243
+\end{gather*}
+
+</p>
+
+<p>
+Nothing terribly insightful, however, this is due to our poor choices of \(a\) and \(b\). Variety is key here, since the forumla should hold for <em>all</em> numbers \(a\) and \(b\). Trying out some negative numbers reveals a big clue:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                                                   −13 = −1
+                                                                                                                                   −23 = −8
+                                                                                                                                  −35 = −243
+                                                                                                                                   −25 = −32
+
+
+-->
+
+
+<p>
+
+\begin{gather*}
+-1^3 = -1 \\ -2^3 = -8 \\ -3^5 = -243 \\ -2^5 = -32
+\end{gather*}
+
+</p>
+
+<p>
+This shows that any number \(b^n\) has the same sign as \(b\) when \(n\) is odd. This property combined with the fact that \(a + b = a - (-b)\) allows the technique we showed previously to be used as-is:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{1}\)</span>
+
+
+<!--
+
+
+                                                                                                    (an + bn ) = (an − (−bn ))
+                                                                                                              = (a − (−b))(an−1 + an−2 (−b) + · · · + a(−b)n−2 + (−b)n−1 )
+                                                                                                              = (a + b)(an−1 − an−2 b + · · · − abn−2 + bn−1 )
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+(a^n + b^n) &amp;= (a^n - (-b^n)) \\ &amp;= (a - (-b))(a^{n-1} + a^{n-2}(-b) + \dots + a(-b)^{n-2} + (-b)^{n-1}) \\ &amp;= (a + b)(a^{n-1} - a^{n-2}b + \dots - ab^{n-2} + b^{n-1})
+\end{align*}
+
+</p>
+
+<p>
+Thinking through whether \(b\) is raised to an even power or odd power in each of the above terms explains why some terms are subtracted. Concrete examples help.
+</p>
+
 </section>
 
 </main>
