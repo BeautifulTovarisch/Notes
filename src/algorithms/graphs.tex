@@ -1,0 +1,308 @@
+\documentclass{standalone}
+\begin{document}
+
+\section{Graphs} \label{sec:graphs}
+
+An extraordinary number of problems can be modeled by graphs. Despite being
+relatively simple, graph algorithms form the basis for more advanced solutions
+to problems concering connectivity, precedence, optimality, and much more. The
+solution to a graph problem is usually built on top of the methodology used to
+explore the nodes in a graph, or \textbf{\emph{graph traversal}} algorithm.
+
+\subsection{Cuts} \label{sec:graphs:cuts}
+
+A graph cut is a way of partitioning the nodes of a graph into two non-empty
+sets. Cuts and their properties are very useful to model various kinds of graph
+problems, and algorithms frequently exploit properties of a cut to obtain some
+desired solution. For example, certain computer vision problems can be solved
+using graph-cut optimization algorithms.
+
+Considering the edges "crossing" the cut also reveals information about a graph
+itself, and is the basis for a large number of graph algorithms.
+
+% TODO: tikz figure, edges crossing the cut
+
+Fun fact:
+
+\begin{theorem}
+  A graph $G = (V,E)$ with $n \geqslant 2$ vertices has exactly $2^n - 2$ graph
+  cuts.
+\end{theorem}
+
+\begin{proof}
+  This proof is rather short, but hints at a strong connection between graphs
+  and combinatorics. The main idea behind the proof is to recognize that there
+  are two choices for a given node to be placed into a set. Call the two sets
+  a node can be placed into $A$ and $B$. We'll start by counting the total ways
+  to assign nodes to either set. Invoking the product rule $n$ times, with two
+  choices per invocation:
+
+  \[
+    \underbrace{2 \cdot 2 \cdot \dots \cdot 2}_\text{$n$ choices} = 2^n
+  \]
+
+  However, the definition of a cut forbids either set from being empty. To make
+  up for this, we need to subtract the invalid cases from the total. Since this
+  problem only makes senses for graphs with at least two nodes, the only way a
+  set can be empty is if we shove all the nodes into one or the other. This can
+  only be done two ways; either they all go into $A$, leaving $B$ empty, or the
+  reverse. Therefore, the grand total comes out to:
+
+  \[
+    2^n - 2
+  \]
+\end{proof}
+
+\subsubsection{Properties of a Graph Cut}
+
+Some basic properties of a graph cut serve an important role in proving graph
+algorithms to be correct. A notable example is Prim's algorithm, which relies
+on the \textbf{Cut Property} for its proof. Here's three important properties
+and their proofs
+
+\paragraph{Empty Cut}
+
+This lemma is an interesting way to rephrase what it means for a graph to be
+connected. Actually, the empty cut lemma is usually given as the contrapositive
+statement, that a graph is not connected if there is even a single cut where no
+edges are crossing. In other words, if there is some partitioning of nodes such
+that the sets can't reach other (since there are no crossing edges), then this
+means we've found (at least) two subgraphs that have no connection between them
+which is the definition of a disconnected graph. A picture greatly clarifies the
+situation:
+
+% TODO: Disconnected graph + empty cut diagram
+
+\begin{lemma} \label{lem:emptycut}
+  A graph $G = (V, E)$ is disconnected if and only if there is some cut $C$ in
+  which there are no crossing edges.
+\end{lemma}
+
+\begin{proof}
+  Starting with the righthand side, if there are no edges crossing the cut, all
+  we have to do is select a vertex from either of the sets and see that there's
+  no path from one to the other. But if there are \emph{any} two vertices that
+  can't reach one another in a graph, it's disconnected by definition.
+
+  If $G$ is disconnected, then there must be at least two groups of nodes that
+  \emph{are} connected. This holds even in the extreme case of a graph with no
+  edges. Finding a cut with no crossing edges is a matter of identifying two of
+  these disconnected groups and placing them in opposite sets in the cut. Seen
+  another way, since $G$ is disconnected, it must have at least two connected
+  components. We can compute those and create the necessary partition. Now for
+  the formalities:
+
+  Suppose $G$ is disconnected. Then there exist vertices $u, v \in V$ such that
+  there is no path from $u$ to $v$. Construct a graph cut as follows, in one of
+  the sets in the partition, place all of those nodes reachable from $u$. Let
+  this set be called $A$ and its construction be given by
+
+  \[
+    A = \{u' \in V \mid \exists \; \text{a path from $u$ to $u'$ in $G$} \}
+  \]
+
+  Similarly, construct the other set in the partition, $B$ as those nodes that
+  can be reached by $v$
+
+  \[
+    B = \{v' \in V \mid \exists \; \text{a path from $v$ to $v'$ in $G$} \}
+  \]
+
+  These sets are disjoint, and there cannot be any edge from a vertex in $A$ to
+  one in $B$. Therefore, we have exhibited a cut with no crossing edges and the
+  forward direction is shown.
+
+  To see the reverse implication, assume that there exists a cut with no edges
+  between the elements of either set forming the partition of nodes. Select an
+  arbitrary node from either, say $u, v$ and notice by construction there is no
+  path from $u$ to $v$. But then by definition there exist vertices in $G$ such
+  that no path exists between them, and so $G$ cannot be connected.
+\end{proof}
+
+\paragraph{Double-Crossing Lemma}
+
+This lemma claims that if some edge in a cycle crosses a graph cut, then there
+must be at least two edges of that cycle crossing it. If this isn't intuitive,
+another way to think about it is to imagine that some nodes involved in a cycle
+are in one set of the partition and the rest are in the other. Since we have a
+cycle, we know we can start at one vertex and travel the edges until returning
+to the start. This means that each set has one "way out" and one "way in". If
+this were not the case, then we wouldn't be able to get back to the beginning
+of the cycle, which would mean we didn't actually have one to begin with!
+
+This seemingly random bit of knowledge presents itself in a very elegant way in
+trying to prove the output of certain algorithms is a bona fide tree. A cycle
+is not allowed in a tree, and so if we can be certain that only one edge among
+all of the ones crossing the cut is ever chosen, we eliminate any possibility
+of ever forming a cycle. This is similar to some arguments which systematically
+remove the edges of a cycle in a connected graph until none exists, just from
+the opposite perspective.
+
+\begin{lemma} \label{lem:doublecross}
+  Suppose a cycle $C \in E$ has an edge crossing the cut $(A, B)$. Then there
+  must be at least two edges of $C$ crossing the cut.
+\end{lemma}
+
+\begin{proof}
+  To prove the Double-Crossing Lemma, all we have to show is that it is not
+  possible for a cycle which has an edge crossing a cut to have fewer than 2
+  such edges. To see this imagine if there were only one edge, and attempt to
+  navigate the cycle back to the starting point. Clearly it's impossible, since
+  there's no way back to the beginning.
+
+  This reasoning is straightforward, and a more formal proof barely serves any
+  purpose in providing additional clarity. Nevertheless:
+
+  Suppose $C \in E$ has an edge crossing the cut labeled $(A, B)$ and further
+  suppose by way of contradiction that $C$ has fewer than 2 edges crossing the
+  cut. By assumption, $C$ has at least one edge, so it will suffice to consider
+  the case in which $C$ has exactly one crossing edge.
+
+  Choose an arbitrary vertex, say $u$, involved in $C$. By definition, there is
+  a path:
+
+  \[
+    u-e_1-v_1-e_2-\dots-v_{n-1}-e_{n-1}-u
+  \]
+
+  such that $e_1 \neq e_{n-1}$. Consider the edge $e_j$ in $C$ crossing the cut
+  which has endpoints $v_i, v_j \; i \neq j$. Then $v_j$ is in the opposite set
+  of $u$. By definition of a cycle, there must be some path from $v_j$ to $u$.
+  This is impossible, since such an edge would need contain vertices $v_k, v_l$
+  with $v_k$ in the same set as $v_j$ and $v_l$ in the same set as $u$, meaning
+  it would have to cross the cut. This contradicts the claim that $C$ had only
+  single edge crossing the cut, and thus the proof is complete.
+\end{proof}
+
+% TODO: Picture
+
+\subsection{Depth-First Search}
+
+Depth-first search is arguably the simpler of the two main traversal algorithms.
+The key idea is to explore a graph as "deeply" as possible, following the trail
+of nodes as far as possible before backtracking out to the starting point. DFS
+ignores neighbors until after there are no additional nodes to explore or after
+reaching an already visited node.
+
+% TODO: Picture (animation???)
+
+\begin{algorithm}
+  \caption{Depth-First Search}
+  \begin{algorithmic}
+  \State visited = $\emptyset$
+  \Procedure{DFS}{$v$}
+  \State add $v$ to visited
+  \For{$u \in V$ such that $(v, u) \in E$}
+  \If{$u \not \in$ visited}
+  \State DFS($u$)
+    \EndIf
+    \EndFor
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
+% \subsubsection{Cycle Detection}
+
+% TODO
+
+\subsubsection{Analysis}
+
+Depth-first search explores each reachable node from starting vertex $v$ and traverses edge incident on $v$. Additionally, the check for whether a node has been visited before (using a hash) runs in expected $O(1)$ time.
+
+Due to visiting every node, the runtime of DFS is $O(|V| + |E|)$.
+
+\subsection{Breadth-First Search}
+
+Breadth-first search (BFS) proceeds to process the "levels" of a graph, proceeding only when every neighbor of the current node has been explored. Typical implementations enqueue the neighbors of a vertex in order to enforce a BFS discipline.
+
+\begin{algorithm}
+  \caption{Breadth-First Search}
+  \begin{algorithmic}
+  \State $Q = \{v\}$
+  \State visited = $\emptyset$
+  \While{$Q$ is not empty}
+    \State $u =$ dequeue($Q$)
+    \For{$w \in V$ such that $(u, w) \in E$}
+      \If{$w \not \in$ visited}
+        \State add $w$ to visited
+        \State enqueue($Q, w$)
+      \EndIf
+    \EndFor
+  \EndWhile
+  \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Analysis}
+
+Similar to DFS, the runtime of BFS is $O(|V| + |E|)$ assuming an implementation of a queue which allows constant time add and remove operations.
+
+\subsection{Topological Ordering}
+
+A Topological ordering in a directed graph is the order in which DFS explores vertices (formally called reverse post-order).  The topological sort algorithm computes a valid topological ordering of a directed graph $G$, if one exists.
+
+Such orderings are typically used to determine whether a precedence graph is logically consistent, and if so, compute a correct sequence of operations.
+
+\begin{algorithm}
+  \caption{TopoSort}
+  \begin{algorithmic}
+  \Require{$G$ is a directed acyclic graph}
+  \State visited = $\emptyset$
+  \State processing = $\emptyset$
+  \State ordering = Stack \\
+  \Procedure{DFS}{$v$}
+    \State mark $v$ as visited
+    \State processing(v) = True
+    \For{$u$ such that $(v, u) \in E$}
+      \If{$u \not \in visited$}
+        \State DFS($u$)
+        \ElsIf{$u$ is a node currently being processed}
+        \Return	"no topological ordering"
+      \EndIf
+    \EndFor
+    \State processing(v) = False
+    \State ordering.push(v)
+  \EndProcedure
+  \For{$v \in V$}
+    \If {$v \not \in visited$}
+      \State DFS($v$)
+    \EndIf
+  \EndFor
+  \Return ordering
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection{Strongly Connected Components}
+
+We define "strongly-connected" as a relation between two vertices $u, v \in V$ such that $(u, v) \in R$ if there exists a path from $u$ to $v$ and a path from $v$ to $u$. Strongly connected components represent an equivalence class of the vertices of that component.
+
+Kosaraju's algorithm computes the strongly connected components of $G = (V, E)$ via two passes. The first past computes a "topological ordering" of the reverse of $G$, $G_{\text{rev}}$, which provides the ordering necessary to provide to an additional pass of DFS.
+
+> Note that there cannot be a valid topological ordering in the strictest sense due to the fact that there must be a cycle in a directed graph in order for two vertices to be strongly connected.
+
+\begin{algorithm}
+  \caption{Kosaraju-Sharir}
+  \begin{algorithmic}
+  \State scc = $\emptyset$
+  \State count = 0
+  \State visited = $\emptyset$
+  \State ordering = \Call{TopoSort}{$G_{\text{rev}}$}
+    \State \\
+  \Function{DFS-SCC}{$G, v$}
+  \State mark $v$ as visited
+  \State scc($v$) = count
+  \For{$u \in V$ such that $(v, u) \in E$}
+  \If{$u \not \in$ visited}
+  \State DFS-SCC($G, u$)
+    \EndIf
+    \EndFor
+    \EndFunction
+    \For{$v$ in ordering}
+    \State DFS-SCC($G, v$)
+    \State count = count + 1
+    \EndFor
+    \State \\
+    \Return scc
+  \end{algorithmic}
+\end{algorithm}
+
+\end{document}

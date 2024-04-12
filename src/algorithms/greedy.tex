@@ -85,6 +85,7 @@ First, a precise statement of the theorem:
   from $s$ to every (reachable) $v \in V$.
 \end{theorem}
 
+% TODO: Rewrite to not sound like a dick.
 \begin{proof}[Proof of Dijkstra's Shortest-Path Algorithm] \label{prf:dijkstra}
   Let $k$ be the current iteration of the while loop in Dijkstra's algorithm,
   that is, the $k$th choice of vertex, say, $v$ to be added to the solution.
@@ -151,13 +152,30 @@ First, a precise statement of the theorem:
 
 \subsubsection{Analysis}
 
-The cost of repeatedly selecting the minimum edge via brute force dominates the runtime of the algorithm. For $G = (V, E)$, we traverse $|V|$ nodes, each time performing $O(|E|)$ work to select the minimum edge crossing the cut. Therefore, the naive version of Dijkstra's runs in $O(|E||V|)$.
+% TODO: git gud and perform a proper analysis.
 
-Using a [[Heap]] this algorithm can be sped up significantly, achieving $O((|E| + |V|)\log|V|)$ runtime.
+The cost of repeatedly selecting the minimum edge via brute force dominates the
+runtime of the algorithm. For $G = (V, E)$, we traverse $|V|$ nodes, each time
+performing $O(|E|)$ work to select the minimum edge crossing the cut. Therefore,
+the naive version of Dijkstra's runs in $O(|E||V|)$.
+
+Using a [[Heap]] this algorithm can be sped up significantly, achieving
+$O((|E| + |V|)\log|V|)$ runtime.
 
 \subsection{Prim's MST Algorithm}
 
-Prim's algorithm for computing a minimum-spanning tree. The algorithm functions almost identically to Dijkstra's algorithm in that the minimum incident edge is always chosen for the solution.
+"Robert Prim's" algorithm, which was actually discovered a few decades prior,
+computes a minimum spanning tree of an undirected graph. The general strategy
+is very close to how Dijkstra's chooses which edge weight will be used in order
+to compute the current distance from the starting vertex. The main idea here is
+simply to choose the minimum edge out of all the edges crossing the cut formed
+by visited and unvisited nodes in $V$.
+
+The key difference is subtle, but important. Dijkstra's algorithm chooses the
+edge which minimizes the total distance from the starting vertex, while Prim's
+chooses the edge with minimum individual cost. This has the overall effect of
+\emph{minimizing} the \emph{maximum} edge cost along every path. This key fact
+is critical in proving Prim's algorithm correct.
 
 \begin{center}
   \begin{tikzpicture}[
@@ -193,7 +211,13 @@ Prim's algorithm for computing a minimum-spanning tree. The algorithm functions 
 \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{Analysis}
+\subsubsection{Correctness}
+
+We need to prove that Prim's algorithm not only computes a spanning tree, but
+that this tree is the best possible one that could have been produced. There's
+some initial paperwork to be done in order to set up the ideas behind the proof.
+
+\subsubsection{Runtime Analysis}
 
 Once again the cost of repeatedly selecting the minimum edge dominates the
 runtime of the algorithm leading to $O(|V||E|)$ worst-case runtime.
@@ -325,7 +349,7 @@ For example, given the frequencies:
   \hline
 \end{tabular}
 
-Huffman's greedy algorithm will produce the following encoding tree
+Huffman's greedy algorithm will produce the following encoding tree:
 
 \begin{figure}
   \centering
@@ -358,12 +382,19 @@ Huffman's greedy algorithm will produce the following encoding tree
   \label{fig:huffman_tree}
 \end{figure}
 
-which ensures that symbol $a$, the most frequently encountered will be the quickest to encode and decode since its depth in minimized in the output.
+which ensures that symbol $a$, the most frequently encountered will be the
+quickest to encode and decode since its depth in minimized in the output.
 
 \subsubsection{Analysis}
 
-Preprocessing the nodes can be done quickly in $O(n)$ time. The inner loop of the algorithm is bound by the time it takes to select a minimum, therefore, repeated brute-force searching for minima each iteration leads to $O(n^2)$ runtime.
+Preprocessing the nodes can be done quickly in $O(n)$ time. The inner loop of
+the algorithm is bound by the time it takes to select a minimum, therefore,
+repeated brute-force searching for minima each iteration leads to a runtime of
+$O(n^2)$.
 
-Once again, however, a [[Heap]] can be used to retrieve the minimum trees in constant time with $O(\log n)$ re-balance operations. This results in a much better runtime of $O(n \log n)$.
+Once again, the Heap data structure is a perfect fit for this kind of problem.
+A heap is initialized with the frequencies provided to the algorithm, and keeps
+track of the current minimum by re-balancing in $O(\log n)$ time. This speeds up
+Huffman's algorithm tremendously, bringing the runtime down to $O(n \log n)$.
 
 \end{document}

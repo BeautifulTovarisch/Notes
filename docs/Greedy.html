@@ -1,0 +1,1565 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="author" content="Anthony" />
+<meta name="generator" content="LaTeX Lwarp package" />
+<meta name="description" content="Personal notes on Mathematics and Computer Science" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes on Everything — Greedy</title>
+<link rel="stylesheet" type="text/css" href="lwarp.css" />
+
+<script>
+// Lwarp MathJax emulation code
+//
+// Based on code by Davide P. Cervone.
+// Equation numbering: https://github.com/mathjax/MathJax/issues/2427
+// Starred and ifnextchar macros: https://github.com/mathjax/MathJax/issues/2428
+// \left, \right delimiters: https://github.com/mathjax/MathJax/issues/2535
+//
+// Modified by Brian Dunn to adjust equation numbering and add subequations.
+//
+// LaTeX can use \seteqnumber{subequations?}{section}{number} before each equation.
+// subequations? is 0 usually, 1 if inside subequations.
+// section is a string printed as-is, or empty.
+// number is auto-incremented by MathJax between equations.
+//
+MathJax = {
+  subequations: "0",
+  section: "",
+  loader: {
+    load: ['[tex]/tagformat', '[tex]/textmacros'],
+  },
+  startup: {
+    ready() {
+      // These would be replaced by import commands if you wanted to make
+      // a proper extension.
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      const Macro = MathJax._.input.tex.Symbol.Macro;
+      const TexError = MathJax._.input.tex.TexError.default;
+      const ParseUtil = MathJax._.input.tex.ParseUtil.default;
+      const expandable = MathJax._.util.Options.expandable;
+
+       // Insert the replacement string into the TeX string, and check
+       // that there haven't been too many maxro substitutions (prevents
+       // infinite loops).
+       const useArgument = (parser, text) => {
+         parser.string = ParseUtil.addArgs(parser, text, parser.string.slice(parser.i));
+         parser.i = 0;
+         if (++parser.macroCount > parser.configuration.options.maxMacros) {
+           throw new TexError('MaxMacroSub1',
+           'MathJax maximum macro substitution count exceeded; ' +
+           'is there a recursive macro call?');
+         }
+       }
+
+       // Create the command map for:
+       //     \ifstar, \ifnextchar, \ifblank, \ifstrequal, \gsub, \seteqnumber
+       new CommandMap('Lwarp-macros', {
+         ifstar: 'IfstarFunction',
+         ifnextchar: 'IfnextcharFunction',
+         ifblank: 'IfblankFunction',
+         ifstrequal: 'IfstrequalFunction',
+         gsubstitute: 'GsubstituteFunction',
+         seteqnumber: 'SeteqnumberFunction'
+       }, {
+         // This function implements an ifstar macro.
+         IfstarFunction(parser, name) {
+            const resultstar = parser.GetArgument(name);
+            const resultnostar = parser.GetArgument(name);
+            const star = parser.GetStar();                 // true if there is a *
+            useArgument(parser, star ? resultstar : resultnostar);
+         },
+
+          // This function implements an ifnextchar macro.
+          IfnextcharFunction(parser, name) {
+            let whichchar = parser.GetArgument(name);
+            if (whichchar.match(/^(?:0x[0-9A-F]+|[0-9]+)$/i)) {
+              // $ syntax highlighting
+              whichchar = String.fromCodePoint(parseInt(whichchar));
+            }
+            const resultnextchar = parser.GetArgument(name);
+            const resultnotnextchar = parser.GetArgument(name);
+            const gotchar = (parser.GetNext() === whichchar);
+            useArgument(parser, gotchar ? resultnextchar : resultnotnextchar);
+          },
+
+          // This function implements an ifblank macro.
+          IfblankFunction(parser, name) {
+            const blankarg = parser.GetArgument(name);
+            const resultblank = parser.GetArgument(name);
+            const resultnotblank = parser.GetArgument(name);
+            const isblank = (blankarg.trim() == "");
+            useArgument(parser, isblank ? resultblank : resultnotblank);
+          },
+
+          // This function implements an ifstrequal macro.
+          IfstrequalFunction(parser, name) {
+            const strequalfirst = parser.GetArgument(name);
+            const strequalsecond = parser.GetArgument(name);
+            const resultequal = parser.GetArgument(name);
+            const resultnotequal = parser.GetArgument(name);
+            const isequal = (strequalfirst == strequalsecond);
+            useArgument(parser, isequal ? resultequal : resultnotequal);
+          },
+
+          // This function implements a gsub macro.
+          GsubstituteFunction(parser, name) {
+            const gsubfirst = parser.GetArgument(name);
+            const gsubsecond = parser.GetArgument(name);
+            const gsubthird = parser.GetArgument(name);
+            let gsubresult=gsubfirst.replace(gsubsecond, gsubthird);
+            useArgument(parser, gsubresult);
+          },
+
+          // This function modifies the equation numbers.
+          SeteqnumberFunction(parser, name) {
+              // Get the macro parameters
+              const star = parser.GetStar();                  // true if there is a *
+              const optBrackets = parser.GetBrackets(name);   // contents of optional brackets
+              const newsubequations = parser.GetArgument(name); // the subequations argument
+              const neweqsection = parser.GetArgument(name); // the eq section argument
+              const neweqnumber = parser.GetArgument(name);   // the eq number argument
+              MathJax.config.subequations=newsubequations ;   // a string with boolean meaning
+              MathJax.config.section=neweqsection ;           // a string with numeric meaning
+              parser.tags.counter = parser.tags.allCounter = neweqnumber ;
+          }
+
+       });
+
+       // Create the Lwarp-macros package
+       Configuration.create('Lwarp-macros', {
+         handler: {macro: ['Lwarp-macros']}
+       });
+
+       MathJax.startup.defaultReady();
+
+       // For forward references:
+       MathJax.startup.input[0].preFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             MathJax.config.subequations = math.inputData.recompile.subequations;
+             MathJax.config.section = math.inputData.recompile.section;
+         }
+       });
+       MathJax.startup.input[0].postFilters.add(({math}) => {
+         if (math.inputData.recompile){
+             math.inputData.recompile.subequations = MathJax.config.subequations;
+             math.inputData.recompile.section = MathJax.config.section;
+         }
+       });
+
+         // For \left, \right with unicode-math:
+         const {DelimiterMap} = MathJax._.input.tex.SymbolMap;
+         const {Symbol} = MathJax._.input.tex.Symbol;
+         const {MapHandler} = MathJax._.input.tex.MapHandler;
+         const delimiter = MapHandler.getMap('delimiter');
+         delimiter.add('\\lBrack', new Symbol('\\lBrack', '\u27E6'));
+         delimiter.add('\\rBrack', new Symbol('\\rBrack', '\u27E7'));
+         delimiter.add('\\lAngle', new Symbol('\\lAngle', '\u27EA'));
+         delimiter.add('\\rAngle', new Symbol('\\rAngle', '\u27EB'));
+         delimiter.add('\\lbrbrak', new Symbol('\\lbrbrak', '\u2772'));
+         delimiter.add('\\rbrbrak', new Symbol('\\rbrbrak', '\u2773'));
+         delimiter.add('\\lbag', new Symbol('\\lbag', '\u27C5'));
+         delimiter.add('\\rbag', new Symbol('\\rbag', '\u27C6'));
+         delimiter.add('\\llparenthesis', new Symbol('\\llparenthesis', '\u2987'));
+         delimiter.add('\\rrparenthesis', new Symbol('\\rrparenthesis', '\u2988'));
+         delimiter.add('\\llangle', new Symbol('\\llangle', '\u2989'));
+         delimiter.add('\\rrangle', new Symbol('\\rrangle', '\u298A'));
+         delimiter.add('\\Lbrbrak', new Symbol('\\Lbrbrak', '\u27EC'));
+         delimiter.add('\\Rbrbrak', new Symbol('\\Rbrbrak', '\u27ED'));
+         delimiter.add('\\lBrace', new Symbol('\\lBrace', '\u2983'));
+         delimiter.add('\\rBrace', new Symbol('\\rBrace', '\u2984'));
+         delimiter.add('\\lParen', new Symbol('\\lParen', '\u2985'));
+         delimiter.add('\\rParen', new Symbol('\\rParen', '\u2986'));
+         delimiter.add('\\lbrackubar', new Symbol('\\lbrackubar', '\u298B'));
+         delimiter.add('\\rbrackubar', new Symbol('\\rbrackubar', '\u298C'));
+         delimiter.add('\\lbrackultick', new Symbol('\\lbrackultick', '\u298D'));
+         delimiter.add('\\rbracklrtick', new Symbol('\\rbracklrtick', '\u298E'));
+         delimiter.add('\\lbracklltick', new Symbol('\\lbracklltick', '\u298F'));
+         delimiter.add('\\rbrackurtick', new Symbol('\\rbrackurtick', '\u2990'));
+         delimiter.add('\\langledot', new Symbol('\\langledot', '\u2991'));
+         delimiter.add('\\rangledot', new Symbol('\\rangledot', '\u2992'));
+         delimiter.add('\\lparenless', new Symbol('\\lparenless', '\u2993'));
+         delimiter.add('\\rparengtr', new Symbol('\\rparengtr', '\u2994'));
+         delimiter.add('\\Lparengtr', new Symbol('\\Lparengtr', '\u2995'));
+         delimiter.add('\\Rparenless', new Symbol('\\Rparenless', '\u2996'));
+         delimiter.add('\\lblkbrbrak', new Symbol('\\lblkbrbrak', '\u2997'));
+         delimiter.add('\\rblkbrbrak', new Symbol('\\rblkbrbrak', '\u2998'));
+         delimiter.add('\\lvzigzag', new Symbol('\\lvzigzag', '\u29D8'));
+         delimiter.add('\\rvzigzag', new Symbol('\\rvzigzag', '\u29D9'));
+         delimiter.add('\\Lvzigzag', new Symbol('\\Lvzigzag', '\u29DA'));
+         delimiter.add('\\Rvzigzag', new Symbol('\\Rvzigzag', '\u29DB'));
+         delimiter.add('\\lcurvyangle', new Symbol('\\lcurvyangle', '\u29FC'));
+         delimiter.add('\\rcurvyangle', new Symbol('\\rcurvyangle', '\u29FD'));
+         delimiter.add('\\Vvert', new Symbol('\\Vvert', '\u2980'));
+   }     // ready
+ },      // startup
+
+ tex: {
+   packages: {'[+]': ['tagformat', 'Lwarp-macros', 'textmacros']},
+   tags: "ams",
+        tagformat: {
+            number: function (n) {
+                if(MathJax.config.subequations==0)
+                    return(MathJax.config.section + n);
+                else
+                    return(MathJax.config.section + String.fromCharCode(96+n));
+            },
+        },
+ }
+}
+</script>
+
+<script
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script>
+
+</head>
+<body>
+
+
+<a id="index-autopage-42"></a>
+<nav class="topnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+
+<div class="bodyandsidetoc">
+<div class="sidetoccontainer">
+
+
+<nav class="sidetoc">
+
+
+<div class="sidetoctitle">
+
+<p>
+<span class="sidetocthetitle">Notes on Everything</span>
+</p>
+
+<p>
+Subjects
+</p>
+</div>
+
+
+<div class="sidetoccontents">
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+<p>
+<a href="Sums.html#autosec-6" class="tocchapter" >
+Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-7" class="tocsection" >
+Manipulating Sums</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-8" class="tocsubsection" >
+Basic Rules</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-10" class="tocsubsection" >
+Iverson Notation</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-13" class="tocsubsection" >
+Perturbing the Sum</a>
+</p>
+
+
+<p>
+<a href="Sums.html#autosec-16" class="tocsubsection" >
+Multiple Sums</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-24" class="tocchapter" >
+Algorithms</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-25" class="tocsection" >
+Graphs</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-26" class="tocsubsection" >
+Cuts</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-36" class="tocsubsection" >
+Depth-First Search</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-38" class="tocsubsection" >
+Breadth-First Search</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-40" class="tocsubsection" >
+Topological Ordering</a>
+</p>
+
+
+<p>
+<a href="Algorithms.html#autosec-41" class="tocsubsection" >
+Strongly Connected Components</a>
+</p>
+
+
+<p>
+<a href="Greedy.html#autosec-43" class="tocsection" >
+Greedy</a>
+</p>
+
+
+<p>
+<a href="Greedy.html#autosec-44" class="tocsubsection" >
+Dijkstra’s Shortest Path Algorithm</a>
+</p>
+
+
+<p>
+<a href="Greedy.html#autosec-55" class="tocsubsection" >
+Prim’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Greedy.html#autosec-61" class="tocsubsection" >
+Kruskal’s MST Algorithm</a>
+</p>
+
+
+<p>
+<a href="Greedy.html#autosec-68" class="tocsubsection" >
+Huffman Codes</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-75" class="tocsection" >
+Divide and Conquer</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-76" class="tocsubsection" >
+Master Theorem</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-78" class="tocsubsection" >
+MergeSort</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-80" class="tocsubsection" >
+Counting Array Inversions</a>
+</p>
+
+
+<p>
+<a href="Divide-Conquer.html#autosec-83" class="tocsubsection" >
+Karatsuba Multiplication</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-85" class="tocchapter" >
+Combinatorics</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-86" class="tocsection" >
+Basics of Counting</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-87" class="tocsubsection" >
+Product Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-88" class="tocsubsection" >
+Complement Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-89" class="tocsubsection" >
+Sum Rule</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-90" class="tocsubsection" >
+Inclusion/Exclusion</a>
+</p>
+
+
+<p>
+<a href="Combinatorics.html#autosec-91" class="tocsubsection" >
+Permutations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-94" class="tocchapter" >
+Foundations</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-95" class="tocsection" >
+Set Theory</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-99" class="tocsubsection" >
+Basic Definitions</a>
+</p>
+
+
+<p>
+<a href="Foundations.html#autosec-100" class="tocsubsection" >
+Laws</a>
+</p>
+
+
+<p>
+<a href="Factoring-Tricks.html#autosec-126" class="tocsection" >
+Factoring Tricks</a>
+</p>
+
+
+<p>
+<a href="Factoring-Tricks.html#autosec-127" class="tocsubsection" >
+Basic Identities</a>
+</p>
+
+
+<p>
+<a href="Factoring-Tricks.html#autosec-128" class="tocsubsection" >
+Splitting Apart a Monomial</a>
+</p>
+
+
+<p>
+<a href="Factoring-Tricks.html#autosec-129" class="tocsubsection" >
+Adding Zero</a>
+</p>
+
+
+<p>
+<a href="Factoring-Tricks.html#autosec-130" class="tocsubsection" >
+\((a^n - b^n) \)</a>
+</p>
+
+
+<p>
+<a href="Factoring-Tricks.html#autosec-132" class="tocsubsection" >
+\((a^n + b^n) \)</a>
+</p>
+
+
+<p>
+<a href="Quadratics.html#autosec-136" class="tocsection" >
+Quadratics</a>
+</p>
+
+
+<p>
+<a href="Quadratics.html#autosec-137" class="tocsubsection" >
+Finding Roots of a Quadratic Function</a>
+</p>
+
+
+<p>
+<a href="Quadratics.html#autosec-143" class="tocsubsection" >
+Vieta’s Theorem</a>
+</p>
+
+
+<p>
+<a href="Quadratics.html#autosec-146" class="tocsubsection" >
+The Quadratic Formula</a>
+</p>
+
+
+</div>
+
+</nav>
+
+</div>
+
+
+<main class="bodycontainer">
+
+
+<section class="textbody">
+
+<h1>Notes on Everything</h1>
+
+<!--MathJax customizations:-->
+<div data-nosnippet
+    style="display:none"
+>
+
+\(\newcommand{\footnotename}{footnote}\)
+
+\(\def \LWRfootnote {1}\)
+
+\(\newcommand {\footnote }[2][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\newcommand {\footnotemark }[1][\LWRfootnote ]{{}^{\mathrm {#1}}}\)
+
+\(\let \LWRorighspace \hspace \)
+
+\(\renewcommand {\hspace }{\ifstar \LWRorighspace \LWRorighspace }\)
+
+\(\newcommand {\mathnormal }[1]{{#1}}\)
+
+\(\newcommand \ensuremath [1]{#1}\)
+
+\(\newcommand {\LWRframebox }[2][]{\fbox {#2}} \newcommand {\framebox }[1][]{\LWRframebox } \)
+
+\(\newcommand {\setlength }[2]{}\)
+
+\(\newcommand {\addtolength }[2]{}\)
+
+\(\newcommand {\setcounter }[2]{}\)
+
+\(\newcommand {\addtocounter }[2]{}\)
+
+\(\newcommand {\arabic }[1]{}\)
+
+\(\newcommand {\number }[1]{}\)
+
+\(\newcommand {\noalign }[1]{\text {#1}\notag \\}\)
+
+\(\newcommand {\cline }[1]{}\)
+
+\(\newcommand {\directlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\luatexdirectlua }[1]{\text {(directlua)}}\)
+
+\(\newcommand {\protect }{}\)
+
+\(\def \LWRabsorbnumber #1 {}\)
+
+\(\def \LWRabsorbquotenumber &quot;#1 {}\)
+
+\(\newcommand {\LWRabsorboption }[1][]{}\)
+
+\(\newcommand {\LWRabsorbtwooptions }[1][]{\LWRabsorboption }\)
+
+\(\def \mathchar {\ifnextchar &quot;\LWRabsorbquotenumber \LWRabsorbnumber }\)
+
+\(\def \mathcode #1={\mathchar }\)
+
+\(\let \delcode \mathcode \)
+
+\(\let \delimiter \mathchar \)
+
+\(\def \oe {\unicode {x0153}}\)
+
+\(\def \OE {\unicode {x0152}}\)
+
+\(\def \ae {\unicode {x00E6}}\)
+
+\(\def \AE {\unicode {x00C6}}\)
+
+\(\def \aa {\unicode {x00E5}}\)
+
+\(\def \AA {\unicode {x00C5}}\)
+
+\(\def \o {\unicode {x00F8}}\)
+
+\(\def \O {\unicode {x00D8}}\)
+
+\(\def \l {\unicode {x0142}}\)
+
+\(\def \L {\unicode {x0141}}\)
+
+\(\def \ss {\unicode {x00DF}}\)
+
+\(\def \SS {\unicode {x1E9E}}\)
+
+\(\def \dag {\unicode {x2020}}\)
+
+\(\def \ddag {\unicode {x2021}}\)
+
+\(\def \P {\unicode {x00B6}}\)
+
+\(\def \copyright {\unicode {x00A9}}\)
+
+\(\def \pounds {\unicode {x00A3}}\)
+
+\(\let \LWRref \ref \)
+
+\(\renewcommand {\ref }{\ifstar \LWRref \LWRref }\)
+
+\( \newcommand {\multicolumn }[3]{#3}\)
+
+\(\require {textcomp}\)
+
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}\)
+
+\(\let \Hat \hat \)
+
+\(\let \Check \check \)
+
+\(\let \Tilde \tilde \)
+
+\(\let \Acute \acute \)
+
+\(\let \Grave \grave \)
+
+\(\let \Dot \dot \)
+
+\(\let \Ddot \ddot \)
+
+\(\let \Breve \breve \)
+
+\(\let \Bar \bar \)
+
+\(\let \Vec \vec \)
+
+</div>
+
+<!--
+...... section Greedy ......
+-->
+<h4 id="autosec-43">Greedy</h4>
+<a id="index-autopage-43"></a>
+<a id="index-autofile-3"></a>
+
+<p>
+The greedy algorithm design paradigm produces straightforward and fast solutions to certain problems. Usually, however, greedy algorithms do not produce correct results, and great care must be taken to prove their correctness.
+</p>
+
+<p>
+In general, the strategy is to choose a locally optimal solution in the hopes that it produces a globally optimal output. Proofs of correctness and optimality usually involve an exchange argument and/or induction.
+</p>
+<!--
+...... subsection Dijkstra's Shortest Path Algorithm ......
+-->
+<h5 id="autosec-44">Dijkstra’s Shortest Path Algorithm</h5>
+<a id="index-autopage-44"></a>
+
+
+<p>
+The canonical greedy algorithm. Dijkstra’s algorithm computes the shortest paths from a starting vertex by choose the least costly edge spanning a graph ”cut” or partition incident to the visited nodes. In other words, greedily choose the edge which minimizes the current
+distance traveled.
+</p>
+
+<figure id="autoid-5" class="figure ">
+<div class="center">
+
+<p>
+<span
+    id="lateximage-index-2"
+    class="lateximagesource"
+><!--
+        V
+    1           6
+
+
+S           2       T
+    4           3
+
+        W
+--><img
+    src="index-images/image-2.svg"
+    alt="(-tikz-&nbsp;diagram)"
+    style=""
+    class="lateximage"
+></span>
+</p>
+
+<div class="figurecaption">
+<p>
+Figure&nbsp;1:&nbsp;Weighted, directed graph
+</p>
+</div>
+
+<a id="fig:dijkstra1"></a>
+
+</div>
+
+</figure>
+
+<p>
+The shortest path algorithm outputs the following when starting from \(S\):
+</p>
+<table>
+
+<tr style="display:none"><th>.</th></tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">Vertex</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">Shortest Path</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">S</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">0</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">V</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">1</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">W</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">3</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">T</td>
+<td class="tdc tvertbarr" style="border-right: 1px solid black">6</td>
+</tr>
+
+<tr class="hline" aria-hidden="true">
+<td class="tdc"></td>
+<td class="tdc"></td>
+</tr>
+</table>
+
+<figure id="autoid-6" class="algorithm ruled">
+
+<div class="figurecaption">
+<p>
+Algorithm&nbsp;5:&nbsp;Dijkstra’s Shortest-Path
+</p>
+</div>
+<ul class="list" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker"><b>Require:</b></span> \(G = (V, E)\) has nonnegative edge weights
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span>\(X = \{s\}\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span>len(s) = 0, len(v) = \(+\infty \) for every \(v \neq s\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>while</b> There exists an edge \((v, w) \; v \in X, w \not \in X\) <b>do</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>         <span style="width:12pt; display:inline-block;"></span>\((v&apos;, w&apos;)\) = edge minimizing \(len(v) + l_{vw}\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>         <span style="width:12pt; display:inline-block;"></span>Add \(w&apos;\) to \(X\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>         <span style="width:12pt; display:inline-block;"></span>len(w’) = len(v’) + \(l_{v&apos;w&apos;}\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <b>return</b> len
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>while</b>
+</p>
+</li>
+</ul>
+
+</figure>
+
+<p>
+The proof of Dijkstra’s shortest-path algorithm differs from that of Prim’s and Kruskal’s in that it proceeds by basic induction rather than presenting a proof by contradiction and exchange argument<sup>1</sup><a id="index-autopage-48"></a>.
+</p>
+
+<p>
+First, a precise statement of the theorem:
+</p>
+<div role="note" class="footnotes">
+
+<a id="index-autopage-49"></a>
+
+<p>
+<sup>1</sup>&nbsp;Consequently, I find this proof to be slightly more difficult
+</p>
+
+
+</div>
+
+
+
+<div class="amsthmbodyplain">
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker">
+<span class="amsthmnameplain">Theorem</span><span class="amsthmnumberplain"> <span class="textup">2</span></span>. </span> <a id="thm:dijkstra"></a> For every directed graph \(G = (V, E)\), for every starting vertex \(s \in V\), Dijkstra’s
+shortest-path algorithm outputs the distance of the shortest paths from \(s\) to every (reachable) \(v \in V\).
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<div class="amsthmproof">
+
+<a id="index-autopage-50"></a>
+
+<ul class="list" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker"> <span class="amsthmproofname">Proof of Dijkstra’s Shortest-Path Algorithm.</span></span> <a id="prf:dijkstra"></a> Let \(k\) be the current iteration of the while loop in Dijkstra’s algorithm, that is, the \(k\)th choice of vertex, say,
+\(v\) to be added to the solution. During this iteration, the shortest distance \(dist[v]\) from \(s\) is computed. The goal of this proof is to show that every iteration of the algorithm gives the correct distance from \(s\) for all vertices.
+</p>
+
+<p>
+Proceeding by induction, for \(k = 1\) the computed distance from the starting vertex \(s\) to itself is 0, which is clearly correct. Now assume the correct distance is computed for all \(k = 1, 2, \dots n-1\), and consider the moment the algorithm must choose the
+\(n\)th vertex, call it \(u\), to add to the solution and let the edge chosen by the algorithm be labeled \((v, u)\).
+</p>
+
+<p>
+By the algorithm, \(u\)’s distance is computed to be:
+</p>
+
+<p>
+\[ dist[u] = dist[v] + length_{vu} \]
+</p>
+
+<p>
+To show that this is indeed the shortest path from \(s\) to \(u\), consider an arbitrary path \(P\) from \(s\) to \(u\). We will show the length of this path is at least the value produced by Dijkstra’s algorithm. We can deduce that \(P\) must be comprised of three
+segments:
+</p>
+
+<ul class="itemize" style="list-style-type:none">
+
+
+<li>
+<p>
+<span class="listmarker">•</span> A prefix of vertices already processed
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+<span class="listmarker">•</span> At least one edge crossing the cut of visited and unvisited nodes
+</p>
+
+
+</li>
+<li>
+
+
+<p>
+<span class="listmarker">•</span> A path consisting of unvisited nodes that reaches \(u\)
+</p>
+</li>
+</ul>
+
+<figure id="autoid-7" class="figure ">
+<div class="center">
+
+<p>
+<span
+      id="lateximage-index-3"
+      class="lateximagesource"
+><!--
+s   a   b   u
+--><img
+      src="index-images/image-3.svg"
+      alt="(-tikz-&nbsp;diagram)"
+      style=""
+      class="lateximage"
+></span>
+</p>
+
+
+<div class="figurecaption">
+<p>
+Figure&nbsp;2:&nbsp;Arbitrary                                                                                                                    shortest                                                                                                                     path
+</p>
+</div>
+
+<a id="fig:shortest_path"></a>
+
+</div>
+
+</figure>
+
+<p>
+Let \((a, b)\) be the edge in \(P\) bridging the aforementioned cut. It suffices to compute a lower bound for the length of \(P\). The first segment consisting of a path from \(s\) to \(a\) has length \(dist[a]\). By the inductive hypothesis, each vertex in the first
+segment has its correct shortest distance recorded. The segment consisting of only the edge \((a, b)\) has length \(length_{ab}\). Finally, the final segment must be non-negative due to the restrictions the algorithm imposes on the input graph.
+</p>
+
+<p>
+\[ len(P) \geqslant dist[a] + length_{ab} \]
+</p>
+
+<p>
+The final step in the proof makes use of the fact that Dijkstra’s algorithm always chooses the edge which minimizes the sum of a candidate path’s prefix and the edge cross the cut. In other words, we have shown:
+</p>
+
+<p>
+\[ dist[u] + length_{uw} \leqslant dist[a] + length_{ab} \leqslant len(P) \]
+</p>
+
+<p>
+therefore, the path chosen by the algorithm is always the shortest such path. <span class="theoremendmark">&#x25A1;</span>
+</p>
+
+</li>
+
+</ul>
+
+</div>
+<!--
+...... subsubsection Analysis ......
+-->
+<h6 id="autosec-54">Analysis</h6>
+<a id="index-autopage-54"></a>
+
+
+<p>
+The cost of repeatedly selecting the minimum edge via brute force dominates the runtime of the algorithm. For \(G = (V, E)\), we traverse \(|V|\) nodes, each time performing \(O(|E|)\) work to select the minimum edge crossing the cut. Therefore, the naive version of
+Dijkstra’s runs in \(O(|E||V|)\).
+</p>
+
+<p>
+Using a [[Heap]] this algorithm can be sped up significantly, achieving \(O((|E| + |V|)\log |V|)\) runtime.
+</p>
+<!--
+...... subsection Prim's MST Algorithm ......
+-->
+<h5 id="autosec-55">Prim’s MST Algorithm</h5>
+<a id="index-autopage-55"></a>
+
+
+<p>
+”Robert Prim’s” algorithm, which was actually discovered a few decades prior, computes a minimum spanning tree of an undirected graph. The general strategy is very close to how Dijkstra’s chooses which edge weight will be used in order to compute the current distance
+from the starting vertex. The main idea here is simply to choose the minimum edge out of all the edges crossing the cut formed by visited and unvisited nodes in \(V\).
+</p>
+
+<p>
+The key difference is subtle, but important. Dijkstra’s algorithm chooses the edge which minimizes the total distance from the starting vertex, while Prim’s chooses the edge with minimum individual cost. This has the overall effect of <em>minimizing</em> the
+<em>maximum</em> edge cost along every path. This key fact is critical in proving Prim’s algorithm correct.
+</p>
+<div class="center">
+
+<p>
+<span
+    id="lateximage-index-4"
+    class="lateximagesource"
+><!--
+        1
+a           b
+        3
+4               2
+
+    c       d
+        5
+--><img
+    src="index-images/image-4.svg"
+    alt="(-tikz-&nbsp;diagram)"
+    style=""
+    class="lateximage"
+></span>
+</p>
+</div>
+
+<figure id="autoid-8" class="algorithm ruled">
+
+<div class="figurecaption">
+<p>
+Algorithm&nbsp;6:&nbsp;Prim’s MST Algorithm
+</p>
+</div>
+<ul class="list" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span>\(X = \{s\}\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span>\(T = \emptyset \)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>while</b> There is an edge \((v, w)\) s.t \(v \in X\), \(w \not \in X\) <b>do</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>     <span style="width:12pt; display:inline-block;"></span>\((v&apos;, w&apos;)\) = minimum cost edge
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>     <span style="width:12pt; display:inline-block;"></span>Add \(w&apos;\) to \(X\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>     <span style="width:12pt; display:inline-block;"></span>Add \((v&apos;, w&apos;)\) to \(T\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>while</b><b>return</b> \(T\)
+</p>
+</li>
+</ul>
+
+</figure>
+<!--
+...... subsubsection Correctness ......
+-->
+<h6 id="autosec-59">Correctness</h6>
+<a id="index-autopage-59"></a>
+
+
+<p>
+We need to prove that Prim’s algorithm not only computes a spanning tree, but that this tree is the best possible one that could have been produced. There’s some initial paperwork to be done in order to set up the ideas behind the proof.
+</p>
+<!--
+...... subsubsection Runtime Analysis ......
+-->
+<h6 id="autosec-60">Runtime Analysis</h6>
+<a id="index-autopage-60"></a>
+
+
+<p>
+Once again the cost of repeatedly selecting the minimum edge dominates the runtime of the algorithm leading to \(O(|V||E|)\) worst-case runtime.
+</p>
+
+<p>
+We can employ the same technique of using a Heap as in Dijkstra’s algorithm to achieve a runtime of \(O(|E|\log |V|)\).
+</p>
+<!--
+...... subsection Kruskal's MST Algorithm ......
+-->
+<h5 id="autosec-61">Kruskal’s MST Algorithm</h5>
+<a id="index-autopage-61"></a>
+
+
+<p>
+Kruskal’s algorithm adopts a different approach, instead opting to choose the minimum edge that would not introduce a cycle.
+</p>
+
+<p>
+<span
+    id="lateximage-index-5"
+    class="lateximagesource"
+><!--
+    1
+a       b
+    3
+4       2
+
+
+c   5   d
+--><img
+    src="index-images/image-5.svg"
+    alt="(-tikz-&nbsp;diagram)"
+    style=""
+    class="lateximage"
+></span>
+</p>
+
+<p>
+Kruskal’s algorithm would execute the following steps:
+</p>
+
+<ul class="enumerate" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker">1.</span> Choose \((a, b)\), since it is the minimum cost edge
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker">2.</span> Choose \((b, d)\), since no cycle is produced
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker">3.</span> Choose \((d, e)\), since \((a, c)\) would produce a cycle
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker">4.</span> The chosen edges form a spanning tree of minimum cost!
+</p>
+</li>
+</ul>
+
+<figure id="autoid-9" class="figure ">
+<div class="center">
+
+<p>
+<span
+    id="lateximage-index-6"
+    class="lateximagesource"
+><!--
+        1
+a           b
+4               2
+
+    c       d
+--><img
+    src="index-images/image-6.svg"
+    alt="(-tikz-&nbsp;diagram)"
+    style=""
+    class="lateximage"
+></span>
+</p>
+
+<div class="figurecaption">
+<p>
+Figure&nbsp;3:&nbsp;Minimum spanning tree
+</p>
+</div>
+
+<a id="fig:kruskal-mst"></a>
+
+</div>
+
+</figure>
+
+<p>
+In a real program, we sort the edges of the input graph \(G\) by weight as a pre-processing step to avoid quadratic searches for successive minima.
+</p>
+
+<figure id="autoid-10" class="algorithm ruled">
+
+<div class="figurecaption">
+<p>
+Algorithm&nbsp;7:&nbsp;Kruskal’s Algorithm
+</p>
+</div>
+<ul class="list" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span>\(T = \emptyset \)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span>sort \(E\) by edge weight
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>for</b> \((v, w) \in E\) <b>do</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>if</b> \((v, w)\) does not produce a cycle in \(T\) <b>then</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>           <span style="width:24pt; display:inline-block;"></span>add \((v, w)\) to \(T\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>        <span style="width:12pt; display:inline-block;"></span><b>end</b> <b>if</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>for</b><b>return</b> \(T\)
+</p>
+</li>
+</ul>
+
+</figure>
+<!--
+...... subsubsection Analysis ......
+-->
+<h6 id="autosec-67">Analysis</h6>
+<a id="index-autopage-67"></a>
+
+
+<p>
+Sorting the edges takes \(O(n\log n)\) time. Cycle detection in the inner loop dominates the runtime of naive Kruskal’s and therefore the overall runtime is subject to the implementation details. For a brute-force cycle detection approach, the inner loop runs \(O(|E||E +
+V|) = O(|E||V|)\) time.
+</p>
+
+<p>
+By using a Union-Find data structure, we can dramatically improve the runtime. In particular by implementing optimizations such as Path Compression and Union-by-Rank
+</p>
+
+<p>
+> TODO: Do the detailed analysis later, (Inverse Ackermann)
+</p>
+<!--
+...... subsection Huffman Codes ......
+-->
+<h5 id="autosec-68">Huffman Codes</h5>
+<a id="index-autopage-68"></a>
+
+
+<p>
+Invented by David Huffman in the 50s as a way to compute the optimal prefix-free variable length encoding for a (mathematical) language \(\sum \). The algorithm constructs a tree from the ”bottom up”, repeatedly merging the least frequently occurring codes in order
+to ensure the most frequently occurring have minimum possible depth.
+</p>
+
+<figure id="autoid-11" class="algorithm ruled">
+
+<div class="figurecaption">
+<p>
+Algorithm&nbsp;8:&nbsp;Huffman Encoding
+</p>
+</div>
+<ul class="list" style="list-style-type:none">
+
+<li>
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span>\(H = \emptyset \)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>for</b> symbol \(\sigma \in \sum \) <b>do</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>\({T_\sigma } = (\sigma , P_\sigma )\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>\(H = H \cup T_\sigma \)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>for</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>while</b> There is more than one \(T_\sigma \in H\) <b>do</b>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>\(T_1\) = tree with minimum frequency
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>\(T_2\) = tree with 2nd smallest frequency
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>\(T_3\) = <span class="textsc">MergeTrees</span>(\(T_1, T_2\))
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>       <span style="width:12pt; display:inline-block;"></span>\(H = H \cup T_3\)
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span>
+</p>
+
+</li>
+<li>
+
+<p>
+<span class="listmarker"></span> <span style="width:0pt; display:inline-block;"></span><b>end</b> <b>while</b>
+</p>
+</li>
+</ul>
+
+</figure>
+
+<p>
+For example, given the frequencies:
+</p>
+<table>
+
+<tr style="display:none"><th>.</th></tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">Symbol</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">Frequency</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">a</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.60</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">b</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.25</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">c</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.10</td>
+</tr>
+
+<tr class="hline">
+<td class="tdc tvertbarl tvertbarr" style="border-left: 1px solid black; border-right: 1px solid black">d</td>
+<td class="tdr tvertbarr" style="border-right: 1px solid black">0.05</td>
+</tr>
+
+<tr class="hline" aria-hidden="true">
+<td class="tdc"></td>
+<td class="tdr"></td>
+</tr>
+</table>
+
+<p>
+Huffman’s greedy algorithm will produce the following encoding tree:
+</p>
+
+<figure id="autoid-12" class="figure ">
+<div class="center">
+
+<p>
+<span
+    id="lateximage-index-7"
+    class="lateximagesource"
+><!--
+    0           1
+
+
+a
+            0               1
+
+
+        b
+                        0       1
+
+                    c               d
+--><img
+    src="index-images/image-7.svg"
+    alt="(-tikz-&nbsp;diagram)"
+    style=""
+    class="lateximage"
+></span>
+</p>
+
+<div class="figurecaption">
+<p>
+Figure&nbsp;4:&nbsp;The output of Huffman’s greedy algorithm
+</p>
+</div>
+
+<a id="fig:huffman_tree"></a>
+
+</div>
+
+</figure>
+
+<p>
+which ensures that symbol \(a\), the most frequently encountered will be the quickest to encode and decode since its depth in minimized in the output.
+</p>
+<!--
+...... subsubsection Analysis ......
+-->
+<h6 id="autosec-73">Analysis</h6>
+<a id="index-autopage-73"></a>
+
+
+<p>
+Preprocessing the nodes can be done quickly in \(O(n)\) time. The inner loop of the algorithm is bound by the time it takes to select a minimum, therefore, repeated brute-force searching for minima each iteration leads to a runtime of \(O(n^2)\).
+</p>
+
+<p>
+Once again, the Heap data structure is a perfect fit for this kind of problem. A heap is initialized with the frequencies provided to the algorithm, and keeps track of the current minimum by re-balancing in \(O(\log n)\) time. This speeds up Huffman’s algorithm
+tremendously, bringing the runtime down to \(O(n \log n)\).
+</p>
+
+</section>
+
+</main>
+
+</div>
+
+<footer>
+
+<p>
+<a href="index.html" class="linkhome" >
+Home</a>
+</p>
+
+</footer>
+
+
+<nav class="botnavigation"><a href="index.html" class="linkhome" >
+Home</a></nav>
+
+</body>
+</html>
