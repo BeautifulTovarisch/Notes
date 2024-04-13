@@ -1,0 +1,90 @@
+\documentclass{standalone}
+\begin{document}
+
+\section{Basics}
+
+Probability is intimately related to combinatorics and set theory, and theorems
+from both routinely show up when trying to precisely describe the total number
+of outcomes of something happening.
+
+\subsection{Terminology}
+
+Generally, outcomes in a \textbf{random experiment} belong to an universal set
+called the \textbf{sample space}. Groups of outcomes (subsets) are referred to
+as \textbf{events}, and an event is said to occurred if one of its outcomes was
+the result of the experiment.
+
+\begin{definition} \label{def:samplespace}
+  The sample space of a random experiment is the set of all possible outcomes
+  of that experiment. Denote the sample space by $\Omega$ and define $A$ to be
+  a subset of $\Omega$. We call $A$ an \emph{event} of sample space $\Omega$.
+  We say $A$ \emph{occurred} if one of its outcomes was produced by the random
+  experiment.
+\end{definition}
+
+The comparatively droll theorems and identities found in set theory make their
+presence known throughout all of probability theory. Likewise, the basics of
+counting and combinatorial proofs are very prominient in determining the number
+of outcomes of a certain experiment.
+
+\subsection{Naive Definition of Probability}
+
+A simple yet easily abused model of Probability is called the \textbf{naive}
+definition of probability. This applies when:
+
+\begin{itemize}
+  \item There is \emph{symmetry} in events, (e.g a Deck of Cards)
+  \item The experiment is defined to have equally likely outcomes (e.g Dice)
+  \item As a thought experiment, to be compared against a more realistic model
+\end{itemize}
+
+Formally:
+
+\begin{definition}
+  Let $A \subseteq \Omega$ be an event in the sample space of an experiment. We
+  define the \emph{Naive Probability} of $A$ as:
+
+  \[
+    P_{naive}(A) = \frac {|A|} {|\Omega|}
+  \]
+
+  In other words, the ratio of outcomes in $A$ and total outcomes in $\Omega$.
+\end{definition}
+
+\subsection{Non-Naive Definition of Probability}
+
+As the name implies, this definition is used when the outcomes in an experiment
+are not equally likely. Predictably, this requires a bit more thought and care
+to set up as a workable model of probability. Fortunately, there are only two
+axioms to worry about (for now).
+
+We also want to define a \textbf{probability space} as a mathematical object
+consisting of a sample space and a \textbf{probability function}. This function
+maps events in a sample space to real numbers, letting us define the likelihood
+that an event in the sample space occurs.
+
+\begin{definition}
+  A probability space consists of a sample space $\Omega$ and a probability
+  function $P$ defined as:
+
+  \[
+    P : A \subseteq \Omega \to \mathbb{R}, \; P(A) = \; \text{the probability
+    of $A$}
+  \]
+
+  and governed by the following axioms:
+
+  \begin{axiom}
+    $P(\emptyset) = 0$ and $P(\Omega) = 1$
+  \end{axiom}
+
+  \begin{axiom}
+    If $A_1, A_2, \dots, A_n$ are disjoint events of $\Omega$, then
+
+    \[
+      P(\bigcup_{k=1}^n A_k) = \sum_{k=1}^n P(A_k)
+    \]
+  \end{axiom}
+\end{definition}
+
+\end{document}

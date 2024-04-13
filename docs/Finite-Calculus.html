@@ -7,7 +7,7 @@
 <meta name="generator" content="LaTeX Lwarp package" />
 <meta name="description" content="Personal notes on Mathematics and Computer Science" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Notes on Everything — Quadratics</title>
+<title>Notes on Everything — Finite Calculus</title>
 <link rel="stylesheet" type="text/css" href="lwarp.css" />
 
 <script>
@@ -221,7 +221,7 @@ MathJax = {
 <body>
 
 
-<a id="index-autopage-158"></a>
+<a id="index-autopage-23"></a>
 <nav class="topnavigation"><a href="index.html" class="linkhome" >
 Home</a></nav>
 
@@ -700,209 +700,111 @@ The Quadratic Formula</a>
 </div>
 
 <!--
-...... section Quadratics ......
+...... section Finite Calculus ......
 -->
-<h4 id="autosec-159">Quadratics</h4>
-<a id="index-autopage-159"></a>
-<a id="index-autofile-10"></a>
+<h4 id="autosec-24">Finite Calculus</h4>
+<a id="index-autopage-24"></a>
+<a id="index-autofile-2"></a>
 
 <p>
-Polynomials of the form \(ax^2 + bx + c\) are called <b>quadratic</b>. They can also be described as polynomials of degree 2, or <b>second order</b>. A huge number of problems in physics and engineering can be modeled after a quadratic equation, and they occur
-frequently enough to warrant some special techniques.
+Finite Calculus establishes analogs between the techniques of infinite Calculus (Analysis etc.) in order to develop sophisticated ways of dealing with sums. Specifically, we’re after methods that remind us of dealing with integrals and derivatives since there are nice formulas
+and tricks for handling those most of the time.
 </p>
 
 <p>
-\[ \boxed {ax^2 + bx + c} \]
-</p>
-
-<p>
-where \(a \neq 0\)
+Another important theme of Finite Calculus is discovering functions that act as discrete versions of their continuous counterparts. If we can find a finite analog of a function, we’ll have an easier time reasoning about a closed form solution.
 </p>
 <!--
-...... subsection Finding Roots of a Quadratic Function ......
+...... subsection The Difference Operator ......
 -->
-<h5 id="autosec-160">Finding Roots of a Quadratic Function</h5>
-<a id="index-autopage-160"></a>
+<h5 id="autosec-25">The Difference Operator</h5>
+<a id="index-autopage-25"></a>
 
 
 <p>
-A <b>root</b> of a polynomial function \(f\) is a number, say, \(\alpha \), such that \(f(\alpha ) = 0\). Finding roots of a quadratic function is equivalent to solving \(f(x) = ax^2 + bx + c = 0\).
+One of the first facts established in Calculus is the limit definition of the derivative of a function:
 </p>
 
 <p>
-Several techniques for finding roots exist:
-</p>
-<!--
-...... subsubsection Factoring ......
--->
-<h6 id="autosec-161">Factoring</h6>
-<a id="index-autopage-161"></a>
-
-
-<p>
-Factoring here is used in the same context as listing the factors of an integer, such as in <em>prime factorization</em>. Factoring allows the polynomial to be written in such as a way as to make the values for which it takes on the value zero to be obvious.
+\[ \frac d {dx} f(x) = \lim _{h \to 0} \frac {f(x + h) - f(x)} h \]
 </p>
 
 <p>
-Every polynomial can be written as a product of its factors. Quadratics have a simple form:
+The righthand side is the limit of the <b>difference quotient</b> of \(f(x)\) as \(h\) approaches 0. In the finite world, there is a similar operation:
 </p>
 
-<p>
-\[ P(x) = (x - \alpha )(x - \beta ) \]
-</p>
-
-<p>
-where \(\alpha \) and \(\beta \) are roots of polynomial \(P\).
-</p>
-
-<p>
-For example,
-</p>
-
-<p>
-\[ x^2 - 4 = (x - 2)(x + 2) = 0 \]
-</p>
-
-<p>
-This can easily be factored by noticing the expression is the difference of two squares. This equation has solutions at \(x \pm 2\).
-</p>
-<!--
-...... subsubsection Completing the Square ......
--->
-<h6 id="autosec-162">Completing the Square</h6>
-<a id="index-autopage-162"></a>
-
-
-<p>
-A good indication to try this technique is when a quadratic function has a 1 as its first coefficient.
-</p>
-
-<p>
-\[ x^2 + bx + c \]
-</p>
-
-<p>
-This is referred to as a <b>reduced quadratic</b> form.
-</p>
-
-<p>
-Completing the square is often taught as a formula to be memorized without any context or justification as to why it works. It helps to consider both what we mean geometrically and then derive the formula with algebra.
-</p>
-<!--
-...... paragraph Geometric ......
--->
-
-
-<p>
-<span class="paragraph" id="autosec-163">Geometric</span>
-<a id="index-autopage-163"></a>
-
-</p>
-
-<p>
-TODO
-</p>
-<!--
-...... paragraph Algebraic ......
--->
-
-
-<p>
-<span class="paragraph" id="autosec-164">Algebraic</span>
-<a id="index-autopage-164"></a>
-
-</p>
-
-<p>
-The clever idea behind coming up with the formula lies in thinking about what term would need to be added to \(x^2 + bx\) in order to make it a perfect square. Another way of thinking about this is how we could start with the square of a binomial, \((x + k)^2\) and
-figure out what \(k\) and \(c\) need to be in order to be equivalent to the lefthand side<sup>6</sup>:
-</p>
-
-<p>
-\[ x^2 + bx = (x + k)^2 - c \]
-</p>
-
-<p>
-Naively computing \((x + b)^2\) might reveal a hint, since we’d end up with the square of a binomial by design. let \(k = b\):
-</p>
-
-<p>
-\[ (x + b)^2 = x^2 + 2bx + b^2 \]
-</p>
-
-<p>
-This is closer, but we got \(2bx\) instead of \(bx\) like we wanted. To get \(bx\), we could let \(k = \frac b 2\). Now see what happens:
-</p>
-
-<p>
-\[ (x + \frac b 2)^2 = x^2 + 2 (\frac b 2) x + (\frac b 2)^2 \]
-</p>
-
-<p>
-Nearly there! All that’s left to do is subtract \(c = (\frac b 2)^2\) from the equation. This gives us:
-</p>
-
-<p>
-\[ \boxed {x^2 + bx = (x + \frac b 2)^2 - (\frac b 2)^2} \]
-</p>
-
-<p>
-A typical follow-up to completing the square is solving for \(x\) via a shortcut used when an expression is the <em>difference of two squares</em>.
-</p>
-<div role="note" class="footnotes">
-
-<a id="index-autopage-165"></a>
-<p>
-<sup>6</sup>&nbsp;Working backwards like this is the way that clicked for me when nothing else did
-</p>
-
-
-</div>
-<!--
-...... subsection Vieta's Theorem ......
--->
-<h5 id="autosec-166">Vieta’s Theorem</h5>
-<a id="index-autopage-166"></a>
-
-
-<p>
-Vieta’s theorem describes the roots of a quadratic polynomial in terms of its coefficients. This is especially helpful in eliminating candidates for roots if a more straightforward approach fails.
-</p>
-
-<p>
-If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \), then
-</p>
-
-<span class="hidden"> \(\seteqnumber{0}{}{2}\)</span>
-
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
 
 <!--
 
 
-                                                                                         α+β                                                                                            = −p           (3)
-                                                                                         αβ                                                                                             = −q           (4)
-
+                                                                                                                            ∆f (x) = f (x + 1) − f (x)
 
 -->
 
-
 <p>
 
-\begin{align}
-&amp;\alpha + \beta &amp;= -p \\ &amp;\alpha \beta &amp;= -q
-\end{align}
+\begin{equation*}
+\Delta f(x) = f(x + 1) - f(x)
+\end{equation*}
 
 </p>
-<div class="amsthmproof">
 
-<a id="index-autopage-167"></a>
+<p>
+This is known as the <b>difference operator</b>. Since we’re dealing with a discrete function and not a continous one, we have to restrict \(h\) to being an integer. The closest integer \(h\) can be without being 0 is 1. This gives a nice tie-in to the limit definition.
+</p>
+
+<p>
+Crucially, \(\Delta f(x)\) is called an <em>operator</em>, because it operates on \(f(x)\) and produces another function, similar to differentiation. Introducing this operator allows for the development of more sophisticated tools a little later.
+</p>
+<!--
+...... subsection Rising and Falling Factorials ......
+-->
+<h5 id="autosec-26">Rising and Falling Factorials</h5>
+<a id="index-autopage-26"></a>
+
+
+<p>
+Unfortunately, the convenient power rule of differential Calculus:
+</p>
+
+<p>
+\[ \frac d {dx} x^m = mx^{m-1} \]
+</p>
+
+<p>
+fails miserably in the finite world:
+</p>
+
+<p>
+\[ \Delta (x^3) = (x + 1)^3 - x^3 = 3x^2 + 3x + 1 \neq 3x^2 \]
+</p>
+
+<p>
+At least for polynomials. There are, however, interesting functions for which the difference operator is a near-perfect match-up to differentiation, although this fact is not obvious right away. Some definitions first:
+</p>
+<div class="amsthmbodyplain">
 
 <ul class="list" style="list-style-type:none">
 
 
 <li>
 <p>
-<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> (Theorem): <span class="theoremendmark">&#x25A1;</span>
+<span class="listmarker"><a id="index-autopage-27"></a>
+<span class="amsthmnameplain">Definition</span><span class="amsthmnumberplain"> <span class="textup">1</span></span>. </span> Falling Factorial
+</p>
+
+<p>
+Let \(m\) be an integer and \(x\) be any real number. Define the falling factorial of \(x\) as:
+</p>
+
+<p>
+\[ x^{\underline {m}} = x(x-1)(x-2)\dots (x-m+1) \]
+</p>
+
+<p>
+
+
 </p>
 
 </li>
@@ -912,26 +814,30 @@ If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \
 </div>
 
 <p>
-Vieta’s theorem also has a corollary:
+and
 </p>
-
-<p>
-If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \),
-</p>
-
-<p>
-\[ (x - \alpha )(x - \beta ) = x^2 - (\alpha + \beta ) + \alpha \beta \]
-</p>
-<div class="amsthmproof">
-
-<a id="index-autopage-168"></a>
+<div class="amsthmbodyplain">
 
 <ul class="list" style="list-style-type:none">
 
 
 <li>
 <p>
-<span class="listmarker"> <span class="amsthmproofname">Proof.</span></span> <span class="theoremendmark">&#x25A1;</span>
+<span class="listmarker"><a id="index-autopage-28"></a>
+<span class="amsthmnameplain">Definition</span><span class="amsthmnumberplain"> <span class="textup">2</span></span>. </span> Rising Factorial
+</p>
+
+<p>
+Let \(m\) be an integer and \(x\) be any real number. Define the rising factorial of \(x\) as:
+</p>
+
+<p>
+\[ x^{\overline {m}} = x(x+1)(x+2)\dots (x+m-1) \]
+</p>
+
+<p>
+
+
 </p>
 
 </li>
@@ -939,54 +845,38 @@ If a quadratic expression \(x^2 + px + q\) has distinct roots \(\alpha , \beta \
 </ul>
 
 </div>
-<!--
-...... subsection The Quadratic Formula ......
--->
-<h5 id="autosec-169">The Quadratic Formula</h5>
-<a id="index-autopage-169"></a>
-
 
 <p>
-The famous quadratic formula has a surprisingly simple derivation based on the formula for completing the square. Simply solving a ”completed square” for \(x\) yields the formula.
+\(m\) denotes the number of terms in the factorial product, and the line above or below \(m\) determines whether the terms are increasing or decreasing. There’s a hint here that the difference operator might be important. Taking a peek at the first two consecutive terms
+in the product, they have the form:
 </p>
 
 <p>
-Begin by factoring out the leading coefficient \(a\):
+\[ (x)(x+1) \; \text {or} \; x(x-1) \]
 </p>
 
-<span class="hidden"> \(\seteqnumber{0}{}{4}\)</span>
+<p>
+It’s still too early to tell what’s going on, but this deserves some suspicion.
+</p>
+
+<p>
+This strange notation takes some getting used to, but is ultimately a very neat way of compressing a lot of information into notation that can be manipulated.
+</p>
+
+<p>
+Here’s an explanation for why there are \(m\) terms:
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
 
 
 <!--
 
 
-                                                                                  b     c
-                                                             ax2 + bx + c = x2 + ( )x +
-                                                                                  a     a
+                                                                                                                     xm = x(x − 1)(x − 2) . . . (x − m + 1)
+                                                                                                                          |             {z                }
+                                                                                                                                x−(x−m+1)+1=m terms
 
-                                                                                    b 2     b    c
-                                                                          = (x +      ) − ( )x −                                                                                      completing the square
-                                                                                   2a      2a    a
-
-
-                                                                                    b 2   b2 − 4ac
-                                                                          = (x +      ) −                                                                                                        by algebra
-                                                                                   2a        4a2
-
-                                                                                        s                         s
-                                                                                  b         b2 − 4ac        b         b2 − 4ac
-                                                                          = (x +    +                )(x +    −                )                                                       difference of squares
-                                                                                 2a            4a2         2a            4a2
-
-                                                                                                √
-                                                                                        b           b2 − 4ac
-                                                                           =⇒ x = −       ±
-                                                                                       2a             2a
-
-                                                                                            √
-                                                                                     −b ±     b2 − 4ac
-                                                                           =⇒ x =
-                                                                                             2a
 
 
 -->
@@ -995,13 +885,96 @@ Begin by factoring out the leading coefficient \(a\):
 <p>
 
 \begin{align*}
-\label {eqn:quadratic_formula} ax^2 + bx + c &amp;= x^2 + (\frac b a)x + \frac c a \\\\ &amp;= (x + \frac b {2a})^2 - (\frac b {2a})x - \frac c a &amp;\text {completing the square} \\\\ &amp;= (x + \frac b {2a})^2 - \frac {b^2 - 4ac}
-{4a^2} &amp;\text {by algebra} \\\\ &amp;= (x + \frac b {2a} + \sqrt {\frac {b^2 - 4ac} {4a^2}})(x + \frac b {2a} - \sqrt {\frac {b^2 - 4ac} {4a^2}}) &amp;\text {difference of squares} \\\\ &amp;\implies x = -\frac b {2a} \pm \frac {\sqrt
-{b^2 - 4ac}} {2a} \\\\ &amp;\implies x = \frac {-b \pm \sqrt {b^2 - 4ac}} {2a}
+x^{\underline {m}} = \underbrace {x(x-1)(x-2)\dots (x-m+1)}_{x - (x - m + 1) + 1 = m \; \text {terms}}
 \end{align*}
 
 </p>
-<a id="index-autofile-last"></a>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                                                     xm = x(x + 1)(x + 2) . . . (x + m − 1)
+                                                                                                                          |             {z                }
+                                                                                                                                (x+m−1)−x+1=m terms
+
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+x^{\overline {m}} = \underbrace {x(x+1)(x+2)\dots (x+m-1)}_{(x + m - 1) - x + 1 = m \; \text {terms}}
+\end{align*}
+
+</p>
+
+<p>
+This comes from counting how many integers there are in a given range. As an example, there are \((5 - 2) + 1 = 4\) integers between 2 and 5.
+</p>
+
+<p>
+Here’s a visual aid as a quick refresher:
+</p>
+
+<p>
+But what does this have to do with the difference operator? The answer may lie in blindly applying the operator and seeing what happens. Nothing ventured!
+</p>
+
+<span class="hidden"> \(\seteqnumber{0}{}{0}\)</span>
+
+
+<!--
+
+
+                                                                                            ∆(xm ) = (x + 1)m − xm
+
+
+                                                                                                   = (x + 1)(x)(x − 1) . . . (x − m + 2) − x(x − 1)(x − 2) . . . (x − m + 2)(x − m + 1)
+
+
+                                                                                                   = x(x − 1)(x − 2) . . . (x − m + 2)(x + 1 − (x − m + 1))
+
+
+                                                                                                   = m[x(x − 1)(x − 2) . . . (x − m + 2)]
+
+
+-->
+
+
+<p>
+
+\begin{align*}
+\Delta (x^{\underline {m}}) &amp;= (x + 1)^{\underline {m}} - x^{\underline {m}} \\ \\ &amp;= (x+1)(x)(x-1)\dots (x-m+2) - x(x-1)(x-2)\dots (x-m+2)(x-m+1) \\ \\ &amp;= x(x-1)(x-2)\dots (x-m+2)(x + 1 - (x - m + 1)) \\ \\ &amp;=
+m[x(x-1)(x-2)\dots (x-m+2)]
+\end{align*}
+
+</p>
+
+<p>
+Some clever factoring got us an \(m\) times something vaguely familiar. Let’s try counting how many terms there are:
+</p>
+
+<p>
+\[ x - (x - m + 2) + 1 = m - 1 \; \text {terms} \]
+</p>
+
+<p>
+This rings a bell! We have a product of \(m - 1\) decreasing terms. Don’t we have a way of cramming that into a compact expression? Putting it all together:
+</p>
+
+<p>
+\[ \Delta (x^{\underline {m}}) = mx^{\underline {m-1}} \]
+</p>
+
+<p>
+which bears a striking similarity to the power rule.
+</p>
+
 </section>
 
 </main>

@@ -1,0 +1,141 @@
+\documentclass{standalone}
+\begin{document}
+
+\section{Finite Calculus}
+
+Finite Calculus establishes analogs between the techniques of infinite Calculus
+(Analysis etc.) in order to develop sophisticated ways of dealing with sums.
+Specifically, we're after methods that remind us of dealing with integrals and
+derivatives since there are nice formulas and tricks for handling those most of
+the time.
+
+Another important theme of Finite Calculus is discovering functions that act as
+discrete versions of their continuous counterparts. If we can find a finite
+analog of a function, we'll have an easier time reasoning about a closed form
+solution.
+
+\subsection{The Difference Operator}
+
+One of the first facts established in Calculus is the limit definition of the
+derivative of a function:
+
+\[
+  \frac d {dx} f(x) = \lim_{h \to 0} \frac {f(x + h) - f(x)} h
+\]
+
+The righthand side is the limit of the \textbf{difference quotient} of $f(x)$
+as $h$ approaches 0. In the finite world, there is a similar operation:
+
+\begin{equation*}
+  \Delta f(x) = f(x + 1) - f(x)
+\end{equation*}
+
+This is known as the \textbf{difference operator}. Since we're dealing with a
+discrete function and not a continous one, we have to restrict $h$ to being an
+integer. The closest integer $h$ can be without being 0 is 1. This gives a nice
+tie-in to the limit definition.
+
+Crucially, $\Delta f(x)$ is called an \emph{operator}, because it operates on
+$f(x)$ and produces another function, similar to differentiation. Introducing
+this operator allows for the development of more sophisticated tools a little
+later.
+
+\subsection{Rising and Falling Factorials}
+
+Unfortunately, the convenient power rule of differential Calculus:
+
+\[
+  \frac d {dx} x^m = mx^{m-1}
+\]
+
+fails miserably in the finite world:
+
+\[
+  \Delta(x^3) = (x + 1)^3 - x^3 = 3x^2 + 3x + 1 \neq 3x^2
+\]
+
+At least for polynomials. There are, however, interesting functions for which
+the difference operator is a near-perfect match-up to differentiation, although
+this fact is not obvious right away. Some definitions first:
+
+\begin{definition}
+  Falling Factorial
+
+  Let $m$ be an integer and $x$ be any real number. Define the falling factorial
+  of $x$ as:
+
+  \[
+    x^{\underline{m}} = x(x-1)(x-2)\dots(x-m+1)
+  \]
+\end{definition}
+
+\begin{definition}
+  Rising Factorial
+
+  Let $m$ be an integer and $x$ be any real number. Define the rising factorial
+  of $x$ as:
+
+  \[
+    x^{\overline{m}} = x(x+1)(x+2)\dots(x+m-1)
+  \]
+\end{definition}
+
+$m$ denotes the number of terms in the factorial product, and the line above or
+below $m$ determines whether the terms are increasing or decreasing. There's a
+hint here that the difference operator might be important. Taking a peek at the
+first two consecutive terms in the product, they have the form:
+
+\[
+  (x)(x+1) \; \text{or} \; x(x-1)
+\]
+
+It's still too early to tell what's going on, but this deserves some suspicion.
+
+This strange notation takes some getting used to, but is ultimately a very neat
+way of compressing a lot of information into notation that can be manipulated.
+
+Here's an explanation for why there are $m$ terms:
+
+\begin{align*}
+  x^{\underline{m}} = \underbrace{x(x-1)(x-2)\dots(x-m+1)}_{x - (x - m + 1) + 1 = m \; \text{terms}}
+\end{align*}
+
+\begin{align*}
+  x^{\overline{m}} = \underbrace{x(x+1)(x+2)\dots(x+m-1)}_{(x + m - 1) - x + 1 = m \; \text{terms}}
+\end{align*}
+
+This comes from counting how many integers there are in a given range. As an
+example, there are $(5 - 2) + 1 = 4$ integers between 2 and 5.
+
+Here's a visual aid as a quick refresher:
+
+% TODO: number line
+
+But what does this have to do with the difference operator? The answer may lie
+in blindly applying the operator and seeing what happens. Nothing ventured!
+
+\begin{align*}
+  \Delta(x^{\underline{m}})
+  &= (x + 1)^{\underline{m}} - x^{\underline{m}} \\ \\
+  &= (x+1)(x)(x-1)\dots(x-m+2) - x(x-1)(x-2)\dots(x-m+2)(x-m+1) \\ \\
+  &= x(x-1)(x-2)\dots(x-m+2)(x + 1 - (x - m + 1)) \\ \\
+  &= m[x(x-1)(x-2)\dots(x-m+2)]
+\end{align*}
+
+Some clever factoring got us an $m$ times something vaguely familiar. Let's try
+counting how many terms there are:
+
+\[
+  x - (x - m + 2) + 1 = m - 1 \; \text{terms}
+\]
+
+This rings a bell! We have a product of $m - 1$ decreasing terms. Don't we have
+a way of cramming that into a compact expression? Putting it all together:
+
+\[
+  \Delta(x^{\underline{m}}) = mx^{\underline{m-1}}
+\]
+
+which bears a striking similarity to the power rule.
+
+\end{document}

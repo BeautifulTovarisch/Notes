@@ -7,62 +7,135 @@ These are the basic "rules" of counting. In general, counting using these rules
 involves modeling the problem as a correct sequence of choices and applying the
 appropriate strategy to the sequence.
 
+Proofs of the basic counting principles are usually extremely heavy on notation
+and formalism. As such, they tend to be cryptic and not offer very much in the
+way of an intuitive understanding of combinatorics. Actually, as it turns out,
+not much can serve as a silver bullet for imbuing the contrived way of thinking
+involved in solving difficult combinatorics problems.
+
+Solving an absurd number of problems is just about the only way to approach the
+subject unfortunately.
+
 \subsection{Product Rule}
 
-The Product rule is applied to combinatorial problems that can be modeled as a
-"process" of making mutually exclusive choices. For such problems the total
-number of ways to perform the process is given by multiplying the number of
-options at each step.
+The Product rule is used when a counting problem is modeled after a sequence of
+choices. A heuristic for understanding when to use the product rule comes from
+comparing a situation to a logical and $\land$ operator. In other words, if we
+need to pick among some choices \emph{and} some other choices, the total number
+of outcomes is given by multiplying them together.
 
-\begin{equation}
-  \text{number of ways} = N_1 \cdot N_2 \cdot \dots \cdot N_k
-\end{equation}
+\begin{theorem}
+  Let $A$ be a set of $n$ outcomes and $B$ be a set of $m$ outcomes. The number
+  of ways to choose an outcome of $A$ and an outcome of $B$ is given by:
 
-where $N_i$ is the number of ways of performing the $i$th step of the process.
+  \begin{equation}
+    \text{number of ways} = n \cdot m
+  \end{equation}
+
+  generalizing over sets $A_1, A_2, \dots, A_n$, the total number of outcomes
+  is given by\footnote{Unlike most of the other rules, the proof of the product
+  rule is actually insightful, but sadly just as convoluted}:
+
+  \begin{equation}
+    |A_1| \cdot |A_2| \cdot \dots \cdot |A_n|
+  \end{equation}
+\end{theorem}
+
+This rule along with the Sum rule are the basis for virtually every counting
+problem. A good way to visualize the product rule is by considering the number
+of branches of a decision tree:
+
+% TODO: Decision tree
 
 \subsection{Complement Rule}
 
-The Complement rule is helpful when expressing the size of a subset. Suppose
-$A \subseteq U$, then
+The Complement rule is helpful when expressing the size of a subset. The main
+idea here is to express the elements of $A$ as a disjoint combination of $U$
+and $A$. This comes in handy every once in a while in proofs.
 
-\[
-  |A| = |U| - |U - A|
-\]
+\begin{theorem}
+  Suppose $A \subseteq B$, then
 
-In other words, the size of $A$ is the same as the size of $U$ when taking away
-the elements of $U$ which are also in $A$ (leaving behind only those elements
-which belong to $A$).
+  \[
+    |A| = |U| - |U - A|
+  \]
+\end{theorem}
 
-(I remember this "algebraically": $U - (U - A) = U - U + A = A$)
+\begin{proof}
+  Since this just involves some straightforward thinking about sets, we might
+  as well go ahead and prove it. Thinking through the notation slowly, all we
+  do in the righthand expression is remove any element not in $A$ from $U$.
+  This is because the elements we take away from $U$ are those leftover from
+  deleting the ones in $A$.
 
-\subsection{Sum Rule}
+  % TODO: Picture
 
-This is a specicial form of the Inclusion/Exclusion rule applicable for
-sets of elements who are mutually disjoint.
+  Admittedly, this still takes a moment to sink in. Another way of expressing
+  this identity is to realize that we're just talking about integers, since the
+  equation is in terms of the \emph{sizes} of sets. We can use a little algebra
+  to help out:
+
+  \begin{align*}
+    a
+    &= u - (u - a) \\
+    &= u - u + a \\
+    &= a
+  \end{align*}
+
+  Since $A \subseteq U$, all of $A$ is already inside of $U$. Taking away any
+  elements not in $A$ leaves us with exactly $A$. Here's a formal way of saying
+  that\footnote{Actually, a subtle fact that's glossed over here is that the
+  theorem claims the sets are the same size. This demands that we establish a
+  bijection between the sets, however, proving that they're exactly the same
+  set is (probably) good enough here}:
+
+  Suppose $A \subseteq U$. We will show both sides of the provided equation are
+  subsets of one another, and therefore equal by set equality. Let $x \in A$.
+  Then $x \in U$ by definition of subset, and likewise $x \not in U - A$ by set
+  subtraction. But then $x \in U - (U - A)$ since it will not be removed from
+  $U$ during the subtraction, and so $A \subseteq U - (U - A)$.
+
+  Now suppose $x \in U - (U - A)$. Then $x \in U$ and not $U - A$ by definition
+  of set subtraction. But if $x \not \in U - A$, then $x \in A$. Therefore the
+  righthand side is also a subset of $A$, and the proof is complete.
+\end{proof}
 
 \subsection{Inclusion/Exclusion}
 
-The Inclusion/Exclusion rule is a generalization of the Sum rule, and can be
-used when sets are not-disjoint. The intuition here is to subtract the "double-
-counted" elements from the union of two sets.
+The Inclusion/Exclusion rule adjusts for overcounting the union of sets whose
+intersection is non-empty. The intuition is fairly straightforward; when taking
+the union of two non-disjoint sets, any element found in \emph{both} sets will
+be double counted. To correct for this misake, the inclusion/exclusion rule
+subtracts the intersection of the two elements, ensuring a given element is only
+ever counted once.
 
-\[
-  |A \cup B| = |A| + |B| - |A \cap B|
-\]
+\begin{theorem}
+  Suppose $A$ and $B$ are sets, not necessarily disjoint. The total number of
+  elements in the union of $A$ and $B$ is given by:
 
-For example, let $A = \{1, 2, 3\}, \; B = \{2, 3\}$. Since $A$ and $B$ are not
-disjoint, we only want to count the elements in their union once:
+  \[
+    |A \cup B| = |A| + |B| - |A \cap B|
+  \]
+\end{theorem}
 
-\begin{align*}
-  &A = \{1, 2, 3\} \\
-  &B = \{2, 3\} \\
-  &A \cup B = \{1, 2, 3, 2, 3\} \\
-  &A \cap B = \{2, 3\} \\
-  &(A \cup B) - (A \cap B) = \{1, 2, 3\}
-\end{align*}
+A special case arises when $A$ and $B$ are disjoint. This reduces the equation
+to $|A \cup B| = |A| + |B|$ since $|A \cap B|$ is empty, which clearly has no
+elements. This identity is called the \textbf{Sum Rule}. Most of the time, it's
+a good idea to think in terms of the inclusion/exclusion rule until confirming
+whether $A$ and $B$ have any shared elements.
 
-When $A$ and $B$ are disjoint, their intersection is $0$, and so the formula
-holds.
+\begin{example}
+  For example, let $A = \{1, 2, 3\}, \; B = \{2, 3\}$. Since $A$ and $B$ are not
+  disjoint, we only want to count the elements in their union once:
+
+  \begin{align*}
+    A &= \{1, 2, 3\} \\
+    B &= \{2, 3\} \\
+    A \cup B &= \{1, 2, 3, 2, 3\} \\
+    A \cap B &= \{2, 3\} \\
+    (A \cup B) - (A \cap B) &= \{1, 2, 3\}
+  \end{align*}
+\end{example}
 
 \subsection{Permutations}
 
