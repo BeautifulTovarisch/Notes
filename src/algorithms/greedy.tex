@@ -200,6 +200,7 @@ is critical in proving Prim's algorithm correct.
 \begin{algorithm}
 \caption{Prim's MST Algorithm}
 \begin{algorithmic}
+  \Require $G = (V, E)$ is connected
   \State $X = \{s\}$
   \State $T = \emptyset$
   \While{There is an edge $(v, w)$ s.t $v \in X$, $w \not \in X$}
@@ -214,8 +215,67 @@ is critical in proving Prim's algorithm correct.
 \subsubsection{Correctness}
 
 We need to prove that Prim's algorithm not only computes a spanning tree, but
-that this tree is the best possible one that could have been produced. There's
-some initial paperwork to be done in order to set up the ideas behind the proof.
+that this tree is the best possible one that could have been produced. The main
+ideas of this proof rely on properties of graph \ref{sec:graphs:cuts}, and the
+crucial fact that Prim's only ever chooses the minimal edge spanning the cut.
+
+Proving each part as separate lemmas keeps the arguments nice and tidy:
+
+\begin{lemma}
+  Prim's algorithm outputs a spanning tree.
+\end{lemma}
+
+The first order of business is to show that Prim's algorithm maintains the
+invariant that $T$ spans the visited nodes in $X$. In other words, $T$ is a
+graph that contains all of the vertices in $X$ at every iteration. This can
+be achieved via a straightforward inductive proof. All that really needs to
+be shown here is that whenever the algorithm adds a vertex to $X$, it always
+adds the edge that led to that vertex. This is clear from reading the code,
+but a proof is good for building character.
+
+\begin{proof}
+  Consider Prim's algorithm given an input graph of exactly one edge. Clearly
+  this edge will immediately be added to $T$ during the first iteration, and
+  since this edge is incident to the only two vertices in the graph, $T$ spans
+  $X$ trivially. Now assume the $T$ spans $X$ for graphs having $n \geqslant 2$
+  vertices. Notice when the $n+1$st vertex $w'$ is added to $X$, then so is the
+  edge incident to it. By hypothesis, $T$ spans all $n$ vertices already added
+  to $X$, and by virtue of adding an edge incident to $w'$, must also span $w'$
+  as well. Thus, $T$ spans $X$ at every iteration of Prim's algorithm.
+\end{proof}
+
+Onto more interesting business. We know that $T$ spans $X$, but still need to
+show the algorithm terminates eventually, and that $T$ is in fact a spanning
+tree by the time the loop is finished. This is where a clever application of
+the \ref{lem:emptycut} lemma helps out in a proof by contradiction.
+
+Since the algorithm adds a vertex to $X$ every iteration, we'll eventually
+run out of edges that cross the cut, and therefore exit the loop. What if the
+algorithm terminates early, however? Can $T$ fail to span all of the nodes in
+$G$? From the pseudocode, the while loop stops as soon as there are no further
+edges to be processed. If there are nodes left in $V-X$ when this happens, we
+have ourselves a graph cut. By the empty cut lemma, this means that $G$ must
+have been disconnected, violating the constraints of the algorithm! The proof
+sketch is solid, now to get to work.
+
+% TODO: Picture
+
+\begin{proof}
+  To see that Prim's algorithm terminates, notice that every iteration of the
+  while loop some vertex is added to $X$. Because $G$ is finite, there can only
+  be a finite number of edges to cross the cut. Therefore, since each iteration
+  of the loop reduces this number by exactly one, the loop will terminate by
+  induction.
+
+  Now to show that the output $T$ spans all vertices of $G$, assume by way of
+  contradiction that there are vertices in $G$ which $T$ does not span. By the
+  previous lemma, $T$ spans all vertices in $X$, and so those $T$ does not span
+  must be in $V-X$. This exhibits a graph cut which must have no crossing edges
+  by way of the termination condition. But then by the empty cut lemma, $G$ is
+  disconnected, contradicting the constraint on the input to the algorithm.
+
+  Thus, the output graph $T$ spans all vertices in $G$.
+\end{proof}
 
 \subsubsection{Runtime Analysis}
 
